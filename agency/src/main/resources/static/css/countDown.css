@@ -1,0 +1,151 @@
+/* 倒计时弹窗样式开始 */
+.open-time-box .layui-layer-setwin {
+  top: 22px;
+}
+
+body .open-time-box {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+body .open-time-box .layui-layer-title {
+  height: 57px;
+  background: #fff;
+  text-align: center;
+  line-height: 57px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0 50px;
+}
+
+body .open-time-box .layui-layer-setwin {
+  top: 22px;
+}
+
+body .open-time-box .time-box {
+  height: 100%;
+  width: 100%;
+}
+
+body .open-time-box .time-box .time-box-content {
+  height: calc(100% - 80px);
+  position: relative;
+}
+
+body .open-time-box .time-box .time-box-btns {
+  height: 80px;
+  text-align: center;
+  word-spacing: -5px;
+  padding: 20px;
+  background: #e8ebf1;
+  box-sizing: border-box;
+}
+
+body .open-time-box .time-box .time-box-btns > div > div {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  width: 80px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+body .open-time-box .time-box .time-box-btns div:hover {
+  opacity: 0.75;
+  transition-duration: 200ms;
+}
+
+body .open-time-box .time-box .time-box-btns div:active {
+  opacity: 1;
+}
+
+body .open-time-box .time-box .time-box-btns .confirm {
+  background: linear-gradient(
+          268deg,
+          rgba(19, 97, 254, 1) 0%,
+          rgba(78, 138, 255, 1) 100%
+  );
+  color: #fff;
+}
+
+body .open-time-box .time-box .time-box-btns .concel {
+  border: 1px solid rgba(19, 97, 254, 1);
+  color: rgba(19, 97, 254, 1);
+}
+
+body .open-time-box .time-box .time-box-btns div:last-child {
+  margin-right: 0;
+}
+
+body .open-time-box .time-box .set-time-box,
+body .open-time-box .time-box .show-time-box {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body .open-time-box .set-time-box_input input {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-left: 16px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  transition-duration: 200ms;
+}
+
+body .open-time-box .set-time-box_input input:focus {
+  border-color: #1361fe;
+}
+
+body .layui-laydate-main {
+  width: 300px;
+}
+
+body .open-time-box .set-time-box_label {
+  color: #1a2539;
+  font-size: 14px;
+}
+
+body .layui-laydate .layui-this {
+  background-color: #1361fe !important;
+}
+
+body .layui-laydate-footer span:hover,
+body .layui-laydate-header span:hover {
+  color: #1361fe;
+}
+
+body .open-time-box .show-time-box {
+  word-spacing: -5px;
+  width: 100%;
+}
+
+body .open-time-box .show-time-box > div {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 46px;
+  font-weight: bold;
+}
+
+body .open-time-box .show-time-box .show-time-box_item {
+  height: 90px;
+  width: 90px;
+  border-radius: 8px;
+  border: 1px solid #1361fe;
+  line-height: 90px;
+  background: #e8ebf1;
+  color: #1361fe;
+}
+
+body .open-time-box .show-time-box_hr {
+  color: #b5b5b5;
+  margin: 0 10px;
+}
+
+/* 倒计时弹窗样式结束 */

@@ -1,0 +1,209 @@
+.down {
+  width: 100%;
+  background-color: #fff;
+  padding-top: 50px;
+  box-sizing: border-box;
+  position: relative;
+}
+.down .num {
+  width: 63.2%;
+  height: 80px;
+  border: 1px solid rgba(19, 97, 254, 1);
+  margin: 50px auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.down h3 {
+  width: 100%;
+  height: 27px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  line-height: 27px;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.down .extraFont{
+  width: 100%;
+  height: 289px;
+  font-size: 36px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  line-height: 239px;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.down .num li {
+  width: 16.6%;
+  height: 80px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 80px;
+  color: rgba(19, 97, 254, 1);
+  cursor: pointer;
+  float: left;
+}
+.down .num li:hover {
+  color: #ccc;
+  transition: 0.2s;
+}
+.down .hide {
+  width: 154px;
+  height: 60px;
+  background: rgba(252, 252, 252, 1);
+  opacity: 1;
+  margin: 0 auto;
+}
+.hide .big-btn {
+  width: 69%;
+  height: 60px;
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 60px;
+  text-align: center;
+  color: rgba(19, 97, 254, 1);
+  float: left;
+}
+.hide .big-nothing {
+  width: 69%;
+  height: 60px;
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 68px;
+  text-align: center;
+  color: rgba(19, 97, 254, 1);
+  float: left;
+}
+.hide .save {
+  width: 30%;
+  height: 100%;
+  float: right;
+}
+.hide .save img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+.hide span {
+  display: block;
+  width: 1%;
+  height: 50%;
+  background-color: rgba(213, 213, 213, 1);
+  float: left;
+  margin-top: 15px;
+}
+.foot {
+  width: 180px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.foot .lit-btn {
+  width: 75px;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  cursor: pointer;
+}
+.foot .lit-btn:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+html .organe .layui-btn-normal {
+  background: linear-gradient(
+          270deg,
+          rgba(255, 145, 0, 1) 0%,
+          rgba(255, 179, 81, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#ff9100, endColorstr=#ffb351);
+}
+html .blove .layui-btn {
+  background: linear-gradient(
+          270deg,
+          rgba(19, 97, 254, 1) 0%,
+          rgba(78, 138, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#1361fe, endColorstr=#4e8aff);
+}
+.tan {
+  overflow: hidden;
+}
+.tan form input {
+  width: 300px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(213, 213, 213, 1);
+  opacity: 1;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 60px 150px 20px;
+}
+.tan form p {
+  width: 100%;
+  height: 24px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 24px;
+  color: rgba(245, 57, 35, 1);
+  opacity: 1;
+}
+.layui-layer-btn,
+.layui-layer-btn-c {
+  background: rgba(239, 243, 244, 1);
+}
+html .layui-layer-hui .layui-layer-content {
+  font-size: 24px;
+  line-height: 176px;
+  overflow: hidden;
+  background-color: #fff;
+  font-weight: 900;
+  color: rgba(34, 49, 101, 1);
+}
+.yinc {
+  width: 40px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 25px;
+  background-color: #fff;
+  color: #ccc;
+  position: absolute;
+  left: 58%;
+  bottom: 40px;
+  cursor: pointer;
+}
+
+/*弹窗样式*/
+.loging * {
+  margin: 0;
+  padding: 0;
+}
+
+.loging p {
+  width: 100%;
+  height: 155px;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 155px;
+  color: #1A2539;
+}

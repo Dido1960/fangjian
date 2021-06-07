@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.FreeBackApplyMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.FreeBackApply">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="STEP" property="step" />
+        <result column="STEP_NOW" property="stepNow" />
+        <result column="CHECK_STATUS" property="checkStatus" />
+        <result column="REASON" property="reason" />
+        <result column="APPLY_USER" property="applyUser" />
+        <result column="APPLY_TIME" property="applyTime" />
+        <result column="CHECK_TIME" property="checkTime" />
+        <result column="CHECK_USER" property="checkUser" />
+        <result column="FREE_BACK_ANNEX_ID" property="freeBackAnnexId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, STEP, STEP_NOW, CHECK_STATUS, CHECK_USER, REASON, APPLY_USER, APPLY_TIME, APPLY_TIME ,
+        CHECK_TIME, CHECK_USER, FREE_BACK_ANNEX_ID
+    </sql>
+
+</mapper>

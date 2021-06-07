@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 1200px;
+  min-height: 800px;
+  margin: 0 auto;
+}
+input {
+  outline: none;
+}
+.kong {
+  width: 100%;
+  height: 20px;
+}
+header {
+  width: 100%;
+  height: 80px;
+  background: rgba(48, 60, 100, 1);
+  opacity: 1;
+}
+header .text {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+header .text .name {
+  width: 500px;
+  height: 100%;
+  font-size: 30px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 5px;
+  opacity: 1;
+  float: left;
+}
+header .text .name span {
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 0px;
+}
+header .bao {
+  width: 220px;
+  height: 100%;
+  float: right;
+}
+header .bao .back {
+  width: 110px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 40px;
+  color: rgba(19, 97, 254, 1);
+  cursor: pointer;
+  float: left;
+  margin-top: 20px;
+}
+header .bao .back:hover {
+  background: rgba(12, 113, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  transition: 0.3s;
+}
+header .bao .try {
+  width: 80px;
+  height: 100%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  float: right;
+}
+header .bao .try i {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/off.png) no-repeat;
+  float: right;
+  margin-top: 32px;
+}
+section {
+  width: 100%;
+  min-height: calc(100% - 80px);
+  background: rgba(239, 243, 244, 1);
+}
+section .content {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+section .content .depend {
+  width: 100%;
+  height: 40px;
+}
+section .content .depend li {
+  width: 91px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 40px;
+  color: rgba(213, 213, 213, 1);
+  text-align: center;
+  cursor: pointer;
+  float: left;
+}
+section .content .depend li + li {
+  margin-left: 20px;
+}
+section .content .depend .blue {
+  background: linear-gradient(
+          263deg,
+          rgba(19, 97, 254, 1) 0%,
+          rgba(78, 138, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#1361fe, endColorstr=#4e8aff);
+  color: #fff;
+  font-weight: 900;
+}
+section .content .depend li:hover {
+  background-color: rgba(19, 97, 254, 1);
+  color: #fff;
+  transition: 0.3s;
+  font-weight: 900;
+}
+section .content .head {
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
+  opacity: 1;
+  padding: 20px 20px 0px 20px;
+  box-sizing: border-box;
+  margin: 20px 0px 0px;
+}
+.head .add-btn {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #1361fe;
+  opacity: 1;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 40px;
+  color: #1361fe;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+}
+.head .seach {
+  width: 380px;
+  height: 40px;
+  float: right;
+  position: relative;
+}
+.seach .layui-form-select {
+  width: 110px;
+  height: 40px;
+  float: left;
+}
+.head .seach .seach-text {
+  width: 260px;
+  height: 38px;
+  background: #ffffff;
+  border: 1px solid #d5d5d5;
+  opacity: 1;
+  float: right;
+  padding: 0 30px 0 10px;
+  box-sizing: border-box;
+}
+.head .seach img {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.seach .layui-form-select dl dd {
+  text-align: center;
+}
+.seach .layui-form-select dl dd.layui-this {
+  background-color: #1361fe;
+}
+.content .kind {
+  width: 100%;
+  height: 60px;
+  background: #a9bfdc;
+  opacity: 1;
+}
+.kind li {
+  width: 18.7%;
+  height: 60px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 60px;
+  color: #223165;
+  text-align: center;
+  display: inline-block;
+}
+.kind .small{
+  width: 10% !important;
+}
+.content .document {
+  width: 100%;
+  height: 700px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.document li {
+  width: 100%;
+  min-height: 96px;
+  background: #ffffff;
+  opacity: 1;
+  margin-top: 20px;
+}
+.document li div {
+  display: inline-block;
+  width: 18.7%;
+  min-height: 96px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 500;
+  line-height: 96px;
+  color: #223165;
+  text-align: center;
+  vertical-align: middle;
+}
+.document li .small{
+  width: 10% !important;
+}
+.document li div p {
+  display: inline-block;
+  line-height: 24px;
+  overflow: visible;
+  white-space: pre-wrap;
+  vertical-align: middle;
+}
+.document li div span {
+  display: inline-table;
+  width: 85px;
+  height: 40px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+  position: relative;
+}
+.document li div span ol {
+  width: 85px;
+  min-height: 36px;
+  position: absolute;
+  z-index: 999999;
+}
+.document li div span ol li {
+  width: 100%;
+  min-height: 36px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 500;
+  line-height: 36px;
+  color: #a6a7ab;
+  margin: 0;
+}
+.document li div span ol li:hover {
+  color: #1361fe;
+}
+
+section .foot {
+  margin-top: 40px;
+}
+section .layui-laypage .layui-laypage-count {
+  position: relative;
+  left: 0px;
+  width: 90px;
+  float: left;
+  margin-left: 20px !important;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  color: rgba(26, 51, 88, 1);
+  background-color: #fff;
+  border: 1px solid rgba(163, 180, 212, 1);
+  box-sizing: border-box;
+}
+
+section .layui-laypage .layui-laypage-curr .layui-laypage-em {
+  background: #1361fe;
+  color: #fff;
+}
+
+section .layui-box {
+  width: 100%;
+  text-align: right;
+}
+
+section .layui-box a {
+  margin-right: 10px;
+}
+
+section .layui-laypage .layui-laypage-spr {
+  margin-right: 10px;
+}
+
+section .layui-laypage .layui-laypage-curr {
+  margin-right: 10px;
+}
+html .layui-laypage-refresh {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+html .layui-laypage-skip {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.document li div span img{
+  float: right;
+  margin-top: 12px;
+}

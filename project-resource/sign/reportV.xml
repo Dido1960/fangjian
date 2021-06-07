@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 施工评标报告 签名位置定义文件 -->
+<root>
+    <!-- 适用于A4纸【竖版签字】 -->
+    <!-- rule 定义一个签名规则 type:类型 keyword: 关键字 一个keyword对应一个sign-->
+    <!-- type: normal 标准多人签名区 -->
+    <rule type="normal" keyword="评标委员会成员签字:">
+        <!-- area 定义签名规则所属得签名区域 index 表示签名区域下标 从 1 开始计算 -->
+        <!--index 为0 代表所有的位置都替换  index 为1代表PDf第一个位置信息-->
+        <area index="0">
+            <!-- position 定义区域内的签名位置 一个签名对应 一个position 多人签名区域按照 最多9个专家签名进行设定
+                index: 签名位置下标 从0开始
+                x: 签名基于keyword中心点X轴 偏移量 右正左负
+                y: 签名基于keyword中心点Y轴 偏移量 上正下负
+                width: 签名宽度
+                heigth: 签名高度
+                x y 值 组合确定签名位置  width height 组合 确定签名大小
+            -->
+            <position index="0" x="105" y="5" width="50" height="20"/>
+            <position index="1" x="155" y="5" width="50" height="20"/>
+            <position index="2" x="210" y="5" width="50" height="20"/>
+            <position index="3" x="265" y="5" width="50" height="20"/>
+            <position index="4" x="315" y="5" width="50" height="20"/>
+            <position index="5" x="365" y="5" width="50" height="20"/>
+            <position index="6" x="105" y="-20" width="50" height="20"/>
+            <position index="7" x="155" y="-20" width="50" height="20"/>
+            <position index="8" x="210" y="-20" width="50" height="20"/>
+        </area>
+    </rule>
+
+    <!-- 适用于A4纸【横版签字】 -->
+    <!-- rule 定义一个签名规则 type:类型 keyword: 关键字 一个keyword对应一个sign-->
+    <!-- type: normal 标准多人签名区 -->
+    <rule type="normal" keyword="评标委员会成员签字：">
+        <!-- area 定义签名规则所属得签名区域 index 表示签名区域下标 从 1 开始计算 -->
+        <!--index 为0 代表所有的位置都替换  index 为1代表PDf第一个位置信息-->
+        <area index="0">
+            <!-- position 定义区域内的签名位置 一个签名对应 一个position 多人签名区域按照 最多9个专家签名进行设定
+                index: 签名位置下标 从0开始
+                x: 签名基于keyword中心点X轴 偏移量 右正左负
+                y: 签名基于keyword中心点Y轴 偏移量 上正下负
+                width: 签名宽度
+                heigth: 签名高度
+                x y 值 组合确定签名位置  width height 组合 确定签名大小
+            -->
+            <position index="0" x="105" y="5" width="50" height="20"/>
+            <position index="1" x="155" y="5" width="50" height="20"/>
+            <position index="2" x="205" y="5" width="50" height="20"/>
+            <position index="3" x="265" y="5" width="50" height="20"/>
+            <position index="4" x="315" y="5" width="50" height="20"/>
+            <position index="5" x="365" y="5" width="50" height="20"/>
+            <position index="6" x="415" y="5" width="50" height="20"/>
+            <position index="7" x="465" y="5" width="50" height="20"/>
+            <position index="8" x="515" y="5" width="50" height="20"/>
+        </area>
+    </rule>
+
+    <!-- 有效的签名  validSignature-->
+    <!-- 适用于A4纸【横版签字】，一行全签（九个） -->
+    <rule type="validSignature" keyword="评标委员会成员签名：">
+        <area index="1">
+            <position index="0" x="110" y="5" width="50" height="20"/>
+            <position index="1" x="160" y="5" width="50" height="20"/>
+            <position index="2" x="210" y="5" width="50" height="20"/>
+            <position index="3" x="260" y="5" width="50" height="20"/>
+            <position index="4" x="310" y="5" width="50" height="20"/>
+            <position index="5" x="360" y="5" width="50" height="20"/>
+            <position index="6" x="410" y="5" width="50" height="20"/>
+            <position index="7" x="460" y="5" width="50" height="20"/>
+            <position index="8" x="510" y="5" width="50" height="20"/>
+        </area>
+    </rule>
+
+    <!-- type: person 专家个人签名区 @@scqskj-name@ 占位符:专家名称 -->
+    <rule type="person" keyword="评审专家 @@scqskj-name@ 签字：">
+        <area index="0">
+            <!-- position 个人签名区按照1个专家签名进行设定 -->
+            <position x="200" y="6" width="50"  height="20"/>
+        </area>
+    </rule>
+</root>

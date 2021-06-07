@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+.cont {
+    width: 100%;
+    padding: 30px;
+    background: #F0F4F8;
+    box-sizing: border-box;
+}
+
+.cont .cont-top {
+    width: 100%;
+    height: 250px;
+    background: #FFFFFF;
+    opacity: 1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.cont-top h3 {
+    width: 100%;
+    height: 60px;
+    background: #CFDAE5;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 60px;
+    color: #1A2539;
+    text-align: center;
+}
+
+.cont-top form {
+    width: 100%;
+    height: calc(100% - 60px);
+    padding: 40px 60px 0;
+    box-sizing: border-box;
+}
+
+.cont-top form .check {
+    width: 50%;
+    height: 40px;
+    float: left;
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.cont-top form .check label {
+    display: block;
+    width: 150px;
+    height: 40px;
+    float: left;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 40px;
+    color: #333333;
+}
+
+.cont-top form .check input {
+    width: calc(100% - 150px);
+    height: 40px;
+    background: #F0F4F8;
+    border: 1px solid #CFDAE5;
+    opacity: 1;
+    border-radius: 4px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.cont .document {
+    width: 100%;
+    height: 628px;
+    opacity: 1;
+    border-radius: 8px;
+}
+
+.cont .document .document-left {
+    width: 350px;
+    height: 628px;
+    background: #FFFFFF;
+    opacity: 1;
+    border-radius: 8px;
+    float: left;
+}
+
+.document-left ol {
+    width: 100%;
+    height: 60px;
+    background: #CFDAE5;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+
+}
+
+.document-left ol li {
+    width: 20%;
+    height: 60px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 60px;
+    color: #1A2539;
+    text-align: center;
+    float: left;
+}
+
+.document-left ol .long {
+    width: 80% !important;
+}
+
+.document-left ul {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: auto;
+}
+
+.document-left ul li {
+    width: 100%;
+    height: 59px;
+    cursor: pointer;
+}
+
+.document-left ul li div {
+    width: 20%;
+    height: 59px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 59px;
+    color: #333333;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.document-left ul li .long {
+    width: 80%;
+}
+
+.document-left ul .sele {
+    background-color: rgba(0, 102, 204, 0.1);
+}
+
+.document-left ul .sele div {
+    color: rgba(0, 102, 204, 1);
+    font-weight: bold;
+}
+
+.document-left ul::-webkit-scrollbar {
+    display: none;
+}
+
+.document .document-right {
+    width: calc(100% - 370px);
+    height: 628px;
+    opacity: 1;
+    border-radius: 8px;
+    float: right;
+    background-color: #fff;
+}
+
+.document-right ol {
+    width: 100%;
+    height: 60px;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 1px solid rgba(207, 218, 229, 1);
+    box-sizing: inherit;
+}
+
+.document-right ol li {
+    width: 150px;
+    height: 60px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 60px;
+    color: #9C9C9C;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+
+.document-right ol li:nth-child(1) {
+    border-radius: 8px 0 0 0;
+}
+
+.document-right ol .choice {
+    background: #0066CC;
+    font-weight: bold;
+    color: #FFFFFF;
+}* {
+     margin: 0;
+     padding: 0;
+     user-select: none;
+ }
+
+ol,
+ul {
+    list-style: none;
+}
+
+.cont {
+    width: 100%;
+    padding: 30px;
+    background: #F0F4F8;
+    box-sizing: border-box;
+}
+
+.cont .cont-top {
+    width: 100%;
+    height: 250px;
+    background: #FFFFFF;
+    opacity: 1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.cont-top h3 {
+    width: 100%;
+    height: 60px;
+    background: #CFDAE5;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 60px;
+    color: #1A2539;
+    text-align: center;
+}
+
+.cont-top form {
+    width: 100%;
+    height: calc(100% - 60px);
+    padding: 40px 60px 0;
+    box-sizing: border-box;
+}
+
+.cont-top form .check {
+    width: 50%;
+    height: 40px;
+    float: left;
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.cont-top form .check label {
+    display: block;
+    width: 150px;
+    height: 40px;
+    float: left;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 40px;
+    color: #333333;
+}
+
+.cont-top form .check input {
+    width: calc(100% - 150px);
+    height: 40px;
+    background: #F0F4F8;
+    border: 1px solid #CFDAE5;
+    opacity: 1;
+    border-radius: 4px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.cont .document {
+    width: 100%;
+    height: 628px;
+    opacity: 1;
+    border-radius: 8px;
+}
+
+.cont .document .document-left {
+    width: 350px;
+    height: 628px;
+    background: #FFFFFF;
+    opacity: 1;
+    border-radius: 8px;
+    float: left;
+}
+
+.document-left ol {
+    width: 100%;
+    height: 60px;
+    background: #CFDAE5;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+
+}
+
+.document-left ol li {
+    width: 20%;
+    height: 60px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 60px;
+    color: #1A2539;
+    text-align: center;
+    float: left;
+}
+
+.document-left ol .long {
+    width: 80% !important;
+}
+
+.document-left ul {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: auto;
+}
+
+.document-left ul li {
+    width: 100%;
+    height: 59px;
+    cursor: pointer;
+}
+
+.document-left ul li div {
+    width: 20%;
+    height: 59px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 59px;
+    color: #333333;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.document-left ul li .long {
+    width: 80%;
+}
+
+.document-left ul .choice {
+    background-color: rgba(0, 102, 204, 0.1);
+}
+
+.document-left ul .choice div {
+    color: rgba(0, 102, 204, 1);
+    font-weight: bold;
+}
+
+.document-left ul::-webkit-scrollbar {
+    display: none;
+}
+
+.document .document-right {
+    width: calc(100% - 370px);
+    height: 628px;
+    opacity: 1;
+    border-radius: 8px;
+    float: right;
+    background-color: #fff;
+}
+
+.document-right ol {
+    width: 100%;
+    height: 60px;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 1px solid rgba(207, 218, 229, 1);
+    box-sizing: inherit;
+}
+
+.document-right ol li {
+    width: 150px;
+    height: 60px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 60px;
+    color: #9C9C9C;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+
+.document-right ol li:nth-child(1) {
+    border-radius: 8px 0 0 0;
+}
+
+.document-right ol .sele {
+    background: #0066CC;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.cont-text {
+    height: 567px;
+}

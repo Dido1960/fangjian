@@ -1,0 +1,46 @@
+section .head {
+  width: 100%;
+  height: 56px;
+  background: #cfdae5;
+  margin-top: 20px;
+  border-radius: 8px 8px 0 0;
+}
+.head li {
+  width: 17.5%;
+  height: 56px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #333333;
+  line-height: 56px;
+  text-align: center;
+  float: left;
+}
+.head .long {
+  width: 30%;
+}
+.cont {
+  width: 100%;
+}
+.cont li {
+  width: 100%;
+  height: 72px;
+  background: #ffffff;
+}
+.cont li + li {
+  border-top: 1px solid #ccc;
+}
+.cont li div {
+  width: 17.5%;
+  height: 72px;
+  line-height: 72px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #333333;
+  text-align: center;
+  float: left;
+}
+.cont li .long {
+  width: 30%;
+}

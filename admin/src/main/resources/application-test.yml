@@ -1,0 +1,218 @@
+spring:
+  datasource:
+    dynamic:
+      primary: common
+      strict: true
+      datasource:
+        common:
+          username: root
+          password: www.lyjcd.cn
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://192.168.30.242/bid_common?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+          type: com.alibaba.druid.pool.DruidDataSource
+        log:
+          username: root
+          password: www.lyjcd.cn
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://192.168.30.242/gc_normal_log?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+          type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 192.168.30.242
+    port: 6379
+    password: lyjcdzc
+    database: 3
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 5000
+  cache:
+    cache-names: wordbook_redis_cache, config_map_redis_cache, menu_list_redis_cache
+    type: redis
+    redis:
+      cache-null-values: false
+      time-to-live: 60000
+      key-prefix: redis_ejiaoyi_
+      use-key-prefix: true
+logging:
+  config: classpath:logback-spring-test.xml
+
+## 线程池配置
+task:
+  pool:
+    core-pool-size: 20
+    max-pool-size: 40
+    keep-alive-seconds: 300
+    queue-capacity: 50
+    thread-utlis-max-size: 20
+
+## FastDFS configuration
+fdfs:
+  group: mygroup
+  address:  61.178.200.57:18092
+  intranet-address: 172.21.1.111:8089
+  connect-timeout: 60000
+  so-timeout: 60000
+  tracker-list: 172.21.1.111:22122
+  pool:
+    ## 连接池最大数量
+    max-total: 200
+    ## 每个tracker地址的最大连接数
+    max-total-per-key: 50
+    ## 连接耗尽时等待获取连接的最大毫秒数
+    max-wait-millis: 60000
+
+#单点登录api接口：替换为单点服务器的ip+端口
+sso:
+  url: http://119.45.207.240:23157
+  platform: cd033f02-5a36-480e-838a-8055a8063701
+  apikey: 02510a79-784d-4880-8df8-3e917900e22d
+
+# 投标人签到默认时长（单位：分钟）
+bidder:
+  param:
+    sign-time-left: 1440
+
+# 手写板签名服务器配置
+signature:
+  ip: 117.156.94.51
+  port: 8002
+
+# 文件预览服务器
+file:
+  view:
+    address: http://119.45.170.224:8012/onlinePreview
+
+# 第三方接口配置
+api:
+  # 工程量清单处理服务
+  quantity:
+    api-key: d8b99f24-44c2-4056-8962-8e137ece1e58
+    platform: 98e508bc-05e2-4174-9d45-533331cb17a5
+    server-code: fjsz
+    url:
+      get-token: http://172.21.1.98:9001/api/v1/quantity/getToken
+      get-ticket: http://172.21.1.98:9001/api/v1/quantity/getTicket
+      register-parse-quantity: http://172.21.1.98:9001/api/v1/quantity/registerParseQuantity
+      do-parse-quantity: http://172.21.1.98:9001/api/v1/quantity/doParseQuantity
+      get-parse-quantity-result: http://172.21.1.98:9001/api/v1/quantity/getParseQuantityResult
+      register-price-analysis: http://172.21.1.98:9001/api/v1/quantity/registerPriceAnalysis
+      do-price-analysis: http://172.21.1.98:9001/api/v1/quantity/doPriceAnalysis
+      register-arithmetic-analysis: http://172.21.1.98:9001/api/v1/quantity/registerArithmeticAnalysis
+      do-arithmetic-analysis: http://172.21.1.98:9001/api/v1/quantity/doArithmeticAnalysis
+      register-structure-analysis: http://172.21.1.98:9001/api/v1/quantity/registerStructureAnalysis
+      do-structure-analysis: http://172.21.1.98:9001/api/v1/quantity/doStructureAnalysis
+      register-rule-analysis: http://172.21.1.98:9001/api/v1/quantity/registerRuleAnalysis
+      do-rule-analysis: http://172.21.1.98:9001/api/v1/quantity/doRuleAnalysis
+      get-service-result: http://172.21.1.98:9001/api/v1/quantity/getServiceResult
+      create-overall-analysis: http://172.21.1.98:9001/api/v1/quantity/createOverallAnalysis
+      calc-quantity-score: http://172.21.1.98:9001/api/v1/quantity/calcQuantityScore
+      get-quantity-score-result: http://172.21.1.98:9001/api/v1/quantity/getQuantityScoreResult
+      list-service-result: http://172.21.1.98:9001/api/v1/quantity/listServiceResult
+  quantity-view:
+    api-key: d8b99f24-44c2-4056-8962-8e137ece1e58
+    platform: 98e508bc-05e2-4174-9d45-533331cb17a5
+    url:
+      get-token: http://172.21.1.98:9001/api/v1/quantity/view/getToken
+      quantity-result: http://172.21.1.98:9001/api/v1/quantity/view/quantityResult
+      structure-analysis: http://172.21.1.98:9001/api/v1/quantity/view/structureAnalysis
+      arithmetic-analysis: http://172.21.1.98:9001/api/v1/quantity/view/arithmeticAnalysis
+      price-analysis: http://172.21.1.98:9001/api/v1/quantity/view/priceAnalysis
+      rule-analysis: http://172.21.1.98:9001/api/v1/quantity/view/ruleAnalysis
+      partial-list-item-analysis: http://172.21.1.98:9001/api/v1/quantity/view/partialListItemAnalysis
+      material-analysis: http://172.21.1.98:9001/api/v1/quantity/view/materialAnalysis
+      quantity-score-detail: http://172.21.1.98:9001/api/v1/quantity/view/quantityScoreDetail
+      list-partial-list-item: http://172.21.1.98:9001/api/v1/quantity/view/listPartialListItem
+      list-unit-price-calc: http://172.21.1.98:9001/api/v1/quantity/view/listUnitPriceCalc
+  economy-view:
+    api-key: d8b99f24-44c2-4056-8962-8e137ece1e58
+    platform: 98e508bc-05e2-4174-9d45-533331cb17a5
+    url:
+      get-token: http://172.21.1.98:9001/api/v1/economy/view/getToken
+      total-offer-analysis: http://172.21.1.98:9001/api/v1/economy/view/totalOfferAnalysis
+      partial-list-analysis: http://172.21.1.98:9001/api/v1/economy/view/partialListAnalysis
+      measures-list-analysis: http://172.21.1.98:9001/api/v1/economy/view/measuresListAnalysis
+      other-list-analysis: http://172.21.1.98:9001/api/v1/economy/view/otherListAnalysis
+      fees-analysis: http://172.21.1.98:9001/api/v1/economy/view/feesAnalysis
+
+#配置 投标文件上传 清单采用本地或网络文件()
+quantity:
+  #网络文件 ：network 本地文件 : local
+  path-type: network
+  #正式 : formal 测试 : test
+  user-type: formal
+
+
+
+#消息盒子 configuration
+message:
+  #解密密码
+  decrypt-password: C2E4D687CBF53388474FB6FF11E64F4E
+  #聊天室群 前缀  不限
+  room-id: TEST_SC_CD_JQ
+  #代理id 前缀  20个字节
+  user-id: TEST_SC_CD_AGENCY_JQ
+  #投标人ID 前缀 20个字节
+  bidder-id-pre: TEST_SC_CD_BIDDER_JQ
+  #监管ID 前缀 20个字节
+  gov-id-pre: TEST_SC_CD_GOV_JQ
+
+#各项目不见面开标地址
+no-face:
+  #市政房建
+  bid-con:
+    admin: http://61.178.200.57:13111/login.html
+    agency: http://61.178.200.57:13112/login.html
+    bidder: http://61.178.200.57:13113/visitor/noLoginPage.html
+    expert: http://61.178.200.57:13114/login.html
+    supervise: http://61.178.200.57:13115/login.html
+    worker: http://61.178.200.57:13116/login.html
+  #政府采购
+  gov:
+    agency: http://61.178.200.56:8004/
+    supplier: http://61.178.200.56:8005/visitor/listPage.html
+    file-make: http://61.178.200.57:10001/login.html
+  #交通工程
+  traffic:
+    agency: http://61.178.200.57:13003/login.html
+    bidder: http://61.178.200.57:13002/login.html
+  #水利工程
+  water:
+    agency: http://www.ejiaoyi.vip/
+    bidder: http://www.ejiaoyi.vip/
+  #纸质标
+  paper:
+    agency: http://61.178.200.57:13312/login.html
+    bidder: http://61.178.200.57:13313/login.html
+  #无范本
+  no-template:
+    agency: http://www.ejiaoyi.vip/
+    bidder: http://www.ejiaoyi.vip/
+
+## 国泰新点对接接口地址
+dock:
+  gtxd:
+    lz:
+      url: http://lzggzyjy.lanzhou.gov.cn:88/EpointWebService_CS/rest
+    jq:
+      url: http://www.ggzyjypt.com.cn/EpointWebServiceJQ/rest
+
+# 清标V3.0页面
+clearPage: http://www.lyjcd.cn:18926/#/clear-home
+priceScorePage: http://www.lyjcd.cn:18926/#/quotation-score
+clearSysName: 甘肃省电子开评标系统电子清标(酒泉测试)
+# 清标V3.0数据
+clear-v3:
+  platform: 02510a79-784d-4880-8df8-3e917900e22d
+  apiKey: cd033f02-5a36-480e-838a-8055a8063701
+  apiUrl: http://192.168.30.244:9007
+  getToken: /api/bidClearResult/getToken
+  createProject: /api/bidClearResult/createProject
+  createUser: 酒泉市公共资源交易中心
+  ywCodePrefix: BID_JQ
+  priceScore-notify: http://192.168.30.244:8014/clearBidV3/pushPriceScoreNotify
+  updateProject: /api/bidClearResult/updateProject
+  cancelBidders: /api/bidClearResult/cancelBidders
+  priceScoreCalcStatus: /api/bidClearResult/priceCalcIsEnd

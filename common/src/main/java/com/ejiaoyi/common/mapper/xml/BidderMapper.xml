@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.BidderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.Bidder">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="BIDDER_NAME" property="bidderName" />
+        <result column="BIDDER_CODE_TYPE" property="bidderCodeType" />
+        <result column="BIDDER_ORG_CODE" property="bidderOrgCode" />
+        <result column="BID_MANAGER" property="bidManager" />
+        <result column="LEGAL_PERSON" property="legalPerson" />
+        <result column="PHONE" property="phone" />
+        <result column="BID_DOC_ID" property="bidDocId" />
+        <result column="BID_DOC_TYPE" property="bidDocType" />
+        <result column="IS_PASS_BID_OPEN" property="isPassBidOpen" />
+        <result column="DATA_FROM" property="dataFrom" />
+        <result column="DELETE_FLAG" property="deleteFlag" />
+        <result column="DELETE_REASON" property="deleteReason" />
+    </resultMap>
+
+    <!-- 扩展查询映射结果 -->
+    <resultMap id="Bidder_BidderOpenInfo" type="com.ejiaoyi.common.entity.Bidder" extends="BaseResultMap">
+        <association property="bidderOpenInfo" javaType="com.ejiaoyi.common.entity.BidderOpenInfo">
+            <id column="ID" property="id"/>
+            <result column="INSERT_TIME" property="insertTime"/>
+            <result column="BID_SECTION_ID" property="bidSectionId"/>
+            <result column="BIDDER_ID" property="bidderId"/>
+            <result column="UPFILE_TIME" property="upfileTime"/>
+            <result column="CLIENT_NAME" property="clientName"/>
+            <result column="CLIENT_IDCARD" property="clientIdcard"/>
+            <result column="CLIENT_PHONE" property="clientPhone"/>
+            <result column="TICKET_NO" property="ticketNo"/>
+            <result column="QR_PIC_URL" property="qrPicUrl"/>
+            <result column="SQR_PIC_URL" property="sqrPicUrl"/>
+            <result column="AUTHENTICATION" property="authentication"/>
+            <result column="AUTH_TIME" property="authTime"/>
+            <result column="REQUEST_ID" property="requestId"/>
+            <result column="SQWTS_FILE_ID" property="sqwtsFileId"/>
+            <result column="SQWTS_FILE_NAME" property="sqwtsFileName"/>
+            <result column="URGENT_SIGIN" property="urgentSigin"/>
+            <result column="SQWTS_PNG_FILE_ID" property="sqwtsPngFileId"/>
+            <result column="SIGNIN_TIME" property="signinTime"/>
+            <result column="TENDER_CASN" property="tenderCasn"/>
+            <result column="BID_CASN" property="bidCasn"/>
+            <result column="RATE" property="rate"/>
+            <result column="QUALITY" property="quality"/>
+            <result column="NOT_CHECKIN" property="notCheckin"/>
+            <result column="NOT_CHECKIN_REASON" property="notCheckinReason"/>
+            <result column="DECRYPT_STATUS" property="decryptStatus"/>
+            <result column="TENDER_DECRYPT_STATUS" property="tenderDecryptStatus"/>
+            <result column="DECRYPT_START_TIME" property="decryptStartTime"/>
+            <result column="DECRYPT_END_TIME" property="decryptEndTime"/>
+            <result column="MARGIN_PAY_STATUS" property="marginPayStatus"/>
+            <result column="BIDDER_IDENTITY_STATUS" property="bidderIdentityStatus"/>
+            <result column="SEAL_STATUS" property="sealStatus"/>
+            <result column="TENDER_REJECTION" property="tenderRejection"/>
+            <result column="TENDER_REJECTION_REASON" property="tenderRejectionReason"/>
+            <result column="PRICE_DETERMINE" property="priceDetermine"/>
+            <result column="DOC_DETERMINE" property="docDetermine"/>
+            <result column="DOC_DETERMINE_TIME" property="docDetermineTime"/>
+            <result column="RESUME_DETERMINE" property="resumeDetermine"/>
+            <result column="IS_CLIENT_CHECK" property="isClientCheck"/>
+            <result column="BID_PRICE" property="bidPrice"/>
+            <result column="PRICE_TYPE" property="bidPriceType"/>
+            <result column="TIME_LIMIT" property="timeLimit"/>
+        </association>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, BIDDER_NAME, BIDDER_CODE_TYPE, BIDDER_ORG_CODE, BID_MANAGER, LEGAL_PERSON, PHONE, BID_DOC_ID, BID_DOC_TYPE, IS_PASS_BID_OPEN, DATA_FROM, DELETE_FLAG, DELETE_REASON
+    </sql>
+
+    <!-- 通用标段id查询解密成功，且未被标书拒绝的投标人结果集合 -->
+    <select id="listDecrySuccessBidder" resultMap="Bidder_BidderOpenInfo">
+        SELECT a.*,b.* FROM  bidder a LEFT JOIN `bidder_open_info` b ON a.ID = b.BIDDER_ID
+        <where>
+            a.DELETE_FLAG = 0
+            AND(b.NOT_CHECKIN = 3 or b.NOT_CHECKIN is null)
+            AND b.DECRYPT_STATUS = 1
+            AND b.TENDER_DECRYPT_STATUS = 1
+            AND (b.TENDER_REJECTION is null or b.TENDER_REJECTION != 1)
+            <if test="bidSectionId != null">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+    <!-- 通用标段id查询解密成功 -->
+    <select id="listOfflineDecrySuccessBidder" resultMap="Bidder_BidderOpenInfo">
+        SELECT a.*,b.* FROM  bidder a LEFT JOIN `bidder_open_info` b ON a.ID = b.BIDDER_ID
+        <where>
+            a.DELETE_FLAG = 0
+            AND(b.NOT_CHECKIN = 3 or b.NOT_CHECKIN is null)
+            AND b.DECRYPT_STATUS = 1
+            AND b.TENDER_DECRYPT_STATUS = 1
+            <if test="bidSectionId != null">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="listBiddersForSing" resultMap="BaseResultMap">
+        SELECT a.* FROM  bidder a LEFT JOIN `bidder_open_info` b ON a.ID = b.BIDDER_ID
+        <where>
+            a.DELETE_FLAG = 0
+            AND (b.NOT_CHECKIN IS NULL || b.NOT_CHECKIN = 3)
+            AND b.BIDDER_IDENTITY_STATUS = 1
+            AND (b.MARGIN_PAY_STATUS = 1 or b.MARGIN_PAY_STATUS = 2)
+            AND b.DECRYPT_STATUS = 1
+            AND b.TENDER_DECRYPT_STATUS = 1
+            AND (b.TENDER_REJECTION is null or b.TENDER_REJECTION != 1)
+            <if test="bidSectionId != null">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+    <select id="listSiteBiddersForSing" resultMap="BaseResultMap">
+        SELECT a.* FROM  bidder a LEFT JOIN `bidder_open_info` b ON a.ID = b.BIDDER_ID
+        <where>
+            a.DELETE_FLAG = 0
+            AND (b.MARGIN_PAY_STATUS = 1 or b.MARGIN_PAY_STATUS = 2)
+            AND b.DECRYPT_STATUS = 1
+            AND b.TENDER_DECRYPT_STATUS = 1
+            AND (b.TENDER_REJECTION is null or b.TENDER_REJECTION != 1)
+            <if test="bidSectionId != null">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+    <!-- 获取解密失败，未签到和被标书拒绝的投标人 -->
+    <select id="listFailBidder" resultMap="Bidder_BidderOpenInfo">
+        SELECT a.*,b.* FROM  bidder a LEFT JOIN `bidder_open_info` b ON a.ID = b.BIDDER_ID
+        <where>
+            a.DELETE_FLAG = 0
+            AND (b.NOT_CHECKIN != 3
+            OR b.DECRYPT_STATUS != 1
+            OR b.TENDER_DECRYPT_STATUS != 1
+            OR  b.TENDER_REJECTION = 1)
+            <if test="bidSectionId != null">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+    <!-- 通过标段id和信封类型获取详细评审投标人列表 -->
+    <select id="listDetailedBidder" resultMap="BaseResultMap">
+        SELECT a.* FROM BIDDER a
+        <where>
+            a.DELETE_FLAG = 0
+            AND a.IS_PASS_BID_OPEN = 1
+            AND NOT EXISTS(
+            SELECT * FROM BIDDER_REVIEW_RESULT b
+            <where>
+                b.BIDDER_ID = a.ID AND b.RESULT = '0'
+                AND b.GRADE_ID IN
+                <foreach collection="gradeIds" item="gradeId" open="(" separator="," close=")">
+                    #{gradeId}
+                </foreach>
+            </where>
+            )
+            <if test="bidSectionId != null and bidSectionId != '' ">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+    <!-- 获取未通过初步评审的投标人 -->
+    <select id="listNoPassFirstStepBidder" resultMap="BaseResultMap">
+        SELECT a.* FROM BIDDER a
+        <where>
+            a.DELETE_FLAG = 0
+            AND a.IS_PASS_BID_OPEN = 1
+            AND NOT EXISTS(
+            SELECT * FROM BIDDER_REVIEW_RESULT b
+            <where>
+                b.BIDDER_ID = a.ID AND b.RESULT = '1'
+                AND b.GRADE_ID IN
+                <foreach collection="gradeIds" item="gradeId" open="(" separator="," close=")">
+                    #{gradeId}
+                </foreach>
+            </where>
+            )
+            <if test="bidSectionId != null and bidSectionId != '' ">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+    <select id="listTenderDecryptBidders" resultMap="BaseResultMap">
+        SELECT a.* FROM  bidder a LEFT JOIN `bidder_open_info` b ON a.ID = b.BIDDER_ID
+        <where>
+            a.DELETE_FLAG = 0
+            AND (b.NOT_CHECKIN IS NULL || b.NOT_CHECKIN = 3)
+            AND (b.BIDDER_IDENTITY_STATUS IS NULL || b.BIDDER_IDENTITY_STATUS = 1)
+            <if test="!isQualification">
+                AND (b.MARGIN_PAY_STATUS = 1 or b.MARGIN_PAY_STATUS = 2)
+            </if>
+            <if test="bidSectionId != null">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+    <select id="listBiddersForPhone" resultType="com.ejiaoyi.common.dto.statistical.BidderListDTO">
+        SELECT a.ID,a.BIDDER_NAME,b.MARGIN_PAY_STATUS,b.CLIENT_NAME
+        FROM  bidder a
+        LEFT JOIN `bidder_open_info` b
+        ON a.ID = b.BIDDER_ID
+        <where>
+            a.DELETE_FLAG = 0
+            AND (b.NOT_CHECKIN IS NULL || b.NOT_CHECKIN = 3)
+            AND (b.TENDER_REJECTION is null or b.TENDER_REJECTION != 1)
+            <if test="bidSectionId != null">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+    <select id="confirmBidOpenRecordForPhone" resultType="com.ejiaoyi.common.dto.statistical.ConfirmBidOpenRecordDTO">
+        SELECT a.ID,a.BIDDER_NAME,b.BID_PRICE,b.MARGIN_PAY_STATUS,b.TIME_LIMIT,b.CLIENT_NAME
+        FROM  bidder a
+        LEFT JOIN `bidder_open_info` b
+        ON a.ID = b.BIDDER_ID
+        <where>
+            a.DELETE_FLAG = 0
+            AND (b.NOT_CHECKIN IS NULL || b.NOT_CHECKIN = 3)
+            AND (b.TENDER_REJECTION is null or b.TENDER_REJECTION != 1)
+            AND b.DECRYPT_STATUS = 1
+            <if test="bidSectionId != null">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

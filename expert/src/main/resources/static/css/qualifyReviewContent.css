@@ -1,0 +1,262 @@
+.cont-left {
+    width: 45.8%;
+    min-height: 918px;
+    border-radius: 12px;
+    float: left;
+}
+.cont-right {
+    width: 52.8%;
+    min-height: 918px;
+    background-color: #fff;
+    float: right;
+    border-radius: 12px;
+}
+.cont-left form {
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+    opacity: 1;
+    border-radius: 6px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.cont-left form .layui-form-label {
+    width: 20%;
+    height: 60px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 60px;
+    color: #1a2539;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    float: left;
+}
+.cont-left form .layui-input-block {
+    width: 75%;
+    margin: 0;
+    float: right;
+    margin-top: 12px;
+}
+.cont-left form .layui-form-select dl dd.layui-this {
+    background-color: rgba(0, 102, 204, 1);
+}
+.document {
+    width: 100%;
+    height: 848px;
+    background: #ffffff;
+    opacity: 1;
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.document-btns {
+    width: 100%;
+    height: 66px;
+    padding: 20px 20px 0px;
+    box-sizing: border-box;
+}
+.document-btns span {
+    width: 86px;
+    height: 36px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+.document-btns span:hover {
+    opacity: 0.7;
+}
+.document-btns span + span {
+    margin-left: 10px;
+}
+.document-word {
+    width: 97%;
+    height: 765px;
+    background: #ffffff;
+    border: 1px solid #cfdae5;
+    opacity: 1;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+.document-word ol {
+    width: 100%;
+    height: 60px;
+    background: #cfdae5;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+    white-space: normal;
+    overflow: visible;
+}
+.document-word ol li {
+    display: inline-block;
+    width: 40%;
+    height: 60px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 60px;
+    color: #333333;
+    text-align: center;
+}
+.document-word ol .long {
+    width: 59.2%;
+}
+.document-word .document-table {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.document-word .document-table table {
+    width: 100%;
+}
+.document-table table tr {
+    width: 100%;
+}
+.document-word .document-table table tr td {
+    width: 40%;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.document-table table tr td + td {
+    border-left: 1px solid #ccc;
+}
+.document-table table tr .long {
+    width: 59.2% !important;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-align: left;
+}
+.document-table table tr td p {
+    width: 100%;
+    line-height: 24px;
+    overflow: visible;
+    white-space: pre-wrap;
+}
+.document-table table tr td .radio {
+    width: 100%;
+    height: 40px;
+}
+.radio .radio-pass,
+.radio .radio-unpass {
+    width: 50%;
+    height: 40px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 40px;
+    color: #333333;
+    float: left;
+}
+.radio div .garden {
+    width: 16px;
+    height: 16px;
+    background: #ffffff;
+    border: 1px solid #cfdae5;
+    border-radius: 50%;
+    opacity: 1;
+    float: left;
+    margin-top: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.radio .checked div{
+    border: 1px solid #0066cc;
+    position: relative;
+}
+.radio .checked div i {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #0066cc;
+    opacity: 1;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.document-table table tr td textarea {
+    width: 100%;
+    height: 120px;
+    background: #f0f4f8;
+    border: 1px solid #cfdae5;
+    opacity: 1;
+    border-radius: 4px;
+    resize: none;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+}
+.document-table table tr td {
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.document-table table tr td span {
+    display: inline-block;
+    width: 66px;
+    height: 40px;
+    border: 1px solid #0066cc;
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 40px;
+    color: #0066cc;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    margin: 5px;
+}
+.document-table table tr td span img {
+    display: block;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+}
+.tit {
+    width: 100%;
+    height: 51px;
+    border-radius: 10px 0px 0px 0px;
+    border-bottom: 1px solid #ccc;
+}
+.tit li {
+    width: 16%;
+    height: 51px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 51px;
+    color: #bcbcbc;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+.tit li:nth-child(1) {
+    border-radius: 10px 0px 0px 0px;
+}
+.tit .choice {
+    background-color: rgba(0, 102, 204, 1);
+    color: #fff;
+    font-weight: bold;
+}
+.cont-text {
+    width: 100%;
+    height: 866px;
+}
+html .disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+    color: rgba(226, 226, 226, 1);
+}

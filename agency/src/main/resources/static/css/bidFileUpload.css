@@ -1,0 +1,161 @@
+.title {
+    width: 100%;
+    height: 64px;
+    background: #ffffff;
+    opacity: 1;
+}
+.title .much {
+    width: 240px;
+    height: 64px;
+    font-size: 18px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 64px;
+    color: #223165;
+    text-align: center;
+    float: left;
+}
+.title .progress {
+    width: calc(100% - 355px);
+    height: 64px;
+    float: left;
+    padding-top: 23px;
+    box-sizing: border-box;
+}
+.title .complete {
+    width: 115px;
+    height: 64px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 64px;
+    color: #333333;
+    text-align: center;
+    float: left;
+}
+.document {
+    width: 100%;
+    min-height: 230px;
+    background: #ffffff;
+    opacity: 1;
+}
+.document h3 {
+    width: 100%;
+    height: 60px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 60px;
+    color: #0c163b;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-bottom: 1px dashed #d5d5d5;
+    box-sizing: border-box;
+}
+.document ul {
+    width: 100%;
+    height: calc(100% - 60px);
+}
+.document ul li {
+    width: 25%;
+    height: 100%;
+    float: left;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.document ul li img {
+    display: block;
+    margin: 0 auto;
+}
+.document ul li p {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 20px;
+    color: #0c163b;
+    text-align: center;
+}
+.document ul li .refresh {
+    width: 32px;
+    height: 32px;
+    background: url(../img/up.png) no-repeat center center #05bfbf;
+    border-radius: 50%;
+    opacity: 1;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.document ul li .finish {
+    width: 76px;
+    height: 36px;
+    border: 1px solid #05bfbf;
+    opacity: 1;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 36px;
+    color: #05bfbf;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.document ul li .fail {
+    width: 76px;
+    height: 36px;
+    border: 1px solid #f53923;
+    opacity: 1;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 36px;
+    color: #f53923;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+.type {
+    float: right;
+    color: rgba(19, 97, 254, 1);
+}
+.type img {
+    margin-left: 10px;
+}
+.type .waiting {
+    -webkit-transform: rotate(360deg);
+    animation: rotation 1s linear infinite;
+    -moz-animation: rotation 1s linear infinite;
+    -webkit-animation: rotation 1s linear infinite;
+    -o-animation: rotation 1s linear infinite;
+}
+.inRight {
+    float: right;
+    color: rgba(19, 97, 254, 1);
+}
+.inRight img {
+    margin-left: 10px;
+}
+.success {
+    float: right;
+    color: rgba(5, 191, 191, 1);
+}
+.success img {
+    margin-left: 10px;
+}
+.error {
+    float: right;
+    color: rgba(245, 57, 35, 1);
+}
+.error img {
+    margin-left: 10px;
+}

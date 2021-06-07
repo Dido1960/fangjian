@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.BidderOpenInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.BidderOpenInfo">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="BID_SECTION_ID" property="bidSectionId"/>
+        <result column="BIDDER_ID" property="bidderId"/>
+        <result column="UPFILE_TIME" property="upfileTime"/>
+        <result column="CLIENT_NAME" property="clientName"/>
+        <result column="CLIENT_IDCARD" property="clientIdcard"/>
+        <result column="CLIENT_PHONE" property="clientPhone"/>
+        <result column="TICKET_NO" property="ticketNo"/>
+        <result column="QR_PIC_URL" property="qrPicUrl"/>
+        <result column="SQR_PIC_URL" property="sqrPicUrl"/>
+        <result column="AUTHENTICATION" property="authentication"/>
+        <result column="AUTH_TIME" property="authTime"/>
+        <result column="REQUEST_ID" property="requestId"/>
+        <result column="SQWTS_FILE_ID" property="sqwtsFileId"/>
+        <result column="SQWTS_FILE_NAME" property="sqwtsFileName"/>
+        <result column="URGENT_SIGIN" property="urgentSigin"/>
+        <result column="SQWTS_PNG_FILE_ID" property="sqwtsPngFileId"/>
+        <result column="SIGNIN_TIME" property="signinTime"/>
+        <result column="TENDER_CASN" property="tenderCasn"/>
+        <result column="BID_CASN" property="bidCasn"/>
+        <result column="RATE" property="rate"/>
+        <result column="QUALITY" property="quality"/>
+        <result column="NOT_CHECKIN" property="notCheckin"/>
+        <result column="BID_PRICE" property="bidPrice"/>
+        <result column="PRICE_TYPE" property="bidPriceType"/>
+        <result column="TIME_LIMIT" property="timeLimit"/>
+        <result column="NOT_CHECKIN_REASON" property="notCheckinReason"/>
+        <result column="DECRYPT_STATUS" property="decryptStatus"/>
+        <result column="TENDER_DECRYPT_STATUS" property="tenderDecryptStatus"/>
+        <result column="DECRYPT_START_TIME" property="decryptStartTime"/>
+        <result column="DECRYPT_END_TIME" property="decryptEndTime"/>
+        <result column="MARGIN_PAY_STATUS" property="marginPayStatus"/>
+        <result column="BIDDER_IDENTITY_STATUS" property="bidderIdentityStatus"/>
+        <result column="SEAL_STATUS" property="sealStatus"/>
+        <result column="TENDER_REJECTION" property="tenderRejection"/>
+        <result column="TENDER_REJECTION_REASON" property="tenderRejectionReason"/>
+        <result column="PRICE_DETERMINE" property="priceDetermine"/>
+        <result column="DOC_DETERMINE" property="docDetermine"/>
+        <result column="DOC_DETERMINE_TIME" property="docDetermineTime"/>
+        <result column="DISSENT_STATUS" property="dissentStatus"/>
+        <result column="RESUME_DETERMINE" property="resumeDetermine"/>
+        <result column="IS_CLIENT_CHECK" property="isClientCheck"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, BIDDER_ID,  UPFILE_TIME, CLIENT_NAME, CLIENT_IDCARD, CLIENT_PHONE, TICKET_NO, QR_PIC_URL, SQR_PIC_URL, AUTHENTICATION, AUTH_TIME,
+        REQUEST_ID, SQWTS_FILE_ID, SQWTS_FILE_NAME, URGENT_SIGIN, SQWTS_PNG_FILE_ID, SIGNIN_TIME, TENDER_CASN, BID_CASN, RATE,
+        QUALITY, NOT_CHECKIN, NOT_CHECKIN_REASON, DECRYPT_STATUS, TENDER_DECRYPT_STATUS, DECRYPT_START_TIME, DECRYPT_END_TIME, MARGIN_PAY_STATUS, BIDDER_IDENTITY_STATUS, SEAL_STATUS,
+        TENDER_REJECTION, TENDER_REJECTION_REASON, PRICE_DETERMINE, DOC_DETERMINE, DOC_DETERMINE_TIME, DISSENT_STATUS, RESUME_DETERMINE,
+        IS_CLIENT_CHECK, IS_CLIENT_CHECK, BID_PRICE, PRICE_TYPE, TIME_LIMIT
+    </sql>
+
+    <!-- 扩展查询映射结果 -->
+    <resultMap id="BidSection_Bidder" type="com.ejiaoyi.common.entity.BidderOpenInfo" extends="BaseResultMap">
+        <result column="BIDDER_NAME" property="bidderName"/>
+    </resultMap>
+
+    <select id="listBidderOpenInfo" resultMap="BidSection_Bidder">
+        SELECT a.*,b.* FROM `bidder_open_info` a LEFT JOIN bidder b ON a.BIDDER_ID = b.ID
+        <where>
+            a.NOT_CHECKIN = 3
+            <if test="!isQualification">
+                AND a.MARGIN_PAY_STATUS = 1
+            </if>
+            AND a.BIDDER_IDENTITY_STATUS = 1
+            AND a.BID_SECTION_ID = #{bid}
+        </where>
+    </select>
+
+</mapper>

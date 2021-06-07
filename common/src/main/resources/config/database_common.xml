@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="database.xsd">
+    <database>
+        <table name="QUARTZ_JOB" des="Quartz定义任务表">
+            <column name="NAME" type="varchar" des="任务名称"/>
+            <column name="JOB_GROUP" type="varchar" des="任务组"/>
+            <column name="DESCRIPTION" type="varchar" des="任务描述"/>
+            <column name="JOB_CLASS_NAME" type="varchar" des="任务执行类"/>
+            <column name="CRON_EXPRESSION" type="varchar" des="任务触发规则"/>
+            <column name="TRIGGER_STATE" type="varchar" des="触发器状态"/>
+            <column name="OLD_NAME" type="varchar" des="旧的任务名称"/>
+            <column name="OLD_JOB_GROUP" type="varchar" des="旧的任务组"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+            <index_group>
+                <group_index>
+                    <group_column column="NAME"/>
+                    <group_column column="JOB_GROUP"/>
+                </group_index>
+            </index_group>
+        </table>
+        <table name="WORDBOOK" des="字典表">
+            <column name="BOOK_TOP_KEY" type="varchar" des="TOP KEY"/>
+            <column name="BOOK_PARENT_KEY" type="varchar" des="PARENT KEY"/>
+            <column name="BOOK_KEY" type="varchar" des="KEY"/>
+            <column name="BOOK_VALUE" type="varchar" des="VALUE"/>
+        </table>
+        <table name="MENU" des="菜单表">
+            <column name="PARENT_ID" type="int" des="父级菜单Id"/>
+            <column name="MENU_NAME" type="varchar" des="菜单名称"/>
+            <column name="URL" type="varchar" des="菜单地址"/>
+            <column name="ORDER_NO" type="int" des="菜单排序号"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+            <column name="ICON_FONT" type="varchar" des="菜单图标"/>
+        </table>
+        <table name="REG" des="行政区划">
+            <column name="PARENT_ID" type="int" des="父级区划Id"/>
+            <column name="REG_NAME" type="varchar" des="区划名称"/>
+            <column name="ORDER_NO" type="int" des="排序"/>
+            <column name="ALL_SPELLING" type="varchar" des="拼音 全拼"/>
+            <column name="FIRST_SPELLING" type="varchar" des="拼音 首字母"/>
+            <column name="REG_NO" type="varchar" des="行政区划代码"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+        </table>
+        <table name="DEP" des="部门">
+            <column name="REG_ID" type="int" des="所属行政区划Id"/>
+            <column name="DEP_NAME" type="varchar" des="机构名称"/>
+            <column name="ENABLED" type="int" des="启用状态"/>
+            <column name="ORDER_NO" type="int" des="排序"/>
+            <column name="ALL_SPELLING" type="varchar" des="拼音 全拼"/>
+            <column name="FIRST_SPELLING" type="varchar" des="拼音 首字母"/>
+            <column name="PARENT_ID" type="int" des="父级部门Id"/>
+            <column name="CODE" type="varchar" des="统一社会信用代码"/>
+            <column name="GOV_DEP_TYPE" type="int" des="部门类别"/>
+            <column name="PHONE" type="varchar" des="部门电话"/>
+            <column name="REMARK" type="varchar" length="1000" des="部门职责"/>
+        </table>
+        <table name="ROLE" des="角色">
+            <column name="ROLE_NAME" type="varchar" des="角色名称"/>
+            <column name="ENABLED" type="int" des="启用状态 参见数据字典enabled"/>
+            <column name="REMARK" type="varchar" des="备注说明"/>
+            <column name="ORDER_NO" type="int" des="排序" default="0"/>
+        </table>
+        <table name="ROLE_MENU" des="角色菜单关系表">
+            <column name="ROLE_ID" type="int" des="角色id"/>
+            <column name="MENU_ID" type="int" des="菜单id"/>
+        </table>
+        <table name="ROLE_USER" des="角色用户关系表">
+            <column name="ROLE_ID" type="int" des="角色id"/>
+            <column name="USER_ID" type="int" des="用户id"/>
+        </table>
+        <table name="USER_INFO" des="系统用户">
+            <column name="NAME" type="varchar" des="姓名"/>
+            <column name="LOGIN_NAME" type="varchar" des="登录名"/>
+            <column name="PASSWORD" type="varchar" des="登录密码"/>
+            <column name="REG_ID" type="int" des="用户所在地区"/>
+            <column name="PHONE" type="varchar" des="用户电话"/>
+            <column name="ALL_SPELLING" type="varchar" des="拼音 全拼"/>
+            <column name="FIRST_SPELLING" type="varchar" des="拼音 首字母"/>
+            <column name="USER_ROLE_STATUS" type="int" des="用户权限 -1：后台用户（不允许修改）"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+            <column name="USER_FILE_ID" type="int" des="用户的头像"/>
+        </table>
+        <table name="USER_STYLE" des="用户界面">
+            <column name="THEME" type="varchar" des="界面风格"/>
+            <column name="NOTE" type="text" des="便签"/>
+            <column name="USER_ID" type="int" des="用户id"/>
+        </table>
+        <table name="GOV_USER" des="政府用户">
+            <column name="NAME" type="varchar" des="姓名"/>
+            <column name="LOGIN_NAME" type="varchar" des="登录名"/>
+            <column name="PASSWORD" type="varchar" des="登录密码"/>
+            <column name="ALL_SPELLING" type="varchar" des="拼音 全拼"/>
+            <column name="FIRST_SPELLING" type="varchar" des="拼音 首字母"/>
+            <column name="DEP_ID" type="int" des="用户所在部门"/>
+            <column name="PHONE" type="varchar" des="用户电话"/>
+            <column name="LEADER" type="int" default="0" des="是否绑定最高权限（1：绑定，  0：不绑定）"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+        </table>
+        <table name="COMPANY_USER" des="企业用户">
+            <column name="NAME" type="varchar" des="姓名"/>
+            <column name="LOGIN_NAME" type="varchar" des="登录名"/>
+            <column name="PASSWORD" type="varchar" des="登录密码"/>
+            <column name="CODE" type="varchar" des="企业统一信用代码"/>
+            <column name="ADDRESS" type="varchar" des="单位地址"/>
+            <column name="LINK_MAN" type="varchar" des="联系人"/>
+            <column name="PHONE" type="varchar" des="联系电话"/>
+            <column name="ALL_SPELLING" type="varchar" des="拼音 全拼"/>
+            <column name="FIRST_SPELLING" type="varchar" des="拼音 首字母"/>
+            <column name="ENABLED" type="int" default="1" des="启用状态"/>
+            <column name="LOCAL" type="varchar" des="企业所在地代码"/>
+            <column name="LOCAL_DETAIL" type="varchar" des="企业所在地"/>
+            <column name="PHOTO_ID" type="int" des="头像id"/>
+            <column name="FILE_IDS" type="varchar" des="上传文件id"/>
+            <column name="LICENSE" type="varchar" des="营业执照扫描件执照"/>
+        </table>
+        <table name="EXPERT_USER" des="评标专家">
+            <column name="BID_SECTION_ID" type="int" des="标段信息主键ID"/>
+            <column name="BID_APPLY_ID" type="int" des="评标申请记录主键ID"/>
+            <column name="EXPERT_NAME" type="varchar" des="专家名称"/>
+            <column name="ALL_SPELLING" type="varchar" des="拼音 全拼"/>
+            <column name="FIRST_SPELLING" type="varchar" des="拼音 首字母"/>
+            <column name="PHONE_NUMBER" type="varchar" des="手机号码"/>
+            <column name="ID_CARD" type="varchar" des="证件号码"/>
+            <column name="COMPANY" type="varchar" des="专家单位"/>
+            <column name="LEADER_STATUS" type="varchar" des="候选资格状态，用于组长推选 0:失去候选资格)"/>
+            <column name="PWD" type="varchar" des="随机密码"/>
+            <column name="CHECKIN_TIME" type="varchar" des="专家签到时间"/>
+            <column name="IS_CHAIRMAN" type="varchar" des="是否为评标组长"/>
+            <column name="CATEGORY" type="int" des="专家类别 参见数据字典expertCategory"/>
+            <column name="PASS_WORD" type="varchar" des="密码明文"/>
+            <column name="PROFESSIONAL" type="varchar" des="职称"/>
+            <column name="AVOID" type="varchar" des="专家状态（包含主动回避和签到  null: 未签到 0:已确认 1:已回避 2:已签到）"/>
+            <column name="REASON" type="varchar" des="回避原因"/>
+            <column name="REG_ID" type="int" des="行政区划主键(用于区分远程异地评标主客场)"/>
+            <column name="SIGNAR" type="int" default="0" des="是否签名完成，1代表签名结束"/>
+            <column name="DATA_TYPE" type="varchar" des="数据类型（1:正常推送专家， 2：补抽专家）"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+            <column name="UNAVAILABLE_REASON" type="varchar" des="未启用原因"/>
+        </table>
+
+        <table name="ONLINE_INFO" des="在线用户信息表">
+            <column name="SESSION_ID" type="varchar" des="登录ID"/>
+            <column name="NAME" type="varchar" des="名字"/>
+            <column name="USER_ID" type="varchar" des="用户ID"/>
+            <column name="MODULE" type="varchar" des="模块名称"/>
+            <column name="IP_INFO" type="varchar" des="登录IP"/>
+            <column name="ADDRESS_INFO" type="varchar" des="地址信息"/>
+            <index_group>
+                <index column="MODULE"/>
+            </index_group>
+        </table>
+        <!--用户区划表-->
+        <table name="USER_REG" des="用户区划关联表">
+            <column name="USER_ID" type="int" des="用户id"/>
+            <column name="REG_ID" type="int" des="区划id"/>
+        </table>
+        <table name="UPLOAD_FILE" des="附件">
+            <column name="FILE_UID" type="varchar" des="文件UUID"/>
+            <column name="NAME" type="varchar" des="文件名"/>
+            <column name="SUFFIX" type="varchar" des="后缀名"/>
+            <column name="PATH" type="varchar" des="路径"/>
+            <column name="BYTE_SIZE" type="int" des="字节大小"/>
+            <column name="READ_SIZE" type="varchar" des="易读性大小(自动转换单位)"/>
+            <column name="CALL_COUNT" type="varchar" des="文件被读取次数"/>
+        </table>
+        <table name="API_AUTH" des="API接口认证信息">
+            <column name="API_NAME" type="varchar" des="接口名称"/>
+            <column name="PLATFORM" type="varchar" des="平台授权码"/>
+            <column name="API_KEY" type="varchar" des="API授权码"/>
+            <column name="REMARK" type="varchar" des="授权说明"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+        </table>
+        <table name="USER_CERT" des="用户CA绑定表">
+            <column name="USER_ID" type="int" des="用户ID"/>
+            <column name="UKEY_NUM" type="varchar" des="锁号"/>
+            <column name="USER_TYPE" type="int" des="用户类型"/>
+            <column name="CA_NAME" type="varchar" des="锁的名称"/>
+            <column name="LOGIN_FLAG" type="int" default="0" des="是否允许登录"/>
+            <column name="DELETE_FLAG" type="int" default="0" des="是否删除"/>
+        </table>
+        <table name="FDFS" des="FastDFS文件">
+            <column name="MARK" type="varchar" des="文件标记"/>
+            <column name="DFS_GROUP" type="varchar" des="文件组名"/>
+            <column name="DFS_ADDRESS" type="varchar" des="文件地址"/>
+            <column name="URL" type="varchar" des="文件访问地址"/>
+            <column name="SUFFIX" type="varchar" des="后缀名"/>
+            <column name="NAME" type="varchar" des="文件名"/>
+            <column name="FILE_HASH" type="varchar" des="文件Hash值"/>
+            <column name="BYTE_SIZE" type="int" des="字节大小"/>
+            <column name="READ_SIZE" type="varchar" des="易读性大小(自动转换单位)"/>
+            <column name="WAV_DURATION" type="int" des="wav音频文件的总时长"/>
+            <index_group>
+                <!--mark不可重复-->
+                <unique column="MARK"/>
+            </index_group>
+        </table>
+        <table name="PROJECT" des="项目信息">
+            <column name="PROJECT_CODE" type="varchar" des="项目编号"/>
+            <column name="PROJECT_NAME" type="varchar" length="300" des="项目名称"/>
+            <column name="REGION_CODE" type="varchar" des="项目所在行政区域代码"/>
+            <column name="INVEST_PROJECT_CODE" type="varchar" des="投资项目统一代码"/>
+            <column name="ADDRESS" type="varchar" des="项目地址"/>
+            <column name="LEGAL_PERSON" type="varchar" des="项目法人"/>
+            <column name="INDUSTRIES_TYPE" type="varchar" des="项目行业分类"/>
+            <column name="SOURCE_FUND" type="varchar" des="资金来源"/>
+            <column name="CONTRIBUTION_SCALE" type="varchar" des="出资比例"/>
+            <column name="PROJECT_SCALE" type="varchar" des="项目规模"/>
+            <column name="CONTACT_PERSON" type="varchar" des="联系人"/>
+            <column name="CONTACT_INFORMATION" type="varchar" des="联系方式"/>
+            <column name="APPROVAL_NAME" type="varchar" des="项目审批文件名称"/>
+            <column name="APPROVAL_NUMBER" type="varchar" des="项目审批文号"/>
+            <column name="APPROVAL_AUTHORITY" type="varchar" des="项目审批单位"/>
+            <column name="CREATE_TIME" type="varchar" des="项目建立时间"/>
+            <column name="REG_ID" type="int" des="行政区划主键ID"/>
+            <column name="DELETE_FLAG" type="int" default="0" des="是否删除"/>
+        </table>
+        <table name="TENDER_PROJECT" des="招标项目信息">
+            <column name="PROJECT_ID" type="int" des="项目主键ID"/>
+            <column name="TENDER_PROJECT_CODE" type="varchar" des="招标项目编号"/>
+            <column name="TENDER_PROJECT_NAME" type="varchar" length="300" des="招标项目名称"/>
+            <column name="TENDER_PROJECT_TYPE" type="varchar" des="招标项目类型"/>
+            <column name="REGION_CODE" type="varchar" des="招标项目所在行政区域代码"/>
+            <column name="REG_ID" type="int" des="行政区划主键ID"/>
+            <column name="TENDER_CONTENT" type="varchar" des="招标内容与范围及招标方案说明"/>
+            <column name="OWNER_NAME" type="varchar" des="项目业主名称"/>
+            <column name="TENDERER_NAME" type="varchar" des="招标人名称"/>
+            <column name="TENDERER_CODE_TYPE" type="varchar" des="招标人类别"/>
+            <column name="TENDERER_CODE" type="varchar" des="招标人代码"/>
+            <column name="TENDERER_ROLE" type="varchar" des="招标人角色"/>
+            <column name="TENDER_AGENCY_NAME" type="varchar" des="招标代理机构名称"/>
+            <column name="TENDER_AGENCY_PHONE" type="varchar" des="招标代理机构电话"/>
+            <column name="TENDER_AGENCY_CODE_TYPE" type="varchar" des="招标代理机构类别"/>
+            <column name="TENDER_AGENCY_ROLE" type="varchar" des="招标代理机构角色"/>
+            <column name="TENDER_MODE" type="varchar" des="招标方式"/>
+            <column name="TENDER_ORGANIZE_FORM" type="varchar" des="招标组织形式"/>
+            <column name="CREATE_TIME" type="varchar" des="招标项目建立时间"/>
+            <column name="SUPERVISE_DEPT_NAME" type="varchar" des="监督部门名称"/>
+            <column name="SUPERVISE_DEPT_CODE" type="varchar" des="监督部门代码"/>
+            <column name="APPROVE_DEPT_NAME" type="varchar" des="审核部门名称"/>
+            <column name="APPROVE_DEPT_CODE" type="varchar" des="审核部门代码"/>
+            <column name="USER_ID" type="int" des="招标项目创建人(单点用户ID)"/>
+            <column name="TENDER_AGENCY_CODE" type="varchar" des="招标代理机构统一社会信用代码"/>
+            <column name="DELETE_FLAG" type="int" default="0" des="是否删除"/>
+        </table>
+        <table name="BID_SECTION" des="标段信息">
+            <column name="TENDER_PROJECT_ID" type="int" des="招标项目主键ID"/>
+            <column name="BID_SECTION_CODE" type="varchar" des="标段编号"/>
+            <column name="BID_SECTION_NAME" type="varchar" length="300" des="标段名称"/>
+            <column name="BID_SECTION_CONTENT" type="varchar" des="标段内容"/>
+            <column name="BID_CLASSIFY_CODE" type="varchar" des="标段分类代码 参见字典表" />
+            <column name="CONTRACT_RECKON_PRICE" type="varchar" des="合同估算价(单位：元)"/>
+            <column name="BIDDER_QUALIFICATION" type="varchar" des="投标人资格条件"/>
+            <column name="PLAN_START_DATE" type="varchar" des="计划开工日期"/>
+            <column name="LIMITE_TIME" type="varchar" des="工期"/>
+            <column name="BID_OPEN_STATUS" type="int" default="0" des="开标状态 参见数据字典status"/>
+            <column name="EVAL_STATUS" type="int" default="0" des="评标状态 参见数据字典status"/>
+            <column name="PRICE_RECORD_STATUS" type="int" default="0" des="报价得分计算状态 参见数据字典status"/>
+            <column name="UPDATE_SCORE_STATUS" type="int" default="0" des="报价得分修改状态 参见数据字典status"/>
+            <column name="UPDATE_SCORE_REASON" type="varchar" length="1000" des="报价得分修改原因"/>
+            <column name="REG_ID" type="int" des="行政区划主键ID"/>
+            <column name="DATA_FROM" type="int" default="0" des="数据来源 参见数据字典dataSource"/>
+            <column name="DOCK_TENDER_DECRY_STATUS" type="int" default="0" des="招标文件解密状态 0：失败  1：成功"/>
+            <column name="BID_OPEN_ONLINE" type="int" default="0" des="是否网上开标 1：网上开标，0：现场开标"/>
+            <column name="REMOTE_EVALUATION" type="int" default="0" des="是否远程异地评标 1：远程评标，0：现场评标"/>
+            <column name="BID_OPEN_END_TIME" type="varchar" des="开标结束时间"/>
+            <column name="EVAL_START_TIME" type="varchar" des="评标开始时间"/>
+            <column name="EVAL_END_TIME" type="varchar" des="评标结束时间"/>
+            <column name="CANCEL_STATUS" type="int" default="0" des="流标状态 0:未做流标状态修改 1：流标 2：不流标"/>
+            <column name="CANCEL_REASON" type="varchar" des="流标原因"/>
+            <column name="SCRAP_STATUS" type="int" default="0" des="废标状态 1：废标"/>
+            <column name="SCRAP_REASON" type="varchar" des="废标原因"/>
+            <column name="BID_PAUSE_STATUS" type="int" default="0" des="项目进行状态 1:暂停"/>
+            <column name="UKEY_SERIAL_NUM" type="varchar" des="UKey硬件序列号"/>
+            <column name="EVAL_PDF_GENERATE_STATUS" type="int" default="0" des="评标报告生成状态 1：已生成"/>
+            <column name="REEVAL_FLAG" type="int" default="0" des="项目复议状态 1:复议"/>
+            <column name="EVAL_REVIEW_STATUS" type="varchar" default="0" des="评标审核状态 0：未申请 1：申请中 2：通过"/>
+            <column name="CHECK_STATUS" type="varchar" des="委托人身份检查状态 1:结束"/>
+            <column name="PAPER_EVAL" type="varchar" des="是否纸质标 1:纸质标"/>
+            <column name="LIVE_ROOM" type="varchar" des="不见面直播房间号"/>
+            <column name="SIGN_IN_START_TIME_LEFT" type="int" default="1440" des="设置签到开标时间前面多少分钟，默认1440分钟(一天)"/>
+            <column name="RESUME_STATUS" type="int" default="0" des="复会状态 参见数据字典status"/>
+            <column name="RESUME_TIME" type="varchar" des="复会时间"/>
+            <column name="MANAGER_ID" type="int" des="监管主键ID(即GOV_USER主键ID)"/>
+            <column name="DELETE_FLAG" type="int" default="0" des="是否删除"/>
+            <column name="YW_CODE" type="varchar"  des="清标业务code"/>
+            <column name="START_DOWN_LOAD" type="int" default="0" des="是否开启下载功能 1：开启下载功能，0：不开启下载功能"/>
+        </table>
+        <table name="BID_SECTION_RELATE" des="标段关联信息">
+            <column name="BID_SECTION_ID" type="int" des="标段信息主键ID"/>
+            <column name="REG_ID" type="int" des="主场行政区划主键ID"/>
+            <column name="AWAY_REG_ID" type="int" des="客场行政区划主键ID"/>
+            <column name="HOME_OPEN_SITE" type="int" des="主场开标室 关联Site主键ID"/>
+            <column name="HOME_EVAL_SITE" type="int" des="主场评标室 关联Site主键ID"/>
+            <column name="AWAY_EVAL_SITE" type="int" des="客场评标室 关联Site主键ID"/>
+            <column name="EVALUATION_REPORT_ID" type="int" des="评标报告ID 关联fdfs主键ID"/>
+            <column name="START_CLEAR_TIME" type="varchar" des="清标开始时间"/>
+            <column name="CLEAR_TOTAL_TIME" type="varchar" des="清标用时"/>
+            <column name="CLEAR_ANALYSIS_UID" type="varchar" des="清标阶段的整体服务参数序列号 清标 经济标的视图参数（开标结束后，进入评标的投标人）"/>
+            <column name="CALC_PRICE_UID" type="varchar" des="评标阶段的整体服务参数序列号 报价的视图参数(初步评审后，参与报价得分计算的投标人)"/>
+            <column name="PRICE_SCORE_UID" type="varchar" des="报价得分计算服务序列号 用于获取报价计算的结果JSON（初步评审后，参与报价得分计算的投标人）"/>
+            <column name="RESUMPTION_REPORT_ID" type="int" des="复会报告ID 关联fdfs主键ID"/>
+            <column name="PRE_RELATED_ID" type="int" des="非预审项目，关联预审项目 bidSectionId"/>
+            <column name="IS_OLD_PROJECT" type="varchar" default="0" length="1" des="是否老系统项目，1：老系统项目 "/>
+            <column name="DELETE_FLAG" type="int" default="0" des="是否删除"/>
+        </table>
+        <table name="TENDER_DOC" des="招标文件信息">
+            <column name="BID_SECTION_ID" type="int" des="标段信息主键ID"/>
+            <column name="DOC_NO" type="varchar" des="文件编号"/>
+            <column name="BIDDER_QUALIFICATION" type="varchar" des="投标资格"/>
+            <column name="VALID_PERIOD" type="varchar" des="投标有效期"/>
+            <column name="BID_DOC_PEFER_TYPE" type="varchar" des="投标文件递交方法"/>
+            <column name="TENDER_DOC_PRICE" type="varchar" des="招标文件费金额(单位：元)"/>
+            <column name="MARGIN_AMOUNT" type="varchar" des="投标保证金金额(单位：元)"/>
+            <column name="CONTROL_PRICE" type="varchar" des="控制价(最高限价 单位：元)"/>
+            <column name="EVALUATION_METHOD" type="varchar" des="评标办法"/>
+            <column name="BID_DOC_REFER_END_TIME" type="varchar" des="投标文件递交截止时间"/>
+            <column name="BID_OPEN_TIME" type="varchar" des="开标时间"/>
+            <column name="BID_OPEN_PLACE" type="varchar" des="开标地点"/>
+            <column name="BID_OPEN_TYPE" type="varchar" des="开标方式"/>
+            <column name="QUAL_TYPE" type="varchar" des="资格审查方式"/>
+            <column name="SUBMIT_TIME" type="varchar" des="递交时间"/>
+            <column name="DOC_FILE_ID" type="int" des="招标文件ID（关联UPLOAD_FILE主键ID）"/>
+            <column name="GRADE_ID" type="varchar" des="关联评标办法grade,多个评标办法间用逗号隔开"/>
+            <column name="OTHER_GRADE_ID" type="varchar" des="其他评审ID，关联评标办法grade,多个评标办法间用逗号隔开"/>
+            <column name="FLOAT_POINT" type="varchar" des="甘肃评标方法中的浮动点(取值范围1.5%、1.25%、1%、0.75%、0.5%、0.25%)"/>
+            <column name="XML_UID" type="varchar" des="工程量清单文件标识码"/>
+            <column name="TAXES_FACTOR" type="varchar" des="税金系数"/>
+            <column name="STRUCTURE_STATUS" type="int" des="结构性分析启用状态 参见数据字典bool"/>
+            <column name="PRICE_STATUS" type="int" des="零负报价分析启用状态 参见数据字典bool"/>
+            <column name="SIMILAR_ITEM_STATUS" type="int" des="雷同项分析启用状态 参见数据字典bool"/>
+            <column name="FUND_BASIS_STATUS" type="int" des="取费基础分析启用状态 参见数据字典bool"/>
+            <column name="MUTUAL_SECURITY_STATUS" type="int" des="互保共建启用状态 参见数据字典bool"/>
+            <column name="CREDIT_STATUS" type="int" des="信用报告评审启用状态 参见数据字典bool"/>
+            <column name="CERT_NUM" type="varchar" des="招标CA序列号"/>
+            <column name="EXPERT_COUNT" type="int" des="专家人数"/>
+            <column name="REPRESENTATIVE_COUNT" type="int" des="业主代表人数"/>
+            <column name="OPEN_BID_RECORD_DES" type="varchar" length="2000" des="开标记录表备注"/>
+            <column name="VERSION" type="int" default="1" notnull="true" des="招标文件版本"/>
+            <column name="DELETE_FLAG" type="int" default="0" des="是否删除"/>
+        </table>
+        <table name="BIDDER" des="投标人信息">
+            <column name="BID_SECTION_ID" type="int" des="标段信息主键ID"/>
+            <column name="BIDDER_NAME" type="varchar" des="投标人名称"/>
+            <column name="BIDDER_CODE_TYPE" type="varchar" des="投标人类别"/>
+            <column name="BIDDER_ORG_CODE" type="varchar" des="投标人统一社会信用代码"/>
+            <column name="BID_MANAGER" type="varchar" des="投标单位项目负责人(用于对接数据接收)"/>
+            <column name="LEGAL_PERSON" type="varchar" des="法人或授权委托人(用于对接数据接收)"/>
+            <column name="PHONE" type="varchar" des="联系电话(用于对接数据接收)"/>
+            <column name="BID_DOC_ID" type="int" des="投标文件附件主键ID（关联UPLOAD_FILE主键ID）"/>
+            <column name="BID_DOC_TYPE" type="int" des="投标文件附件类型 0:gef或tjy  1:sgef或etjy"/>
+            <column name="IS_PASS_BID_OPEN" default="1" type="int" des="是否通过开标（即能够进入评标系统）"/>
+            <column name="DATA_FROM" type="int" default="0" des="数据来源  参见数据字典dataSource"/>
+            <column name="DELETE_FLAG" type="int" default="0" des="是否删除"/>
+            <column name="DELETE_REASON" type="varchar" des="删除原因"/>
+        </table>
+        <table name="BIDDER_OPEN_INFO" des="投标人开标信息">
+            <column name="BID_SECTION_ID" type="int" des="标段信息主键ID"/>
+            <column name="BIDDER_ID" type="int" des="投标人息主键ID"/>
+            <column name="GEF_HASH" type="varchar" des="投标文件Hash值"/>
+            <column name="SGEF_HASH" type="varchar" des="加密投标文件Hash值"/>
+            <column name="UPFILE_TIME" type="varchar" des="文件上传时间"/>
+            <column name="CLIENT_NAME" type="varchar" des="法人或授权委托人姓名"/>
+            <column name="CLIENT_IDCARD" type="varchar" des="法人或授权委托人身份证号"/>
+            <column name="CLIENT_PHONE" type="varchar" des="电话号码"/>
+            <column name="TICKET_NO" type="varchar" des="身份验证订单号"/>
+            <column name="QR_PIC_URL" type="varchar" des="二维码地址"/>
+            <column name="SQR_PIC_URL" type="varchar" des="头像地址"/>
+            <column name="AUTHENTICATION" type="int" des="验证结果 1:验证通过，其他均为失败验证结果"/>
+            <column name="AUTH_TIME" type="varchar" des="验证时间"/>
+            <column name="REQUEST_ID" type="varchar" des="验证ID"/>
+            <column name="SQWTS_FILE_ID" type="int" des="授权委托书上传id"/>
+            <column name="SQWTS_FILE_NAME" type="varchar" des="授权委托书名称"/>
+            <column name="URGENT_SIGIN" type="int" des="紧急签到"/>
+            <column name="SQWTS_PNG_FILE_ID" type="int" des="法人或授权委托书人照片上传id"/>
+            <column name="SIGNIN_TIME" type="varchar" des="签到时间"/>
+            <column name="TENDER_CASN" type="varchar" des="CA序列号(招标人CA)"/>
+            <column name="BID_CASN" type="varchar" des="CA序列号(投标人CA)"/>
+            <column name="PRICE_TYPE" type="varchar" des="报价类型（总价、上浮、下浮）"/>
+            <column name="BID_PRICE" type="varchar" des="报价 单位：元"/>
+            <column name="TIME_LIMIT" type="varchar" des="工期"/>
+            <column name="RATE" type="varchar" des="费率"/>
+            <column name="QUALITY" type="varchar" des="工程质量(施工)"/>
+            <column name="NOT_CHECKIN" type="int" des="未签到 1:迟到 2:弃标 9:其它"/>
+            <column name="NOT_CHECKIN_REASON" type="varchar" des="未签到原因(notCheckin=9时存在)"/>
+            <column name="DECRYPT_STATUS" type="int" default="0" des="投标文件解密状态(0:未解密;1:已解密;2:解密失败)"/>
+            <column name="TENDER_DECRYPT_STATUS" type="int" default="0" des="招标解密状态(0:未解密;1:已解密;2:解密失败)"/>
+            <column name="DECRYPT_START_TIME" type="varchar" des="解密时间开始时间"/>
+            <column name="DECRYPT_END_TIME" type="varchar" des="解密时间结束时间"/>
+            <column name="MARGIN_PAY_STATUS" type="int" default="0" des="投标保证金缴纳状态(1:已缴纳;0:未缴纳)"/>
+            <column name="BIDDER_IDENTITY_STATUS" type="int" des="投标人身份检查 1:符合 0:不符合"/>
+            <column name="SEAL_STATUS" type="int" des="密封性检查 1:密封 0:破损"/>
+            <column name="TENDER_REJECTION" type="int" des="标书拒绝 1:拒绝"/>
+            <column name="TENDER_REJECTION_REASON" type="varchar" des="标书拒绝理由"/>
+            <column name="PRICE_DETERMINE" type="int" des="投标报价确定 1:已确定"/>
+            <column name="DOC_DETERMINE" type="int" des="开标一览表确定 1:已确定"/>
+            <column name="DOC_DETERMINE_TIME" type="varchar" des="开标一览表确定时间"/>
+            <column name="DISSENT_STATUS" type="int" default="0" des="质询异议状态 1:无异议 2：有异议 0: 未做选择"/>
+            <column name="RESUME_DETERMINE" type="int" default="0" des="复会确定 1:无异议 2：有异议 0: 未做选择"/>
+            <column name="IS_CLIENT_CHECK" type="int" default="0" des="是否完成身份检查，1：是：0否"/>
+            <column name="KICK_STATUS" default="0" type="int" des="是否提出  0:默认  1: 剔除"/>
+        </table>
+        <table name="BIDDER_FILE_INFO" des="投标文件信息">
+            <column name="BIDDER_ID" type="int" des="投标人息主键ID"/>
+            <column name="GEF_ID" type="int" des="投标人上传的GEF源文件ID,对应uploadFile主键"/>
+            <column name="GEF_HASH" type="varchar" des="GEF投标文件Hash值"/>
+            <column name="SGEF_ID" type="int" des="投标人上传的SGEF源文件ID,对应uploadFile主键"/>
+            <column name="SGEF_HASH" type="varchar" des="SGEF加密投标文件Hash值"/>
+            <column name="CZR_ID" type="int" des="存根文件上传ID,对应uploadFile主键"/>
+            <column name="CZR_HASH" type="varchar" des="存根文件Hash值"/>
+            <column name="RECEIPT_ID" type="int" des="投标文件核验成功后上传的回执单ID,对应fdfs表主键"/>
+            <column name="CERT_ID" type="varchar" des="加密锁的ID"/>
+            <column name="CIPHER" type="text" des="加密因子"/>
+            <column name="CA_TYPE" type="varchar" des="锁类型（0：BJCA   1:互认锁   2：手机证书）"/>
+            <column name="PCID" type="varchar" des="投标文件硬件码"/>
+            <column name="DISKID" type="varchar" des="投标文件硬盘码"/>
+            <column name="MACID" type="varchar" des="投标文件网卡MAC"/>
+            <column name="XML_UID" type="varchar" des="投标工程量清单文件标识码"/>
+            <column name="XML_SERVICE_NUMBER" type="varchar" des="投标工程量清单文件解析服务号"/>
+            <column name="BUSINESS_STATUS" type="int" default="0" des="商务文件 上传状态 （0：未上传 1：成功 2：失败）/纸质标代表 纸质标投标文件PDF"/>
+            <column name="TECHNICAL_STATUS" type="int" default="0" des="技术文件 上传状态 （0：未上传 1：成功 2：失败）"/>
+            <column name="QUALIFICATIONS_STATUS" type="int" default="0" des="资格证明 上传状态 （0：未上传 1：成功 2：失败）"/>
+            <column name="CHECKLIST_STATUS" type="int" default="0" des="工程量清单PDF（施工类特有） 上传状态 （0：未上传 1：成功 2：失败）"/>
+            <column name="CHECKLIST_XML_STATUS" type="int" default="0" des="工程量清单XML（施工类特有） 上传状态 （0：未上传 1：成功 2：失败）"/>
+            <column name="OTHER_STATUS" type="int" default="0" des="其他文件 上传状态 （0：未上传 1：成功 2：失败）"/>
+            <column name="ALL_FILE_STATUS" type="int" default="0" des="所有投标文件 上传状态 （0：未上传 1：成功 2：失败）"/>
+            <column name="FILE_UNZIP_PATH" type="varchar" des="投标文件解密路径"/>
+        </table>
+        <table name="BIDDER_QUANTITY" des="投标人工程量清单服务信息">
+            <column name="TENDER_XML_UID" type="varchar" des="招标工程量清单文件标示码"/>
+            <column name="BID_XML_UID" type="varchar" des="投标工程量清单文件标示码"/>
+            <column name="STRUCTURE_ANALYSIS_FLAG" type="int" des="错漏项分析服务标示: 0:未请求服务 1:已请求服务"/>
+            <column name="STRUCTURE_ANALYSIS_SERIAL_NUMBER" type="varchar" des="错漏项分析服务序列号"/>
+            <column name="STRUCTURE_ANALYSIS_STATE" type="varchar" des="错漏项分析服务状态"/>
+            <column name="STRUCTURE_ANALYSIS_PROCESS" type="varchar" des="错漏项分析服务进度"/>
+            <column name="PRICE_ANALYSIS_FLAG" type="int" des="零负报价分析服务标示: 0:未请求服务 1:已请求服务"/>
+            <column name="PRICE_ANALYSIS_SERIAL_NUMBER" type="varchar" des="零负报价分析服务序列号"/>
+            <column name="PRICE_ANALYSIS_STATE" type="varchar" des="零负报价分析服务状态"/>
+            <column name="PRICE_ANALYSIS_PROCESS" type="varchar" des="零负报价分析服务进度"/>
+            <column name="ARITHMETIC_ANALYSIS_FLAG" type="int" des="算术性分析服务标示: 0:未请求服务 1:已请求服务"/>
+            <column name="ARITHMETIC_ANALYSIS_SERIAL_NUMBER" type="varchar" des="算术性分析服务序列号"/>
+            <column name="ARITHMETIC_ANALYSIS_STATE" type="varchar" des="算术性分析服务状态"/>
+            <column name="ARITHMETIC_ANALYSIS_PROCESS" type="varchar" des="算术性分析服务进度"/>
+            <column name="RULE_ANALYSIS_FLAG" type="int" des="取费基础分析服务标示: 0:未请求服务 1:已请求服务"/>
+            <column name="RULE_ANALYSIS_SERIAL_NUMBER" type="varchar" des="取费基础分析服务序列号"/>
+            <column name="RULE_ANALYSIS_STATE" type="varchar" des="取费基础分析服务状态"/>
+            <column name="RULE_ANALYSIS_PROCESS" type="varchar" des="取费基础分析服务进度"/>
+        </table>
+        <table name="LINE_MSG" des="网上开标消息">
+            <column name="BID_SECTION_ID" type="int" des="标段信息主键ID"/>
+            <column name="BIDDER_ID" type="int" des="投标人主键ID"/>
+            <column name="SEND_NAME" type="varchar" des="发送人名称"/>
+            <column name="ROLE_TYPE" type="int" des="消息类型 0：系统消息 1：投标人消息 2：代理机构消息"/>
+            <column name="QUESTION" type="int" des="是否质疑信息 1：质疑信息"/>
+            <column name="MESSAGE" type="varchar" length="1000" des="内容信息"/>
+            <column name="BACK_NAME" type="varchar" des="回复人"/>
+            <column name="BACK_MSG" type="varchar" length="1000" des="回复消息"/>
+            <column name="RESUME" type="int" des="对复会是否有异议 1：有异议"/>
+            <column name="OBJECTION_FILE_ID" type="int" des="有异议时，上传的附件id"/>
+        </table>
+        <table name="LINE_MSG_READ" des="网上开标消息阅读情况">
+            <column name="LINE_MSG_ID" type="int" des="网上开标消息主键ID"/>
+            <column name="USER_ID" type="int" des="用户ID（投标人主键Id或代理机构主键ID）"/>
+            <column name="USER_TYPE" type="int" des="用户类型（投标人：1投标人，2代理）"/>
+            <column name="READ_SITUATION" type="int" default="0" des="阅读情况(0：未读，1:已读；默认情况未读)"/>
+        </table>
+        <table name="LINE_STATUS" des="网上开标状态">
+            <column name="BID_SECTION_ID" type="int" des="标段信息主键ID"/>
+            <column name="UPLOAD_STATUS" type="int" des="文件上传状态 1:开始文件上传 2:文件上传结束"/>
+            <column name="SIGNIN_STATUS" type="int" des="签到状态 1:开始签到 2:签到结束"/>
+            <column name="PUBLISH_BIDDER_STATUS" type="varchar" des="公布投标人环节进行情况 1:结束"/>
+            <column name="BIDDER_CHECK_STATUS" type="int" des="投标人身份检查状态 1:投标人身份校验 2:投标人身份校验结束"/>
+            <column name="DECRYPTION_STATUS" type="int" des="解密状态 1:开始解密 2:解密结束"/>
+            <column name="DECRYPTION_TIME" type="int" des="解密累计用时（秒）"/>
+            <column name="QUESTION_TIME" type="int" des="质询累计用时（秒）"/>
+            <column name="RESUME_TIME" type="int" des="复会累计用时（秒）"/>
+            <column name="DECRYPTION_PERIODS" type="varchar" length="1000" des="解密时间段json字符串"/>
+            <column name="QUESTION_PERIODS" type="varchar" length="1000" des="质询时间段json字符串"/>
+            <column name="RESUME_PERIODS" type="varchar" length="1000" des="复会时间段json字符串"/>
+            <column name="QUESTION_STATUS" type="int" des="质询状态 1：开始质询 2：结束质询"/>
+            <column name="RESUME_STATUS" type="int" des="复会状态 1:开始复会 2:结束复会"/>
+        </table>
+        <table name="BIDDER_EXCEPTION" des="投标人异常信息">
+            <column name="BID_SECTION_ID" type="int" des="标段信息主键ID"/>
+            <column name="BIDDER_ID" type="int" des="投标人主键ID"/>
+            <column name="EXCEPTION_TYPE" type="int" des="异常类型"/>
+            <column name="EXCEPTION_REASON" type="varchar" des="异常原因"/>
+            <column name="OPERATOR_ID" type="int" des="操作人id"/>
+            <column name="OPERATOR_NAME" type="varchar" des="操作人名称"/>
+            <column name="OPERAT_TIME" type="varchar" des="操作时间"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+        </table>
+        <table name="BID_APPLY" des="评标申请记录">
+            <column name="BID_SECTION_ID" type="int" des="标段信息主键ID"/>
+            <column name="CHAIR_MAN" type="int" des="专家组长主键ID"/>
+            <column name="VOTE_COUNT" type="int" des="投票轮次"/>
+        </table>
+        <table name="BID_VOTE" des="专家推选评标组长投票信息">
+            <column name="BID_APPLY_ID" type="int" des="评标申请记录主键ID"/>
+            <column name="BID_EXPERT_ID" type="int" des="专家组长主键ID"/>
+            <column name="COUNT" type="int" des="得票数"/>
+            <column name="VOTE_PERSON" type="varchar" des="投票人(多个投标人用逗号隔开)"/>
+            <column name="VOTE_ROUND" type="int" des="投票轮次"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+        </table>
+        <table name="GRADE" des="评分标准表">
+            <column name="NAME" type="varchar" des="评分标准名称"/>
+            <column name="GRADE_TYPE" type="varchar" des="评分标准类型"/>
+            <column name="TYPE" type="int" des="评审形式(0:打分;1:合格制;2扣分制)"/>
+            <column name="CALC_TYPE" type="int" des="1:加分 2:扣分"/>
+            <column name="SCORE" type="varchar" des="总分"/>
+            <column name="HAS_ITEM" type="int" des="是否含有评分子项GradeChildItem"/>
+            <column name="GROUP_END" type="int" des="小组评审是否结束 1:评审结束"/>
+            <column name="USER_ID" type="int" des="创建人ID"/>
+            <column name="REMARK" type="varchar" length="1000" des="备注说明"/>
+            <column name="DELETE_FLAG" type="int" default="0" des="是否移除评分标准"/>
+            <column name="REVIEW_PROCESS" type="int" des="评审环节(1:初步评审; 2:详细评审)"/>
+            <column name="REVIEW_TYPE" type="int" des="评审类型  参考ReviewType"/>
+        </table>
+        <table name="GRADE_ITEM" des="评分项信息">
+            <column name="GRADE_ID" type="int" des="评分标准ID"/>
+            <column name="ITEM_CONTENT" type="varchar" length="2000" des="评分项内容"/>
+            <column name="SCORE" type="varchar" des="评分项分数"/>
+            <column name="SCORE_TYPE" type="varchar" des="分数类型（拓展字段：酌情打分  固定分值）"/>
+            <column name="SCORE_RANGE" type="varchar" des="分数范围"/>
+            <column name="REMARK" type="varchar" length="1000" des="备注说明"/>
+        </table>
+        <table name="GRADE_CHILD_ITEM" des="评分项子项信息">
+            <column name="GRADE_ITEM_ID" type="int" des="评分标准ID"/>
+            <column name="ITEM_CONTENT" type="varchar" length="2000" des="评分项内容"/>
+            <column name="SCORE" type="varchar" des="评分项分数"/>
+            <column name="RULE_TRADE_CODE" type="varchar" des="引用后台配置好的RuleTradeRule规则"/>
+            <column name="REMARK" type="varchar" length="1000" des="备注说明"/>
+            <column name="SCORE_RANGE" type="varchar" des="打分范围"/>
+        </table>
+        <table name="EXPERT_REVIEW_SINGLE_ITEM" des="专家对企业评审单项评审结果 合格制">
+            <column name="EXPERT_ID" type="int" des="评审专家主键ID"/>
+            <column name="EXPERT_REVIEW_ID" type="int" des="专家评审表ID"/>
+            <column name="BIDDER_ID" type="int" des="投标企业ID"/>
+            <column name="GRADE_ID" type="int" des="评分标准ID"/>
+            <column name="GRADE_ITEM_ID" type="int" des="评审项ID"/>
+            <column name="GRADE_TYPE" type="int" des="评审类别"/>
+            <column name="EVAL_RESULT" type="varchar" des="评审结果(0:不合格, 1:合格)"/>
+            <column name="EVAL_COMMENTS" type="varchar" des="评审意见"/>
+            <index_group>
+                <index column="EXPERT_ID"/>
+                <index column="EXPERT_REVIEW_ID"/>
+                <index column="BIDDER_ID"/>
+                <index column="GRADE_ID"/>
+                <index column="GRADE_ITEM_ID"/>
+                <unique column="EXPERT_ID,EXPERT_REVIEW_ID,BIDDER_ID,GRADE_ID,GRADE_ITEM_ID"/>
+            </index_group>
+        </table>
+        <table name="EXPERT_REVIEW_SINGLE_ITEM_DEDUCT" des="专家对企业评审单项评审结果 扣分制">
+            <column name="EXPERT_ID" type="int" des="评审专家主键ID"/>
+            <column name="EXPERT_REVIEW_ID" type="int" des="专家评审表ID"/>
+            <column name="BIDDER_ID" type="int" des="投标企业ID"/>
+            <column name="GRADE_ID" type="int" des="评分标准ID"/>
+            <column name="GRADE_ITEM_ID" type="int" des="评审项ID"/>
+            <column name="EVAL_RESULT" type="varchar" des="评审结果(0:扣分, 1:不扣分)"/>
+            <column name="DEDUCT_COMMENTS" type="varchar" des="扣分意见"/>
+            <index_group>
+                <index column="EXPERT_ID"/>
+                <index column="EXPERT_REVIEW_ID"/>
+                <index column="BIDDER_ID"/>
+                <index column="GRADE_ID"/>
+                <index column="GRADE_ITEM_ID"/>
+                <unique column="EXPERT_ID,EXPERT_REVIEW_ID,BIDDER_ID,GRADE_ID,GRADE_ITEM_ID"/>
+            </index_group>
+        </table>
+        <table name="EXPERT_REVIEW_MUTUAL" des="专家对企业评审单项评审结果 互保共建">
+            <column name="EXPERT_ID" type="int" des="评审专家主键ID"/>
+            <column name="EXPERT_REVIEW_ID" type="int" des="专家评审表ID"/>
+            <column name="BIDDER_ID" type="int" des="投标企业ID"/>
+            <column name="GRADE_ID" type="int" des="评分标准ID"/>
+            <column name="MUTUAL_RESULT" type="int" des="对应选择的gradeItemId"/>
+            <column name="EVAL_RESULT" type="varchar" des="最终加分结果"/>
+            <index_group>
+                <index column="EXPERT_ID"/>
+                <index column="EXPERT_REVIEW_ID"/>
+                <index column="BIDDER_ID"/>
+                <index column="GRADE_ID"/>
+                <unique column="EXPERT_ID,EXPERT_REVIEW_ID,BIDDER_ID,GRADE_ID"/>
+            </index_group>
+        </table>
+        <table name="EXPERT_REVIEW_SINGLE_ITEM_SCORE" des="专家对企业评审单项评审结果 打分制">
+            <column name="EXPERT_ID" type="int" des="评审专家主键ID"/>
+            <column name="EXPERT_REVIEW_ID" type="int" des="专家评审表ID"/>
+            <column name="BIDDER_ID" type="int" des="投标企业ID"/>
+            <column name="GRADE_ID" type="int" des="评分标准ID"/>
+            <column name="GRADE_ITEM_ID" type="int" des="评审项ID"/>
+            <column name="GRADE_TYPE" type="int" des="评审类别"/>
+            <column name="EVAL_SCORE" type="varchar" des="评审分数"/>
+            <index_group>
+                <index column="EXPERT_ID"/>
+                <index column="EXPERT_REVIEW_Id"/>
+                <index column="BIDDER_ID"/>
+                <index column="GRADE_ID"/>
+                <index column="GRADE_ITEM_ID"/>
+                <unique column="EXPERT_ID,EXPERT_REVIEW_ID,BIDDER_ID,GRADE_ID,GRADE_ITEM_ID"/>
+            </index_group>
+        </table>
+        <table name="EXPERT_REVIEW_SINGLE_ITEM_DEDUCT_SCORE" des="专家对企业评审单项评审结果 扣分打分制">
+            <column name="EXPERT_ID" type="int" des="评审专家主键ID"/>
+            <column name="EXPERT_REVIEW_ID" type="int" des="专家评审表ID"/>
+            <column name="BIDDER_ID" type="int" des="投标企业ID"/>
+            <column name="GRADE_ID" type="int" des="评分标准ID"/>
+            <column name="GRADE_ITEM_ID" type="int" des="评审项ID"/>
+            <column name="EVAL_SCORE" type="varchar" des="评审分数"/>
+            <index_group>
+                <index column="EXPERT_ID"/>
+                <index column="EXPERT_REVIEW_Id"/>
+                <index column="BIDDER_ID"/>
+                <index column="GRADE_ID"/>
+                <index column="GRADE_ITEM_ID"/>
+                <unique column="EXPERT_ID,EXPERT_REVIEW_ID,BIDDER_ID,GRADE_ID,GRADE_ITEM_ID"/>
+            </index_group>
+        </table>
+        <table name="EXPERT_REVIEW" des="专家评审表">
+            <column name="EXPERT_ID" type="int" des="评审专家"/>
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="GRADE_ID" type="int" des="评分标准ID"/>
+            <column name="START_TIME" type="varchar" des="评审开始时间"/>
+            <column name="END_TIME" type="varchar" des="评审结束时间"/>
+            <column name="INIT_STATUS" type="int" des="初始化状态 参见数据字典bool"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+        </table>
+        <table name="BIDDER_REVIEW_RESULT" des="企业评审grade单项的评审结果表 合格制">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="投标企业ID"/>
+            <column name="GRADE_ID" type="int" des="评分标准ID"/>
+            <column name="RESULT" type="varchar" des="评审汇总的结果 0/空:不合格 1:合格"/>
+        </table>
+        <table name="BIDDER_REVIEW_RESULT_DEDUCT" des="企业评审grade单项的评审结果表 扣分制">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="投标企业ID"/>
+            <column name="GRADE_ID" type="int" des="评分标准ID"/>
+            <column name="DEDUCT_SCORE" type="varchar" des="评审扣减的总分 0/空:不扣分 非0:扣减的分值"/>
+        </table>
+        <table name="BIDDER_REVIEW_RESULT_SCORE" des="企业评审单项的评审结果表 打分制">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="投标企业ID"/>
+            <column name="GRADE_ID" type="int" des="评分标准ID"/>
+            <column name="ADD_SCORE" type="varchar" des="评审得分的总分"/>
+        </table>
+        <table name="ELECT_BIDDER" des="企业推选记录">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="被推选企业ID"/>
+            <column name="EVAL_EXPERT_ID" type="int" des="推选专家ID"/>
+            <column name="ORDER_NO" type="int" des="推选的名次：1：第一中标候选人 2：第二候选人 3：第三中标候选人"/>
+            <column name="REASON" type="varchar" des="推荐理由"/>
+        </table>
+        <table name="ELECT_BIDDER_RESULT" des="企业推选结果">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="被推选企业ID"/>
+            <column name="ORDER_NO" type="int" des="推选的名次：1：第一中标候选人 2：第二候选人 3：第三中标候选人"/>
+            <column name="REASON" type="varchar" des="理由"/>
+        </table>
+        <table name="EVAL_RESULT_JL" des="监理项目简要评标结果">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="企业ID"/>
+            <column name="BID_PRICE" type="varchar" des="投标报价"/>
+            <column name="BUSINESS_SCORE" type="varchar" des="商务标得分"/>
+            <column name="TECHNICAL_SCORE" type="varchar" des="技术标得分"/>
+            <column name="VIOLATION_DEDUCT" type="varchar" des="违章行为扣分"/>
+            <column name="TOTAL_SCORE" type="varchar" des="最终得分"/>
+            <column name="ORDER_NO" type="int" des="排名"/>
+        </table>
+        <table name="EVAL_RESULT_SG" des="施工项目简要评标结果">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="企业ID"/>
+            <column name="BID_PRICE" type="varchar" des="投标报价"/>
+            <column name="BUSINESS_SCORE" type="varchar" des="报价得分"/>
+            <column name="ABILITY" type="varchar" des="施工能力扣分分数"/>
+            <column name="ORGANIZE" type="varchar" des="施工组织设计扣分分数"/>
+            <column name="QUALITY" type="varchar" des="安全质量事故扣分分数"/>
+            <column name="BAD_RECORD" type="varchar" des="不良行为扣分分数"/>
+            <column name="MUTUAL_SECURITY" type="varchar" des="互保共建加分分数"/>
+            <column name="TOTAL_SCORE" type="varchar" des="最终得分"/>
+            <column name="ORDER_NO" type="int" des="排名"/>
+        </table>
+        <table name="EVAL_RESULT_EPC" des="施工总承包项目简要评标结果">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="企业ID"/>
+            <column name="BID_PRICE" type="varchar" des="投标报价"/>
+            <column name="BUSINESS_SCORE" type="varchar" des="报价得分"/>
+            <column name="DETAILED_SCORE" type="varchar" des="详细评审得分分数"/>
+            <column name="TOTAL_SCORE" type="varchar" des="最终得分"/>
+            <column name="ORDER_NO" type="int" des="排名"/>
+        </table>
+        <table name="CANDIDATE_RESULTS" des="推荐候选人结果表">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="EXPERT_ID" type="int" des="专家ID"/>
+            <column name="BIDDER_ID" type="int" des="投标人ID"/>
+            <column name="RANKING" type="int" des="推荐名次"/>
+            <column name="REASON" type="varchar" des="推荐理由"/>
+            <column name="IS_END" type="int" des="个人环节是否结束 1：结束"/>
+        </table>
+        <table name="CANDIDATE_SUCCESS" des="中标候选人表">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="投标人ID"/>
+            <column name="RANKING" type="int" des="推荐名次"/>
+            <column name="BIDDER_FROM" type="int" des="1：小组投票产生 2：组长推选产生"/>
+            <column name="REASON" type="varchar" des="推荐理由"/>
+        </table>
+        <table name="FREE_BACK_APPLY" des="自由回退申请">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="STEP" type="int" des="申请回退的评审环节 对应evalFlow code"/>
+            <column name="STEP_NOW" type="int" des="回退申请前的评审环节 对应evalFlow code"/>
+            <column name="CHECK_STATUS" type="int" default="0" des="审核状态(对应BackStatus 0:未审核 1:审核通过 2:审核未通过)"/>
+            <column name="REASON" type="varchar" length="500" des="回退理由"/>
+            <column name="APPLY_TIME" type="varchar" des="申请时间"/>
+            <column name="CHECK_TIME" type="varchar" des="审核时间"/>
+            <column name="APPLY_USER" type="int" des="申请人ID" />
+            <column name="CHECK_USER" type="int" des="审核人ID" />
+            <column name="FREE_BACK_ANNEX_ID" type="int" des="回退审核通过后，各个环节专家的个人评审表附件ID(对应fdfs主键ID)" />
+        </table>
+        <table name="BACK_PUSH_STATUS" des="回退申请推送状态">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BACK_ID" type="int" des="回退申请ID"/>
+            <column name="EXPERT_ID" type="int" des="专家ID"/>
+            <column name="PUSH_RESULT" type="int" default="0" des="推送结果(0:未接收 1:已接收)"/>
+        </table>
+        <table name="REEVAL_LOG" des="复议日志">
+            <column name="BID_SECTION_ID" type="int" des="标段主键ID"/>
+            <column name="USER_ID" type="int" des="操作人主键"/>
+            <column name="USER_NAME" type="varchar" des="操作人名称"/>
+            <column name="REASON"  type="varchar" length="255" des="复议原因"/>
+            <column name="SUBMIT_TIME" type="varchar" des="提交时间"/>
+            <column name="RE_EVAL_ANNEX_ID" type="int" des="项目复议后，评标报告附件ID(对应fdfs主键ID)"/>
+        </table>
+        <table name="CLARIFY_ANSWER" des="澄清答疑">
+            <column name="BID_SECTION_ID" type="int" des="标段主键ID"/>
+            <column name="BID_SECTION_CODE" type="varchar" des="标段编号"/>
+            <column name="BID_CLASSIFY_CODE" type="varchar" des="标段分类代码"/>
+            <column name="REGION_CODE" type="varchar" des="行政区划"/>
+            <column name="FILE_TYPE" type="varchar" des="文件类型（1：招标文件  2：澄清文件）"/>
+            <column name="UPFILES_ID" type="int" des="关联upfiles主键"/>
+        </table>
+        <table name="SITE" des="场地信息">
+            <column name="NAME" type="varchar" des="场地名称"/>
+            <column name="TYPE" type="int" des="场地类型"/>
+            <column name="REG_ID" type="int" des="行政区划主键"/>
+            <column name="remark" type="varchar" des="备注"/>
+        </table>
+        <table name="MONITOR" des="监控信息">
+            <column name="REG_ID" type="int" des="行政区划主键"/>
+            <column name="REG_NAME" type="varchar" des="行政区划名称"/>
+            <column name="REG_CODE" type="varchar" des="行政区划代码"/>
+            <column name="IP" type="varchar" des="大华摄像头IP"/>
+            <column name="PORT" type="varchar" des="大华摄像头端口"/>
+            <column name="USER_NAME" type="varchar" des="用户名"/>
+            <column name="PWD" type="varchar" des="密码"/>
+            <column name="ENABLED" type="int" des="启用状态  参见数据字典enabled"/>
+        </table>
+        <table name="PROJECT_PAUSE" des="项目暂停">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="OPERATOR_ID" type="int" des="操作人员ID"/>
+            <column name="OPERATOR_NAME" type="varchar" des="操作人员名称"/>
+            <column name="PAUSE_REASON" type="varchar" des="暂停原因"/>
+            <column name="PAUSE_STATUS" type="int" default="1" des="暂停状态(0:暂停 1:未暂停)"/>
+        </table>
+        <table name="BSN_CHAIN_INFO" des="区块信息表">
+            <column name="BIDDER_ID" type="int" des="投标人息主键ID"/>
+            <column name="BID_SECTION_ID" type="int" des="标段信息主键ID"/>
+            <column name="TYPE" type="int" des="区块数据类型（1：招标文件存根  2：开标记录表  3投标文件解密记录）"/>
+            <column name="TX_ID" type="varchar" des="区块数据id"/>
+            <column name="STATUS" type="varchar" des="返回数据状态码"/>
+            <column name="BASE_KEY" type="varchar" des="返回key值"/>
+            <column name="QUERY_ADDRESS" type="varchar" des="数据请求地址"/>
+        </table>
+        <table name="CALC_SCORE_PARAM" des="计算报价得分参数">
+            <column name="BID_SECTION_ID" type="int" des="标段id"/>
+            <column name="EVAL_PRICE_SCORE_METHOD" type="varchar" des="评标价得分计算方式"/>
+            <column name="EVAL_PRICE_SCORE_METHOD_DESC" type="varchar" length="2000" des="评标价得分计算方式详细描述"/>
+            <column name="TOTAL_SCORE" type="varchar" des="总分"/>
+            <column name="BASE_PRICE" type="varchar" des="评标基准价"/>
+            <column name="UPDATE_BASE_PRICE" type="varchar" des="修改后的评标基准价"/>
+            <column name="OFFSET_RATE_PRECISION" type="int" default="2" des="偏差率保留小数位数"/>
+            <column name="GT_BASE_PRICE_DEDUCTION" type="varchar" des="评标价每高于评标基准价一个百分点的扣分值"/>
+            <column name="LT_BASE_PRICE_DEDUCTION" type="varchar" des="评标价每低于评标基准价一个百分点的扣分值"/>
+        </table>
+        <table name="QUOTE_SCORE_RESULT" des="投标人报价得分结果">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="投标人id"/>
+            <column name="BID_PRICE" type="varchar" des="投标人评标价"/>
+            <column name="BID_PRICE_OFFSET" type="varchar" des="对应报价偏差率"/>
+            <column name="BID_PRICE_SCORE" type="varchar" des="对应报价得分"/>
+        </table>
+        <table name="QUOTE_SCORE_RESULT_APPENDIX" des="投标人报价得分结果附录">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="投标人id"/>
+            <column name="BID_PRICE" type="varchar" des="投标人评标价"/>
+            <column name="BID_PRICE_OFFSET" type="varchar" des="对应报价偏差率"/>
+            <column name="BID_PRICE_SCORE" type="varchar" des="对应报价得分"/>
+        </table>
+        <table name="BIDDER_QUANTITY_SCORE" des="投标人工程量清单报价得分结果">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="BIDDER_ID" type="int" des="投标人id"/>
+            <column name="BIDDER_NAME" type="varchar" des="投标人名称"/>
+            <column name="SCORE_A" type="decimal" des="分部分项工程量清单报价A 得分"/>
+            <column name="SCORE_B1" type="decimal" des="措施项目清单报价B1 得分"/>
+            <column name="SCORE_B2" type="decimal" des="措施项目清单报价B2 得分"/>
+            <column name="SCORE_C" type="decimal" des="其它项目清单C(总承包服务费) 得分"/>
+            <column name="SCORE_D" type="decimal" des="规费清单报价D 得分"/>
+            <column name="SCORE_E" type="decimal" des="税金清单报价E 得分"/>
+            <column name="SCORE_F" type="decimal" des="综合单价F 得分"/>
+            <column name="SCORE_G" type="decimal" des="主要材料设备单价G 得分"/>
+            <column name="TOTAL_SCORE" type="decimal" des="总得分"/>
+            <index_group>
+                <unique column="BID_SECTION_ID,BIDDER_ID"/>
+            </index_group>
+        </table>
+
+        <table name="WINING_BID_FILE" des="中标通知书信息">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="WINING_BID_FILE_ID" type="int" des="中标通知书pdf对应的uploadFile主键id"/>
+        </table>
+        <table name="LATI_LONGITUDE" des="投标人/游客经纬度">
+            <column name="BIDDER_NAME" type="varchar" des="投标人名称"/>
+            <column name="BID_SECTION_ID" type="varchar" des="标段id"/>
+            <column name="LATI_LONGITUDE" type="varchar" des="经纬度"/>
+            <column name="TYPE" type="int" des="身份：0：投标人，1：游客"/>
+            <column name="REMAKE" type="varchar" des="备注"/>
+        </table>
+        <table name="LIKE_COUNT" des="点赞统计">
+            <column name="BID_SECTION_ID" type="int" des="标段id"/>
+            <column name="COUNT" type="int" des="点赞数"/>
+            <column name="REMAKE" type="varchar" des="备注"/>
+        </table>
+        <table name="SIGNATURE_CONFIG_INFO" des="签章配置信息（回执单签章）">
+            <column name="REG_NO" type="varchar" des="区划编号"/>
+            <column name="IMPRESSION_NO" type="varchar" des="印模编号"/>
+            <column name="REMARK" type="varchar" des="备注"/>
+        </table>
+        <table name="OPERATION_MAINTENANCE_TRACK_RECORD" des="运维跟踪记录">
+            <column name="BID_SECTION_ID" type="int" des="标段ID"/>
+            <column name="OPERATION_MAINTENANCE_ID" type="int" des="运维人员ID"/>
+            <column name="OPERATION_MAINTENANCE_NAME" type="varchar" length="50" des="运维人员名称"/>
+            <column name="ABNORMAL" type="varchar" default="1" length="1" des="是否异常(1:正常   0：异常)"/>
+            <column name="ABNORMAL_TIME" type="int" default="0" des="异常处理时长（分钟）"/>
+            <column name="REMARK" type="varchar" length="1000" des="跟踪记录"/>
+        </table>
+        <!--签章记录表-->
+        <table name="FDFS_SIGNATURE" des="FDFS文件签章记录表">
+            <column name="OLD_PATH" type="varchar" length="500" des="原来路径"/>
+            <column name="NOW_PATH" type="varchar" length="500" des="现路径"/>
+            <column name="FDFS_ID" type="int" des="FDFS文件ID"/>
+            <column name="USER_NAME" type="varchar"  des="签章人名字"/>
+        </table>
+    </database>
+</root>

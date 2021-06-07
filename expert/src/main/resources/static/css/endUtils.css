@@ -1,0 +1,113 @@
+html .blove-b {
+    background-color: #1f70bb;
+    color: #fff;
+}
+html .blove-f {
+    color: #1f70bb;
+}
+html .blove-s {
+    border: 1px solid #1f70bb;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+html .yellow-b {
+    background-color: rgba(214, 147, 11, 1);
+    color: #fff;
+    cursor: pointer;
+}
+html .green-b {
+    background-color: #3b8767;
+    color: #fff;
+    cursor: pointer;
+}
+html .red-b {
+    background-color: rgba(225, 75, 75, 1);
+    color: #fff;
+    cursor: pointer;
+}
+
+html .gray-b {
+    background: rgba(163, 180, 212, 1);
+    color: #fff;
+    cursor: pointer;
+}
+html .yellow-f {
+    color: #d6930b;
+}
+html .first-f {
+    color: #1f2e4d;
+}
+html .blove-b:hover {
+    background: #1f70bb;
+}
+html .yellow-b:hover {
+    background: rgba(214, 147, 11, 1);
+}
+html .green-f {
+    color: #3b8767;
+}
+html .red-f {
+    color: rgba(255, 71, 71, 1);
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html .disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+    color: rgba(226, 226, 226, 1);
+}
+html .gray-f {
+    color: rgba(226, 226, 226, 1);
+}
+html .gray-b {
+    background-color: rgba(226, 226, 226, 1);
+}
+html .gray-s {
+    border: 1px solid rgba(226, 226, 226, 1);
+}
+html .blod {
+    font-weight: bold;
+}
+ol,
+ul {
+    list-style: none;
+}
+img {
+    display: block;
+}
+span,
+li,
+p,
+h3,
+h4,
+b,
+label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #ccc;
+}
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #ccc;
+}
+input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #ccc;
+}
+input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #ccc;
+}

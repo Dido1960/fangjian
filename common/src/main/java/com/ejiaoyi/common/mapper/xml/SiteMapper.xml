@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.SiteMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.Site">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="NAME" property="name" />
+        <result column="TYPE" property="type" />
+        <result column="REG_ID" property="regId" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, NAME, TYPE, REG_ID, REMARK
+    </sql>
+
+    <!-- 扩展查询映射结果 -->
+    <resultMap id="BaseResultMapExtend" type="com.ejiaoyi.common.entity.Site" extends="BaseResultMap">
+        <result column="REG_NAME" property="regName"/>
+    </resultMap>
+
+    <select id="pagedSite" resultMap="BaseResultMapExtend">
+        select a.*, b.REG_NAME from SITE a
+        left join REG b on a.REG_ID = b.ID
+        <where>
+            <if test="site.regId != null ">
+                <bind name="regId" value="site.regId"/>
+                and a.REG_ID = #{regId}
+            </if>
+            <if test="site.name !='' and site.name !=null ">
+                <bind name="name" value="'%'+site.name+'%'"/>
+                and a.NAME like #{name}
+            </if>
+            <if test="site.type != null ">
+                <bind name="type" value="site.type"/>
+                and a.TYPE = #{type}
+            </if>
+        </where>
+    </select>
+
+</mapper>

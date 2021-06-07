@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.DockPushLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.DockPushLog">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="API_URI" property="apiUri" />
+        <result column="API_PARAMS" property="apiParams" />
+        <result column="API_PARAMS_LAWS" property="apiParamsLaws" />
+        <result column="API_REMARK" property="apiRemark" />
+        <result column="CREATE_API_TIME" property="createApiTime" />
+        <result column="RESPONSE_CODE" property="responseCode" />
+        <result column="RESPONSE_CONTENT" property="responseContent" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, API_URI, API_PARAMS, API_PARAMS_LAWS, API_REMARK, CREATE_API_TIME, RESPONSE_CODE, RESPONSE_CONTENT
+    </sql>
+
+</mapper>

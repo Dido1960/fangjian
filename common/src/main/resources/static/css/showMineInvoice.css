@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+p {
+  margin: 0;
+}
+html.body {
+  width: 100%;
+  height: 100%;
+  /* background-color: #b4b4b4; */
+}
+/*img {
+  display: block;
+}*/
+a {
+  text-decoration: none;
+}
+button,
+input {
+  cursor: pointer;
+}
+section {
+  width: 100%;
+  height: 100%;
+  background-color: #eff3f5;
+}
+.body {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right {
+  width: 1060px;
+  height: 1067px;
+}
+
+.blue {
+  background: url(../img/bian.png) no-repeat left center rgba(243, 247, 255, 1);
+}
+
+.tlt {
+  width: 100%;
+  height: 56px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+.tlt div {
+  width: 100%;
+  height: 56px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 56px;
+  color: #000;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+.tlt div p {
+  color: rgba(0, 98, 235, 1);
+  margin-right: 820px;
+}
+.tlt div span {
+  display: block;
+  width: 70px;
+  height: 36px;
+  background: rgba(0, 98, 235, 1);
+  opacity: 1;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  text-align: center;
+  line-height: 36px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+.zhong {
+  width: 1060px;
+  height: 266px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.zhong ul {
+  width: 1020px;
+  height: 226px;
+  border: 1px solid rgba(212, 220, 235, 1);
+  opacity: 1;
+}
+.zhong ul div {
+  width: 1020px;
+  height: 60px;
+  background: rgba(243, 247, 255, 1);
+  opacity: 1;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  padding-left: 20px;
+  box-sizing: border-box;
+  line-height: 60px;
+  color: rgba(26, 51, 88, 1);
+}
+.zhong ul li {
+  width: 100%;
+  height: 54px;
+}
+.zhong ul li + li {
+  border-top: 1px solid rgba(212, 220, 235, 1);
+}
+.zhong ul li p {
+  width: 100%;
+  height: 54px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 54px;
+  color: rgba(26, 51, 88, 1);
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.zhong ul li p span {
+  float: right;
+  font-size: 16px;
+}
+
+.xia {
+  width: 100%;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.xia ul {
+  width: 1020px;
+  border: 1px solid rgba(212, 220, 235, 1);
+  opacity: 1;
+}
+.xia ul div {
+  width: 1020px;
+  height: 60px;
+  background: rgba(243, 247, 255, 1);
+  opacity: 1;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  padding-left: 20px;
+  box-sizing: border-box;
+  line-height: 60px;
+  color: rgba(26, 51, 88, 1);
+}
+.xia ul li {
+  width: 100%;
+  height: 54px;
+}
+.xia ul li + li {
+  border-top: 1px solid rgba(212, 220, 235, 1);
+}
+.xia ul li p {
+  width: 100%;
+  height: 54px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 54px;
+  color: rgba(26, 51, 88, 1);
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.xia ul li p span {
+  float: right;
+  font-size: 16px;
+}
+.btn {
+  width: 200px;
+  height: 40px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.btn .change {
+  width: 86px;
+  height: 40px;
+  background: rgba(0, 98, 235, 1);
+  opacity: 1;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  cursor: pointer;
+}
+.download {
+  width: 86px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 98, 235, 1);
+  opacity: 1;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(0, 98, 235, 1);
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+

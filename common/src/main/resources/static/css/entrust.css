@@ -1,0 +1,323 @@
+.shang {
+  width: 100%;
+  height: 76px;
+  font-size: 18px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 76px;
+  color: rgba(19, 97, 254, 1);
+  background-color: #fff;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.shang span {
+  display: block;
+  width: 8%;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 36px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  cursor: pointer;
+  float: right;
+  margin-top: 20px;
+}
+#organe {
+  background: linear-gradient(
+          270deg,
+          rgba(255, 145, 0, 1) 0%,
+          rgba(255, 179, 81, 1) 100%
+  );
+  color: #fff;
+}
+.shang span:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.tou {
+  width: 100%;
+  height: 77px;
+}
+.tou li {
+  width: 25%;
+  height: 77px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 77px;
+  color: rgba(34, 49, 101, 1);
+  float: left;
+  background: rgba(169, 191, 220, 1);
+}
+form {
+  width: 100%;
+}
+/* .center {
+  width: 100%;
+  height: 100%;
+}
+
+.center li {
+  width: 100%;
+  height: 96px;
+
+  margin-top: 20px;
+  text-align: center;
+  line-height: 96px;
+}
+.center li div {
+  width: 25%;
+  height: 96px;
+  float: left;
+  background-color: #fff;
+  position: relative;
+}
+.ming {
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  color: rgba(34, 49, 101, 1);
+  position: relative;
+  background-color: #fff;
+}
+html .center .layui-unselect,
+html .center .layui-form-switch {
+  width: 80px;
+  height: 36px;
+  font-size: 12px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  left: 33%;
+  top: 25%;
+}
+
+html .center .layui-form-switch i {
+  width: 28px;
+  height: 28px;
+}
+html .center .layui-form-onswitch i {
+  margin-left: -32px;
+}
+html .center .layui-form-onswitch {
+  background: rgba(5, 191, 191, 1);
+}
+.cha {
+  display: block;
+  width: 23.3%;
+  height: 24px;
+  background: rgba(19, 97, 254, 0.21);
+  font-size: 12px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(19, 97, 254, 1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#xblove {
+  color: rgba(19, 97, 254, 1);
+  border: 1px solid rgba(19, 97, 254, 1);
+}
+.doing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.doing span {
+  display: block;
+  width: 34.8%;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  cursor: pointer;
+}
+.doing span:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.doing span + span {
+  margin-left: 10px;
+}
+#red {
+  background: linear-gradient(
+    270deg,
+    rgba(255, 55, 32, 1) 0%,
+    rgba(255, 103, 86, 1) 100%
+  );
+  color: #fff;
+}
+#gray {
+  background: rgba(213, 213, 213, 1);
+  color: #fff;
+}
+#blove {
+  background: linear-gradient(
+    270deg,
+    rgba(19, 97, 254, 1) 0%,
+    rgba(78, 138, 255, 1) 100%
+  );
+  color: #fff;
+}
+html .center .layui-form-switch em {
+  font-weight: 500;
+  font-size: 14px;
+}
+html .center .doing .lit-btn,
+html .center .doing .site-demo-button {
+  width: 34.8%;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+.layui-layer-btn,
+.layui-layer-btn-c {
+  background: rgba(239, 243, 244, 1);
+}
+html .layui-input-block {
+  margin: 0px auto;
+}
+html .layui-input-block,
+html .layui-textarea {
+  width: 540px;
+  height: 150px;
+  border: 1px solid rgba(213, 213, 213, 1);
+  border: 1px solid rgba(213, 213, 213, 1);
+  opacity: 1;
+  font-weight: 500;
+}
+html .layui-textarea::-webkit-scrollbar {
+  display: none;
+}
+.tan h3 {
+  width: 100%;
+  height: 44px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 44px;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+}
+html .layui-btn {
+  padding: 0;
+}
+ */
+.overTan p {
+  width: 100%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(34, 49, 101, 1);
+  margin: 100px auto;
+}
+form table {
+  width: 100%;
+}
+
+form table tr {
+  width: 100%;
+  height: 96px;
+  min-height: 96px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+form table td {
+  width: 25%;
+  height: 96px;
+  min-height: 96px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  color: #223165;
+  text-align: center;
+  position: relative;
+  border-bottom: 20px solid rgba(239, 243, 244, 1);
+}
+form table tr td span {
+  display: inline-block;
+  width: 80px;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  cursor: pointer;
+}
+form table tr td span + span {
+  margin-left: 10px;
+}
+form table tr td .layui-form-switch {
+  margin-top: 0;
+  width: 80px;
+  height: 36px;
+}
+form table tr td .layui-form-switch i {
+  width: 28px;
+  height: 28px;
+}
+form table tr td .layui-form-switch em {
+  font-size: 12px;
+  line-height: 36px;
+}
+form table tr td .layui-form-onswitch i {
+  margin-left: -32px;
+}
+form table tr td .layui-form-onswitch {
+  border-color: rgba(5, 191, 191, 1);
+  background-color: rgba(5, 191, 191, 1);
+}
+form table tr td b {
+  display: block;
+  width: 54px;
+  height: 24px;
+  background: rgba(19, 97, 254, 0.21);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 12px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 24px;
+  color: #1361fe;
+}
+
+.how {
+  width: 22% !important;
+}
+
+.how p {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  padding-left: 10%;
+  box-sizing: border-box;
+}
+
+.how p label {
+  display: inline-block;
+  width: 56px;
+}
+
+.how p div {
+  line-height: 24px;
+  margin: 0 0px 0 0;
+  padding: 0px 0 0;
+}

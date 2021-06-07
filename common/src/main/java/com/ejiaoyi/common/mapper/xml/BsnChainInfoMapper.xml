@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.BsnChainInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.BsnChainInfo">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BIDDER_ID" property="bidderId" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="TYPE" property="type" />
+        <result column="TX_ID" property="txId" />
+        <result column="STATUS" property="status" />
+        <result column="BASE_KEY" property="baseKey" />
+        <result column="QUERY_ADDRESS" property="queryAddress" />
+    </resultMap>
+
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BIDDER_ID, TYPE, TX_ID, STATUS, BASE_KEY, QUERY_ADDRESS
+    </sql>
+
+
+    <!-- 获取最新的一条区块信息的地址 -->
+    <select id="getLastBsnChainInfo" resultMap="BaseResultMap">
+        select
+        *
+        from
+        bsn_chain_info a
+        <where>
+            a.BIDDER_ID = #{bidderId}
+            AND a.TYPE = #{type}
+        </where>
+        order by id DESC
+        limit 1
+    </select>
+
+</mapper>

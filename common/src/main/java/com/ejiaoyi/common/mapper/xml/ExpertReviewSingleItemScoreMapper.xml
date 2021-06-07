@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.ExpertReviewSingleItemScoreMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.ExpertReviewSingleItemScore">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="EXPERT_ID" property="expertId" />
+        <result column="EXPERT_REVIEW_ID" property="expertReviewId" />
+        <result column="BIDDER_ID" property="bidderId" />
+        <result column="GRADE_ID" property="gradeId" />
+        <result column="GRADE_ITEM_ID" property="gradeItemId" />
+        <result column="GRADE_TYPE" property="gradeType" />
+        <result column="EVAL_SCORE" property="evalScore" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, EXPERT_ID, EXPERT_REVIEW_ID, BIDDER_ID, GRADE_ID, GRADE_ITEM_ID, GRADE_TYPE, EVAL_SCORE
+    </sql>
+    <select id="listHasScore" resultType="com.ejiaoyi.common.entity.ExpertReviewSingleItemScore">
+        SELECT * FROM expert_review_single_item_score
+        <where>
+            1=1
+            <if test="expertId != '' and expertId != null">
+                AND EXPERT_ID = #{expertId}
+            </if>
+            <if test="gradeId != '' and gradeId != null">
+                AND GRADE_ID = #{gradeId}
+            </if>
+            <if test="bidderId != '' and bidderId != null">
+                AND BIDDER_ID = #{bidderId}
+            </if>
+            AND  EVAL_SCORE != ""
+        </where>
+    </select>
+    <select id="listScoreResult" resultMap="BaseResultMap">
+        SELECT * FROM expert_review_single_item_score
+        <where>
+            1 = 1
+            <if test="item.expertReviewId !='' and item.expertReviewId !=null ">
+                <bind name="expertReviewId" value="item.expertReviewId"/>
+                AND EXPERT_REVIEW_ID = #{expertReviewId}
+            </if>
+            <if test="item.gradeId !='' and item.gradeId !=null ">
+                <bind name="gradeId" value="item.gradeId"/>
+                AND GRADE_ID = #{gradeId}
+            </if>
+            <if test="item.expertId !='' and item.expertId !=null ">
+                <bind name="expertId" value="item.expertId"/>
+                AND EXPERT_ID = #{expertId}
+            </if>
+            <if test="item.bidderId !='' and item.bidderId !=null ">
+                <bind name="bidderId" value="item.bidderId"/>
+                AND BIDDER_ID = #{bidderId}
+            </if>
+        </where>
+        ORDER BY GRADE_ITEM_ID, EXPERT_ID
+    </select>
+    <select id="listScoreBySth" resultMap="BaseResultMap">
+        SELECT s.* FROM expert_review_single_item_score s
+        LEFT JOIN grade g ON g.ID = s.GRADE_ID
+        WHERE
+        g.ID IN
+        <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+            #{gradeId}
+        </foreach>
+        <if test="evalProcess != '' and evalProcess != null">
+            AND g.REVIEW_PROCESS = #{evalProcess}
+        </if>
+        <if test="reviewType != '' and reviewType != null">
+            AND g.REVIEW_TYPE = #{reviewType}
+        </if>
+        <if test="bidderId != '' and bidderId != null">
+            AND s.BIDDER_ID = #{bidderId}
+        </if>
+        <if test="expertId != '' and expertId != null">
+            AND s.EXPERT_ID = #{expertId}
+        </if>
+        <if test="gradeItemId != '' and gradeItemId != null">
+            AND s.GRADE_ITEM_ID = #{gradeItemId}
+        </if>
+        <if test="isScore">
+            AND s.EVAL_SCORE != ''
+        </if>
+    </select>
+    <select id="listScoreConsistent" resultType="java.lang.Integer">
+        SELECT COUNT(temp.GRADE_ITEM_ID) FROM (
+            SELECT a.GRADE_ITEM_ID, COUNT(a.EVAL_SCORE)
+            FROM expert_review_single_item_score a
+            LEFT JOIN grade g ON g.ID = a.GRADE_ID
+            where g.ID IN
+            <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+                #{gradeId}
+            </foreach>
+            AND g.REVIEW_TYPE = #{reviewType}
+            GROUP BY a.GRADE_ITEM_ID, a.EVAL_SCORE, a.BIDDER_ID
+        ) temp
+        GROUP BY temp.GRADE_ITEM_ID
+    </select>
+    <select id="getAvgScore" resultType="java.lang.String">
+        SELECT SUM(a.EVAL_SCORE)/#{size} AS score
+        FROM expert_review_single_item_score a
+		WHERE a.BIDDER_ID =#{bidderId}
+		AND a.GRADE_ID = #{gradeId}
+    </select>
+    <select id="countScoreResult" resultType="java.lang.Integer">
+        SELECT COUNT(temp.GRADE_ITEM_ID) FROM (
+        SELECT a.GRADE_ITEM_ID
+        FROM expert_review_single_item_score a
+        LEFT JOIN grade g ON g.ID = a.GRADE_ID
+        WHERE g.ID IN
+        <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+            #{gradeId}
+        </foreach>
+        AND g.REVIEW_TYPE = #{reviewType}
+        AND a.BIDDER_ID = #{bidderId}
+        GROUP BY a.grade_item_id, a.EVAL_SCORE
+        ) temp
+    </select>
+    <select id="getAvgScoreForReview" resultType="java.lang.String">
+        SELECT SUM(CAST(a.EVAL_SCORE AS DECIMAL(18,6)))/#{expertNum}
+        FROM expert_review_single_item_score a
+        LEFT JOIN grade g ON g.ID = a.GRADE_ID
+        WHERE g.ID IN
+        <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+            #{gradeId}
+        </foreach>
+        <if test="evalProcess != '' and evalProcess != null">
+            AND g.REVIEW_PROCESS = #{evalProcess}
+        </if>
+        <if test="reviewType != '' and reviewType != null">
+            AND g.REVIEW_TYPE = #{reviewType}
+        </if>
+        AND a.BIDDER_ID = #{bidderId}
+    </select>
+    <select id="getAvgScoreBySth" resultType="com.ejiaoyi.common.dto.BidderResultDTO">
+        SELECT BIDDER_ID,
+	        CASE WHEN expertCount > 4
+	        THEN (sumScore-minScore-maxScore)/(expertCount-2)
+	        ELSE (sumScore/expertCount) END AS arithmeticScore
+        FROM (
+	        SELECT BIDDER_ID ,
+	            SUM(temp.score) AS sumScore ,
+	            COUNT(temp.score)AS expertCount,
+	            MIN(temp.score)AS minScore,
+	            MAX(temp.score) AS maxScore
+            FROM  (
+                SELECT a.BIDDER_ID,a.EXPERT_ID,
+                    SUM(a.EVAL_SCORE) AS score
+                FROM expert_review_single_item_score a
+                LEFT JOIN expert_user b ON a.EXPERT_ID = b.ID
+                WHERE
+                1=1
+                <if test="bidSectionId != '' and bidSectionId != null">
+                    AND b.BID_SECTION_ID =#{bidSectionId}
+                </if>
+                <if test="gradeIds != '' and gradeIds != null">
+                    AND a.GRADE_ID in
+                    <foreach collection="gradeIds" index="index" item="gId" open="(" separator="," close=")">
+                        #{gId}
+                    </foreach>
+                </if>
+                <if test="gradeId != '' and gradeId != null">
+                    AND a.GRADE_ID =#{gradeId}
+                </if>
+                <if test="bidderId != '' and bidderId != null">
+                    AND a.BIDDER_ID =#{bidderId}
+                </if>
+                <if test="bidderId != '' and bidderId != null">
+                    AND a.BIDDER_ID =#{bidderId}
+                </if>
+                <if test="gradeItemId != '' and gradeItemId != null">
+                    AND a.GRADE_ITEM_ID =#{gradeItemId}
+                </if>
+                GROUP BY a.BIDDER_ID, a.EXPERT_ID
+                ORDER BY a.BIDDER_ID, score
+            ) AS temp
+            GROUP BY BIDDER_ID
+        ) AS temp2
+    </select>
+
+</mapper>

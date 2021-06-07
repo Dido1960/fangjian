@@ -1,0 +1,41 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+!/invoice/
+/invoice/
+!/invoice/
+admin/src/main/java/com/ejiaoyi/admin/thread/
+admin/src/main/resources/static/js/
+/web/src/test/
+!/invoice/
+invoice/
+/custom-file/
+/agency/src/main/resources/META-INF/

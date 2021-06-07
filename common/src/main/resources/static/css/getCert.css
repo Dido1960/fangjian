@@ -1,0 +1,190 @@
+.ele {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+.ele .weizi {
+  width: 1200px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.ele .weizi p {
+  width: 550px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  line-height: 80px;
+  color: rgba(17, 22, 30, 1);
+}
+.ele .weizi p span {
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  color: rgba(0, 98, 235, 1);
+  margin-right: 10px;
+  cursor: pointer;
+}
+.ele .weizi p .iconfont {
+  width: 18px;
+  height: 18px;
+  color: #0062eb;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.ele .weizi div {
+  width: 200px;
+  height: 36px;
+  background: url(../img/bottom_gary.png) no-repeat center right #fbfbfb;
+  opacity: 1;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  line-height: 36px;
+  color: rgba(180, 180, 180, 1);
+  padding: 0 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.ban {
+  width: 100%;
+  height: 800px;
+  background-color: #fff;
+}
+.ban .map {
+  width: 1200px;
+  height: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ban .mao .zuo {
+  width: 114px;
+  height: 100%;
+  cursor: pointer;
+}
+.ban .map .you {
+  width: 763px;
+  height: 544px;
+  /*background: url(../img/big_map.png) no-repeat;*/
+  position: relative;
+}
+.ban .map .zuo h3 {
+  width: 100%;
+  height: 27px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  line-height: 27px;
+  color: rgba(17, 22, 30, 1);
+  margin: 20px 0;
+}
+.ban .map .zuo div {
+  width: 390px;
+  height: 114px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(199, 199, 199, 1);
+  opacity: 1;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.ban .map .zuo div p {
+  width: 100%;
+  height: 24px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  line-height: 24px;
+  color: rgba(17, 22, 30, 1);
+  margin-top: 10px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+.ban .map .zuo div p span {
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  color: rgba(0, 98, 235, 1);
+}
+.ban .map .you .fu {
+  width: 300px;
+  height: 182px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.06);
+  opacity: 1;
+  border-radius: 8px;
+  position: absolute;
+  left: 380px;
+  top: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+.ban .map .you .fu h4 {
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  color: rgba(17, 22, 30, 1);
+}
+.ban .map .you .fu p {
+  font-size: 12px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  color: rgba(17, 22, 30, 1);
+  opacity: 1;
+}
+.ban .map .you .fu i {
+  display: block;
+  width: 300px;
+  height: 0px;
+  border: 1px solid rgba(199, 199, 199, 1);
+  opacity: 1;
+  position: absolute;
+  left: 0;
+  top: 100px;
+}
+.ban .map .you .fu p span {
+  color: rgba(0, 98, 235, 1);
+}
+.big {
+  width: 1200px;
+  height: 623px;
+  margin: 0 auto;
+}
+.big h3 {
+  width: 100%;
+  height: 150px;
+  font-size: 50px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 150px;
+  color: rgba(17, 22, 30, 1);
+  opacity: 1;
+}
+.big ul {
+  width: 100%;
+  height: 380px;
+  display: flex;
+  justify-content: space-between;
+}
+.big ul li {
+  width: 386px;
+  height: 380px;
+}
+.big ul li:nth-child(1) {
+  background: url(../img/big_01.png) no-repeat center center;
+}
+.big ul li:nth-child(2) {
+  background: url(../img/big_02.png) no-repeat center center;
+}
+.big ul li:nth-child(3) {
+  background: url(../img/big_03.png) no-repeat center center;
+}

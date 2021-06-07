@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.BidSectionRelateMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.BidSectionRelate">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="REG_ID" property="regId" />
+        <result column="AWAY_REG_ID" property="awayRegId" />
+        <result column="HOME_OPEN_SITE" property="homeOpenSite" />
+        <result column="HOME_EVAL_SITE" property="homeEvalSite" />
+        <result column="AWAY_EVAL_SITE" property="awayEvalSite" />
+        <result column="EVALUATION_REPORT_ID" property="evaluationReportId" />
+        <result column="START_CLEAR_TIME" property="startClearTime" />
+        <result column="CLEAR_TOTAL_TIME" property="clearTotalTime" />
+        <result column="CLEAR_ANALYSIS_UID" property="clearAnalysisUid" />
+        <result column="CALC_PRICE_UID" property="calcPriceUid" />
+        <result column="PRICE_SCORE_UID" property="priceScoreUid" />
+        <result column="RESUMPTION_REPORT_ID" property="resumptionReportId" />
+        <result column="PRE_RELATED_ID" property="preRelatedId" />
+        <result column="IS_OLD_PROJECT" property="isOldProject" />
+        <result column="DELETE_FLAG" property="deleteFlag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, REG_ID, AWAY_REG_ID, HOME_OPEN_SITE, HOME_EVAL_SITE, AWAY_EVAL_SITE, EVALUATION_REPORT_ID,
+         START_CLEAR_TIME, CLEAR_TOTAL_TIME, CLEAR_ANALYSIS_UID, CALC_PRICE_UID, PRICE_SCORE_UID, PRE_RELATED_ID, IS_OLD_PROJECT, DELETE_FLAG
+    </sql>
+
+    <update id="updateClearReportId">
+        UPDATE bid_section_relate
+        SET EVALUATION_REPORT_ID = null,
+        RESUMPTION_REPORT_ID = null
+        <where>
+            ID = #{id}
+        </where>
+    </update>
+</mapper>

@@ -1,0 +1,115 @@
+.layui-table {
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+}
+.layui-table thead tr {
+  width: 100%;
+  height: 56px;
+  background: #cfdae5;
+}
+.layui-table thead tr th {
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  text-align: center;
+}
+.layui-table tbody tr {
+  width: 100%;
+  height: 71px;
+}
+.layui-table .roll {
+  height: 360px;
+  overflow: auto;
+  max-height: 360px;
+}
+.layui-table tbody tr td {
+  text-align: center;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #343434;
+}
+.layui-table tbody .green td {
+  color: #02b078;
+}
+.layui-table tbody tr td span {
+  display: inline-table;
+  width: 85px;
+  height: 40px;
+  border: 1px solid #0066cc;
+  box-sizing: border-box;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #0066cc;
+  line-height: 40px;
+  text-align: center;
+  overflow: auto;
+}
+.choice {
+  width: 100%;
+  height: 56px;
+  margin-top: 20px;
+}
+.choice span {
+  display: block;
+  width: 142px;
+  height: 56px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #9c9c9c;
+  line-height: 56px;
+  float: left;
+  background-color: #fff;
+  cursor: pointer;
+}
+.choice .check {
+  background-color: #0066cc;
+  color: #fff;
+}
+.content {
+  width: 100%;
+  min-height: calc(100% - 230px);
+}
+.content .side {
+  width: 21%;
+  min-height: 880px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  background-color: #fff;
+  float: left;
+  margin-top: 20px;
+}
+.side .layui-tree-main {
+  display: inline-block;
+  width: 100%;
+}
+.side .layui-tree-txt {
+  font-size: 14px;
+  display: inline-block;
+  width: 85%;
+  padding-left: 22px;
+  box-sizing: border-box;
+  background: url(../img/file.png) no-repeat left center;
+  user-select: none;
+}
+.side .layui-tree-pack .layui-tree-txt {
+  font-size: 14px;
+  display: inline-block;
+  width: 90%;
+  padding-left: 22px;
+  box-sizing: border-box;
+  background: url(../img/money.png) no-repeat left center;
+  user-select: none;
+}
+.side .layui-tree-pack .layui-icon-file {
+  display: none;
+}
+.content .cont-right {
+  width: 78%;
+  float: right;
+}

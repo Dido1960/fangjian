@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.OnlineInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.OnlineInfo">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="SESSION_ID" property="sessionId"/>
+        <result column="NAME" property="name"/>
+        <result column="MODULE" property="module"/>
+        <result column="USER_ID" property="userId"/>
+        <result column="IP_INFO" property="ipInfo"/>
+        <result column="ADDRESS_INFO" property="addressInfo"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, SESSION_ID, NAME,MODULE,ADDRESS_INFO, USER_ID, IP_INFO
+    </sql>
+    <delete id="removeBySessionId">
+        delete  from online_info where  SESSION_ID=#{sessionId};
+    </delete>
+    <select id="selectOnlineBySessionId" resultType="java.lang.Integer">
+        select id from   online_info where SESSION_ID=#{sessionId} limit 1;
+
+    </select>
+
+</mapper>

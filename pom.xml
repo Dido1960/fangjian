@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ejiaoyi.framework</groupId>
+    <artifactId>fangjian</artifactId>
+    <version>1.0.0</version>
+    <name>${project.artifactId}</name>
+    <packaging>pom</packaging>
+
+    <!-- 子工程 -->
+    <modules>
+        <module>common</module>
+        <module>admin</module>
+        <module>api</module>
+        <module>agency</module>
+        <module>bidder</module>
+        <module>expert</module>
+        <module>supervise</module>
+        <module>worker</module>
+    </modules>
+
+    <!-- 全局属性 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+        <mybatis-plus.version>3.3.1</mybatis-plus.version>
+    </properties>
+
+    <dependencies>
+        <!-- apache 通用工具 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+
+        <!-- apache 编码解码工具 -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.13</version>
+        </dependency>
+
+        <!-- apache java bean 操作工具 -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+
+        <!-- apache IO 操作工具 -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <!-- apache 科学计算类库 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+
+        <!-- hutool 全模块工具 -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.2.3</version>
+        </dependency>
+
+        <!-- 汉字转拼音工具 -->
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+
+        <!-- xml文件读写工具 -->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <!-- xpath 类库 -->
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+
+        <!-- lombok 注解 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- 数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.21</version>
+        </dependency>
+
+        <!-- fastJson JSON工具 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.69</version>
+        </dependency>
+
+        <!--freemarker-template相关的jar-->
+        <dependency>
+            <groupId>kr.pe.kwonnam.freemarker</groupId>
+            <artifactId>freemarker-template-inheritance</artifactId>
+            <version>0.4.RELEASE</version>
+        </dependency>
+
+        <!-- websocket-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-websocket -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+            <version>${spring-boot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--二维码生成-->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+</project>

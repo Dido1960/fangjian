@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.BidderQuantityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.BidderQuantity">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="TENDER_XML_UID" property="tenderXmlUid" />
+        <result column="BID_XML_UID" property="bidXmlUid" />
+        <result column="STRUCTURE_ANALYSIS_FLAG" property="structureAnalysisFlag" />
+        <result column="STRUCTURE_ANALYSIS_SERIAL_NUMBER" property="structureAnalysisSerialNumber" />
+        <result column="STRUCTURE_ANALYSIS_STATE" property="structureAnalysisState" />
+        <result column="STRUCTURE_ANALYSIS_PROCESS" property="structureAnalysisProcess" />
+        <result column="PRICE_ANALYSIS_FLAG" property="priceAnalysisFlag" />
+        <result column="PRICE_ANALYSIS_SERIAL_NUMBER" property="priceAnalysisSerialNumber" />
+        <result column="PRICE_ANALYSIS_STATE" property="priceAnalysisState" />
+        <result column="PRICE_ANALYSIS_PROCESS" property="priceAnalysisProcess" />
+        <result column="ARITHMETIC_ANALYSIS_FLAG" property="arithmeticAnalysisFlag" />
+        <result column="ARITHMETIC_ANALYSIS_SERIAL_NUMBER" property="arithmeticAnalysisSerialNumber" />
+        <result column="ARITHMETIC_ANALYSIS_STATE" property="arithmeticAnalysisState" />
+        <result column="ARITHMETIC_ANALYSIS_PROCESS" property="arithmeticAnalysisProcess" />
+        <result column="RULE_ANALYSIS_FLAG" property="ruleAnalysisFlag" />
+        <result column="RULE_ANALYSIS_SERIAL_NUMBER" property="ruleAnalysisSerialNumber" />
+        <result column="RULE_ANALYSIS_STATE" property="ruleAnalysisState" />
+        <result column="RULE_ANALYSIS_PROCESS" property="ruleAnalysisProcess" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, TENDER_XML_UID, BID_XML_UID,
+         STRUCTURE_ANALYSIS_FLAG, STRUCTURE_ANALYSIS_SERIAL_NUMBER, STRUCTURE_ANALYSIS_STATE, STRUCTURE_ANALYSIS_PROCESS,
+         PRICE_ANALYSIS_FLAG, PRICE_ANALYSIS_SERIAL_NUMBER, PRICE_ANALYSIS_STATE, PRICE_ANALYSIS_PROCESS,
+         ARITHMETIC_ANALYSIS_FLAG, ARITHMETIC_ANALYSIS_SERIAL_NUMBER, ARITHMETIC_ANALYSIS_STATE, ARITHMETIC_ANALYSIS_PROCESS,
+         RULE_ANALYSIS_FLAG, RULE_ANALYSIS_SERIAL_NUMBER, RULE_ANALYSIS_STATE,RULE_ANALYSIS_PROCESS
+    </sql>
+
+    <select id="listNotCompleteBidderQuantity" resultMap="BaseResultMap">
+        SELECT ID, ARITHMETIC_ANALYSIS_SERIAL_NUMBER, ARITHMETIC_ANALYSIS_STATE,
+            STRUCTURE_ANALYSIS_SERIAL_NUMBER, STRUCTURE_ANALYSIS_STATE,
+            PRICE_ANALYSIS_SERIAL_NUMBER, PRICE_ANALYSIS_STATE,
+            RULE_ANALYSIS_SERIAL_NUMBER, RULE_ANALYSIS_STATE
+        FROM bidder_quantity
+        <where>
+            STRUCTURE_ANALYSIS_STATE IS NULL
+            OR STRUCTURE_ANALYSIS_STATE = 'WAIT'
+            OR STRUCTURE_ANALYSIS_STATE = 'ACTIVE'
+            OR PRICE_ANALYSIS_STATE IS NULL
+            OR PRICE_ANALYSIS_STATE = 'WAIT'
+            OR PRICE_ANALYSIS_STATE = 'ACTIVE'
+            OR ARITHMETIC_ANALYSIS_STATE IS NULL
+            OR ARITHMETIC_ANALYSIS_STATE = 'WAIT'
+            OR ARITHMETIC_ANALYSIS_STATE = 'ACTIVE'
+            OR RULE_ANALYSIS_STATE IS NULL
+            OR RULE_ANALYSIS_STATE = 'WAIT'
+            OR RULE_ANALYSIS_STATE = 'ACTIVE'
+        </where>
+    </select>
+
+    <select id="listBidderQuantityNeedDoArithmeticAnalysis" resultMap="BaseResultMap">
+        SELECT ID, TENDER_XML_UID, BID_XML_UID, ARITHMETIC_ANALYSIS_FLAG, ARITHMETIC_ANALYSIS_SERIAL_NUMBER
+        FROM bidder_quantity
+        <where>
+            ARITHMETIC_ANALYSIS_SERIAL_NUMBER IS NULL OR ARITHMETIC_ANALYSIS_SERIAL_NUMBER = ''
+        </where>
+    </select>
+
+    <select id="listBidderQuantityNeedDoPriceAnalysis" resultMap="BaseResultMap">
+        SELECT ID, TENDER_XML_UID, BID_XML_UID, PRICE_ANALYSIS_FLAG, PRICE_ANALYSIS_SERIAL_NUMBER
+        FROM bidder_quantity
+        <where>
+            PRICE_ANALYSIS_SERIAL_NUMBER IS NULL OR PRICE_ANALYSIS_SERIAL_NUMBER = ''
+        </where>
+    </select>
+
+    <select id="listBidderQuantityNeedDoRuleAnalysis" resultMap="BaseResultMap">
+        SELECT ID, TENDER_XML_UID, BID_XML_UID, RULE_ANALYSIS_FLAG, RULE_ANALYSIS_SERIAL_NUMBER
+        FROM bidder_quantity
+        <where>
+            RULE_ANALYSIS_SERIAL_NUMBER IS NULL OR RULE_ANALYSIS_SERIAL_NUMBER = ''
+        </where>
+    </select>
+
+    <select id="listBidderQuantityNeedDoStructureAnalysis" resultMap="BaseResultMap">
+        SELECT ID, TENDER_XML_UID, BID_XML_UID, STRUCTURE_ANALYSIS_FLAG, STRUCTURE_ANALYSIS_SERIAL_NUMBER
+        FROM bidder_quantity
+        <where>
+            STRUCTURE_ANALYSIS_SERIAL_NUMBER IS NULL OR STRUCTURE_ANALYSIS_SERIAL_NUMBER = ''
+        </where>
+    </select>
+
+    <select id="listNotDoServiceBidderQuantity" resultMap="BaseResultMap">
+        SELECT ID,STRUCTURE_ANALYSIS_SERIAL_NUMBER,STRUCTURE_ANALYSIS_FLAG,
+            PRICE_ANALYSIS_SERIAL_NUMBER, PRICE_ANALYSIS_FLAG,
+            ARITHMETIC_ANALYSIS_SERIAL_NUMBER, ARITHMETIC_ANALYSIS_FLAG,
+            RULE_ANALYSIS_SERIAL_NUMBER, RULE_ANALYSIS_FLAG
+        FROM bidder_quantity
+        <where>
+            STRUCTURE_ANALYSIS_FLAG = 0 OR PRICE_ANALYSIS_FLAG = 0 OR
+             ARITHMETIC_ANALYSIS_FLAG = 0 OR RULE_ANALYSIS_FLAG = 0
+        </where>
+    </select>
+
+    <select id="listNeedRegisterAnalysisService" resultMap="BaseResultMap">
+        SELECT ID, TENDER_XML_UID, BID_XML_UID,
+            ARITHMETIC_ANALYSIS_SERIAL_NUMBER, ARITHMETIC_ANALYSIS_FLAG,
+            STRUCTURE_ANALYSIS_SERIAL_NUMBER, STRUCTURE_ANALYSIS_FLAG,
+            PRICE_ANALYSIS_SERIAL_NUMBER, PRICE_ANALYSIS_FLAG,
+            RULE_ANALYSIS_SERIAL_NUMBER, RULE_ANALYSIS_FLAG
+        FROM bidder_quantity
+        <where>
+            STRUCTURE_ANALYSIS_SERIAL_NUMBER IS NULL
+            OR STRUCTURE_ANALYSIS_SERIAL_NUMBER = ''
+            OR PRICE_ANALYSIS_SERIAL_NUMBER IS NULL
+            OR PRICE_ANALYSIS_SERIAL_NUMBER = ''
+            OR ARITHMETIC_ANALYSIS_SERIAL_NUMBER IS NULL
+            OR ARITHMETIC_ANALYSIS_SERIAL_NUMBER = ''
+            OR RULE_ANALYSIS_SERIAL_NUMBER IS NULL
+            OR RULE_ANALYSIS_SERIAL_NUMBER = ''
+        </where>
+    </select>
+</mapper>

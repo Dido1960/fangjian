@@ -1,0 +1,20 @@
+.qualifications_img {
+    background: url("/img/qualifications.png") no-repeat;
+    content: url("/img/qualifications.png");
+    position: absolute;
+    right: 0px;
+}
+
+.business_img {
+    background: url("/img/business.png") no-repeat;
+    content: url("/img/business.png");
+    position: absolute;
+    right: 0px;
+}
+
+.technology_img {
+    background: url("/img/technology.png") no-repeat;
+    content: url("/img/technology.png");
+    position: absolute;
+    right: 0px;
+}

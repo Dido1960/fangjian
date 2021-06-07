@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.layui-form {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 40px;
+  box-sizing: border-box;
+  min-width: 580px;
+}
+
+.layui-form label {
+  display: inline-block;
+  width: 20%;
+  height: 40px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 40px;
+  color: #1A2539;
+  text-align: right;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.layui-form label span {
+  color: #E14B4B;
+}
+
+.layui-form input {
+  width: 70%;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  opacity: 1;
+  border-radius: 4px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.layui-form .layui-form-item {
+  position: relative;
+}
+
+.layui-unselect,
+.layui-form-select,
+.layui-select-title {
+  height: 40px;
+}
+
+.layui-form-select dl dd.layui-this {
+  background-color: #0066cc;
+}
+
+.foot {
+  width: 100%;
+  height: 76px;
+  background: #E8EBF1;
+  opacity: 1;
+  position: fixed;
+  bottom: 0;
+}
+
+.foot .btns {
+  width: 35%;
+  height: 40px;
+  margin: 20px auto 0;
+}
+
+.btns span {
+  display: inline-block;
+  width: 45%;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btns span:hover {
+  opacity: 0.7;
+}
+
+.btns span:nth-child(1) {
+  color: #FFFFFF;
+  background: #0066cc;
+  float: left;
+}
+
+.btns span:nth-child(2) {
+  color: #0066cc;
+  border: 1px solid #0066cc;
+  float: right;
+  box-sizing: border-box;
+}
+
+.layui-form-item ul {
+  width: 70%;
+  height: 165px;
+  max-height: 165px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  overflow: auto;
+  position: absolute;
+  background-color: #fff;
+  z-index: 99999;
+  right: 7%;
+  box-shadow: 0px 10px 40px rgba(60, 86, 183, 0.15);
+}
+
+.layui-form-item ul::-webkit-scrollbar {
+  display: none;
+}
+
+.layui-form-item ul li {
+  width: 100%;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  color: #1A2539;
+  padding: 0 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.layui-form-item ul li:hover {
+  background-color: #0066cc;
+  color: #fff;
+}
+
+.layui-form-item ul li span {
+  float: right;
+}
+
+.layui-form .layui-form-radio>i:hover,
+.layui-form .layui-form-radioed>i {
+  color: #0066cc;
+}

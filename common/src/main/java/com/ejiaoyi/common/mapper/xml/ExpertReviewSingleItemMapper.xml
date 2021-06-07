@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.ExpertReviewSingleItemMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.ExpertReviewSingleItem">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="EXPERT_ID" property="expertId" />
+        <result column="EXPERT_REVIEW_ID" property="expertReviewId" />
+        <result column="BIDDER_ID" property="bidderId" />
+        <result column="GRADE_ID" property="gradeId" />
+        <result column="GRADE_ITEM_ID" property="gradeItemId" />
+        <result column="GRADE_TYPE" property="gradeType" />
+        <result column="EVAL_RESULT" property="evalResult" />
+        <result column="EVAL_COMMENTS" property="evalComments" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, EXPERT_ID, EXPERT_REVIEW_ID, BIDDER_ID, GRADE_ID, GRADE_ITEM_ID, GRADE_TYPE, EVAL_RESULT, EVAL_COMMENTS
+    </sql>
+    <!-- 扩展查询映射结果 -->
+    <resultMap id="BaseResultMapExtend" type="com.ejiaoyi.common.entity.ExpertReviewSingleItem" extends="BaseResultMap">
+        <result column="GRADE_ITEM_CONTENT" property="gradeItemContent"/>
+    </resultMap>
+
+    <!-- 条件获取专家对企业评审单项评审结果集合 -->
+    <select id="listExpertReviewSingleItem" resultMap="BaseResultMapExtend">
+        SELECT a.ID,
+        a.INSERT_TIME,
+        a.EXPERT_ID,
+        a.EXPERT_REVIEW_ID,
+        a.BIDDER_ID,
+        a.GRADE_ID,
+        a.GRADE_ITEM_ID,
+        a.GRADE_TYPE,
+        a.EVAL_RESULT,
+        a.EVAL_COMMENTS,
+        b.ITEM_CONTENT as GRADE_ITEM_CONTENT
+        FROM EXPERT_REVIEW_SINGLE_ITEM a
+        LEFT JOIN GRADE_ITEM b
+        ON a.GRADE_ITEM_ID = b.ID
+        <where>
+            1 = 1
+            <if test="item.expertReviewId !='' and item.expertReviewId !=null ">
+                <bind name="expertReviewId" value="item.expertReviewId"/>
+                AND a.EXPERT_REVIEW_ID = #{expertReviewId}
+            </if>
+            <if test="item.gradeId !='' and item.gradeId !=null ">
+                <bind name="gradeId" value="item.gradeId"/>
+                AND a.GRADE_ID = #{gradeId}
+            </if>
+            <if test="item.gradeType !='' and item.gradeType !=null ">
+                <bind name="gradeType" value="item.gradeType"/>
+                AND a.GRADE_TYPE = #{gradeType}
+            </if>
+            <if test="item.expertId !='' and item.expertId !=null ">
+                <bind name="expertId" value="item.expertId"/>
+                AND a.EXPERT_ID = #{expertId}
+            </if>
+            <if test="item.bidderId !='' and item.bidderId !=null ">
+                <bind name="bidderId" value="item.bidderId"/>
+                AND a.BIDDER_ID = #{bidderId}
+            </if>
+            <if test="item.evalResult !='' and item.evalResult !=null ">
+                <bind name="evalResult" value="item.evalResult"/>
+                AND a.EVAL_RESULT = #{evalResult}
+            </if>
+        </where>
+        ORDER BY a.GRADE_ITEM_ID, a.EXPERT_ID
+    </select>
+
+    <select id="listHasScore" resultType="com.ejiaoyi.common.entity.ExpertReviewSingleItem">
+        SELECT * FROM expert_review_single_item
+        <where>
+            1=1
+            <if test="expertId != '' and expertId != null">
+                AND EXPERT_ID = #{expertId}
+            </if>
+            <if test="gradeId != '' and gradeId != null">
+                AND GRADE_ID = #{gradeId}
+            </if>
+            <if test="bidderId != '' and bidderId != null">
+                AND BIDDER_ID = #{bidderId}
+            </if>
+            AND  EVAL_RESULT != ""
+        </where>
+    </select>
+
+    <select id="listGradeConsistent" resultType="com.ejiaoyi.common.dto.BidderResultDTO">
+        SELECT BIDDER_ID as bidderId,
+            GRADE_ITEM_ID as gradeItemId,
+            sum(case when EVAL_RESULT ='1'then 1 ELSE 0 END) as passSum ,
+            sum(case when EVAL_RESULT ='0'then 1 ELSE 0 END) as noPassSum
+        from expert_review_single_item
+        where GRADE_ID = #{gradeId}
+        GROUP BY  BIDDER_ID, GRADE_ITEM_ID
+    </select>
+
+    <select id="listCountByEvalResult"  resultType="int">
+        select count(distinct a.EVAL_RESULT) from expert_review_single_item a
+        <where>
+            1 = 1
+            <if test="gradeIds != null">
+                AND a.GRADE_ID in
+                <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+                    #{gradeId}
+                </foreach>
+            </if>
+        </where>
+        GROUP BY a.GRADE_ITEM_ID, a.BIDDER_ID
+    </select>
+
+    <!-- 统计投标人某评分标准合格与不合格项条数（合格制） -->
+    <select id="listQualifiedInfo"  resultType="com.ejiaoyi.common.dto.BidderResultDTO">
+        SELECT a.BIDDER_ID AS bidderId,
+        SUM(CASE WHEN a.EVAL_RESULT = 1 THEN 1 ELSE 0 END) AS passSum,
+        SUM(CASE WHEN a.EVAL_RESULT != 1 THEN 1 ELSE 0 END) AS noPassSum
+        FROM expert_review_single_item a LEFT JOIN expert_user b ON a.EXPERT_ID = b.id
+        <where>
+            1 = 1
+            <if test="gradeId != '' and gradeId != null">
+                AND a.GRADE_ID = #{gradeId}
+            </if>
+            <if test="bidSectionId != '' and bidSectionId != null">
+                AND b.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+        GROUP BY a.BIDDER_ID
+    </select>
+    <select id="listGradeResult" resultType="com.ejiaoyi.common.dto.BidderResultDTO">
+            SELECT BIDDER_ID as bidderId,
+            GRADE_ITEM_ID as gradeItemId,
+            EVAL_RESULT as passResult
+            FROM expert_review_single_item
+            WHERE GRADE_ID = #{gradeId}
+            AND BIDDER_ID = #{bidderId}
+            GROUP BY GRADE_ITEM_ID,EVAL_RESULT
+            ORDER BY GRADE_ITEM_ID
+    </select>
+
+    <!-- 条件获取专家对企业评审单项评审结果集合 -->
+    <select id="listExpertReviewSingleItemForComment" resultMap="BaseResultMapExtend">
+        SELECT a.*,b.EXPERT_NAME,c.ITEM_CONTENT,d.BIDDER_NAME
+        FROM EXPERT_REVIEW_SINGLE_ITEM a
+        LEFT JOIN expert_user b ON a.EXPERT_ID = b.ID
+        LEFT JOIN grade_item c ON a.GRADE_ITEM_ID = c.ID
+        LEFT JOIN bidder d ON a.BIDDER_ID = d.ID
+        <where>
+            EVAL_RESULT = 0
+            <if test="gradeIds !=''">
+                AND a.GRADE_ID IN
+                <foreach collection="gradeIds" item="gradeId" open="(" close=")" separator=",">
+                    #{gradeId}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+</mapper>

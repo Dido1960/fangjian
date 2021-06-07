@@ -1,0 +1,53 @@
+.cont-candidate {
+  width: 100%;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 8px;
+}
+.cont-candidate ol {
+  width: 100%;
+  height: 61px;
+  background: #cfdae5;
+  opacity: 1;
+  border-radius: 8px 8px 0px 0px;
+}
+.cont-candidate ol li {
+  width: 15%;
+  height: 61px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 61px;
+  color: #1a2539;
+  text-align: center;
+  float: left;
+}
+.cont-candidate ol .long {
+  width: 35%;
+}
+.cont-candidate table {
+  width: 100%;
+}
+.cont-candidate table tr {
+  width: 100%;
+  height: 98px;
+  min-height: 98px;
+}
+.cont-candidate table tr td {
+  width: 15%;
+  height: 98px;
+  min-height: 98px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #333333;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.cont-candidate table tr td + td {
+  border-left: 1px solid #ccc;
+}
+.cont-candidate table tr .long {
+  width: 35%;
+}

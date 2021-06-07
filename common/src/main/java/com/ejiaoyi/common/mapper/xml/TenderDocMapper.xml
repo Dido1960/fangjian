@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.TenderDocMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.TenderDoc">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="DOC_NO" property="docNo" />
+        <result column="BIDDER_QUALIFICATION" property="bidderQualification" />
+        <result column="VALID_PERIOD" property="validPeriod" />
+        <result column="BID_DOC_PEFER_TYPE" property="bidDocPeferType" />
+        <result column="TENDER_DOC_PRICE" property="tenderDocPrice" />
+        <result column="MARGIN_AMOUNT" property="marginAmount" />
+        <result column="CONTROL_PRICE" property="controlPrice" />
+        <result column="EVALUATION_METHOD" property="evaluationMethod" />
+        <result column="BID_DOC_REFER_END_TIME" property="bidDocReferEndTime" />
+        <result column="BID_OPEN_TIME" property="bidOpenTime" />
+        <result column="BID_OPEN_PLACE" property="bidOpenPlace" />
+        <result column="BID_OPEN_TYPE" property="bidOpenType" />
+        <result column="QUAL_TYPE" property="qualType" />
+        <result column="SUBMIT_TIME" property="submitTime" />
+        <result column="DOC_FILE_ID" property="docFileId" />
+        <result column="GRADE_ID" property="gradeId" />
+        <result column="OTHER_GRADE_ID" property="otherGradeId" />
+        <result column="FLOAT_POINT" property="floatPoint" />
+        <result column="XML_UID" property="xmlUid" />
+        <result column="TAXES_FACTOR" property="taxesFactor" />
+        <result column="STRUCTURE_STATUS" property="structureStatus" />
+        <result column="PRICE_STATUS" property="priceStatus" />
+        <result column="SIMILAR_ITEM_STATUS" property="similarItemStatus" />
+        <result column="FUND_BASIS_STATUS" property="fundBasisStatus" />
+        <result column="MUTUAL_SECURITY_STATUS" property="mutualSecurityStatus" />
+        <result column="CREDIT_STATUS" property="creditStatus" />
+        <result column="CERT_NUM" property="certNum" />
+        <result column="EXPERT_COUNT" property="expertCount" />
+        <result column="REPRESENTATIVE_COUNT" property="representativeCount" />
+        <result column="OPEN_BID_RECORD_DES" property="openBidRecordDes" />
+        <result column="VERSION" property="version" />
+        <result column="DELETE_FLAG" property="deleteFlag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, DOC_NO, BIDDER_QUALIFICATION, VALID_PERIOD, BID_DOC_PEFER_TYPE, TENDER_DOC_PRICE, MARGIN_AMOUNT, CONTROL_PRICE, EVALUATION_METHOD, BID_DOC_REFER_END_TIME, BID_OPEN_TIME, BID_OPEN_PLACE, BID_OPEN_TYPE, QUAL_TYPE, SUBMIT_TIME, DOC_FILE_ID, GRADE_ID, OTHER_GRADE_ID, FLOAT_POINT, XML_UID, TAXES_FACTOR, STRUCTURE_STATUS, PRICE_STATUS, SIMILAR_ITEM_STATUS, FUND_BASIS_STATUS, MUTUAL_SECURITY_STATUS, CREDIT_STATUS, CASN, EXPERT_COUNT, REPRESENTATIVE_COUNT, OPEN_BID_RECORD_DES, VERSION, DELETE_FLAG
+    </sql>
+</mapper>

@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+.box {
+  width: 100%;
+}
+
+.box table {
+  width: 90%;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+}
+
+.box table thead tr {
+  width: 100%;
+  height: 61px;
+  background: #CFDAE5;
+  opacity: 1;
+  border-radius: 7px 7px 0px 0px;
+}
+
+.box table thead tr th {
+  width: 25%;
+  height: 61px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 61px;
+  color: #333333;
+  text-align: center;
+}
+
+.box table thead tr .small {
+  width: 10%;
+}
+
+.box table tbody tr {
+  width: 100%;
+  height: 59px;
+  min-height: 59px;
+}
+
+.box table tbody tr td {
+  width: 25%;
+  height: 59px;
+  min-height: 59px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #333333;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.box table tbody tr .small {
+  width: 10%;
+}
+
+.box table tbody tr td + td {
+  border-left: 1px solid #ccc;
+}
+
+/*选项卡样式*/
+.choice {
+  width: 90%;
+  height: 80px;
+  padding: 20px 0px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.choice .select {
+  width: 422px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #bdcbd9;
+  opacity: 1;
+  border-radius: 4px;
+  float: left;
+  list-style: none
+}
+.choice .select li {
+  width: calc(100% / 3);
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 40px;
+  color: #9c9c9c;
+  float: left;
+  cursor: pointer;
+}
+.choice .select li + li{
+  border-left: 1px solid #bdcbd9;
+  box-sizing: border-box;
+}
+.choice .select .sele {
+  background-color: rgba(0, 102, 204, 1);
+  color: #ffffff;
+  font-weight: bold;
+}

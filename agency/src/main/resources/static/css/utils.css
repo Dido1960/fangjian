@@ -1,0 +1,186 @@
+.green-b {
+  background-color: #02c386;
+  color: #fff;
+}
+.oragen-b {
+  background-color: #ffb300;
+  color: #fff;
+}
+.red-b {
+  background-color: #ff482b;
+  color: #fff;
+}
+.blove-b {
+  background: rgba(24, 144, 255, 1);
+  color: #fff;
+}
+.blove-s {
+  border: 1px solid #2f75fe;
+  box-sizing: border-box;
+}
+.blove-f{
+  color: rgba(24, 144, 255, 1);
+}
+.green-f {
+  color: #02c386 !important;
+}
+.oragen-f {
+  color: #ffb300 !important;
+}
+.red-f {
+  color: #ff482b !important;
+}
+.green-s {
+  border: 1px solid #02c386;
+}
+.oragen-s {
+  border: 1px solid #ffb300;
+}
+.red-s {
+  border: 1px solid #ff482b;
+}
+.o-lev-c {
+  color: #242b29;
+}
+.s-lev-c {
+  color: #b9b9b9;
+}
+.t-lev-c {
+  color: #f1f4f3;
+}
+/* 字体大小 */
+.xl-lev {
+  font-size: 36px;
+}
+.l-lev {
+  font-size: 30px;
+}
+.m-lev {
+  font-size: 16px;
+}
+.s-lev {
+  font-size: 14px;
+}
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+  color: rgba(226, 226, 226, 1);
+}
+.gray-f {
+  color: rgba(226, 226, 226, 1) !important;
+}
+.gray-b {
+  background-color: rgba(226, 226, 226, 1);
+  color: #fff;
+}
+.gray-s {
+  border: 1px solid rgba(226, 226, 226, 1);
+}
+
+.layui-layer-btn .layui-layer-btn0 {
+  border-color: rgb(73, 134, 255) !important;
+  background-color:rgb(73, 134, 255) !important;;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  width: 80px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.layui-layer-btn .layui-layer-btn1 {
+  height: 40px;
+  line-height: 40px;
+  width: 80px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.layui-layer-dialog .layui-layer-content {
+  font-size: 16px !important;
+}
+
+.layui-layer-title {
+  font-size: 16px;
+  font-weight: 900 !important;
+}
+
+.layui-laydate .layui-this {
+  background-color: rgb(73, 134, 255) !important;
+  color: white !important;
+}
+
+.layui-this {
+  background-color: rgb(73, 134, 255) !important;
+  color: white !important;
+}
+.layui-laydate-footer{
+  border: 0px;
+}
+
+.layui-laydate-footer span[lay-type=date] {
+  color: #666666 !important;
+}
+
+body .custom-class .layui-layer-title {
+  background: #f2f2f2;
+  color: #fff;
+  border: none;
+}
+
+body .custom-class .layui-layer-btn {
+  border-top: 1px solid #E9E7E7
+}
+
+body .custom-class .layui-layer-btn a {
+  background: #333;
+}
+
+body .custom-class .layui-layer-btn .layui-layer-btn1 {
+  background: #999;
+}
+
+body .custom-class {
+  border: 1px gainsboro solid;
+  border-radius: 5px;
+}
+
+.layui-form-radio > i:hover, .layui-form-radioed > i {
+  color: rgb(73, 134, 255) !important;
+}
+
+.layui-form-radio > i:hover, .layui-form-radioed > i {
+  color: rgb(73, 134, 255) !important;;
+}
+
+.layui-textarea {
+  resize: none !important;
+}
+
+.layui-laydate .layui-this {
+  background-color: rgb(73, 134, 255) !important;
+  color: white !important;
+}
+
+.layui-laydate-footer span:hover {
+  color: rgb(73, 134, 255) !important;
+}
+
+.layui-layer, .layui-layer-shade {
+  position: absolute;
+}
+.layui-form-checked[lay-skin=primary] i {
+  border-color: rgb(73, 134, 255) !important;
+  background-color: rgb(73, 134, 255) !important;
+}
+.layui-laydate-list {
+  padding: 0px;
+}
+body{
+  margin: 0px;
+  background: #fff;
+}
+.layui-layer, .layui-layer-shade{
+  position: fixed !important;
+}

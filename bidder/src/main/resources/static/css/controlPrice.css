@@ -1,0 +1,29 @@
+.right-center {
+  width: 100%;
+  height: 272px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  margin-top: 20px;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+.right-center h3 {
+  width: 100%;
+  height: 46px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 46px;
+  text-align: center;
+  color: rgba(34, 49, 101, 1);
+}
+.right-center p {
+  width: 100%;
+  height: 66px;
+  font-size: 36px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 66px;
+  text-align: center;
+  color: rgba(20, 98, 254, 1);
+}

@@ -1,0 +1,87 @@
+section {
+  width: 90%;
+  min-height: calc(100% - 80px);
+  margin: 0 auto;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.flow {
+  width: 100%;
+  height: 137px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.flow li {
+  width: 33.3%;
+  height: 137px;
+  float: left;
+  position: relative;
+}
+.flow li div {
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 1;
+  position: relative;
+  margin: 0 auto;
+}
+.flow li div .iconfont {
+  display: block;
+  font-size: 36px;
+  color: #eceeed;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+}
+.flow li p {
+  width: 100%;
+  height: 36px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 36px;
+  color: #b5b5b5;
+  text-align: center;
+  cursor: pointer;
+}
+.flow .check div {
+  background: rgba(48, 60, 100, 1);
+}
+.flow .check div i {
+  color: #ffffff;
+}
+.flow .check p {
+  color: rgba(13, 65, 157, 1);
+}
+.flow li span {
+  display: block;
+  width: calc(50% - 30px);
+  height: 1px;
+  border-top: 1px dashed #ccc;
+  box-sizing: border-box;
+}
+.flow li .flow-left {
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
+.flow li .flow-right {
+  position: absolute;
+  right: 0px;
+  top: 30px;
+}
+/*当前环节样式*/
+.nowa {
+  display: block;
+  width: 54px;
+  height: 22px;
+  position: relative;
+  background: url(../img/nowaday.png) no-repeat;
+  right: -90%;
+  top: -107%;
+}

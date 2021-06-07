@@ -1,0 +1,30 @@
+.right .flow {
+    width: 100%;
+    height: 251px;
+    background: #ffffff;
+    opacity: 1;
+    border-radius: 8px;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+.right .flow h3 {
+    width: 100%;
+    height: 56px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 56px;
+    color: #1b2a3d;
+    text-align: center;
+}
+.right .flow p {
+    width: 100%;
+    height: 45px;
+    font-size: 34px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 45px;
+    color: #0066cc;
+    opacity: 1;
+    text-align: center;
+}

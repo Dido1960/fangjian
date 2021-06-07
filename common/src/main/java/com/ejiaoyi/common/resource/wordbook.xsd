@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- wordbook xml valid xsd -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root" type="root_type"/>
+    <xs:complexType name="root_type">
+        <xs:sequence>
+            <xs:element type="wordbook_type" name="wordbook" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="wordbook_type">
+        <xs:sequence>
+            <xs:element type="data_type" name="data" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="key" use="required"/>
+        <xs:attribute type="xs:string" name="des" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="data_type">
+        <xs:sequence>
+            <xs:element type="data_type" name="data" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="hash_key" use="required"/>
+        <xs:attribute type="xs:string" name="value" use="required"/>
+    </xs:complexType>
+</xs:schema>

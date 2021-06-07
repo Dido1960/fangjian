@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.ExpertReviewMutualMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.ExpertReviewMutual">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="EXPERT_ID" property="expertId" />
+        <result column="EXPERT_REVIEW_ID" property="expertReviewId" />
+        <result column="BIDDER_ID" property="bidderId" />
+        <result column="GRADE_ID" property="gradeId" />
+        <result column="MUTUAL_RESULT" property="mutualResult" />
+        <result column="EVAL_RESULT" property="evalResult" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, EXPERT_ID, EXPERT_REVIEW_ID, BIDDER_ID, GRADE_ID, MUTUAL_RESULT, EVAL_RESULT
+    </sql>
+
+    <select id="listExpertReviewMutual" resultMap="BaseResultMap">
+        SELECT e.* FROM expert_review_mutual e
+        <where>
+            1 = 1
+            <if test="expertReviewMutual.expertId !='' and expertReviewMutual.expertId !=null ">
+                <bind name="expertId" value="expertReviewMutual.expertId"/>
+                and e.EXPERT_ID = #{expertId}
+            </if>
+            <if test="expertReviewMutual.expertReviewId !='' and expertReviewMutual.expertReviewId !=null ">
+                <bind name="expertReviewId" value="expertReviewMutual.expertReviewId"/>
+                and e.EXPERT_REVIEW_ID = #{expertReviewId}
+            </if>
+            <if test="expertReviewMutual.bidderId !='' and expertReviewMutual.bidderId !=null ">
+                <bind name="bidderId" value="expertReviewMutual.bidderId"/>
+                and e.BIDDER_ID = #{bidderId}
+            </if>
+            <if test="expertReviewMutual.gradeId !='' and expertReviewMutual.gradeId !=null ">
+                <bind name="gradeId" value="expertReviewMutual.gradeId"/>
+                and e.GRADE_ID = #{gradeId}
+            </if>
+            <if test="expertReviewMutual.mutualResult !='' and expertReviewMutual.mutualResult !=null ">
+                <bind name="mutualResult" value="expertReviewMutual.mutualResult"/>
+                and e.MUTUAL_RESULT = #{mutualResult}
+            </if>
+            <if test="isHasResult">
+                and (e.MUTUAL_RESULT != null or e.MUTUAL_RESULT != "")
+            </if>
+        </where>
+    </select>
+
+    <select id="listMutualResultGroup" resultMap="BaseResultMap">
+        SELECT e.BIDDER_ID, e.MUTUAL_RESULT, e.EVAL_RESULT FROM expert_review_mutual e
+        <where>
+            e.GRADE_ID = #{gradeId}
+            <if test="bidderId !='' and bidderId !=null ">
+                and e.BIDDER_ID = #{bidderId}
+            </if>
+        </where>
+        GROUP BY e.BIDDER_ID, e.MUTUAL_RESULT, e.EVAL_RESULT
+    </select>
+
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.TenderProjectMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.TenderProject">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="PROJECT_ID" property="projectId" />
+        <result column="TENDER_PROJECT_CODE" property="tenderProjectCode" />
+        <result column="TENDER_PROJECT_NAME" property="tenderProjectName" />
+        <result column="TENDER_PROJECT_TYPE" property="tenderProjectType" />
+        <result column="REGION_CODE" property="regionCode" />
+        <result column="REG_ID" property="regId" />
+        <result column="TENDER_CONTENT" property="tenderContent" />
+        <result column="OWNER_NAME" property="ownerName" />
+        <result column="TENDERER_NAME" property="tendererName" />
+        <result column="TENDERER_CODE_TYPE" property="tendererCodeType" />
+        <result column="TENDERER_CODE" property="tendererCode" />
+        <result column="TENDERER_ROLE" property="tendererRole" />
+        <result column="TENDER_AGENCY_NAME" property="tenderAgencyName" />
+        <result column="TENDER_AGENCY_PHONE" property="tenderAgencyPhone" />
+        <result column="TENDER_AGENCY_CODE_TYPE" property="tenderAgencyCodeType" />
+        <result column="TENDER_AGENCY_ROLE" property="tenderAgencyRole" />
+        <result column="TENDER_MODE" property="tenderMode" />
+        <result column="TENDER_ORGANIZE_FORM" property="tenderOrganizeForm" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="SUPERVISE_DEPT_NAME" property="superviseDeptName" />
+        <result column="SUPERVISE_DEPT_CODE" property="superviseDeptCode" />
+        <result column="APPROVE_DEPT_NAME" property="approveDeptName" />
+        <result column="APPROVE_DEPT_CODE" property="approveDeptCode" />
+        <result column="USER_ID" property="userId" />
+        <result column="TENDER_AGENCY_CODE" property="tenderAgencyCode" />
+        <result column="DELETE_FLAG" property="deleteFlag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, PROJECT_ID, TENDER_PROJECT_CODE, TENDER_PROJECT_NAME, TENDER_PROJECT_TYPE, REGION_CODE, REG_ID, TENDER_CONTENT, OWNER_NAME, TENDERER_NAME, TENDERER_CODE_TYPE, TENDERER_CODE, TENDERER_ROLE, TENDER_AGENCY_NAME, TENDER_AGENCY_PHONE, TENDER_AGENCY_CODE_TYPE, TENDER_AGENCY_ROLE, TENDER_MODE, TENDER_ORGANIZE_FORM, CREATE_TIME, SUPERVISE_DEPT_NAME, SUPERVISE_DEPT_CODE, APPROVE_DEPT_NAME, APPROVE_DEPT_CODE, USER_ID, TENDER_AGENCY_CODE, DELETE_FLAG
+    </sql>
+
+</mapper>

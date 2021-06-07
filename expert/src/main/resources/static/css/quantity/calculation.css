@@ -1,0 +1,149 @@
+.left {
+  display: inline-block;
+  width: 320px;
+  height: 609px;
+  margin-right: 20px;
+  float: left;
+}
+.left .side {
+  width: 320px;
+  height: 589px;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+.left .side div {
+  width: 100%;
+  height: 52px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.left .side p {
+  width: 90%;
+  height: 52px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #333333;
+  line-height: 52px;
+  cursor: pointer;
+  float: left;
+}
+.left .side div span {
+  display: block;
+  width: 5%;
+  height: 52px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #333333;
+  line-height: 52px;
+  float: right;
+}
+.left .side p:hover {
+  color: rgba(0, 102, 204, 1);
+}
+.left .side h3 {
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #343434;
+  line-height: 48px;
+  text-align: center;
+  background-color: #cfdae5;
+  border-bottom: 1px solid #cfdae5;
+  box-sizing: border-box;
+  border-radius: 8px 8px 0 0;
+}
+.left .side .choice {
+  background-color: rgba(0, 102, 204, 1);
+}
+.left .side .choice p {
+  color: #fff;
+  font-weight: bold;
+}
+.left .side .choice span {
+  color: #fff;
+}
+.left .side .choice:hover {
+  color: #fff;
+}
+section .right {
+  display: inline-block;
+  width: calc(100% - 345px);
+}
+section .right .head {
+  width: 100%;
+  height: 56px;
+  background: #cfdae5;
+  padding-right: 17px;
+  box-sizing: border-box;
+  border-radius: 8px 8px 0 0;
+}
+.right .head li {
+  width: 24.7%;
+  height: 56px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  color: #333333;
+  line-height: 56px;
+  text-align: center;
+  display: inline-block;
+}
+.right .cont {
+  width: 100%;
+  height: 457px;
+  overflow: auto;
+  border-radius: 8px;
+}
+.right .cont li {
+  width: 100%;
+  min-height: 72px;
+  background: #ffffff;
+  overflow-y: visible;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+.right .cont li + li {
+  border-top: 1px solid #ccc;
+}
+.right .cont li div {
+  display: inline-block;
+  width: 24.7%;
+  min-height: 72px;
+  line-height: 72px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #333333;
+  text-align: center;
+}
+.right .cont li div p {
+  line-height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+  white-space: pre-wrap;
+  padding: 10px;
+  box-sizing: border-box;
+}
+section .right h3 {
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 60px;
+  color: #333333;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 20px 0px;
+}

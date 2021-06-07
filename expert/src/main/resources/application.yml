@@ -1,0 +1,58 @@
+server:
+  port: 8014
+  servlet:
+    context-path: /
+    #HTTPS======================================START
+    #如果需要支持https.即配置如下信息
+    #ssl:
+    #key-store: classpath:4848843__lzggzyjy.cn.pfx
+    #key-store-password: z27weF0L
+    #key-store-type: PKCS12
+    #ciphers: TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA256
+  #HTTPS=========================================END
+  #=================================================
+  max-http-header-size: 10000
+  jetty:
+    max-http-form-post-size: 1000000
+spring:
+  application:
+    name: expert
+  profiles:
+    active: test
+  aop:
+    proxy-target-class: true
+    auto: true
+  freemarker:
+    suffix: .ftl
+    content-type: text/html
+    enabled: true
+    cache: false
+    template-loader-path: classpath:/templates/
+    charset: UTF-8
+    settings:
+      number_format: 0
+      classic_compatible: true
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+  session:
+    store-type: redis
+  servlet:
+    multipart:
+      max-request-size: 500MB
+      max-file-size: 50MB
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: Y
+      logic-not-delete-value: N
+  mapper-locations: classpath*:com/ejiaoyi/**/*Mapper.xml
+

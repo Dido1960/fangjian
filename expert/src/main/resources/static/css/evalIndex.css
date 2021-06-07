@@ -1,0 +1,109 @@
+section {
+  width: 90%;
+  height: calc(100% - 80px);
+  margin: 0 auto;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+.title {
+  width: 100%;
+  min-height: 122px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 8px;
+}
+.title p span {
+  width: 93%;
+  float: right;
+  display: inline-block;
+  padding: 16px 0 10px 0;
+  text-align: right;
+  line-height: 24px;
+  vertical-align: middle;
+  overflow: visible;
+  white-space: pre-wrap;
+}
+.title p {
+  width: 100%;
+  min-height: 61px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 61px;
+  color: #444444;
+}
+.title p + p {
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.cont {
+  width: 100%;
+  height: 616px;
+  opacity: 1;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+.cont-btn {
+  width: 100%;
+  height: 130px;
+  background: url(../img/result.png) no-repeat center center;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.cont .document {
+  width: 100%;
+  height: 500px;
+  background-color: #fff;
+}
+.cont .document .choice {
+  width: 1600px;
+  height: 500px;
+  padding-top: 100px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  margin: 0 auto;
+}
+.cont .document .choice li {
+  width: 240px;
+  height: 300px;
+  background: url(../img/bottom-back.png) no-repeat center bottom #0066cc;
+  opacity: 1;
+  border-radius: 40px;
+  float: left;
+  white-space: nowrap;
+}
+.cont .document .choice li + li {
+  margin-left: 100px;
+}
+.cont .document .choice li img {
+  display: block;
+  margin: 40px auto 60px;
+}
+.cont .document .choice li .choice-btn {
+  width: 180px;
+  height: 54px;
+  background: #ffffff;
+  box-shadow: 0px 16px 24px rgba(7, 75, 143, 0.3);
+  opacity: 1;
+  border-radius: 30px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 54px;
+  color: #0066cc;
+  text-align: center;
+  margin: 0 auto;
+}
+.cont .document .choice .disabledClass {
+  background: url(../img/bottom-back.png) no-repeat center bottom #98b8d8;
+}
+.cont .document .choice .disabledClass div {
+  color: #98b8d8;
+  cursor: not-allowed;
+  box-shadow: none;
+}

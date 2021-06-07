@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layuiAdmin 控制台主页一</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="/layuiAdmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/layuiAdmin/style/admin.css" media="all">
+</head>
+<body>
+<style>
+    blockquote div p {
+        margin-left: 2em;
+    }
+</style>
+<div class="layui-card-header">更新日志</div>
+<div class="layui-card-body layui-text layadmin-about" style="background: #fff">
+
+    <blockquote class="layui-elem-quote">
+        <h2>房建市政系统(admin)</h2>
+        <p></p>
+        <ol>
+            <li>admin 后台管理模块 端口：8001</li>
+            <li>agency 招标代理（招标人） 端口：8002</li>
+            <li>api 第三方对接模块 端口：8007</li>
+            <li>bidder 投标人 端口：8003</li>
+            <li>common 公用模块        </li>
+            <li>expert 评标专家模块 端口：8004</li>
+            <li>project-resource 项目资源文件</li>
+            <li>supervise 监管部门模块  端口：8005</li>
+            <li>worker 专家录入模块  端口：8006</li>
+        </ol>
+    </blockquote>
+
+    <p>© 2020 <a>交易通</a> 版权所有</p>
+</div>
+
+
+<script src="/layuiAdmin/layui/layui.js?t=1"></script>
+<script>
+    layui.config({
+        base: '/layuiAdmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index', 'console']);
+</script>
+</body>
+</html>
+

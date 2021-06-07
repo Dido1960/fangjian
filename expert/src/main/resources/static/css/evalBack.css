@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+form {
+    width: 70%;
+    margin: 40px auto;
+}
+
+form label {
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 40px;
+    color: #333333;
+}
+
+form .layui-input-block {
+    margin: 0 auto 20px;
+
+}
+
+form .layui-form-select dl dd.layui-this {
+    background-color: rgba(0, 102, 204, 1);
+}
+
+form textarea {
+    width: 100%;
+    height: 120px;
+    background: #F0F4F8;
+    border: 1px solid #CFDAE5;
+    opacity: 1;
+    border-radius: 4px;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.foot {
+    width: 100%;
+    height: 76px;
+    background: #E8EBF1;
+    opacity: 1;
+    position: fixed;
+    bottom: 0;
+}
+
+.foot .btns {
+    width: 35%;
+    height: 40px;
+    margin: 20px auto 0;
+}
+
+.btns span {
+    display: inline-block;
+    width: 45%;
+    height: 40px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btns span:hover {
+    opacity: 0.7;
+}
+
+.btns span:nth-child(1) {
+    color: #FFFFFF;
+    background: rgba(0, 102, 204, 1);
+    float: left;
+}
+
+.btns span:nth-child(2) {
+    color: rgba(0, 102, 204, 1);
+    border: 1px solid rgba(0, 102, 204, 1);
+    float: right;
+    box-sizing: border-box;
+}

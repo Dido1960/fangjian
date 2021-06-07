@@ -1,0 +1,163 @@
+.right-center{
+  width: 100%;
+  height: 225px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  margin-top: 20px;
+}
+.right-center h3 {
+  width: 100%;
+  height: 57px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 57px;
+  text-align: center;
+  color: rgba(34, 49, 101, 1);
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+}
+.right-center .decryptContent {
+  width: 100%;
+  height: 168px;
+  padding-left: 15%;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+.right-center .space {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+.space label {
+  display: block;
+  width: 100%;
+  height: 42px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 42px;
+  color: rgba(34, 49, 101, 1);
+}
+.space input {
+  width: 60%;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(213, 213, 213, 1);
+  opacity: 1;
+  box-sizing: border-box;
+  padding: 0 10px;
+  outline: none;
+}
+.space .decryptBtn {
+  width: 20%;
+  height: 40px;
+  background: linear-gradient(
+          270deg,
+          rgba(19, 97, 254, 1) 0%,
+          rgba(78, 138, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#1361fe, endColorstr=#4e8aff);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  float: left;
+}
+
+.right-refuse {
+  display: inline-block;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #cccccc55;
+  opacity: 1;
+  border-radius: 0px;
+}
+.right-refuse img {
+  display: block;
+  margin: 50px auto 0;
+}
+.right-refuse p {
+  width: 100%;
+  /*height: 50px;*/
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 50px;
+  color: #1a2539;
+  text-align: center;
+}
+.rejectReason{
+  width: 80% !important;
+  margin: 0 auto;
+  vertical-align: middle;
+  overflow: visible;
+  white-space: pre-wrap;
+  box-sizing: border-box;
+  text-align: left !important;
+  font-size: 18px !important;
+  line-height: 30px !important;
+  font-weight: normal !important;
+  padding-bottom: 30px;
+}
+.witingCss {
+  width: 180px;
+  height: 40px;
+  background: rgba(13, 65, 157, 0.33);
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 40px;
+  color: #0d419d;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+.QRcode {
+  width: 100%;
+  height: 230px;
+  background: url(../img/qrback.png) no-repeat center center;
+  background-size: 100%;
+  margin-top: 20px;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.qr-cen {
+  width: 60%;
+  height: 170px;
+  margin: 0 auto;
+  min-width: 458px;
+}
+.qr-cen .qr-left {
+  width: 60%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 4px solid rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  float: left;
+}
+.qr-cen .qr-left p {
+  width: 100%;
+  height: 85px;
+  font-size: 40px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 68px;
+  color: rgba(255, 255, 255, 1);
+  padding: 0 26px;
+  box-sizing: border-box;
+}
+.qr-right {
+  width: 183px;
+  height: 170px;
+  float: right;
+}
+body .decrypt-box {
+  border-radius: 19px !important;
+  overflow: hidden;
+}

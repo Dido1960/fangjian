@@ -1,0 +1,366 @@
+.layui-layer-btn,
+.layui-layer-btn-c {
+    background: rgba(239, 243, 244, 1);
+}
+
+.sussTan h3 {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 60px;
+    color: rgba(34, 49, 101, 1);
+    opacity: 1;
+    text-align: center;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+html .layui-layer-title {
+    padding: 0;
+}
+
+#layerDemoauto {
+    overflow: hidden;
+}
+
+.cons {
+    width: 100%;
+    overflow: hidden;
+}
+
+.cons .left {
+    width: 341px;
+    height: 624px;
+    float: left;
+    margin-left: 20px;
+}
+
+.cons .zuo {
+    width: 341px;
+    height: 292px;
+    border: 1px solid rgba(213, 213, 213, 1);
+    opacity: 1;
+    box-sizing: border-box;
+    padding-top: 20px;
+    position: relative;
+}
+
+.cons .you {
+    width: 580px;
+    float: right;
+    margin-right: 20px;
+}
+
+.xin {
+    width: 580px;
+    height: 624px;
+    background: rgba(241, 245, 248, 1);
+    opacity: 1;
+}
+
+.zuo p {
+    width: 100%;
+    height: 24px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    line-height: 24px;
+    color: rgba(34, 49, 101, 1);
+    padding-left: 69px;
+    box-sizing: border-box;
+}
+
+.left h4 {
+    width: 100%;
+    height: 60px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 60px;
+    color: rgba(13, 65, 157, 1);
+    margin-top: 10px;
+}
+
+.zuo p+p {
+    margin-top: 10px;
+}
+
+html .layui-form-switch {
+    width: 80px;
+    height: 36px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 36px;
+    background-color: #E8EBF1;
+}
+
+html .layui-form-switch i {
+    background-color: #fff;
+    top: 4px;
+}
+
+html .layui-form-switch i {
+    width: 28px;
+    height: 28px;
+}
+
+html .layui-form-onswitch i {
+    margin-left: -32px;
+}
+
+html .layui-form-onswitch {
+    background: rgba(20, 184, 117, 1);
+}
+
+html .layui-form-switch em {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.inut {
+    width: 100%;
+    height: 116px;
+    background: #E8EBF1;
+    opacity: 1;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.inut .inut-l {
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+.inut .inut-r {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.inut .inut-r label {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    color: #1A2539;
+}
+
+.inut .inut-l label {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    color: #1A2539;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.xin img {
+    display: block;
+    margin: 0 auto;
+}
+
+.foot1 {
+    width: 100%;
+    height: 54px;
+    margin: 20px 0;
+}
+
+.foot1 span {
+    display: inline-block;
+    width: 45%;
+    height: 40px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    line-height: 40px;
+    color: rgba(34, 49, 101, 1);
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.foot1 span:hover {
+    color: rgba(13, 65, 157, 1);
+    transition: 0.3s;
+}
+
+.foot1 .go {
+    float: right;
+    text-align: right;
+}
+
+html .layui-form-switch em {
+    margin-left: 33px;
+}
+
+html .layui-form-onswitch em {
+    margin-left: 5px;
+}
+
+.piao {
+    display: block;
+    width: 76px;
+    height: 36px;
+    background: rgba(20, 184, 117, 1);
+    opacity: 1;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    text-align: center;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.doubt {
+    display: block;
+    width: 76px;
+    height: 36px;
+    background: linear-gradient(249deg, rgba(19, 97, 254, 1) 0%, rgba(78, 138, 255, 1) 100%);
+    opacity: 1;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    text-align: center;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.zuo img {
+    display: block;
+    width: 240px;
+    height: 180px;
+    background: rgba(241, 245, 248, 1);
+    opacity: 1;
+    margin: 10px auto;
+}
+
+.left form {
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.left form label {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.left form label span {
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    color: rgba(166, 167, 171, 1);
+}
+
+.submit {
+    width: 70px;
+    height: 36px;
+    background: #0D419D;
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.submit:hover {
+    opacity: 0.7;
+}
+
+.foot1 span span {
+    display: inline-block;
+    width: 70px;
+    height: 36px;
+    border: 1px solid #0D419D;
+    opacity: 1;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 36px;
+    color: #0D419D;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.foot1 .back span{
+    float: left;
+}
+.foot1 .go span{
+    float: right;
+    margin-left: 5px;
+}
+
+.inut-l p {
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    text-align: left;
+    padding-left: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.left .inut-l p label {
+    display: inline-block;
+    width: 56px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0;
+}
+
+.inut-l p div {
+    width: 8%;
+    line-height: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
+}
+
+.inut-l .layui-form-radio>i:hover,
+.inut-l .layui-form-radioed>i {
+    color: #0D419D;
+}
+.checkOne{
+    width:100%;
+    height:60px;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(213,213,213,1);
+    opacity:1;resize: none;padding: 5px;box-sizing: border-box;
+}
+.checkTwo{
+    width:100%;
+    height:60px;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(213,213,213,1);
+    opacity:1;resize: none;padding: 5px;box-sizing: border-box;
+}

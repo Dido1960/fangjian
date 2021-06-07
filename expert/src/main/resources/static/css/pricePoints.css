@@ -1,0 +1,256 @@
+section {
+  width: 90%;
+  height: calc(100% - 80px);
+  margin: 0 auto;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+section .process {
+  width: 100%;
+  min-height: 214px;
+  background: #ffffff;
+  box-shadow: 2px 2px 2px #e6e6e6;
+}
+.process h3 {
+  width: 100%;
+  min-height: 62px;
+  padding: 0 2%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #cfdae5;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 62px;
+}
+.process h3 span {
+  display: inline-block;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #0066cc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #0066cc;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.process h3 span:hover {
+  opacity: 0.7;
+}
+.process h3 p {
+  display: inline-block;
+  width: calc(100% - 90px);
+  line-height: 24px;
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  vertical-align: middle;
+  overflow: visible;
+  white-space: pre-wrap;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.process ul {
+  width: 100%;
+  height: 110px;
+  margin-top: 20px;
+}
+.process ul li {
+  width: 100%;
+  height: 100%;
+  float: left;
+  position: relative;
+  overflow: initial;
+  z-index: 0;
+}
+.process ul li .flow-num {
+  width: 48px;
+  height: 48px;
+  background: #f0f4f8;
+  border-radius: 50%;
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #9c9c9c;
+  line-height: 48px;
+  text-align: center;
+  z-index: 999999;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.process ul li p {
+  width: 100%;
+  height: 36px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #9c9c9c;
+  line-height: 36px;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.process ul .sele .flow-num {
+  width: 48px;
+  height: 48px;
+  background: url(../../img/process_back.png) no-repeat center center;
+  border: 1px solid rgba(0, 102, 204, 1);
+  color: #fff;
+  font-weight: bold;
+  z-index: 99999;
+  box-sizing: border-box;
+}
+.process ul .sele p {
+  color: rgba(0, 102, 204, 1);
+  font-weight: bold;
+}
+.process ul .sele .blove {
+  background-color: rgba(0, 102, 204, 1);
+}
+.cont {
+  width: 100%;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.cont h3 {
+  width: 100%;
+  height: 36px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 36px;
+  color: #444444;
+}
+.cont p {
+  width: 100%;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 24px;
+  color: #333333;
+}
+.cont .cont-btn {
+  width: 100%;
+  height: 60px;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+.cont .cont-btn span {
+  display: inline-block;
+  width: 108px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: MicrosoftYaHei;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+.cont .cont-btn span + span {
+  margin-left: 5px;
+}
+.cont .cont-btn span:hover {
+  opacity: 0.7;
+}
+.cont .document {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #cfdae5;
+  opacity: 1;
+  border-radius: 8px;
+}
+.document ol {
+  width: 100%;
+  height: 60px;
+  background: #cfdae5;
+  opacity: 1;
+  border-radius: 8px 8px 0px 0px;
+  /*padding-right: 17px;*/
+  /*box-sizing: border-box;*/
+}
+.document ol li {
+  width: 15%;
+  height: 60px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 60px;
+  color: #444444;
+  text-align: center;
+  float: left;
+}
+.document ol .small {
+  width: 10%;
+}
+.document ol .long {
+  width: 30%;
+}
+.document .cont-table {
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.cont-table table {
+  width: 100%;
+}
+.cont-table table tr {
+  width: 100%;
+  height: 59px;
+  line-height: 59px;
+}
+.cont-table table tr td {
+  width: 15%;
+  height: 59px;
+  min-height: 59px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #444444;
+  text-align: center;
+  border-bottom: 1px solid #cfdae5;
+  box-sizing: border-box;
+}
+.cont-table table tr td + td {
+  border-left: 1px solid #cfdae5;
+}
+.cont-table table tr .small {
+  width: 10% !important;
+}
+.cont-table table tr .long {
+  width: 30% !important;
+}
+.cont .tips {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 20px;
+  color: #9c9c9c;
+  margin-top: 20px;
+}
+.cont .tips img {
+  display: inline-block;
+  margin-right: 5px;
+}
+.cont h2{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  text-align: center;
+}

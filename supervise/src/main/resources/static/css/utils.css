@@ -1,0 +1,276 @@
+* {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  left: 100%;
+  min-width: 1400px;
+  font-family: "Microsoft YaHei" !important;
+  color: #1b2a3d;
+}
+
+/* 主题颜色相关========================> */
+/* 主色调按钮 字体 边框  */
+html .blove-b {
+  background: rgba(0, 102, 204, 1);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+}
+html .blove-f {
+  color: rgba(0, 102, 204, 1) !important;
+}
+html .blove-s {
+  border: 1px solid rgba(0, 102, 204, 1);
+  box-sizing: border-box;
+}
+/* 绿色按钮 字体 边框 */
+.green-b {
+  background: rgba(1, 176, 120, 1);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+html .green-f {
+  color: rgba(1, 176, 120, 1) !important;
+}
+html .green-s {
+  border: 1px solid rgba(1, 176, 120, 1);
+  box-sizing: border-box;
+}
+
+/* 黄色按钮 */
+.yellow-b {
+  background: rgba(223, 152, 9, 1);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+html .yellow-f {
+  color: rgba(223, 152, 9, 1) !important;
+}
+html .yellow-s {
+  border: 1px solid rgba(223, 152, 9, 1);
+  box-sizing: border-box;
+}
+
+/* 灰色按钮 */
+.gray-button {
+  background: #dbe3ee;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+/* 红色字体以及边框按钮 */
+html .red-f {
+  color: rgba(229, 70, 20, 1) !important;
+}
+html .red-s {
+  border: 1px solid rgba(229, 70, 20, 1);
+  box-sizing: border-box;
+}
+html .red-b {
+  background-color: rgba(229, 70, 20, 1);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 文本颜色相关========================> */
+/* 一级文字 */
+.one-text {
+  color: #1b2a3d;
+}
+
+/* 二级文字 */
+.tow-text {
+  color: #b9b9b9;
+}
+
+/* 表格分割线 */
+.table-border {
+  border: 1px solid #dbe3ee;
+}
+
+/* 按钮控件相关========================> */
+/* 正常 */
+button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  font-family: "Microsoft YaHei" !important;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* 点击 */
+button:active {
+  opacity: 0.7;
+}
+
+/* 禁用 */
+button:disabled {
+  filter: grayscale(0.8);
+  opacity: 0.2;
+  cursor: no-drop;
+}
+
+/* 输入框控件相关========================> */
+/* 正常 */
+input {
+  border: 1px solid #b3c0d1;
+  border-radius: 4px;
+  background: #ffffff;
+  transition-duration: 0.2s;
+  color: #1b2a3d;
+  outline: 0 !important;
+  width: 100%;
+  height: 100%;
+  padding-left: 13px !important;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei" !important;
+}
+
+/* 聚焦 */
+input:focus {
+  border: 1px solid #3686e9;
+}
+
+/* 禁用 */
+input:disabled {
+  background: #ecf0f5;
+  border: 1px solid #b3c0d1;
+  cursor: no-drop;
+}
+
+/* 禁用 */
+textarea:disabled {
+  background-color: #F2F2F2;
+  cursor: no-drop;
+}
+
+/* 错误 */
+.input-error {
+  background: #fff;
+  border: 1px solid #e54614;
+  color: #e54614;
+}
+
+/* 占位符颜色 */
+input::placeholder {
+  color: #b9b9b9;
+}
+
+/* 错误时占位符颜色 */
+.input-error::placeholder {
+  color: #e54614;
+}
+
+/* 浮动布局相关========================> */
+/* 清除浮动，防止高度坍塌 */
+.clear-float {
+  clear: both;
+}
+
+/* 左浮动 */
+.left-float {
+  float: left;
+}
+
+/* 右浮动 */
+.right-float {
+  float: right;
+}
+/* 单行文本超出部分隐藏 */
+span,
+li,
+p,
+h3,
+h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* layui的页码代码 */
+html .layui-laypage .layui-laypage-count {
+  position: absolute;
+  left: 0px;
+  width: 71px;
+  float: left;
+  text-align: center;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 500;
+  color: rgba(26, 51, 88, 1);
+}
+html .foot {
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+html .layui-laypage .layui-laypage-curr .layui-laypage-em {
+  background: #3686e9;
+  color: #fff;
+}
+html .layui-laypage a:hover {
+  color: #3686e9;
+}
+html .layui-laypage input:focus,
+html .layui-laypage select:focus {
+  border-color: #3686e9 !important;
+}
+html .layui-box {
+  width: 100%;
+  text-align: right;
+  margin: 0px !important;
+}
+html .layui-laypage-refresh {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+html .layui-laypage-skip {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+html .layui-box a {
+  margin-right: 10px;
+}
+
+html .layui-laypage .layui-laypage-spr {
+  margin-right: 10px;
+}
+
+html .layui-laypage .layui-laypage-curr {
+  margin-right: 10px;
+}
+/* a标签的默认样式清除 */
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+.layui-layer, .layui-layer-shade{
+  position: fixed !important;
+}

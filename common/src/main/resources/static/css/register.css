@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+button {
+  cursor: pointer;
+}
+header {
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+}
+section {
+  width: 100%;
+  height: 1000px;
+  background: rgba(239, 243, 245, 1);
+  padding-top: 150px;
+  box-sizing: border-box;
+  position: relative;
+}
+.box {
+  width: 1000px;
+  background: rgba(255, 255, 255, 1);
+  margin: 0 auto;
+  position: relative;
+}
+.logo {
+  width: 240px;
+  height: 40px;
+  font-size: 30px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(26, 51, 88, 1);
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 875px;
+  top: 62px;
+}
+.logo span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url(/img/logo.png) no-repeat center center;
+}
+.box h3 {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 18px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  color: rgba(26, 51, 88, 1);
+  border-bottom: 1px solid rgba(182, 192, 212, 1);
+}
+.box ul {
+  width: 440px;
+  margin: 49px auto 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box ul li {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.box ul li p {
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  color: rgba(26, 51, 88, 1);
+}
+.box ul li input {
+  width: 360px;
+  height: 40px;
+  border: 1px solid rgba(163, 180, 212, 1);
+  opacity: 1;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+}
+.box ul li div {
+  width: 50px;
+  height: 36px;
+  background: rgba(248, 249, 251, 1);
+  opacity: 1;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(26, 51, 88, 1);
+  text-align: center;
+  position: absolute;
+  left: 81px;
+  top: 2px;
+}
+.box ul li button {
+  width: 86px;
+  height: 40px;
+  border: 1px solid rgba(0, 98, 235, 1);
+  opacity: 1;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(0, 98, 235, 1);
+  background-color: #fff;
+}
+.box ul li .login {
+  width: 360px;
+  height: 40px;
+  background: rgba(0, 98, 235, 1);
+  opacity: 1;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  border: none;
+}
+.cat {
+  width: 100%;
+  height: 20px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgba(0, 98, 235, 1);
+  opacity: 1;
+  text-align: center;
+  margin-top: 51px;
+  cursor: pointer;
+}
+.over {
+  width: 100%;
+  height: 24px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(163, 180, 212, 1);
+  opacity: 1;
+  position: absolute;
+  bottom: 65px;
+}
+.pass {
+  width: 360px;
+  height: 110px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(228, 229, 232, 1);
+  box-shadow: 0px 2px 6px rgba(49, 119, 217, 0.1);
+  margin-left: 80px;
+}
+.pass p {
+  height: 50px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  color: rgba(26, 196, 138, 1);
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.pass p span {
+  width: 14px;
+  height: 14px;
+  display: block;
+  margin-right: 7px;
+  background: url(/img/right.png) no-repeat center center;
+}
+.pass .tiao {
+  width: 320px;
+  height: 14px;
+  background: rgba(248, 249, 251, 1);
+  opacity: 1;
+  margin-left: 20px;
+}
+.pass .tiao .lv {
+  width: 100%;
+  height: 14px;
+  background: rgba(26, 196, 138, 1);
+  opacity: 1;
+  font-size: 10px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+.pass .ti {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(163, 180, 212, 1);
+  opacity: 1;
+  margin-top: 10px;
+}
+.err {
+  width: 360px;
+  height: 110px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(228, 229, 232, 1);
+  box-shadow: 0px 2px 6px rgba(49, 119, 217, 0.1);
+  margin-left: 80px;
+}
+.err p {
+  height: 50px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  color: rgba(255, 71, 71, 1);
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.err p span {
+  width: 14px;
+  height: 14px;
+  display: block;
+  margin-right: 7px;
+  background: url(/img/err.png) no-repeat center center;
+}
+.err .tiao {
+  width: 320px;
+  height: 14px;
+  background: rgba(248, 249, 251, 1);
+  opacity: 1;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.err .tiao div {
+  width: 105px;
+  height: 14px;
+  font-size: 10px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+.err .tiao .red {
+  background-color: rgba(255, 71, 71, 1);
+}
+.err .tiao .yell {
+  background: rgba(254, 192, 23, 1);
+}
+.err .tiao .gr {
+  background: rgba(26, 196, 138, 1);
+}
+.err .ti {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(163, 180, 212, 1);
+  opacity: 1;
+  margin-top: 10px;
+}

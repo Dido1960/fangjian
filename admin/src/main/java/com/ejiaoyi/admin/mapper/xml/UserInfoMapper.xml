@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.admin.mapper.UserInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.UserInfo">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="NAME" property="name"/>
+        <result column="LOGIN_NAME" property="loginName"/>
+        <result column="PASSWORD" property="password"/>
+        <result column="REG_ID" property="regId"/>
+        <result column="ALL_SPELLING" property="allSpelling"/>
+        <result column="FIRST_SPELLING" property="firstSpelling"/>
+        <result column="USER_ROLE_STATUS" property="userRoleStatus"/>
+        <result column="ENABLED" property="enabled"/>
+        <result column="PHONE" property="phone"/>
+        <result column="USER_FILE_ID" property="userFileId"/>
+    </resultMap>
+
+    <!-- 扩展查询映射结果 -->
+    <resultMap id="BaseResultMapExtend" type="com.ejiaoyi.common.entity.UserInfo" extends="BaseResultMap">
+        <result column="REG_NAME" property="regName"/>
+        <result column="REG_ID" property="regId"/>
+        <result column="ROLE_NAME" property="roleName"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, NAME, LOGIN_NAME, PASSWORD, REG_ID, ALL_SPELLING, FIRST_SPELLING, ENABLED, SEX, BORN, ID_CARD,
+        PHONE, USER_ROLE_STATUS, USER_FILE_ID, AUTH, ADMIN_FLAG
+    </sql>
+
+    <select id="userAuth" resultMap="BaseResultMapExtend">
+        SELECT * FROM `user_info` WHERE LOGIN_NAME=#{loginName}
+    </select>
+
+
+    <select id="pagedUserInfo" resultMap="BaseResultMapExtend">
+        select a.*, c.REG_NAME, c.REG_NO from USER_INFO a
+        left join reg c on a.REG_ID = c.ID
+        <where>
+            <if test="regId !='' and regId !=null ">
+                <bind name="regId" value="regId"/>
+                and a.REG_ID = #{regId}
+            </if>
+            <if test="name !='' and name !=null ">
+                <bind name="userName" value="'%'+name+'%'"/>
+                and a.NAME like #{userName}
+            </if>
+            <if test="enabled !=null ">
+                <bind name="enabled" value="enabled"/>
+                and a.enabled = #{enabled}
+            </if>
+        </where>
+    </select>
+
+</mapper>

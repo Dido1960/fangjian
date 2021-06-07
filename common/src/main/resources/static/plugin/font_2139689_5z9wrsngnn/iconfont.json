@@ -1,0 +1,23 @@
+{
+  "id": "2139689",
+  "name": "交通",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5330645",
+      "name": "信封",
+      "font_class": "xinfeng",
+      "unicode": "e7aa",
+      "unicode_decimal": 59306
+    },
+    {
+      "icon_id": "16588058",
+      "name": "文件",
+      "font_class": "wenjian",
+      "unicode": "e703",
+      "unicode_decimal": 59139
+    }
+  ]
+}

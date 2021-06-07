@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.WordbookMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.Wordbook">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="BOOK_TOP_KEY" property="bookTopKey"/>
+        <result column="BOOK_PARENT_KEY" property="bookParentKey"/>
+        <result column="BOOK_KEY" property="bookKey"/>
+        <result column="BOOK_VALUE" property="bookValue"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BOOK_KEY, BOOK_HASH_KEY, BOOK_VALUE
+    </sql>
+
+    <delete id="truncateTable">
+        truncate table WORDBOOK
+    </delete>
+</mapper>

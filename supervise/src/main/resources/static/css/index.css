@@ -1,0 +1,494 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  margin: 0 auto;
+}
+input {
+  outline: none;
+}
+.kong {
+  width: 100%;
+  height: 15px;
+}
+header {
+  width: 100%;
+  height: 80px;
+  background: rgba(48, 60, 100, 1);
+  opacity: 1;
+}
+header .text {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+header .text .name {
+  width: 500px;
+  height: 100%;
+  font-size: 30px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 5px;
+  opacity: 1;
+  float: left;
+}
+header .text .name span {
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 0px;
+}
+header .bao {
+  min-width: 220px;
+  height: 100%;
+  float: right;
+}
+header .bao .back {
+  width: 110px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 40px;
+  color: rgba(19, 97, 254, 1);
+  cursor: pointer;
+  float: left;
+  margin-top: 20px;
+}
+header .bao .back:hover {
+  background: rgba(12, 113, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  transition: 0.3s;
+}
+header .bao .try {
+  width: auto;
+  height: 100%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  float: right;
+}
+header .bao .try i {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/off.png) no-repeat;
+  float: right;
+  margin-top: 32px;
+  margin-left: 15px;
+}
+section {
+  width: 100%;
+  height: calc(100% - 80px);
+  background: rgba(239, 243, 244, 1);
+}
+section .content {
+  width: 90%;
+  max-height: 90%;
+  margin: 0 auto;
+}
+section .content .depend {
+  width: 100%;
+  height: 40px;
+}
+section .content .depend li {
+  width: 91px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 40px;
+  color: rgba(213, 213, 213, 1);
+  text-align: center;
+  cursor: pointer;
+  float: left;
+}
+section .content .depend li + li {
+  margin-left: 20px;
+}
+section .content .depend .blue {
+  background: linear-gradient(
+          263deg,
+          rgba(19, 97, 254, 1) 0%,
+          rgba(78, 138, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#1361fe, endColorstr=#4e8aff);
+  color: #fff;
+  font-weight: 900;
+}
+section .content .depend li:hover {
+  background-color: rgba(19, 97, 254, 1);
+  color: #fff;
+  transition: 0.3s;
+  font-weight: 900;
+  opacity: 0.8;
+}
+.more {
+  width: 100%;
+  height: 40px;
+}
+.more form {
+  width: 380px;
+  height: 40px;
+  float: right;
+}
+.more form .all {
+  width: 110px;
+  height: 40px;
+  /* background: url(../img/san.png) no-repeat 90px 12px rgba(255, 255, 255, 1); */
+  background-color: #fff;
+  opacity: 1;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  float: left;
+}
+.more form input {
+  width: 260px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  border-radius: 4px;
+  border: none;
+  padding-left: 20px;
+  box-sizing: border-box;
+  background: url(../img/seach.png) no-repeat 232px 10px #ffffff;
+  float: right;
+}
+.add {
+  width: 110px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 40px;
+  color: rgba(19, 97, 254, 1);
+  letter-spacing: 2px;
+  cursor: pointer;
+  float: left;
+}
+.add:hover {
+  background-color: rgba(19, 97, 254, 1);
+  color: #fff;
+  transition: 0.3s;
+}
+.tlt {
+  width: 100%;
+  height: 77px;
+  background: rgba(169, 191, 220, 1);
+  opacity: 1;
+}
+.tlt li {
+  width: 20%;
+  height: 100%;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 77px;
+  color: rgba(34, 49, 101, 1);
+  float: left;
+}
+.center {
+  width: 100%;
+  height: 96px;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+.center div {
+  display: inline-block;
+  box-sizing: border-box;
+  float: left;
+}
+.center .number {
+  width: 20%;
+  height: 100%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 96px;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+}
+
+.center .name {
+  width: 20%;
+  height: 100%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 96px;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+}
+.center .num {
+  width: 20%;
+  height: 100%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 96px;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+}
+.center .time {
+  width: 20%;
+  height: 100%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 96px;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+}
+.center .state {
+  width: 20%;
+  height: 100%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 96px;
+  text-align: center;
+}
+.center .organ {
+  color: rgba(245, 154, 35, 1);
+}
+.center .qin {
+  color: rgba(5, 191, 191, 1);
+}
+.center .over {
+  color: rgba(245, 57, 35, 1);
+}
+.center .todo {
+  position: relative;
+
+}
+.center .todo span {
+  width: 50px;
+  height: 96px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 96px;
+  color: rgba(19, 97, 254, 1);
+  opacity: 1;
+  float: left;
+  cursor: pointer;
+}
+.center .todo .inTo {
+  width: 90px;
+  height: 36px;
+  background: rgba(78, 138, 255, 1);
+  opacity: 1;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  margin: 30px auto 0;
+}
+.center .todo .outTo {
+  width: 90px;
+  height: 36px;
+  background: linear-gradient(
+          268deg,
+          rgba(0, 190, 190, 1) 0%,
+          rgba(112, 219, 219, 1) 100%
+  );
+  opacity: 1;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  margin: 30px auto 0;
+}
+.center .todo .inTo:hover {
+  opacity: 0.7;
+}
+.center .todo .outTo:hover {
+  opacity: 0.7;
+}
+.center .todo i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url(../img/more.png) no-repeat;
+  cursor: pointer;
+  float: right;
+  margin-top: 40px;
+}
+.more .la {
+  /* width: 110px;
+  height: 122px; */
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 6px 6px rgba(41, 107, 236, 0.06);
+  opacity: 1;
+  border-radius: 0px 0px 4px 4px;
+  position: absolute;
+  left: 0;
+  top: 40px;
+}
+.more .la li {
+  /* width: 110px;
+  height: 40px; */
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 40px;
+  color: rgba(56, 60, 71, 1);
+  opacity: 1;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.more .la li:hover {
+  background-color: rgba(19, 97, 254, 1);
+  color: #fff;
+  transition: 0.3s;
+}
+.foot {
+  width: 90%;
+  margin: 10px auto;
+  position: relative;
+
+}
+.todo .duo {
+  width: 96px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 11px rgba(41, 107, 236, 0.2);;
+  opacity: 1;
+  border-radius: 4px;
+  position: absolute;
+  left: -35px;
+  top: 60px;
+  z-index: 9;
+}
+.todo .bottom{
+  width: 96px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 11px rgba(41, 107, 236, 0.2);;
+  opacity: 1;
+  border-radius: 4px;
+  position: absolute;
+  left: -35px;
+  bottom: 70px;
+  z-index: 9;
+}
+.todo .duo li {
+  width: 96px;
+  height: 34px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 34px;
+  color: rgba(166, 167, 171, 1);
+  opacity: 1;
+  text-align: center;
+  cursor: pointer;
+}
+.todo .duo li:hover {
+  background-color: rgba(19, 97, 254, 1);
+  color: #fff;
+  transition: 0.3s;
+}
+.todo .bottom li {
+  width: 96px;
+  height: 34px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 34px;
+  color: rgba(166, 167, 171, 1);
+  opacity: 1;
+  text-align: center;
+  cursor: pointer;
+}
+.todo .bottom li:hover {
+  background-color: rgba(19, 97, 254, 1);
+  color: #fff;
+  transition: 0.3s;
+}
+.layui-laypage .layui-laypage-count {
+  position: absolute;
+  left: 0px;
+  width: 71px;
+  float: left;
+  margin-left: 20px !important;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  color: rgba(26, 51, 88, 1);
+}
+
+html .layui-laypage .layui-laypage-curr .layui-laypage-em {
+  background: rgba(78, 138, 255, 1);
+  color: #fff;
+}
+
+.layui-box {
+  width: 100%;
+  text-align: right;
+}
+
+.layui-box a {
+  margin-right: 10px;
+}
+
+.layui-laypage .layui-laypage-spr {
+  margin-right: 10px;
+}
+
+.layui-laypage .layui-laypage-curr {
+  margin-right: 10px;
+}
+html .layui-laypage a,
+html .layui-laypage span {
+  background-color: rgba(0, 0, 0, 0);
+}
+html .foot .layui-laypage-count {
+  width: 90px;
+  background-color: #fff;
+  border: 1px solid rgba(163, 180, 212, 1);
+  box-sizing: border-box;
+}

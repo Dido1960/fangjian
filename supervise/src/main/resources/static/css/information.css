@@ -1,0 +1,157 @@
+.information {
+  width: 100%;
+  height: 515px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 8px;
+}
+.information h3 {
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
+  border-bottom: 1px solid #e2e2e2;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 60px;
+  color: #1b2a3d;
+}
+.information form {
+  width: 80%;
+  height: calc(100% - 60px);
+  margin: 0 auto;
+}
+.information form div {
+  width: 50%;
+  height: 40px;
+  margin-top: 20px;
+  float: left;
+}
+.information form div label {
+  float: left;
+  width: 20%;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 40px;
+  color: #1b2a3d;
+  text-align: right;
+  margin-right: 20px;
+}
+.information form div input {
+  float: left;
+  width: calc(80% - 50px);
+  height: 40px;
+  background: #f2f2f2;
+  border: 1px solid #cecece;
+  opacity: 1;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.cont {
+  width: 100%;
+  height: 495px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.cont h3 {
+  width: 100%;
+  height: 76px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 76px;
+  color: #333333;
+}
+.cont h3 span {
+  display: block;
+  width: 80px;
+  height: 36px;
+  background: #0066cc;
+  opacity: 1;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  color: #ffffff;
+  text-align: center;
+  float: right;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.cont .cont-text {
+  width: 100%;
+  height: 400px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  opacity: 1;
+  border-radius: 10px;
+}
+.cont-text ol {
+  width: 100%;
+  height: 60px;
+  background: #e2e2e2;
+  opacity: 1;
+  padding-right: 17px;
+  box-sizing: border-box;
+  border-radius: 10px 10px 0 0;
+}
+.cont-text ol li {
+  width: 15%;
+  height: 60px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 60px;
+  color: #333333;
+  text-align: center;
+  float: left;
+}
+.cont-text ol .long {
+  width: 30% !important;
+}
+.cont-text ol .small {
+  width: 10% !important;
+}
+.cont-text .cont-table {
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.cont-table table {
+  width: 100%;
+}
+.cont-table table tr {
+  width: 100%;
+  height: 79px;
+  min-height: 79px;
+}
+.cont-table table tr td {
+  width: 15%;
+  height: 79px;
+  min-height: 79px;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #333333;
+  border-bottom: 1px solid #e2e2e2;
+  box-sizing: border-box;
+}
+.cont-table table tr td + td {
+  border-left: 1px solid #e2e2e2;
+}
+.cont-table table tr .long {
+  width: 30% !important;
+}
+.cont-table table tr .small {
+  width: 10% !important;
+}

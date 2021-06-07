@@ -1,0 +1,142 @@
+section {
+  width: 90%;
+  height: calc(100% - 80px);
+  margin: 0 auto;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+section .process {
+  width: 100%;
+  min-height: 214px;
+  background: #ffffff;
+  margin-bottom: 1px;
+  box-shadow: 2px 2px 2px #e6e6e6;
+}
+.process h3 {
+  width: 100%;
+  min-height: 62px;
+  padding: 0 2%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #cfdae5;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 62px;
+}
+.process h3 span {
+  display: inline-block;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #0066cc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #0066cc;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.process h3 span:hover {
+  opacity: 0.7;
+}
+.process h3 p {
+  display: inline-block;
+  width: calc(100% - 90px);
+  line-height: 24px;
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  vertical-align: middle;
+  overflow: visible;
+  white-space: pre-wrap;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.process ul {
+  width: 100%;
+  height: 110px;
+  margin-top: 20px;
+}
+.process ul li {
+  width: 33%;
+  height: 100%;
+  float: left;
+  position: relative;
+  overflow: visible;
+  z-index: 0;
+}
+.process ul li .flow-num i {
+  width: 88px;
+  height: 32px;
+  display: block;
+  background: url(../img/unified.png) no-repeat center center;
+  position: relative;
+  right: -35px;
+  top: -60px;
+}
+.process ul li .flow-num {
+  width: 48px;
+  height: 48px;
+  background: #f0f4f8;
+  border-radius: 50%;
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #9c9c9c;
+  line-height: 48px;
+  text-align: center;
+  z-index: 999999;
+  margin: 0 auto;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.process ul li .flow-right {
+  width: calc(50% - 23px);
+  height: 1px;
+  border-top: 1px dashed #cfdae5;
+  box-sizing: border-box;
+  position: relative;
+  left: calc(50% + 24px);
+  bottom: 24px;
+}
+.process ul li .flow-left {
+  width: calc(50% - 24px);
+  height: 1px;
+  border-top: 1px dashed #cfdae5;
+  box-sizing: border-box;
+  position: relative;
+  top: 25px;
+}
+.process ul li p {
+  width: 100%;
+  height: 36px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #9c9c9c;
+  line-height: 36px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.process ul .sele .flow-num {
+  width: 48px;
+  height: 48px;
+  background: url(../img/process_back.png) no-repeat center center;
+  border: 1px solid rgba(0, 102, 204, 1);
+  color: #fff;
+  font-weight: bold;
+  z-index: 99999;
+  box-sizing: border-box;
+}
+.process ul .sele p {
+  color: rgba(0, 102, 204, 1);
+  font-weight: bold;
+}
+.process ul .sele .blove {
+  background-color: rgba(0, 102, 204, 1);
+}

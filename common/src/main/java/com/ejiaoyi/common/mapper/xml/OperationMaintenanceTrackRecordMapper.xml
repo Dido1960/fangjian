@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.OperationMaintenanceTrackRecordMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.OperationMaintenanceTrackRecord">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="OPERATION_MAINTENANCE_ID" property="operationMaintenanceId" />
+        <result column="OPERATION_MAINTENANCE_NAME" property="operationMaintenanceName" />
+        <result column="ABNORMAL" property="abnormal" />
+        <result column="ABNORMAL_TIME" property="abnormalTime" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, OPERATION_MAINTENANCE_ID, OPERATION_MAINTENANCE_NAME, ABNORMAL, ABNORMAL_TIME, REMARK
+    </sql>
+
+</mapper>

@@ -1,0 +1,401 @@
+{
+  "id": "1834779",
+  "name": "layui-extends",
+  "font_family": "iconfont",
+  "css_prefix_text": "layui",
+  "description": "layui扩展图标库",
+  "glyphs": [
+    {
+      "icon_id": "14830254",
+      "name": "yuanquanzuo",
+      "font_class": "yuanquanzuo",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "14830255",
+      "name": "yuanquanyou",
+      "font_class": "yuanquanyou",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "14830256",
+      "name": "loading04",
+      "font_class": "loading04",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "14830257",
+      "name": "loading03",
+      "font_class": "loading03",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "14830258",
+      "name": "loading02",
+      "font_class": "loading02",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "14830259",
+      "name": "mei",
+      "font_class": "mei",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "14830260",
+      "name": "dian",
+      "font_class": "dian",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "14830261",
+      "name": "fuhe",
+      "font_class": "fuhe",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "14830262",
+      "name": "loading05",
+      "font_class": "loading05",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "14830263",
+      "name": "baiban",
+      "font_class": "baiban",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "14830264",
+      "name": "guandao",
+      "font_class": "guandao",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "14830265",
+      "name": "xinpian",
+      "font_class": "xinpian",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "14830266",
+      "name": "baohu",
+      "font_class": "baohu",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "14830267",
+      "name": "guanwang",
+      "font_class": "guanwang",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "14830268",
+      "name": "pingzhi",
+      "font_class": "pingzhi",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "14830269",
+      "name": "konzhi",
+      "font_class": "konzhi",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "14830270",
+      "name": "xiaolv",
+      "font_class": "xiaolv",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "14830271",
+      "name": "loading01",
+      "font_class": "loading01",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "14830272",
+      "name": "shengtai",
+      "font_class": "shengtai",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "14830273",
+      "name": "yeban",
+      "font_class": "yeban",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "14830274",
+      "name": "yuanchengkonzhi",
+      "font_class": "yuanchengkonzhi",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "14830275",
+      "name": "zhinengshebei",
+      "font_class": "zhinengshebei",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "14830276",
+      "name": "ai",
+      "font_class": "ai",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "14830277",
+      "name": "yuanquan",
+      "font_class": "yuanquan",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "14830278",
+      "name": "circle-xiangyou",
+      "font_class": "circle-xiangyou",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "14830279",
+      "name": "jiankon",
+      "font_class": "jiankon",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "14830280",
+      "name": "fueuqi",
+      "font_class": "fueuqi",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "14830281",
+      "name": "fengyan",
+      "font_class": "fengyan",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "14830282",
+      "name": "circle-shanchu",
+      "font_class": "circle-shanchu",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "14830283",
+      "name": "yaoyi",
+      "font_class": "yaoyi",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "14830284",
+      "name": "kefu",
+      "font_class": "kefu",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "14830285",
+      "name": "cztttjd",
+      "font_class": "cztttjd",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "14830286",
+      "name": "xingxing",
+      "font_class": "xingxing",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "14830287",
+      "name": "zuidahua",
+      "font_class": "zuidahua",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "14830288",
+      "name": "fenxiang",
+      "font_class": "fenxiang",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "14830289",
+      "name": "liuliang",
+      "font_class": "liuliang",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "14830290",
+      "name": "yewei",
+      "font_class": "yewei",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "14830291",
+      "name": "circle-xiangzuo",
+      "font_class": "circle-xiangzuo",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "14830292",
+      "name": "zhengque",
+      "font_class": "zhengque",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "14830293",
+      "name": "shizhong2",
+      "font_class": "shizhong2",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "14830294",
+      "name": "shengyin",
+      "font_class": "shengyin",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "14830295",
+      "name": "zhihui",
+      "font_class": "zhihui",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "14830296",
+      "name": "zhengqi",
+      "font_class": "zhengqi",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "14830297",
+      "name": "jingyin",
+      "font_class": "jingyin",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "14830298",
+      "name": "wendu",
+      "font_class": "wendu",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "14830299",
+      "name": "yonhuguanli",
+      "font_class": "yonhuguanli",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "14830300",
+      "name": "tanhao",
+      "font_class": "tanhao",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "14830301",
+      "name": "qingchu",
+      "font_class": "qingchu",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "14830302",
+      "name": "qiti",
+      "font_class": "qiti",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "14830303",
+      "name": "circle-tianjia",
+      "font_class": "circle-tianjia",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "14830304",
+      "name": "yali",
+      "font_class": "yali",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "14830305",
+      "name": "gj",
+      "font_class": "gj",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "14830306",
+      "name": "circle-duihao",
+      "font_class": "circle-duihao",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "14830307",
+      "name": "circle-wenhao",
+      "font_class": "circle-wenhao",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "14830308",
+      "name": "sjgl",
+      "font_class": "sjgl",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "7983626",
+      "name": "U盘",
+      "font_class": "uKey",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    }
+  ]
+}

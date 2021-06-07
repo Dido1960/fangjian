@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.GradeItemMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.GradeItem">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="GRADE_ID" property="gradeId" />
+        <result column="ITEM_CONTENT" property="itemContent" />
+        <result column="SCORE" property="score" />
+        <result column="SCORE_TYPE" property="scoreType" />
+        <result column="SCORE_RANGE" property="scoreRange" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, GRADE_ID, ITEM_CONTENT, SCORE, REMARK, SCORE_RANGE, SCORE_TYPE
+    </sql>
+    <select id="listGradeItemBySth" resultMap="BaseResultMap">
+        SELECT i.* FROM grade_item i
+        LEFT JOIN grade g ON g.ID = i.GRADE_ID
+        WHERE
+        g.ID IN
+        <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+            #{gradeId}
+        </foreach>
+        <if test="evalProcess != '' and evalProcess != null">
+            AND g.REVIEW_PROCESS = #{evalProcess}
+        </if>
+        <if test="reviewType != '' and reviewType != null">
+            AND g.REVIEW_TYPE = #{reviewType}
+        </if>
+    </select>
+
+    <!-- 查询映射结果 -->
+    <resultMap id="ExpertReviewDetailDTOMap" type="com.ejiaoyi.common.dto.ExpertReviewDetailDTO">
+        <id column="expertId" property="expertId" />
+        <result column="gradeItemId" property="gradeItemId" />
+        <result column="expertName" property="expertName" />
+        <result column="expertReviewDetail" property="expertReviewDetail" />
+    </resultMap>
+
+    <!-- 获取 “某评分项”的“所有专家”对“某投标人”的评审明细 -->
+    <select id="listAllExpertGradeItem" resultMap="ExpertReviewDetailDTOMap">
+        SELECT a.GRADE_ITEM_ID AS gradeItemId,
+        a.EXPERT_ID AS expertId,
+        b.EXPERT_NAME AS expertName,
+        a.EVAL_RESULT AS expertReviewDetail
+        FROM expert_review_single_item a
+        LEFT JOIN expert_user b
+        ON a.EXPERT_ID=b.ID
+        <where>
+            b.bid_Section_Id = #{bidSectionId}
+            AND a.BIDDER_ID=#{bidderId}
+            AND a.GRADE_ITEM_ID =#{gradeItemId}
+        </where>
+    </select>
+
+    <!-- 获取 “某评分项”的“所有专家”对“某投标人”的评审明细 打分表-->
+    <select id="listAllExpertGradeItemScore" resultMap="ExpertReviewDetailDTOMap">
+        SELECT a.EXPERT_ID AS expertId,
+        b.EXPERT_NAME AS expertName,
+        a.EVAL_SCORE AS expertReviewDetail
+        FROM expert_review_single_item_score a
+        LEFT JOIN expert_user b
+        ON a.EXPERT_ID=b.ID
+        <where>
+            b.bid_Section_Id = #{bidSectionId}
+            AND a.BIDDER_ID=#{bidderId}
+            AND a.GRADE_ITEM_ID =#{gradeItemId}
+        </where>
+    </select>
+
+    <!-- 获取 “某评分项”的“所有专家”对“某投标人”的评审明细   扣分表 -->
+    <select id="listAllExpertGradeItemDeductScore" resultMap="ExpertReviewDetailDTOMap">
+        SELECT a.EXPERT_ID AS expertId,
+        b.EXPERT_NAME AS expertName,
+        a.EVAL_RESULT AS expertReviewDetail
+        FROM expert_review_single_item_deduct a
+        LEFT JOIN expert_user b
+        ON a.EXPERT_ID=b.ID
+        <where>
+            b.bid_Section_Id = #{bidSectionId}
+            AND a.BIDDER_ID=#{bidderId}
+            AND a.GRADE_ITEM_ID =#{gradeItemId}
+        </where>
+        order by EXPERT_ID
+    </select>
+
+</mapper>

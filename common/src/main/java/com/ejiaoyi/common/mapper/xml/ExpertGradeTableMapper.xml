@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.ExpertGradeTableMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.ExpertGradeTable">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="GRADE_ID" property="gradeId" />
+        <result column="GRADE_ITEM_ID" property="gradeItemId" />
+        <result column="EVAL_EXPERT_ID" property="evalExpertId" />
+        <result column="GRADE_TYPE" property="gradeType" />
+        <result column="ENABLED" property="enabled" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, GRADE_ID, GRADE_ITEM_ID, EVAL_EXPERT_ID, GRADE_TYPE, ENABLED
+    </sql>
+
+</mapper>

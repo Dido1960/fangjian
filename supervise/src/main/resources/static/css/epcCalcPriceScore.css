@@ -1,0 +1,77 @@
+.cont .right {
+    background-color: #fff;
+}
+.right h3 {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 60px;
+    color: #333333;
+    text-align: center;
+}
+.right .right-document {
+    width: 97%;
+    height: 564px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    opacity: 1;
+    border-radius: 10px;
+    margin: 0px auto;
+}
+.right .right-document ol {
+    width: 100%;
+    height: 79px;
+    background: #e2e2e2;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+    padding-right: 17px;
+    box-sizing: border-box;
+}
+.right-document ol li {
+    width: 12.5%;
+    height: 79px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 79px;
+    color: #333333;
+    text-align: center;
+    float: left;
+}
+.right-document ol .long {
+    width: 25% !important;
+}
+.right-document .right-table {
+    width: 100%;
+    height: calc(100% - 79px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.right-document .right-table table {
+    width: 100%;
+}
+.right-table table tr {
+    width: 100%;
+    height: 96px;
+    min-height: 96px;
+}
+.right-table table tr td {
+    width: 12.5%;
+    height: 96px;
+    min-height: 96px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    color: #333333;
+    text-align: center;
+    border-bottom: 1px solid #e2e2e2;
+    box-sizing: border-box;
+}
+.right-table table tr td + td {
+    border-left: 1px solid #e2e2e2;
+}
+.right-table table tr .long {
+    width: 25% !important;
+}

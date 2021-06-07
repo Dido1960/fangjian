@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.NetworkLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.NetworkLog">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="USER_ID" property="userId"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="REQUEST_URI" property="requestUri"/>
+        <result column="REQUEST_METHOD" property="requestMethod"/>
+        <result column="REQUEST_PARAMS" property="requestParams"/>
+        <result column="REMOTE_ADDRESS" property="remoteAddress"/>
+        <result column="USER_AGENT" property="userAgent"/>
+        <result column="DEVICE_NAME" property="deviceName"/>
+        <result column="BROWSER_NAME" property="browserName"/>
+        <result column="BROWSER_VERSION" property="browserVersion"/>
+        <result column="PROCESSING_TIME" property="processingTime"/>
+        <result column="CREATE_TIME" property="createTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, USER_ID, USER_NAME, REQUEST_URI, REQUEST_METHOD, REQUEST_PARAMS, REMOTE_ADDRESS, USER_AGENT,
+        DEVICE_NAME, BROWSER_NAME, BROWSER_VERSION, PROCESSING_TIME, CREATE_TIME
+    </sql>
+
+</mapper>

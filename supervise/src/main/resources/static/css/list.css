@@ -1,0 +1,256 @@
+section {
+  width: 90%;
+  min-height: calc(100% - 80px);
+  padding-top: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+section .head {
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
+  opacity: 0.8;
+  border-radius: 10px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+.head ol {
+  float: left;
+  width: 51%;
+  height: 80px;
+}
+.head ol li {
+  width: calc(100% / 7);
+  height: 80px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 80px;
+  color: #9c9c9c;
+  text-align: center;
+  float: left;
+  cursor: pointer;
+}
+.head ol .sele {
+  background-color: rgba(0, 102, 204, 1);
+  font-weight: bold;
+  color: #ffffff;
+}
+.head ol li:nth-child(1) {
+  border-radius: 10px 0 0 10px;
+}
+.head .head-form {
+  width: 30%;
+  height: 40px;
+  float: right;
+  margin-top: 20px;
+}
+.head-form .layui-input-block {
+  width: 35%;
+  margin: 0;
+  float: left;
+}
+.head-form .seach {
+  width: 60%;
+  height: 40px;
+  float: right;
+  position: relative;
+}
+.head-form .seach input {
+  width: 100%;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  opacity: 1;
+  border-radius: 5px;
+  padding: 0 30px 0 10px;
+  box-sizing: border-box;
+}
+.head-form .seach img {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  cursor: pointer;
+}
+.head-form .layui-form-select dl dd.layui-this {
+  background-color: #fff;
+  color: #0066cc;
+  font-weight: bold;
+}
+.head-form .layui-form-select dl dd {
+  text-align: center;
+}
+.cont {
+  width: 100%;
+  height: 660px;
+  margin-top: 20px;
+}
+.cont ol {
+  width: 100%;
+  height: 80px;
+  background: #e2e2e2;
+  opacity: 1;
+}
+.cont ol li {
+  width: 10%;
+  height: 80px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 80px;
+  color: #333333;
+  text-align: center;
+  display: inline-block;
+}
+.cont ol .long {
+  width: 24%;
+}
+.cont ul {
+  width: 100%;
+}
+.cont ul li {
+  width: 100%;
+  min-height: 96px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 8px;
+  overflow: visible;
+  margin-top: 20px;
+}
+.cont ul li div {
+  display: inline-block;
+  width: 10%;
+  min-height: 96px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 96px;
+  color: #333333;
+  vertical-align: middle;
+  text-align: center;
+}
+.cont ul li .long {
+  width: 24% !important;
+}
+.cont ul li div p {
+  line-height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+  white-space: pre-wrap;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.cont ul li div span {
+  display: inline-table;
+  width: 76px;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  overflow: visible;
+}
+.cont ul li div .option {
+  overflow: hidden;
+  background: url(../img/select.png) no-repeat 52px center #df9809;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+.cont ul li div .option ol {
+  display: none;
+}
+.cont ul li div .drop-down {
+  width: 76px !important;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #df9809;
+  border-bottom: none;
+  opacity: 1;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  color: #df9809;
+  padding-right: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  background: url(../img/up.png) no-repeat 52px center #fff;
+  border-radius: 5px 5px 0px 0px;
+}
+.cont ul li div .drop-down ol {
+  width: 76px !important;
+  height: 112px;
+  background: #ffffff;
+  border: 1px solid #db9508;
+  border-top: none;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16); */
+  box-sizing: border-box;
+  opacity: 1;
+  border-radius: 0px 0px 5px 5px;
+  position: absolute;
+  left: -1px;
+  z-index: 999999;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: block;
+}
+.cont ul li div .drop-down ol::-webkit-scrollbar {
+  display: none;
+}
+.cont ul li div .drop-down ol li {
+  width: 100%;
+  min-height: 36px;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  color: #9c9c9c;
+  text-align: center;
+  display: block;
+  margin: 0;
+}
+.cont ul li div .drop-down ol li:hover {
+  color: #db9508;
+}
+section .foot {
+  margin-top: 40px;
+}
+section .layui-laypage .layui-laypage-count {
+  position: absolute;
+  left: 0px;
+  width: 71px;
+  float: left;
+  text-align: center;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 500;
+  color: rgba(26, 51, 88, 1);
+}
+
+section .layui-laypage .layui-laypage-curr .layui-laypage-em {
+  background: rgba(0, 102, 204, 1);
+  color: #fff;
+}
+
+section .layui-box {
+  width: 100%;
+  text-align: right;
+}
+
+section .layui-box a {
+  margin-right: 10px;
+}
+
+section .layui-laypage .layui-laypage-spr {
+  margin-right: 10px;
+}
+
+section .layui-laypage .layui-laypage-curr {
+  margin-right: 10px;
+}

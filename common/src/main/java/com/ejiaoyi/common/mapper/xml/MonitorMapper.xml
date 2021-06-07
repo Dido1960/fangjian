@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.MonitorMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.Monitor">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="REG_ID" property="regId" />
+        <result column="REG_NAME" property="regName" />
+        <result column="REG_CODE" property="regCode" />
+        <result column="IP" property="ip" />
+        <result column="PORT" property="port" />
+        <result column="USER_NAME" property="userName" />
+        <result column="PWD" property="pwd" />
+        <result column="ENABLED" property="enabled" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, REG_ID, REG_NAME, REG_CODE, IP, PORT, USER_NAME, PWD, ENABLED
+    </sql>
+
+    <select id="pagedMonitor" resultMap="BaseResultMap">
+        select a.* from MONITOR a
+        <where>
+            <if test="monitor.regId != null ">
+                <bind name="regId" value="monitor.regId"/>
+                and a.REG_ID = #{regId}
+            </if>
+            <if test="monitor.userName !='' and monitor.userName !=null ">
+                <bind name="userName" value="'%'+monitor.userName+'%'"/>
+                and a.USER_NAME like #{userName}
+            </if>
+            <if test="monitor.enabled != null ">
+                <bind name="enabled" value="monitor.enabled"/>
+                and a.ENABLED = #{enabled}
+            </if>
+        </where>
+    </select>
+</mapper>

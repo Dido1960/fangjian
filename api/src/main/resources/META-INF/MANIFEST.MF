@@ -1,0 +1,98 @@
+Manifest-Version: 1.0
+Main-Class: com.ejiaoyi.api.ApiApplication
+Class-Path: guava-20.0.jar html2pdf-3.0.0.jar jakarta.servlet-api-4.0.3.
+ jar kernel-7.1.11.jar springfox-swagger2-2.9.2.jar jetty-security-9.4.2
+ 6.v20200117.jar javax-websocket-client-impl-9.4.26.v20200117.jar knife4
+ j-spring-ui-2.0.5.jar freemarker-template-inheritance-0.4.RELEASE.jar s
+ pring-boot-2.2.5.RELEASE.jar bcpkix-jdk15on-1.64.jar jetty-client-9.4.2
+ 6.v20200117.jar jetty-http-9.4.26.v20200117.jar QRCode.jar stax-api-1.0
+ .1.jar dock-crypto.jar spring-boot-starter-tomcat-2.2.5.RELEASE.jar Lat
+ encyUtils-2.0.3.jar spring-boot-starter-actuator-2.2.5.RELEASE.jar java
+ x.activation-api-1.2.0.jar aspectjweaver-1.9.5.jar HdrHistogram-2.1.11.
+ jar kaptcha-2.3.2.jar spring-security-config-5.2.2.RELEASE.jar springfo
+ x-core-2.9.2.jar classmate-1.5.1.jar commons-logging-1.2.jar spring-cor
+ e-5.2.4.RELEASE.jar netty-codec-dns-4.1.45.Final.jar netty-handler-4.1.
+ 45.Final.jar netty-resolver-4.1.45.Final.jar jodd-core-5.0.13.jar ooxml
+ -schemas-1.3.jar spring-boot-starter-web-2.2.5.RELEASE.jar jackson-data
+ format-yaml-2.10.2.jar jaxen-1.1.6.jar spring-beans-5.2.4.RELEASE.jar f
+ r.opensagres.xdocreport.core-2.0.1.jar DBstep.jar spring-boot-actuator-
+ autoconfigure-2.2.5.RELEASE.jar httpclient-4.5.11.jar logback-classic-1
+ .2.3.jar objenesis-2.5.1.jar commons-io-2.6.jar reactive-streams-1.0.3.
+ jar knife4j-spring-boot-autoconfigure-2.0.5.jar httpcore-4.4.13.jar jet
+ ty-util-9.4.26.v20200117.jar xmlbeans-2.3.0.jar jacob.jar fst-2.57.jar 
+ flying-saucer-pdf-9.1.5.jar rxjava-2.2.18.jar jakarta.validation-api-2.
+ 0.2.jar bcmail-jdk14-1.38.jar spring-boot-starter-aop-2.2.5.RELEASE.jar
+  mybatis-plus-annotation-3.3.1.jar slf4j-api-1.7.30.jar jetty-continuat
+ ion-9.4.26.v20200117.jar jetty-annotations-9.4.26.v20200117.jar mapstru
+ ct-1.2.0.Final.jar jaxb-api-2.3.1.jar javassist-3.25.0-GA.jar spring-co
+ ntext-5.2.4.RELEASE.jar curvesapi-1.04.jar encrypt-1.0.jar swagger-mode
+ ls-1.5.22.jar anysign-client-2.0.3.jar spring-boot-autoconfigure-2.2.5.
+ RELEASE.jar core-3.3.0.jar bcprov-jdk16-1.46.jar spring-boot-starter-we
+ bsocket-2.2.5.RELEASE.jar websocket-common-9.4.26.v20200117.jar ini4j-0
+ .5.4.jar mybatis-3.5.3.jar spring-plugin-metadata-1.2.0.RELEASE.jar spr
+ ing-web-5.2.4.RELEASE.jar itextpdf-5.5.13.jar jave-1.0.1.jar druid-1.1.
+ 21.jar log4j-api-2.12.1.jar mybatis-plus-generator-3.3.1.jar io-7.1.11.
+ jar spring-data-commons-2.2.5.RELEASE.jar spring-jcl-5.2.4.RELEASE.jar 
+ poi-4.1.2.jar commons-math3-3.6.1.jar log4j-to-slf4j-2.12.1.jar druid-s
+ pring-boot-starter-1.1.21.jar tomcat-embed-el-9.0.31.jar lettuce-core-5
+ .2.2.RELEASE.jar spring-tx-5.2.4.RELEASE.jar gson-2.8.6.jar knife4j-spr
+ ing-boot-starter-2.0.5.jar anysign-components-bean-2.0.3.jar redisson-3
+ .12.3.jar javase-3.3.0.jar bcprov-jdk14-1.38.jar forms-7.1.11.jar fastj
+ son-1.2.69.jar spring-expression-5.2.4.RELEASE.jar spring-plugin-core-1
+ .2.0.RELEASE.jar jai-imageio-core-1.3.1.jar commons-codec-1.13.jar spri
+ ngfox-schema-2.9.2.jar spring-aop-5.2.4.RELEASE.jar validation-api-2.0.
+ 1.Final.jar jackson-datatype-jdk8-2.10.2.jar spring-boot-starter-jetty-
+ 2.2.5.RELEASE.jar jetty-servlet-9.4.26.v20200117.jar spring-data-keyval
+ ue-2.2.5.RELEASE.jar filters-2.0.235-1.jar jackson-core-2.10.2.jar comm
+ ons-collections4-4.4.jar pinyin4j-2.5.1.jar cache-api-1.1.1.jar mybatis
+ -plus-core-3.3.1.jar styled-xml-parser-7.1.11.jar jetty-io-9.4.26.v2020
+ 0117.jar HikariCP-3.4.2.jar mybatis-plus-boot-starter-3.3.1.jar springf
+ ox-spring-web-2.9.2.jar jsqlparser-3.1.jar fr.opensagres.poi.xwpf.conve
+ rter.xhtml-2.0.1.jar layout-7.1.11.jar spring-boot-starter-security-2.2
+ .5.RELEASE.jar jakarta.annotation-api-1.3.5.jar reactor-core-3.3.3.RELE
+ ASE.jar spring-boot-starter-validation-2.2.5.RELEASE.jar spring-data-re
+ dis-2.2.5.RELEASE.jar javax-websocket-server-impl-9.4.26.v20200117.jar 
+ commons-lang3-3.9.jar jcl-over-slf4j-1.7.30.jar netty-codec-4.1.45.Fina
+ l.jar mybatis-plus-extension-3.3.1.jar spring-boot-starter-freemarker-2
+ .2.5.RELEASE.jar mybatis-spring-2.0.3.jar tomcat-embed-websocket-9.0.31
+ .jar redisson-spring-data-22-3.12.3.jar swagger-annotations-1.5.22.jar 
+ asm-7.2.jar httpmime-4.5.11.jar snakeyaml-1.25.jar jetty-plus-9.4.26.v2
+ 0200117.jar netty-resolver-dns-4.1.45.Final.jar commons-beanutils-1.9.4
+ .jar spring-boot-starter-jdbc-2.2.5.RELEASE.jar spring-boot-devtools-2.
+ 2.5.RELEASE.jar jsoup-1.13.1.jar dynamic-datasource-spring-boot-starter
+ -3.0.0.jar redisson-spring-boot-starter-3.12.3.jar logback-core-1.2.3.j
+ ar commons-collections-3.2.2.jar netty-buffer-4.1.45.Final.jar commons-
+ text-1.6.jar hutool-all-5.2.3.jar asm-analysis-7.2.jar mybatis-plus-3.3
+ .1.jar jodd-bean-5.0.13.jar mchange-commons-java-0.2.15.jar jul-to-slf4
+ j-1.7.30.jar bcprov-jdk15on-1.64.jar jakarta.websocket-api-1.1.2.jar kn
+ ife4j-core-2.0.5.jar svg-7.1.11.jar spring-websocket-5.2.4.RELEASE.jar 
+ spring-security-core-5.2.2.RELEASE.jar dom4j-1.6.1.jar alipay-sdk-java-
+ 3.0.52.ALL.jar commons-pool2-2.7.0.jar freemarker-2.3.29.jar spring-mes
+ saging-5.2.4.RELEASE.jar websocket-servlet-9.4.26.v20200117.jar spring-
+ boot-starter-data-redis-2.2.5.RELEASE.jar spring-jdbc-5.2.4.RELEASE.jar
+  asm-commons-7.2.jar jackson-module-parameter-names-2.10.2.jar knife4j-
+ annotations-2.0.5.jar apache-el-8.5.49.jar SparseBitSet-1.2.jar xmlwork
+ er-5.5.11.jar websocket-api-9.4.26.v20200117.jar netty-transport-4.1.45
+ .Final.jar websocket-client-9.4.26.v20200117.jar jcommander-1.48.jar fa
+ stdfs-client-1.27.2.jar flying-saucer-core-9.1.5.jar jackson-annotation
+ s-2.10.2.jar spring-boot-starter-2.2.5.RELEASE.jar spring-security-web-
+ 5.2.2.RELEASE.jar jetty-server-9.4.26.v20200117.jar itext-2.1.7.jar mic
+ rometer-core-1.3.5.jar tomcat-embed-core-9.0.31.jar spring-session-data
+ -redis-2.2.2.RELEASE.jar bctsp-jdk14-1.38.jar springfox-bean-validators
+ -2.9.2.jar mysql-connector-java-8.0.19.jar org.jacoco.agent-0.8.3-runti
+ me.jar spring-webmvc-5.2.4.RELEASE.jar spring-boot-starter-json-2.2.5.R
+ ELEASE.jar xml-apis-1.0.b2.jar springfox-swagger-common-2.9.2.jar sprin
+ g-oxm-5.2.4.RELEASE.jar jetty-webapp-9.4.26.v20200117.jar spring-sessio
+ n-core-2.2.1.RELEASE.jar netty-common-4.1.45.Final.jar websocket-server
+ -9.4.26.v20200117.jar spring-boot-starter-logging-2.2.5.RELEASE.jar ali
+ yun-java-sdk-core-4.4.3.jar openapi-java-sdk-1.10.1.jar fr.opensagres.p
+ oi.xwpf.converter.core-2.0.1.jar jackson-datatype-jsr310-2.10.2.jar spr
+ ing-context-support-5.2.4.RELEASE.jar poi-ooxml-3.15-beta2.jar jboss-lo
+ gging-3.4.1.Final.jar spring-boot-starter-quartz-2.2.5.RELEASE.jar asm-
+ tree-7.2.jar springfox-spi-2.9.2.jar spring-boot-actuator-2.2.5.RELEASE
+ .jar poi-scratchpad-4.1.2.jar hibernate-validator-6.0.18.Final.jar quar
+ tz-2.3.2.jar jetty-xml-9.4.26.v20200117.jar anysign-components-2.0.3.ja
+ r jetty-servlets-9.4.26.v20200117.jar jackson-databind-2.10.2.jar javax
+ .servlet-api-4.0.1.jar knife4j-spring-2.0.5.jar byte-buddy-1.10.8.jar z
+ ip4j-1.3.2.jar thumbnailator-0.4.8.jar
+

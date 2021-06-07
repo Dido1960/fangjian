@@ -1,0 +1,113 @@
+.right .right-document {
+    width: 100%;
+    height: 522px;
+    background: #ffffff;
+    opacity: 1;
+    border-radius: 8px;
+}
+.right-document ol {
+    width: 100%;
+    height: 60px;
+    background: #e2e2e2;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+    padding-right: 17px;
+    box-sizing: border-box;
+}
+.right-document ol li {
+    width: 12.5%;
+    height: 60px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 60px;
+    color: #242b29;
+    text-align: center;
+    float: left;
+}
+.right-document ol .long {
+    width: 25%;
+}
+.right-document .document-table {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.document-table table {
+    width: 100%;
+}
+.document-table table tr {
+    width: 100%;
+    height: 77px;
+    min-height: 77px;
+}
+.document-table table tr td {
+    width: 12.5%;
+    height: 77px;
+    min-height: 77px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    color: #1b2a3d;
+    text-align: center;
+    border-bottom: 1px solid #e2e2e2;
+    box-sizing: border-box;
+}
+.document-table table tr .long {
+    width: 25%;
+}
+.document-table table tr td span {
+    display: inline-table;
+    width: 70px;
+    height: 36px;
+    background: #0066cc;
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 36px;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+}
+.document-table table tr .unSign {
+    color: rgba(204, 43, 0, 1);
+}
+.right .foot {
+    /* margin-top: 40px; */
+}
+.right .layui-laypage .layui-laypage-count {
+    position: absolute;
+    left: 0px;
+    width: 71px;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    color: rgba(26, 51, 88, 1);
+}
+
+.right .layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background: rgba(0, 102, 204, 1);
+    color: #fff;
+}
+
+.right .layui-box {
+    width: 100%;
+    text-align: right;
+}
+
+.right .layui-box a {
+    margin-right: 10px;
+}
+
+.right .layui-laypage .layui-laypage-spr {
+    margin-right: 10px;
+}
+
+.right .layui-laypage .layui-laypage-curr {
+    margin-right: 10px;
+}

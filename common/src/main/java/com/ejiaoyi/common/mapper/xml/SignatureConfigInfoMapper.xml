@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.SignatureConfigInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.SignatureConfigInfo">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="REG_NO" property="regNo" />
+        <result column="IMPRESSION_NO" property="impressionNo" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, REG_NO, IMPRESSION_NO, REMARK
+    </sql>
+
+    <!-- 扩展查询映射结果 -->
+    <resultMap id="BaseResultMapExtend" type="com.ejiaoyi.common.entity.SignatureConfigInfo" extends="BaseResultMap">
+        <result column="REG_NAME" property="regName"/>
+    </resultMap>
+
+    <select id="pagedSignatureConfigInfo" resultMap="BaseResultMapExtend">
+        select a.*, b.REG_NAME from signature_config_info a
+        left join reg b on a.REG_NO = b.REG_NO
+        <where>
+            <if test="signatureConfigInfo.regNo != null ">
+                <bind name="regNo" value="signatureConfigInfo.regNo"/>
+                and a.REG_NO = #{regNo}
+            </if>
+        </where>
+    </select>
+</mapper>

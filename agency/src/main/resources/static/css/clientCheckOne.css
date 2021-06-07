@@ -1,0 +1,343 @@
+.layui-layer-btn,
+.layui-layer-btn-c {
+    background: rgba(239, 243, 244, 1);
+}
+
+.sussTan h3 {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 60px;
+    color: rgba(34, 49, 101, 1);
+    opacity: 1;
+    text-align: center;
+    margin-top: 10px;
+}
+
+html .layui-layer-title {
+    padding: 0;
+}
+
+#layerDemoauto {
+    overflow: hidden;
+}
+
+.cons {
+    width: 100%;
+    overflow: hidden;
+}
+
+.cons .left {
+    width: 341px;
+    height: 800px;
+    float: left;
+    margin-left: 20px;
+}
+
+.cons .zuo {
+    width: 341px;
+    height: 292px;
+    border: 1px solid rgba(213, 213, 213, 1);
+    opacity: 1;
+    box-sizing: border-box;
+    padding-top: 20px;
+    position: relative;
+}
+
+.cons .you {
+    width: 580px;
+    float: right;
+    margin-right: 20px;
+}
+
+.xin {
+    width: 580px;
+    height: 624px;
+    background: rgba(241, 245, 248, 1);
+    opacity: 1;
+}
+
+.zuo p {
+    width: 100%;
+    height: 24px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    line-height: 24px;
+    color: rgba(34, 49, 101, 1);
+    padding-left: 69px;
+    box-sizing: border-box;
+}
+
+.left h4 {
+    width: 100%;
+    height: 60px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 60px;
+    color: rgba(19, 97, 254, 1);
+    margin-top: 10px;
+}
+
+.zuo p+p {
+    margin-top: 10px;
+}
+
+html .inut .layui-unselect,
+html .inut .layui-form-switch {
+    width: 80px;
+    height: 36px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 1);
+    /*float: right;*/
+
+}
+
+html .inut .layui-form-switch i {
+    width: 28px;
+    height: 28px;
+}
+
+html .inut .layui-form-onswitch i {
+    margin-left: -32px;
+}
+
+html .inut .layui-form-onswitch {
+    background: rgba(5, 191, 191, 1);
+    line-height: 36px;
+    width: 70px;
+    margin-left: 15px;
+}
+
+html .inut .layui-form-switch em {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.inut {
+    width: 100%;
+    height: 47px;
+    line-height: 36px;
+    font-weight: 500;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.xin img {
+    display: block;
+    margin: 0 auto;
+}
+
+.foot {
+    width: 100%;
+    height: 54px;
+    margin: 20px 0;
+}
+
+.foot span {
+    width: 40%;
+    height: 54px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    line-height: 24px;
+    color: rgba(34, 49, 101, 1);
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+
+.foot span:hover {
+    color: rgba(19, 97, 254, 1);
+    transition: 0.3s;
+}
+
+.foot .go {
+    float: right;
+}
+
+html .layui-form-switch em {
+    margin-left: 33px;
+}
+
+html .layui-form-onswitch em {
+    margin-left: 5px;
+}
+
+.piao {
+    display: block;
+    width: 76px;
+    height: 36px;
+    background: linear-gradient(249deg, rgba(19, 97, 254, 1) 0%, rgba(78, 138, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#1361fe, endColorstr=#4e8aff);
+    opacity: 1;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    text-align: center;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.zuo img {
+    display: block;
+    width: 240px;
+    height: 180px;
+    background: rgba(241, 245, 248, 1);
+    opacity: 1;
+    margin: 10px auto;
+}
+
+.left form {
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.left form label {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.left form label span {
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    color: rgba(166, 167, 171, 1);
+}
+
+.submit {
+    width: 70px;
+    height: 36px;
+    background: rgba(19, 97, 254, 1);
+    opacity: 1;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.submit:hover {
+    opacity: 0.7;
+}
+.doubt {
+    display: block;
+    width: 76px;
+    height: 36px;
+    background: linear-gradient(249deg, rgba(19, 97, 254, 1) 0%, rgba(78, 138, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#1361fe, endColorstr=#4e8aff);
+    opacity: 1;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    text-align: center;
+    line-height: 36px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.checkTwo{
+    width:100%;
+    height:60px;
+    border:1px solid rgba(213,213,213,1);
+    opacity:1;
+    padding: 5px;
+    box-sizing: border-box;
+    resize: none
+}
+.checkOne{
+    width:100%;
+    height:136px;
+    border:1px solid rgba(213,213,213,1);
+    opacity:1;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none
+}
+textarea:disabled{
+    background-color: rgba(200,200,200,0.3);
+}
+
+.inut {
+    width: 100%;
+    height: 116px;
+    background: #E8EBF1;
+    opacity: 1;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.inut .inut-l {
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+.inut .inut-r {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+.inut .inut-r label {
+    display: inline-block;
+    min-width: 70px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: #1A2539;
+}
+
+.inut .inut-l label {
+    display: inline-block;
+    min-width: 70px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: #1A2539;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.inut .layui-form-radio{
+    width: auto !important;
+    height: 40px !important;
+    margin: 0px;
+    padding: 0px;
+    float: none !important;
+}
+
+.inut .inut-center {
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.inut .inut-center label {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: #1A2539;
+}

@@ -1,0 +1,78 @@
+.right {
+  display: inline-block;
+  width: 100%;
+}
+.right .tips {
+  width: 100%;
+  height: 76px;
+  background: #0066cc;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+.right .tips div {
+  line-height: 76px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #ffffff;
+}
+.right .tips div span {
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #ffffff;
+  margin-left: 30px;
+}
+.right .tips div:nth-child(1) {
+  width: 70%;
+  height: 100%;
+  float: left;
+}
+.right .tips div:nth-child(2) {
+  width: 20%;
+  height: 100%;
+  float: right;
+  text-align: right;
+}
+section .right .head {
+  width: 100%;
+  height: 56px;
+  background: #cfdae5;
+  border-radius: 8px 8px 0 0;
+}
+.right .head li {
+  width: 20%;
+  height: 56px;
+  line-height: 56px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  float: left;
+}
+.right .cont {
+  width: 100%;
+  border-radius: 8px;
+}
+.right .cont li {
+  width: 100%;
+  height: 72px;
+  background-color: #fff;
+}
+.right .cont li + li {
+  border-top: 1px solid #ccc;
+}
+.right .cont li div {
+  width: 20%;
+  height: 72px;
+  line-height: 72px;
+  text-align: center;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #333333;
+  float: left;
+}

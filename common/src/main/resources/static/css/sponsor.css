@@ -1,0 +1,70 @@
+body{
+    width:1920px;
+    height:1000px;
+    background:rgba(239,243,245,1);
+    opacity:1;
+    padding-top: 20px;
+}
+
+.main{
+
+    background:rgba(255,255,255,1);
+    opacity:1;
+    width:1060px;
+    /*height:979px;*/
+    float: left;
+    margin-left: 20px;
+    position: relative;
+}
+.lineOne{
+    height:40px;
+    width:700px;
+    margin:20px auto;
+}
+
+
+.tex-input,.city-picker-span{
+    width:420px;
+    height:40px;
+    border:1px solid rgba(163,180,212,1) !important;
+    opacity:1;
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+    font-weight:500;
+    line-height:24px;
+    color:rgba(26,51,88,1);
+    padding-left: 15px;
+    z-index: 999999;
+}
+.word{
+    width:74px;
+    height:14px;
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+    font-weight:500;
+    line-height:24px;
+    color:rgba(26,51,88,1);
+    opacity:1;
+}
+.sub-button{
+    width:86px;
+    height:40px;
+    background:rgba(0,98,235,1);
+    opacity:1;
+    margin: 77px auto;
+    text-align: center;
+    line-height: 38px;
+    cursor: pointer;
+}
+
+.sub-text{
+    width:32px;
+    height:16px;
+    font-size:16px;
+    font-family:"Microsoft YaHei";
+    font-weight:bold;
+    line-height:27px;
+    color:rgba(255,255,255,1);
+    opacity:1;
+}
+

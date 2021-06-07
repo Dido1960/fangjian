@@ -1,0 +1,79 @@
+html .layui-layer-btn .layui-layer-btn0 {
+    background-color: rgba(19, 97, 254, 1);
+}
+
+html .layui-layer-title {
+    padding: 0;
+    border-bottom: 1px solid rgba(213, 213, 213, 1);
+}
+
+html .layui-form-select dl dd.layui-this {
+    background-color: rgba(19, 97, 254, 1);
+}
+
+html .layui-form-item {
+    width: 450px;
+    margin: 25px auto 0;
+}
+
+html .layui-anim,
+html .layui-anim-upbit {
+    height: 144px;
+    overflow: auto;
+}
+
+html .layui-form-label {
+    width: 125px;
+}
+
+.layui-input-block {
+    margin-left: 125px;
+}
+
+html .layui-anim::-webkit-scrollbar,
+.layui-anim-upbit::-webkit-scrollbar {
+    display: none;
+}
+
+.layui-form-label span {
+    color: red;
+}
+
+html .layui-laydate .layui-this {
+    background: linear-gradient(263deg, rgba(19, 97, 254, 1) 0%, rgba(78, 138, 255, 1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#1361fe, endColorstr=#4e8aff) !important;
+}
+
+.layui-laydate-header i:hover,
+.layui-laydate-header span:hover {
+    color: rgba(19, 97, 254, 1);
+}
+
+.laydate-time-list li ol {
+    overflow: auto;
+}
+
+.laydate-time-list li ol::-webkit-scrollbar {
+    display: none
+}
+
+html .layui-layer-btn .layui-layer-btn0 {
+    background-color: rgba(19, 97, 254, 1);
+}
+
+.layui-layer-btn,
+.layui-layer-btn-c {
+    background: rgba(239, 243, 244, 1);
+}
+
+html .layui-form-onswitch {
+    background-color: rgba(19, 97, 254, 1)
+}
+
+#layerDemoauto {
+
+}
+
+.hide {
+    display: none;
+}

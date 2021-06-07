@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: auto;
+    background-color: rgba(3, 34, 76, 1);
+    background-size: 100% 100%;
+    animation: dynamics 6s ease infinite;
+    -webkit-animation: dynamics 6s ease infinite;
+    -moz-animation: dynamics 6s ease infinite;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+@keyframes dynamics {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+span,
+li,
+p,
+h3,
+h4,
+b,
+label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background: url(../img/visitor_head.png) no-repeat center center;
+    background-size: 100%;
+    position: absolute;
+}
+
+header h3 {
+    float: left;
+    width: 62%;
+    height: 80px;
+    font-size: 28px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 80px;
+    color: #ffffff;
+    padding-left: 30px;
+    box-sizing: border-box;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+header p {
+    float: left;
+    width: 28%;
+    height: 80px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 70px;
+    color: #11dcfc;
+    letter-spacing: 5px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.loginSpan {
+    display: block;
+    width: 80px;
+    height: 30px;
+    float: left;
+    background: rgba(22, 145, 255, 0.84);
+    opacity: 1;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 81px;
+    border-radius: 5%;
+}
+
+a {
+    color: #ffffff !important;
+}
+
+a :hover {
+    color: #ffffff !important;
+}
+
+section {
+    width: 86%;
+    height: calc(100% - 80px);
+    padding-top: 40px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 100px;
+    margin: auto;
+}
+
+section .title {
+    width: 100%;
+    height: 100px;
+    font-size: 32px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 100px;
+    color: #11dcfc;
+    text-align: center;
+    background: url(../img/title.png) no-repeat center center;
+    background-size: 100% 100%;
+    margin-bottom: 40px;
+}
+
+section ul {
+    width: 100%;
+    height: calc(100% - 200px);
+    overflow: auto;
+    padding: 0;
+    -ms-scroll-chaining: chained;
+    -ms-overflow-style: none;
+    -ms-content-zooming: zoom;
+    -ms-scroll-rails: none;
+    -ms-content-zoom-limit-min: 100%;
+    -ms-content-zoom-limit-max: 500%;
+    -ms-scroll-snap-type: proximity;
+    -ms-scroll-snap-points-x: snapList(100%, 200%, 300%, 400%, 500%);
+    -ms-overflow-style: none;
+}
+
+section ul::-webkit-scrollbar {
+    display: none;
+}
+
+section ul li {
+    width: 30%;
+    height: 279px;
+    float: left;
+    margin-right: 5%;
+    margin-bottom: 50px;
+}
+
+section ul .over-back {
+    background: url(../img/over_back.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+section ul .doing-back {
+    background: url(../img/doing_back.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+section ul .not-back {
+    background: url(../img/not_back.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+section ul li:nth-child(3n) {
+    margin-right: 0;
+}
+
+section ul li h3 {
+    width: 100%;
+    height: 62px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 62px;
+    color: #11dcfc;
+}
+
+section ul li h3 img {
+    display: block;
+    float: left;
+    margin-top: 24px;
+    margin-left: 40%;
+    margin-right: 20px;
+}
+
+section ul li .introduce {
+    width: 100%;
+    height: 24px;
+    margin-top: 16px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 24px;
+    color: #11dcfc;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+section ul li .introduce span {
+    display: inline-block;
+    width: 85px;
+    height: 24px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 24px;
+    color: #11dcfc;
+    background: url(../img/name.png) no-repeat center center;
+    background-size: 100% 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+section ul li .introduce p {
+    display: inline-block;
+    width: calc(100% - 100px);
+    margin-left: 10px;
+    line-height: 24px;
+    vertical-align: middle;
+}
+
+
+h3 span {
+    animation: animate 3.4s linear infinite;
+}
+
+h3 span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+h3 span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+h3 span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+h3 span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+h3 span:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+h3 span:nth-child(6) {
+    animation-delay: 1s;
+}
+
+h3 span:nth-child(7) {
+    animation-delay: 1.2s;
+}
+
+h3 span:nth-child(8) {
+    animation-delay: 1.4s;
+}
+
+h3 span:nth-child(9) {
+    animation-delay: 1.6s;
+}
+
+h3 span:nth-child(10) {
+    animation-delay: 1.8s;
+}
+
+h3 span:nth-child(11) {
+    animation-delay: 2.0s;
+}
+
+h3 span:nth-child(12) {
+    animation-delay: 2.2s;
+}
+
+h3 span:nth-child(13) {
+    animation-delay: 2.4s;
+}
+
+h3 span:nth-child(14) {
+    animation-delay: 2.6s;
+}
+
+h3 span:nth-child(15) {
+    animation-delay: 2.8s;
+}
+
+h3 span:nth-child(16) {
+    animation-delay: 3.0s;
+}
+
+h3 span:nth-child(17) {
+    animation-delay: 3.2s;
+}
+
+h3 span:nth-child(18) {
+    animation-delay: 3.4s;
+}
+
+
+@keyframes animate {
+    0%, 80% {
+        color: #fff7fb;
+        text-shadow: none;
+    }
+    100% {
+        color: #fff;
+        text-shadow: 0 0 10px #13e3f8,
+        0 0 20px #1691ff,
+        0 0 20px #1691ff,
+        0 0 20px #1691ff,
+        0 0 20px #1691ff,
+        0 0 20px #1691ff;
+    }
+}
+
+li {
+    position: relative; /*相对定位，此处是为了span的定位的父元素为准备*/
+    display: inline-block; /*行内盒模型*/
+    padding: 25px 30px;
+    margin: 40px 0;
+    color: #03e9f4; /*字体颜色的*/
+    font-size: 24px; /*字体大小*/
+    text-decoration: none; /*字体装饰*/
+    text-transform: uppercase; /*字体转变--大写*/
+    transition: 0.5s; /*过渡时间*/
+    overflow: hidden; /*超出隐藏*/
+    letter-spacing: 4px; /*字符间距*/
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); /*镜面翻转*/
+}
+
+.liSpan {
+    position: absolute;
+    display: block;
+    width: 100%;
+}
+
+/*动画时间为1S，每个边框占用0.25S，每经过一个边框延时播放需要增加0.25s，*/
+li span:nth-child(1) { /*上边框，左上--右上*/
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4); /*背景渐变*/
+    animation: cc 2s infinite linear; /*动画 name: cc,重复无限次数，线性播放*/
+}
+
+@keyframes cc { /*对应边框动画*/
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+li span:nth-child(2) { /*右边框，右上--右下*/
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: cc2 2s infinite linear;
+    animation-delay: 0.5s;
+}
+
+@keyframes cc2 { /*对应边框动画*/
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+li span:nth-child(3) { /*下边框，右下--左下*/
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: cc3 2s infinite linear;
+    animation-delay: 1s;
+}
+
+@keyframes cc3 { /*对应边框动画*/
+    0% {
+        right: -100%
+    }
+    50%, 100% {
+        right: 100%
+    }
+}
+
+li span:nth-child(4) { /*左边框，左下--左上*/
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: cc4 2s infinite linear;
+    animation-delay: 1.5s;
+}
+
+@keyframes cc4 { /*对应边框动画*/
+    0% {
+        bottom: -100%
+    }
+    50%, 100% {
+        bottom: 100%
+    }
+}

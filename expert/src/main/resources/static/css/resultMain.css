@@ -1,0 +1,120 @@
+section {
+  width: 90%;
+  min-height: calc(100% - 80px);
+  margin: 0 auto;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+section h3 {
+  width: 100%;
+  height: 76px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 76px;
+  color: #333333;
+  text-align: center;
+}
+section h3 span {
+  display: block;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #0066cc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #0066cc;
+  line-height: 36px;
+  text-align: center;
+  float: left;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.head {
+  width: 100%;
+  height: 50px;
+  margin: 20px 0;
+}
+.head ol {
+  width: 288px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #bdcbd9;
+  opacity: 1;
+  border-radius: 4px;
+  float: left;
+}
+.head ol li {
+  width: 50%;
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 40px;
+  color: #9c9c9c;
+  float: left;
+  cursor: pointer;
+}
+.head ol .sele {
+  background-color: rgba(0, 102, 204, 1);
+  color: #ffffff;
+  font-weight: bold;
+}
+.head span {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  float: right;
+}
+.cont {
+  width: 100%;
+  margin-top: 20px;
+}
+.cont .title {
+  width: 100%;
+  height: 61px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 6px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 61px;
+  color: #1a2539;
+  cursor: pointer;
+}
+.cont .title img {
+  float: right;
+  margin-top: 20px;
+}
+
+.cont .tlt {
+  width: 100%;
+  height: 61px;
+  background: url(../img/keep-up.png) no-repeat 10px center #ffffff;
+  opacity: 1;
+  border-radius: 8px;
+  padding: 0 30px 0 40px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 61px;
+  color: #1a2539;
+  cursor: pointer;
+}
+.cont .tlt span {
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #303C64;
+  float: right;
+}

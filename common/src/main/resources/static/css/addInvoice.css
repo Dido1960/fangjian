@@ -1,0 +1,125 @@
+* {
+    font-family: Microsoft YaHei;
+}
+
+.title {
+    text-align: center;
+    height: 57px;
+    line-height: 57px;
+    border-bottom: 1px solid rgba(163, 180, 212, 1);;
+    width: 100%;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+}
+
+.title .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 22.31px;
+    font-size: 14px;
+    width: 16px;
+    height: 16px;
+}
+
+.form_content {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.form_content .line {
+    height: 60px;
+    justify-content: center;
+}
+
+.form_content .line .all_amount {
+    height: 60px;
+    line-height: 60px;
+    justify-content: center;
+    text-align: center;
+    color: #0062EB;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.form_content .line .show_lable {
+    width: 120px;
+    justify-content: right;
+    line-height: 60px;
+    height: 60px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.form_content .line .show_input {
+    width: 420px;
+    justify-content: left;
+    line-height: 60px;
+    height: 60px;
+    display: inline-block;
+}
+
+.form_content .line .show_input input[readonly] {
+    width: 100%;
+    height: 40px;
+    background: rgba(243, 247, 255, 1);
+    border: 1px solid rgba(163, 180, 212, 1);
+    opacity: 1;
+    padding-left: 10px;
+}
+
+.form_content .line .show_input input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(0, 98, 235, 1);
+    opacity: 1;
+    padding-left: 10px;
+}
+
+.btns_content {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    justify-content: center;
+    text-align: center;
+    background: rgba(243, 247, 255, 1);
+}
+
+.btns_content .ok {
+    width: 86px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    background: rgba(0, 98, 235, 1);
+    opacity: 1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px;
+}
+
+.btns_content .cancel {
+    width: 86px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    background: rgba(212, 220, 235, 1);
+    opacity: 1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+.btns_content .ok:hover,.btns_content .cancel:hover{
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    color: #F1F1F1;
+}
+
+
+
+

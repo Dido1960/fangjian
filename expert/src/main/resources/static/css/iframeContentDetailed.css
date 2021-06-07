@@ -1,0 +1,152 @@
+.contentBody::-webkit-scrollbar{
+    display:none;
+}
+ol {
+    width: 100%;
+    height: 62px;
+    background: #f3f3f3;
+    opacity: 1;
+    border-radius: 6px 6px 0px 0px;
+}
+ol li {
+    width: 30%;
+    height: 100%;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 62px;
+    color: #323437;
+    text-align: center;
+    float: left;
+}
+ol .long {
+    width: 40%;
+}
+ol li + li {
+    border-left: 1px solid #ccc;
+    box-sizing: border-box;
+}
+ul {
+    width: 100%;
+    /*height: calc(100% - 295px);*/
+    overflow: auto;
+}
+ul::-webkit-scrollbar {
+    display: none;
+}
+ul {
+    scrollbar-width: none;
+    -ms-scroll-chaining: chained;
+    -ms-overflow-style: none;
+    -ms-content-zooming: zoom;
+    -ms-scroll-rails: none;
+    -ms-content-zoom-limit-min: 100%;
+    -ms-content-zoom-limit-max: 500%;
+    -ms-scroll-snap-type: proximity;
+    -ms-scroll-snap-points-x: snapList(100%, 200%, 300%, 400%, 500%);
+    -ms-overflow-style: none;
+    overflow: auto;
+}
+ul li {
+    width: 100%;
+    min-height: 230px;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+ul li .lis + .lis {
+    border-left: 1px solid #ccc;
+    box-sizing: border-box;
+}
+ul li .lis {
+    width: 30%;
+    min-height: 230px;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+ul li .long {
+    width: 40%;
+}
+ul li .long p {
+    overflow: inherit;
+    white-space: pre-wrap;
+}
+ul li .lis input {
+    width: 100%;
+    height: 34px;
+    background: #ffffff;
+    border: 1px solid #c5c5c5;
+    opacity: 1;
+    border-radius: 4px;
+    margin-top: 80px;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+ul li .unpass input {
+    margin-top: 10px;
+    display: block;
+    margin-bottom: 10px;
+}
+ul li .unpass i {
+    display: block;
+    width: 100%;
+    min-height: 24px;
+    font-size: 10px;
+    color: #333;
+    white-space: pre-wrap;
+    line-height: 16px;
+    color: rgba(214, 147, 11, 1);
+    border-radius: 4px 4px 0 0;
+    font-style: normal;
+}
+ul li .unpass textarea {
+    display: block;
+    width: 100%;
+    height: 100px;
+    border-radius: 0 4px 4px 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    resize: none;
+    border: 1px solid #c5c5c5;
+    background: #f9f9f9;
+}
+ul li div i,
+ul li div textarea {
+    display: none;
+}
+.lis span {
+    display: block;
+    width: 74px;
+    height: 36px;
+    border: 1px solid rgba(59, 135, 103, 1);
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 36px;
+    color: rgba(59, 135, 103, 1);
+    text-align: center;
+    box-sizing: border-box;
+    margin: 10px auto;
+    cursor: pointer;
+}
+.lis span:nth-child(1) {
+    margin-top: 20px;
+}
+.lis .tips {
+    width: 137px;
+    min-height: 93px;
+    position: absolute;
+    background: url(../img/tips.png) no-repeat center center;
+    background-size: 100% 100%;
+    padding: 20px 10px 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: " Microsoft YaHei";
+    font-weight: 400;
+    line-height: 16px;
+    color: #ffffff;
+    white-space: pre-wrap;
+    z-index: 9999;
+}

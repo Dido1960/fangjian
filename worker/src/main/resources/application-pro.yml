@@ -1,0 +1,125 @@
+spring:
+  datasource:
+    dynamic:
+      primary: common
+      strict: true
+      datasource:
+        common:
+          username: root
+          password: qskj200316
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://172.21.1.77/bid_con_lz_common?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
+          type: com.alibaba.druid.pool.DruidDataSource
+        log:
+          username: root
+          password: qskj200316
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://172.21.1.77/bid_con_lz_log?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
+          type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 172.21.1.77
+    port: 6379
+    password: scqskj200316
+    database: 6
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 5000
+  cache:
+    cache-names: wordbook_redis_cache, config_map_redis_cache, menu_list_redis_cache
+    type: redis
+    redis:
+      cache-null-values: false
+      time-to-live: 60000
+      key-prefix: redis_ejiaoyi_
+      use-key-prefix: true
+logging:
+  config: classpath:logback-spring-pro.xml
+
+## 线程池配置
+task:
+  pool:
+    core-pool-size: 20
+    max-pool-size: 40
+    keep-alive-seconds: 300
+    queue-capacity: 50
+    thread-utlis-max-size: 20
+
+## FastDFS configuration
+fdfs:
+  group: mygroup
+  address:  61.178.200.57:18090
+  intranet-address: 172.21.1.73:8089
+  connect-timeout: 60000
+  so-timeout: 60000
+  tracker-list: 172.21.1.73:22122
+  pool:
+    ## 连接池最大数量
+    max-total: 200
+    ## 每个tracker地址的最大连接数
+    max-total-per-key: 50
+    ## 连接耗尽时等待获取连接的最大毫秒数
+    max-wait-millis: 60000
+
+#单点登录api接口：替换为单点服务器的ip+端口
+sso:
+  url: http://119.45.207.240:23157
+  platform: cd033f02-5a36-480e-838a-8055a8063701
+  apikey: 02510a79-784d-4880-8df8-3e917900e22d
+
+# 投标人签到默认时长（单位：分钟）
+bidder:
+  param:
+    sign-time-left: 1440
+
+# 手写板签名服务器配置
+signature:
+  ip: 117.156.94.51
+  port: 8002
+
+# 文件预览服务器
+file:
+  view:
+    address: http://119.45.170.224:8012/onlinePreview
+
+#配置 投标文件上传 清单采用本地或网络文件()
+quantity:
+  #网络文件 ：network 本地文件 : local
+  path-type: network
+  #正式 : formal 测试 : test
+  user-type: formal
+
+#各项目不见面开标地址
+no-face:
+  #市政房建
+  bid-con:
+    admin: http://61.178.200.57:13101/login.html
+    agency: http://61.178.200.57:13102/login.html
+    bidder: http://61.178.200.57:13103/visitor/noLoginPage.html
+    expert: http://61.178.200.57:13104/login.html
+    supervise: http://61.178.200.57:13105/login.html
+    worker: http://61.178.200.57:13106/login.html
+  #政府采购
+  gov:
+    agency: http://61.178.200.56:8004/
+    supplier: http://61.178.200.56:8005/visitor/listPage.html
+    file-make: http://61.178.200.57:10001/login.html
+  #交通工程
+  traffic:
+    agency: http://61.178.200.57:13003/login.html
+    bidder: http://61.178.200.57:13002/login.html
+  #水利工程
+  water:
+    agency: http://www.ejiaoyi.vip/
+    bidder: http://www.ejiaoyi.vip/
+  #纸质标
+  paper:
+    agency: http://61.178.200.57:13312/login.html
+    bidder: http://61.178.200.57:13313/login.html
+  #无范本
+  no-template:
+    agency: http://www.ejiaoyi.vip/
+    bidder: http://www.ejiaoyi.vip/

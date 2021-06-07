@@ -1,0 +1,56 @@
+ul{
+    padding: 0;
+}
+
+li{
+    list-style-type:none;
+}
+.menu{
+    width:120px;
+    height:652px;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(243,247,255,1);
+    opacity:1;
+    float: left;
+    margin-left: 18.75vw;
+
+}
+.main-option-selected{
+    width:120px;
+    height:100px;
+    background:rgba(243,247,255,1);
+    opacity:1;
+    text-align: center;
+    line-height: 70px;
+    cursor: pointer;
+    background: url(../img/bian.png) no-repeat 0px 0px;
+    background-color: rgba(243,247,255,1);
+    color:rgba(0,98,235,1);
+}
+
+.main-option{
+    width:120px;
+    height:100px;
+    background:rgba(255,255,255,1);
+    opacity:1;
+    text-align: center;
+    line-height: 70px;
+    cursor: pointer;
+
+}
+.main-option span{
+    font-size: 15px;
+    font-family: Microsoft YaHei;
+    font-weight: 900;
+    line-height: 24px;
+}
+.main-option-selected span{
+    font-size: 15px;
+    font-family: Microsoft YaHei;
+    font-weight: 900;
+    line-height: 24px;
+}
+
+.main-option:hover {
+    color:rgba(0,98,235,1);
+}

@@ -1,0 +1,113 @@
+.seach {
+  width: 340px;
+  height: 76px;
+  background: rgba(22, 48, 81, 1);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: -50px;
+  top: 80px;
+  opacity: 0;
+}
+.seach input {
+  width: 240px;
+  height: 36px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  display: block;
+  opacity: 1;
+  border: none;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.seach button {
+  width: 60px;
+  height: 36px;
+  background-color: #0062eb;
+  border: none;
+  color: #fff;
+  font-weight: 900;
+}
+.content {
+  width: 1200px;
+  margin: 0 auto;
+}
+.content .tou {
+  display: block;
+  width: 280px;
+  height: 80px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 80px;
+  color: rgba(199, 199, 199, 1);
+  opacity: 1;
+}
+.content .box {
+  width: 1200px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+}
+.box h3 {
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 60px;
+  color: rgba(17, 22, 30, 1);
+  opacity: 1;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+.box ul {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.box ul.square {
+  list-style-type: square;
+}
+
+.box ul li {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(17, 22, 30, 1);
+  opacity: 1;
+  padding: 0 34px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.box ul li:hover {
+  color: #299cff;
+}
+.box ul li:hover span {
+  color: rgba(199, 199, 199, 1);
+}
+.box ul li i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: rgba(199, 199, 199, 1);
+  opacity: 1;
+  position: absolute;
+  left: 20px;
+  top: 16px;
+}
+.box ul li span {
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(199, 199, 199, 1);
+}

@@ -1,0 +1,105 @@
+.menu {
+    margin-top: 20px;
+    height: 90vh;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(243, 247, 255, 1);
+    opacity: 1;
+}
+
+
+.main-option-selected {
+    width: 120px;
+    height: 100px;
+    background: url(../img/bian.png) no-repeat 0 0 rgba(243,247,255,1);
+    opacity: 1;
+    text-align: center;
+    line-height: 70px;
+
+    cursor: pointer;
+
+}
+
+.main-option-selected .header-name {
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 24px;
+    color: rgba(0, 98, 235, 1);
+    opacity: 1;
+    text-align: center;
+}
+
+.main-option .header-name {
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(163, 180, 212, 1);
+    opacity: 1;
+}
+
+.main-option .header-name {
+    height: 24px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(163, 180, 212, 1);
+    opacity: 1;
+}
+
+.main-option {
+    width: 120px;
+    height: 100px;
+    background: #fff;
+    opacity: 1;
+    text-align: center;
+    line-height: 70px;
+    border-left: 3px solid #fff;
+   cursor: pointer;
+}
+
+.main-option:hover {
+    box-shadow: 0px 10px 30px rgba(0, 98, 235, 0.07);
+}
+
+.header-icon .icon-type {
+    width: 30px;
+    height: 30px;
+}
+
+.header-icon {
+    height: 55px;
+}
+
+.header-icon .cursor {
+    width: 9px;
+    height: 100px;
+    background: rgba(0, 98, 235, 1);
+    opacity: 1;
+    display: inline-block;
+}
+
+.panel-card {
+    background: #fff;
+    margin: 20px 0px;
+    height: 54px;
+}
+
+
+.panel-card .panel-card-header {
+    height: 54px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    line-height: 24px;
+    color: #1A3358;
+    opacity: 1;
+    line-height: 54px;
+    margin-left: 20px;
+}
+
+.panel-card .panel-card-header .tip-text {
+    color: #0062EB;
+}
+

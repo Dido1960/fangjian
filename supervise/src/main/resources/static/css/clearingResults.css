@@ -1,0 +1,91 @@
+.right .right-process {
+  width: 100%;
+  height: 154px;
+  background: #ffffff;
+  opacity: 1;
+  padding: 30px 100px 0px;
+  box-sizing: border-box;
+}
+.right-process ul {
+  width: 100%;
+  height: 110px;
+}
+.right-process ul li {
+  width: 20%;
+  height: 100%;
+  float: left;
+  position: relative;
+  overflow: initial;
+  z-index: 0;
+}
+.right-process ul li .flow-num {
+  width: 48px;
+  height: 48px;
+  background: rgba(242, 242, 242, 1);
+  border-radius: 50%;
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #9c9c9c;
+  line-height: 48px;
+  text-align: center;
+  z-index: 999999;
+  margin: 0 auto;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.right-process ul li .flow-right {
+  width: calc(50% - 23px);
+  height: 1px;
+  border-top: 1px dashed #cfdae5;
+  box-sizing: border-box;
+  position: relative;
+  left: calc(50% + 24px);
+  bottom: 24px;
+}
+.right-process ul li .flow-left {
+  width: calc(50% - 24px);
+  height: 1px;
+  border-top: 1px dashed #cfdae5;
+  box-sizing: border-box;
+  position: relative;
+  top: 25px;
+}
+.right-process ul li p {
+  width: 100%;
+  height: 36px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #9c9c9c;
+  line-height: 36px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.right-process ul .sele .flow-num {
+  width: 48px;
+  height: 48px;
+  background: url(../img/process_back.png) no-repeat center center;
+  border: 1px solid rgba(0, 102, 204, 1);
+  color: #fff;
+  font-weight: bold;
+  z-index: 99999;
+  box-sizing: border-box;
+}
+.right-process ul .sele p {
+  color: rgba(0, 102, 204, 1);
+  font-weight: bold;
+}
+.right-process ul .sele .blove {
+  background-color: rgba(0, 102, 204, 1);
+}
+.right-cont {
+  width: 100%;
+  /*height: 464px;*/
+  background: #ffffff;
+  opacity: 1;
+  margin-top: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}

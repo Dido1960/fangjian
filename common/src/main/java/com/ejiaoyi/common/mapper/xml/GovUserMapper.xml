@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.GovUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.GovUser">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="NAME" property="name" />
+        <result column="LOGIN_NAME" property="loginName" />
+        <result column="PASSWORD" property="password" />
+        <result column="ALL_SPELLING" property="allSpelling" />
+        <result column="FIRST_SPELLING" property="firstSpelling" />
+        <result column="DEP_ID" property="depId" />
+        <result column="PHONE" property="phone" />
+        <result column="LEADER" property="leader" />
+        <result column="ENABLED" property="enabled" />
+    </resultMap>
+
+    <resultMap id="BaseResultMapExtend" type="com.ejiaoyi.common.entity.GovUser" extends="BaseResultMap">
+        <result column="DEP_NAME" property="depName"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, NAME, LOGIN_NAME, PASSWORD, ALL_SPELLING, FIRST_SPELLING, DEP_ID, PHONE, LEADER, ENABLED
+    </sql>
+
+    <select id="pagedGovUser" resultMap="BaseResultMapExtend">
+        SELECT a.*,b.DEP_NAME FROM gov_user a LEFT JOIN dep b on a.DEP_ID = b.ID
+        <where>
+            <if test="depId !='' and depId !=null ">
+                <bind name="depId" value="depId"/>
+                and b.ID = #{depId}
+            </if>
+            <if test="name !='' and name !=null ">
+                <bind name="userName" value="'%'+name+'%'"/>
+                and a.NAME like #{userName}
+            </if>
+
+            <if test="enabled!=null ">
+                <bind name="enabled" value="enabled"/>
+                and a.enabled = #{enabled}
+            </if>
+        </where>
+    </select>
+
+    <select id="pagedGovUserByRegId" resultMap="BaseResultMapExtend">
+        select * from gov_user where dep_id in (SELECT id FROM dep as d WHERE d.REG_ID in (SELECT ID FROM reg WHERE
+        REG_ID = #{regId} or PARENT_ID = #{regId})
+        <if test="depName !='' and depName !=null ">
+            <bind name="depName" value="'%'+depName+'%'"/>
+            AND d.dep_Name LIKE #{depName}
+        </if>
+        )
+        <if test="name !='' and name!=null ">
+            <bind name="name" value="'%'+name+'%'"/>
+            and NAME LIKE #{name}
+        </if>
+    </select>
+
+    <select id="getGovUser" resultMap="BaseResultMapExtend">
+        SELECT a.*,b.DEP_NAME FROM gov_user a LEFT JOIN dep b on a.DEP_ID = b.ID
+        <where>
+            <if test="regId !=null ">
+                <bind name="regId" value="regId"/>
+                and b.REG_ID = #{regId}
+            </if>
+            <if test="id !=null ">
+                <bind name="id" value="id"/>
+                and a.ID = #{id}
+            </if>
+        </where>
+    </select>
+</mapper>

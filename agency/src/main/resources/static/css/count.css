@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-width: 1640px;
+  min-height: 800px;
+  margin: 0 auto;
+  overflow: auto;
+}
+input {
+  outline: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+html .layui-layer-content::-webkit-scrollbar {
+  display: none;
+}
+h3,
+h4,
+p,
+div,
+span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.kong {
+  width: 100%;
+  height: 20px;
+}
+.app {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+header {
+  width: 100%;
+  height: 80px;
+  background: rgba(48, 60, 100, 1);
+  opacity: 1;
+}
+header .text {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+header .text .name {
+  width: 500px;
+  height: 100%;
+  font-size: 30px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 5px;
+  opacity: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  float: left;
+}
+header .text .name span {
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 0px;
+}
+header .bao {
+  width: 220px;
+  height: 100%;
+  float: right;
+}
+header .bao .back {
+  width: 110px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 40px;
+  color: rgba(19, 97, 254, 1);
+  cursor: pointer;
+  float: left;
+  margin-top: 20px;
+}
+header .bao .back:hover {
+  background: rgba(12, 113, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  transition: 0.3s;
+}
+header .bao .try {
+  width: 80px;
+  height: 100%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  float: right;
+}
+header .bao .try i {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/off.png) no-repeat;
+  float: right;
+  margin-top: 32px;
+}
+section {
+  width: 100%;
+  height: calc(100% - 80px);
+  background: url(../img/bcakground.png) no-repeat;
+  background-size: cover;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+.tlt-btn {
+  width: 7.25%;
+  height: 46px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 14px 20px rgba(0, 0, 0, 0.09);
+  opacity: 1;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  text-align: center;
+  font-weight: 900;
+  line-height: 46px;
+  color: rgba(19, 97, 254, 1);
+  margin: 0 auto 30px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* .tlt-btn:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+} */
+.name-num {
+  width: 90%;
+  min-height: 154px;
+  background: rgba(34, 49, 101, 0.2);
+  margin: 0 auto;
+}
+.name-num div {
+  width: 100%;
+  min-height: 77px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  /* display: inline-block; */
+}
+.name-num div + div {
+  border-top: 1px solid rgba(230, 237, 244, 0.35);
+}
+.name-num div p {
+  display: inline-block;
+  width: 100px;
+  height: 77px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 77px;
+  color: #ffffff;
+  vertical-align: middle;
+}
+.name-num div span {
+  display: inline-block;
+  width: calc(100% - 100px);
+  line-height: 24px;
+  vertical-align: middle;
+  white-space: pre-wrap;
+  overflow: visible;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: right;
+}
+.center {
+  width: 90%;
+  height: 59.2%;
+  margin: 20px auto;
+}
+.left {
+  width: 555px;
+  height: 100%;
+  float: left;
+}
+.top {
+  width: 100%;
+  height: 25%;
+  background: rgba(241, 245, 248, 1);
+  opacity: 1;
+}
+.top h3 {
+  width: 100%;
+  font-size: 30px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  color: rgba(34, 49, 101, 1);
+  padding-top: 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.top p {
+  width: 100%;
+  font-size: 18px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+  margin: 10px 0;
+}
+.bottom {
+  width: 100%;
+  height: 75%;
+  background-color: #fff;
+}
+.bottom img {
+  display: block;
+  width: 72.6%;
+  height: 61%;
+  margin-bottom: 47px;
+  margin: 20px auto;
+}
+.bottom p {
+  width: 100%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  color: rgba(34, 49, 101, 1);
+  padding-left: 27.4%;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+.right {
+  width: calc(100% - 555px);
+  height: 100%;
+  background: rgba(34, 49, 101, 1);
+  opacity: 1;
+}
+.right h3 {
+  width: 100%;
+  font-size: 60px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+.time {
+  width: 920px;
+  height: 130px;
+  margin: 100px auto 0;
+}
+.time li {
+  width: 120px;
+  height: 130px;
+  background: rgba(47, 128, 236, 0.16);
+  border-radius: 12px;
+  font-size: 70px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  color: rgba(243, 188, 41, 1);
+  float: left;
+  line-height: 130px;
+  text-align: center;
+  margin: 0px 10px;
+}
+.time p {
+  width: 40px;
+  height: 100%;
+  font-size: 60px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  color: rgba(255, 255, 255, 1);
+  float: left;
+  text-align: center;
+  line-height: 130px;
+}
+.bj {
+  width: 40%;
+  height: 7%;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  margin: 50px auto 0;
+}
+.foot {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  color: rgba(255, 255, 255, 1);
+}
+html .site-demo-button {
+  width: 100%;
+  text-align: center;
+}
+html .layui-btn:hover {
+  color: rgba(19, 97, 254, 1);
+}
+.list {
+  width: 100%;
+  height: 80px;
+  background: rgba(230, 237, 244, 1);
+}
+.list li {
+  width: 23%;
+  height: 80px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 80px;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+  float: left;
+}
+.all-list {
+  width: 100%;
+  height: 100%;
+}
+.all-list li {
+  width: 100%;
+  height: 97px;
+  border-bottom: 1px solid rgba(213, 213, 213, 1);
+}
+.all-list li div {
+  width: 23%;
+  height: 97px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 97px;
+  color: rgba(34, 49, 101, 1);
+  float: left;
+  position: relative;
+}
+.all-list li .hum-how span {
+  display: inline-table;
+  width: 80px;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 36px;
+}
+.gray-do {
+  border: 1px solid rgba(213, 213, 213, 1);
+  color: rgba(213, 213, 213, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.blove-do {
+  border: 1px solid rgba(19, 97, 254, 1);
+  color: rgba(19, 97, 254, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

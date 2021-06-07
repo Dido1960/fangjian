@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.MenuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.Menu">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="PARENT_ID" property="parentId" />
+        <result column="MENU_NAME" property="menuName" />
+        <result column="URL" property="url" />
+        <result column="ORDER_NO" property="orderNo" />
+        <result column="ENABLED" property="enabled" />
+        <result column="ICON_FONT" property="iconFont" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, PARENT_ID, MENU_NAME, URL, ORDER_NO, ENABLED, ICON_FONT
+    </sql>
+    <select id="pagedMenu" resultMap="BaseResultMap">
+        SELECT * FROM MENU
+        <where>
+            <if test="id != null">
+                <bind name="id" value=" id "/>
+                and id = #{id}
+            </if>
+            <if test="menuName != null and menuName != '' ">
+                <bind name="menuName" value=" '%'+menuName+'%' "/>
+                and MENU_NAME like #{menuName}
+            </if>
+        </where>
+        ORDER BY ORDER_NO
+    </select>
+
+    <select id="listMenuByPidAndOrderNo" resultMap="BaseResultMap">
+        SELECT ID from menu WHERE PARENT_ID = #{pId} and ORDER_NO >= #{orderNo}
+    </select>
+
+    <update id="moveMenu">
+        UPDATE menu SET ORDER_NO = ORDER_NO + 1
+        WHERE ID IN
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+    <select id="maxOrderNo" resultType="Integer">
+        SELECT MAX(ORDER_NO) as maxOrderNo FROM menu WHERE PARENT_ID = #{pId}
+    </select>
+
+    <select id="listMenuByRoleIdS" resultMap="BaseResultMap">
+        SELECT DISTINCT b.* FROM role_menu a INNER JOIN menu b on a.MENU_ID = b.ID
+        <if test="roleIds != null and roleIds.size() > 0">
+            WHERE a.ROLE_ID in
+            <foreach collection="roleIds" item="roleId" open="(" separator="," close=")">
+                #{roleId}
+            </foreach>
+        </if>
+        ORDER BY b.ORDER_NO
+    </select>
+</mapper>

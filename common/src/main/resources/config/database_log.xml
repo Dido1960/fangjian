@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="database.xsd">
+    <database>
+        <table name="USER_LOG" des="用户日志">
+            <column name="USER_ID" type="int" des="用户ID"/>
+            <column name="USERNAME" type="varchar" des="用户名"/>
+            <column name="DML_TYPE" type="varchar" des="数据库操纵类型"/>
+            <column name="CONTENT" type="varchar" length="5000" des="日志内容"/>
+            <column name="CREATE_TIME" type="datetime" des="创建时间"/>
+        </table>
+        <table name="API_LOG" des="API日志">
+            <column name="API_NAME" type="varchar" des="请求接口名称"/>
+            <column name="METHOD_NAME" type="varchar" des="请求方法名称"/>
+            <column name="PARAMS" type="text" des="请求参数内容"/>
+            <column name="PLATFORM" type="varchar" des="平台授权码"/>
+            <column name="API_KEY" type="varchar" des="API授权码"/>
+            <column name="CREATE_API_TIME" type="datetime" des="日志创建时间"/>
+            <column name="RESPONSE" type="text" des="响应结果"/>
+            <column name="RESPONSE_TIME" type="datetime" des="响应时间"/>
+            <column name="RESPONSE_TIME_CONSUME" type="bigint" des="响应耗时"/>
+        </table>
+        <table name="API_PUSH_LOG" des="API推送日志">
+            <column name="API_URI" type="varchar" des="请求地址"/>
+            <column name="API_PARAMS" type="text" des="请求参数"/>
+            <column name="API_REMARK" type="varchar" des="请求说明"/>
+            <column name="CREATE_API_TIME" type="datetime" des="日志创建时间"/>
+            <column name="RESPONSE_CODE" type="int" des="响应状态值"/>
+            <column name="RESPONSE_CONTENT" type="text" des="响应返回值"/>
+        </table>
+        <table name="NETWORK_LOG" des="网络日志">
+            <column name="USER_ID" type="int" des="用户主键"/>
+            <column name="USER_NAME" type="varchar" des="用户名"/>
+            <column name="REQUEST_URI" type="varchar" des="请求地址"/>
+            <column name="REQUEST_METHOD" type="varchar" des="请求方法"/>
+            <column name="REQUEST_PARAMS" type="text" des="请求参数"/>
+            <column name="REMOTE_ADDRESS" type="varchar" des="来源地址"/>
+            <column name="USER_AGENT"  type="varchar" length="1000" des="用户代理"/>
+            <column name="DEVICE_NAME" type="varchar" des="设备名称"/>
+            <column name="BROWSER_NAME" type="varchar" des="浏览器名称"/>
+            <column name="BROWSER_VERSION" type="varchar" des="浏览器版本"/>
+            <column name="PROCESSING_TIME" type="bigint" des="处理耗时"/>
+            <column name="CREATE_TIME" type="datetime" des="创建时间"/>
+        </table>
+        <table name="QUARTZ_JOB_LOG" des="Quartz定时任务执行日志">
+            <column name="JOB_NAME" type="varchar" des="任务名称"/>
+            <column name="JOB_GROUP" type="varchar" des="任务组"/>
+            <column name="JOB_ID" type="int" des="任务主键"/>
+            <column name="JOB_TIME" type="datetime" des="任务执行时间"/>
+            <column name="CLASS_NAME" type="varchar" des="任务执行类"/>
+        </table>
+        <table name="LOGGING_EVENT" des="日志事件表">
+            <column name="TIMESTMP" type="varchar" des="日志事件的创建时间"/>
+            <column name="FORMATTED_MESSAGE" type="varchar" des="格式化后的消息"/>
+            <column name="LOGGER_NAME" type="varchar" des="日志的 logger 名"/>
+            <column name="LEVEL_STRING" type="varchar" des="日志事件的级别"/>
+            <column name="THREAD_NAME" type="varchar" des="发出日志请求所在的线程名"/>
+            <column name="REFERENCE_FLAG" type="varchar" des="用来表示是否是异常或者与 MDC 属性相关联。它的值通过 ch.qos.logback.classic.db.DBHelper 计算得到。日志时间包含 MDC 或者 Context 时，它的值为 1。包含异常时，它的值为 2。包含两者，则值为 3。"/>
+            <column name="ARG0" type="varchar" des="参数1"/>
+            <column name="ARG1" type="varchar" des="参数2"/>
+            <column name="ARG2" type="varchar" des="参数3"/>
+            <column name="ARG3" type="varchar" des="参数4"/>
+            <column name="CALLER_FILENAME" type="varchar" des="发出日志请求的文件名"/>
+            <column name="CALLER_CLASS" type="varchar" des="发出日志请求的类"/>
+            <column name="CALLER_METHOD" type="varchar" des="发出日志请求的方法"/>
+            <column name="CALLER_LINE" type="varchar" des="发出日志请求所在的行"/>
+            <column name="EVENT_ID" type="varchar" des="主键ID"/>
+            <index_group>
+                <index column="LEVEL_STRING"/>
+                <index column="EVENT_ID"/>
+            </index_group>
+        </table>
+        <table name="DOCK_PUSH_LOG" des="对接推送日志">
+            <column name="API_URI" type="varchar" des="请求地址"/>
+            <column name="API_PARAMS" type="text" des="请求参数"/>
+            <column name="API_PARAMS_LAWS" type="text" des="请求参数(明文)"/>
+            <column name="API_REMARK" type="varchar" des="请求说明"/>
+            <column name="CREATE_API_TIME" type="datetime" des="日志创建时间"/>
+            <column name="RESPONSE_CODE" type="int" des="响应状态值"/>
+            <column name="RESPONSE_CONTENT" type="text" des="响应返回值"/>
+        </table>
+
+        <table name="REVIEW_AUTHORITY_LOG" des="离线审核权限写入日志">
+            <column name="USER_ID" type="int" des="操作人id"/>
+            <column name="USER_NAME" type="varchar" des="操作人名称"/>
+            <column name="CERT_NAME" type="varchar" des="证书名称"/>
+            <column name="KEY_NO" type="varchar" des="锁唯一序列号"/>
+            <column name="OPERATE_TYPE" type="int" des="操作方式（1：写入权限， 0：取消权限）"/>
+        </table>
+    </database>
+</root>

@@ -1,0 +1,51 @@
+.text-box {
+    background: #FFFFFF;
+    border-radius: 8px 8px 0px 0px;
+}
+ol {
+    width: 100%;
+    height: 61px;
+    background: #cfdae5;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+}
+ol li {
+    width: 20%;
+    height: 61px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 61px;
+    color: #1a2539;
+    text-align: center;
+    float: left;
+}
+ol .long {
+    width: 30%;
+}
+table {
+    width: 100%;
+}
+tr {
+    width: 100%;
+    height: 59px;
+    min-height: 59px;
+}
+tr td {
+    width: 10%;
+    height: 59px;
+    min-height: 59px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    color: #333333;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+table tr td + td {
+    border-left: 1px solid #ccc;
+}
+table tr .long {
+    width: 30%;
+}

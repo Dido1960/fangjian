@@ -1,0 +1,584 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+p {
+  margin: 0;
+}
+html.body {
+  width: 100%;
+  height: 100%;
+  /* background-color: #b4b4b4; */
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+button,
+input {
+  cursor: pointer;
+}
+header {
+  width: 100%;
+  height: 100%;
+  background: url(../img/banner.png) no-repeat;
+  background-size: 100% 100%;
+}
+.head {
+  width: 1200px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner {
+  width: 100%;
+  height: 619px;
+  border-top: 1px solid #fff;
+}
+.head h3 {
+  width: 130px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: rgba(243, 247, 255, 1);
+}
+.head h3 img {
+  width: 40px;
+  height: 40px;
+}
+.head ul {
+  width: 650px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head ul li {
+  width: 150px;
+  height: 80px;
+  font-size: 18px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 80px;
+  color: rgba(255, 255, 255, 1);
+  opacity: 0.8;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+.btn {
+  width: 250px;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn button {
+  width: 90px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  opacity: 1;
+  border-radius: 4px;
+}
+.btn button:nth-child(1) {
+  background-color: #1d8bf9;
+  color: rgba(243, 247, 255, 1);
+}
+.btn button:nth-child(2) {
+  background: rgba(243, 247, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
+  opacity: 1;
+  border-radius: 4px;
+  color: rgba(0, 98, 235, 1);
+}
+.head ul li span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/bottom.png) no-repeat;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.head ul li:hover {
+  opacity: 1;
+}
+.head ul li:hover i {
+  width: 29px;
+  height: 3px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  margin-left: -15px;
+}
+.sup i {
+  width: 29px;
+  height: 3px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  margin-left: -15px;
+}
+.head .iconfont {
+  width: 29px;
+  height: 29px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 900;
+  opacity: 1;
+}
+.cont {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+.cont .tlt {
+  width: 460px;
+}
+
+.cont .tlt p {
+  width: 454px;
+  height: 100px;
+  font-size: 20px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 30px;
+  color: rgba(240, 242, 245, 1);
+  opacity: 1;
+  margin-top: 25px;
+}
+.cont .tlt span {
+  display: block;
+  width: 160px;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  opacity: 1;
+  font-size: 24px;
+  font-family: Microsoft YaHei;
+  font-weight: 500;
+  line-height: 60px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  margin-top: 88px;
+  cursor: pointer;
+}
+.cont .tlt i {
+  display: block;
+  width: 360px;
+  height: 60px;
+  background: url(../img/title.png) no-repeat;
+  margin-top: 190px;
+}
+section {
+  width: 100%;
+  background: rgba(251, 251, 251, 1);
+}
+section .serve {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.serve .left {
+  width: 300px;
+  /* background-color: #0f0; */
+}
+.serve .right {
+  width: 880px;
+  /* background-color: #f66; */
+}
+.left .top {
+  width: 300px;
+  height: 225px;
+  border: 1px solid rgba(199, 199, 199, 1);
+  box-sizing: border-box;
+  margin: 20px 0;
+}
+.left .top h3 {
+  width: 260px;
+  height: 57px;
+  line-height: 57px;
+  margin: 0 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(199, 199, 199, 1);
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  color: rgba(17, 22, 30, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left .top h3 span{
+color: rgba(199,199,199,1);
+  font-size: 14px;
+}
+
+.left .top h3 span:hover{
+  cursor: pointer;
+}
+.left .top p {
+  width: 85%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  color: rgba(17, 22, 30, 1);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  margin-left: 24px;
+}
+.left .bottom {
+  width: 300px;
+  height: 764px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(199, 199, 199, 1);
+  box-sizing: border-box;
+}
+.left .bottom h3 {
+  width: 260px;
+  height: 57px;
+  line-height: 57px;
+  text-align: center;
+  margin: 0 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(199, 199, 199, 1);
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  color: rgba(17, 22, 30, 1);
+}
+.left .bottom .bug {
+  width: 260px;
+  height: 200px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10px;
+  cursor: pointer;
+}
+.left .bottom div img {
+  width: 260px;
+  height: 160px;
+}
+.left .bottom div + div {
+  border-top: 1px dashed rgba(199, 199, 199, 1);
+}
+.left .bottom div p {
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  color: rgba(180, 180, 180, 1);
+}
+.right ul {
+  width: 100%;
+  margin-left: 10px;
+}
+.right ul li {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.right ul li .tu {
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+}
+.right ul li .tu img{
+  width: 160px;
+  height: 160px;
+
+}
+.right ul li .wen {
+  width: 680px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.right ul li .wen h4 {
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  color: rgba(17, 22, 30, 1);
+}
+.right ul li .wen p {
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 500;
+  color: rgba(180, 180, 180, 1);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+
+}
+.right ul li .wen span {
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(180, 180, 180, 1);
+  opacity: 1;
+  width: 100%;
+  display: block;
+  text-align: right;
+}
+.right ul li + li {
+  border-top: 1px solid rgba(199, 199, 199, 1);
+}
+.foot {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  margin-top: 30px;
+}
+.foot div {
+/*  width: 120px;*/
+  height: 43px;
+/*  background: rgba(255, 255, 255, 1);*/
+/*  border: 1px solid rgba(199, 199, 199, 1);*/
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+/*  line-height: 30px;*/
+  color: rgba(17, 22, 30, 1);
+/*  text-align: center;*/
+  opacity: 1;
+  margin-right: 294px;
+/*  background: url(../img/bottom_gary.png) no-repeat 100px 6px;*/
+/*  cursor: pointer;*/
+}
+.foot ol {
+  width: 360px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.foot ol li {
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(199, 199, 199, 1);
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 30px;
+  color: rgba(17, 22, 30, 1);
+  text-align: center;
+  cursor: pointer;
+}
+.foot p {
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 24px;
+  color: rgba(17, 22, 30, 1);
+  display: flex;
+  align-items: center;
+}
+.foot p span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(163, 180, 212, 1);
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 30px;
+  color: rgba(17, 22, 30, 1);
+  text-align: center;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.foot ol li img {
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin: 8px auto;
+}
+footer {
+  width: 100%;
+  height: 300px;
+  background: rgba(47, 50, 57, 1);
+  opacity: 1;
+}
+footer .jie {
+  width: 1200px;
+  height: 240px;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+}
+footer .icp {
+  width: 100%;
+  height: 60px;
+  background: rgba(38, 41, 46, 1);
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 500;
+  line-height: 60px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+footer .icp span {
+  margin-left: 20px;
+}
+footer .jie .logo {
+  width: 220px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
+}
+footer .jie .logo div {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  border-radius: 9px;
+  background: url(../img/logo.png) no-repeat center center;
+  cursor: pointer;
+}
+footer .jie .logo p {
+  width: 140px;
+  height: 24px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 1);
+}
+footer .jie .contact {
+  width: 900px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40px;
+}
+footer .jie .contact h4 {
+  width: 100%;
+  height: 27px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 27px;
+  color: rgba(255, 255, 255, 1);
+  margin: 20px 0;
+}
+footer .jie .contact p {
+  width: 100%;
+  height: 24px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 5px;
+}
+footer .jie .ma {
+  width: 84px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer .jie .ma p {
+  width: 84px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+footer .jie .contact i {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+footer .jie span {
+  width: 1px;
+  height: 130px;
+  background-color: #fff;
+  opacity: 0.3;
+}
+.foot ol li:hover {
+  color: #fff;
+  background-color: #0062eb;
+  border: none;
+}
+.backtop {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 10px;
+  bottom: 300px;
+  border-radius: 10px;
+  display: none;
+}
+.backtop .icon-fanhuidingbu {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+}
+.head ul li a {
+  color: #fff;
+}
+.head ul li ol {
+  width: 91px;
+  height: 190px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  left: 20px;
+  bottom: -190px;
+  display: none;
+}
+.head ul li ol li {
+  width: 56px;
+  height: 14px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 14px;
+  color: #000;
+  opacity: 1;
+}

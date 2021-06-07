@@ -1,0 +1,88 @@
+.panel-card{
+    width:100vw;
+    height:77px;
+    background:rgba(255,255,255,1);
+    opacity:1;
+    margin: 0 10px;
+
+}
+.panel-card .panel-head{
+    width:64px;
+    height:16px;
+    font-size:16px;
+    font-family:"Microsoft YaHei";
+    font-weight:bold;
+    line-height:67px;
+    color:rgba(0,98,235,1);
+    opacity:1;
+}
+.panel-card .panel-button{
+    width:86px;
+    height:36px;
+    background:rgba(0,98,235,1);
+    opacity:1;
+    position: relative;
+    color: #FFFFFF;
+    float: right;
+    text-align: center;
+    line-height:36px;
+
+}
+body{
+     background:rgba(239,243,245,1);
+}
+.box{
+    width:100vw;
+    background:rgba(255,255,255,1);
+    opacity:1;
+    margin: 0 auto;
+}
+.addressTable{
+
+}
+.addressHeader{
+    width: 30vw;
+    height:54px;
+    background:rgba(212,220,235,1);
+    opacity:1;
+}
+.addressLine{
+    width: 30vw;
+    height:77px;
+    background:rgba(255,255,255,1);
+    opacity:1;
+    text-align: center;
+}
+.addressRow{
+   border-bottom:1px solid rgba(212,220,235,1);
+
+}
+.operate{
+    cursor: pointer;
+}
+.operate:hover{
+    color: red;
+}
+.operateBox{
+    width:86px;
+    height:36px;
+    background:rgba(0,98,235,1);
+    opacity:1;
+    position: relative;
+    color: #FFFFFF;
+
+    text-align: center;
+    line-height:36px;
+}
+.operateBox2{
+    width:86px;
+    height:36px;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(212,220,235,1);
+    opacity:1;
+
+
+
+    text-align: center;
+    line-height:36px;
+}

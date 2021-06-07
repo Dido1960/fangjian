@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.admin.mapper.QuartzJobMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.QuartzJob">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="NAME" property="name"/>
+        <result column="JOB_GROUP" property="jobGroup"/>
+        <result column="DESCRIPTION" property="description"/>
+        <result column="JOB_CLASS_NAME" property="jobClassName"/>
+        <result column="CRON_EXPRESSION" property="cronExpression"/>
+        <result column="TRIGGER_NAME" property="triggerName"/>
+        <result column="TRIGGER_STATE" property="triggerState"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, NAME, JOB_GROUP, DESCRIPTION, JOB_CLASS_NAME, CRON_EXPRESSION, TRIGGER_NAME, TRIGGER_STATE
+    </sql>
+
+</mapper>

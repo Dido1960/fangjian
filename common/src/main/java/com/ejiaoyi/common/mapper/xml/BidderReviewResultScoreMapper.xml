@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.BidderReviewResultScoreMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.BidderReviewResultScore">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="BIDDER_ID" property="bidderId" />
+        <result column="GRADE_ID" property="gradeId" />
+        <result column="ADD_SCORE" property="addScore" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, BIDDER_ID, GRADE_ID, ADD_SCORE
+    </sql>
+    <select id="getTotalScore" resultType="java.lang.String">
+            SELECT SUM(CAST(a.ADD_SCORE AS DECIMAL(18,6))
+            FROM bidder_review_result_score a
+            LEFT JOIN grade g ON g.ID = a.GRADE_ID
+            where g.ID IN
+            <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+                #{gradeId}
+            </foreach>
+            AND g.REVIEW_TYPE = #{reviewType}
+            AND a.BIDDER_ID = #{bidderId}
+    </select>
+
+</mapper>

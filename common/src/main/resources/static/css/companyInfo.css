@@ -1,0 +1,68 @@
+.file_upload{
+    width:161px;
+    height:162px;
+    background:rgba(243,247,255,1);
+    border:1px solid rgba(180,180,180,1);
+    opacity:1;
+    display: inline-block;
+    position: relative;
+    margin-right:14px ;
+    margin-top: 10px;
+}
+.companyTable{
+    border-collapse:separate;
+    border-spacing: 6px 20px;
+
+    margin: 0 auto;
+
+}
+
+.file_upload .pic{
+    width: 160px;
+    line-height: 160px;
+    height: 160px;
+    text-align: center;
+
+}
+.span_word{
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+    font-weight:500;
+    line-height:24px;
+    color:rgba(26,51,88,1);
+    opacity:1;
+    float: right;
+}
+.fileImage{
+    height: 160px;
+    width: 160px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+
+}
+.update_photo{
+/*    width:86px;*/
+    height:36px;
+    background:rgba(0,98,235,1);
+    opacity:1;
+    text-align: center;
+    line-height: 36px;
+    margin-top: 10px;
+
+}
+.update_photo_span{
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+    font-weight:500;
+    color: #FFFFFF;
+}
+.user_photo{
+    height:200px;
+    /*width: 420px;*/
+    position: absolute;
+    right: 50px;
+    top: 50px;
+
+}
+

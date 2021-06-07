@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.BidSectionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.BidSection">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="TENDER_PROJECT_ID" property="tenderProjectId" />
+        <result column="BID_SECTION_CODE" property="bidSectionCode" />
+        <result column="BID_SECTION_NAME" property="bidSectionName" />
+        <result column="BID_SECTION_CONTENT" property="bidSectionContent" />
+        <result column="BID_CLASSIFY_CODE" property="bidClassifyCode" />
+        <result column="CONTRACT_RECKON_PRICE" property="contractReckonPrice" />
+        <result column="BIDDER_QUALIFICATION" property="bidderQualification" />
+        <result column="PLAN_START_DATE" property="planStartDate" />
+        <result column="LIMITE_TIME" property="limiteTime" />
+        <result column="BID_OPEN_STATUS" property="bidOpenStatus" />
+        <result column="EVAL_STATUS" property="evalStatus" />
+        <result column="UPDATE_SCORE_STATUS" property="updateScoreStatus" />
+        <result column="UPDATE_SCORE_REASON" property="updateScoreReason" />
+        <result column="PRICE_RECORD_STATUS" property="priceRecordStatus" />
+        <result column="REG_ID" property="regId" />
+        <result column="DATA_FROM" property="dataFrom" />
+        <result column="DOCK_TENDER_DECRY_STATUS" property="dockTenderDecryStatus" />
+        <result column="BID_OPEN_ONLINE" property="bidOpenOnline" />
+        <result column="REMOTE_EVALUATION" property="remoteEvaluation" />
+        <result column="BID_OPEN_END_TIME" property="bidOpenEndTime" />
+        <result column="EVAL_START_TIME" property="evalStartTime" />
+        <result column="EVAL_END_TIME" property="evalEndTime" />
+        <result column="CANCEL_STATUS" property="cancelStatus" />
+        <result column="CANCEL_REASON" property="cancelReason" />
+        <result column="SCRAP_STATUS" property="scrapStatus" />
+        <result column="SCRAP_REASON" property="scrapReason" />
+        <result column="BID_PAUSE_STATUS" property="bidPauseStatus" />
+        <result column="UKEY_SERIAL_NUM" property="ukeySerialNum" />
+        <result column="EVAL_PDF_GENERATE_STATUS" property="evalPdfGenerateStatus" />
+        <result column="REEVAL_FLAG" property="reevalFlag" />
+        <result column="EVAL_REVIEW_STATUS" property="evalReviewStatus" />
+        <result column="CHECK_STATUS" property="checkStatus" />
+        <result column="PAPER_EVAL" property="paperEval" />
+        <result column="LIVE_ROOM" property="liveRoom" />
+        <result column="SIGN_IN_START_TIME_LEFT" property="signInStartTimeLeft" />
+        <result column="RESUME_STATUS" property="resumeStatus" />
+        <result column="RESUME_TIME" property="resumeTime" />
+        <result column="MANAGER_ID" property="managerId" />
+        <result column="DELETE_FLAG" property="deleteFlag" />
+    </resultMap>
+
+    <!-- 扩展查询映射结果 -->
+    <resultMap id="TenderDoc_BidSection" type="com.ejiaoyi.common.entity.BidSection" extends="BaseResultMap">
+        <result column="BID_OPEN_TIME" property="bidOpenTime"/>
+        <result column="IS_OLD_PROJECT" property="isOldProject"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, TENDER_PROJECT_ID, BID_SECTION_CODE, BID_SECTION_NAME, BID_SECTION_CONTENT, BID_CLASSIFY_CODE, CONTRACT_RECKON_PRICE, BIDDER_QUALIFICATION, PLAN_START_DATE, LIMITE_TIME, BID_OPEN_STATUS, EVAL_STATUS, PRICE_RECORD_STATUS, UPDATE_SCORE_STATUS, UPDATE_SCORE_REASON REG_ID, DATA_FROM, DOCK_TENDER_DECRY_STATUS, BID_OPEN_ONLINE, REMOTE_EVALUATION, BID_OPEN_END_TIME, EVAL_START_TIME, EVAL_END_TIME, CANCEL_STATUS, CANCEL_REASON, SCRAP_STATUS, SCRAP_REASON, BID_PAUSE_STATUS, UKEY_SERIAL_NUM, EVAL_PDF_GENERATE_STATUS, REEVAL_FLAG, EVAL_REVIEW_STATUS, SIGN_IN_STATUS, CHECK_STATUS, PAPER_EVAL, LIVE_ROOM, SIGN_IN_START_TIME_LEFT, RESUME_STATUS, RESUME_TIME, MANAGER_ID, DELETE_FLAG
+    </sql>
+    
+
+    <!-- 通过条件查询标段数量 -->
+    <select id="countBidSection" resultType="int">
+        SELECT count(*) FROM bid_section b
+        LEFT JOIN tender_project tp on b.TENDER_PROJECT_ID = tp.ID
+
+        <where>
+            (b.SCRAP_STATUS is null or b.SCRAP_STATUS != 1)
+            AND (b.CANCEL_STATUS is null or b.CANCEL_STATUS != 1)
+            AND b.DELETE_FLAG = 0
+            AND tp.DELETE_FLAG = 0
+            <if test="bidSection.bidSectionCode != null">
+                <bind name="bidSectionCode" value="bidSection.bidSectionCode"/>
+                AND b.BID_SECTION_CODE = #{bidSectionCode}
+            </if>
+            <if test="bidSection.bidClassifyCode != null and bidSection.bidClassifyCode != '' ">
+                <bind name="bidClassifyCode" value="bidSection.bidClassifyCode"/>
+                AND b.BID_CLASSIFY_CODE = #{bidClassifyCode}
+            </if>
+            <if test="bidSection.regId != null">
+                <bind name="regId" value="bidSection.regId"/>
+                AND b.REG_ID = #{regId}
+            </if>
+        </where>
+    </select>
+
+    <select id="listBidSection" resultMap="TenderDoc_BidSection">
+        SELECT b.*,a.BID_OPEN_TIME, r.IS_OLD_PROJECT
+        FROM bid_section b
+        LEFT JOIN tender_project tp ON tp.ID = b.TENDER_PROJECT_ID
+        LEFT JOIN tender_doc a ON b.ID = a.BID_SECTION_ID
+        LEFT JOIN bid_section_relate r ON b.ID = r.BID_SECTION_ID
+        <where>
+            b.DELETE_FLAG = 0
+            <if test="bidSection.bidClassifyCode != null and bidSection.bidClassifyCode!=''">
+                <bind name="bidClassifyCode" value="bidSection.bidClassifyCode"/>
+                AND b.BID_CLASSIFY_CODE = #{bidClassifyCode}
+            </if>
+            <if test="bidSection.bidSectionCode !=null">
+                <bind name="bidSectionCode" value="'%'+bidSection.bidSectionCode+'%'"/>
+                AND (b.BID_SECTION_CODE LIKE #{bidSectionCode} OR b.BID_SECTION_NAME LIKE #{bidSectionCode})
+            </if>
+            <if test="bidSection.agencyId != null">
+                <bind name="userId" value="bidSection.agencyId"/>
+                AND tp.USER_ID = #{userId}
+            </if>
+            <if test="bidSection.bidOpenStatus != null">
+                <bind name="bidOpenStatus" value="bidSection.bidOpenStatus"/>
+                AND b.BID_OPEN_STATUS = #{bidOpenStatus}
+            </if>
+            <if test="bidSection.evalStatus != null">
+                <bind name="evalStatus" value="bidSection.evalStatus"/>
+                AND b.EVAL_STATUS = #{evalStatus}
+            </if>
+            <if test="bidSection.bidOpenOnline != null">
+                <bind name="bidOpenOnline" value="bidSection.bidOpenOnline"/>
+                AND b.BID_OPEN_ONLINE = #{bidOpenOnline}
+            </if>
+            <if test="bidSectionIds != null and bidSectionIds.size()>0">
+                AND b.ID IN
+                <foreach collection="bidSectionIds" index="index" item="bidSectionId" open="(" separator="," close=")">
+                    #{bidSectionId}
+                </foreach>
+            </if>
+            <choose>
+                <when test="bidSection.leader != null">
+                    <choose>
+                        <when test="bidSection.regId != null and bidSection.managerId != null">
+                            <bind name="regId" value="bidSection.regId"/>
+                            <bind name="managerId" value="bidSection.managerId"/>
+                            AND (r.REG_ID = #{regId} OR r.AWAY_REG_ID = #{regId} OR b.MANAGER_ID = #{managerId})
+                        </when>
+                        <otherwise>
+                            <if test="bidSection.regId != null">
+                                <bind name="regId" value="bidSection.regId"/>
+                                AND (r.REG_ID = #{regId} OR r.AWAY_REG_ID = #{regId})
+                            </if>
+                            <if test="bidSection.managerId != null">
+                                <bind name="managerId" value="bidSection.managerId"/>
+                                AND (b.MANAGER_ID = #{managerId})
+                            </if>
+                        </otherwise>
+                    </choose>
+                </when>
+                <otherwise>
+                    <if test="bidSection.regId != null">
+                        <bind name="regId" value="bidSection.regId"/>
+                        AND (r.REG_ID = #{regId} OR r.AWAY_REG_ID = #{regId})
+                    </if>
+                    <if test="bidSection.managerId != null">
+                        <bind name="managerId" value="bidSection.managerId"/>
+                        AND (b.MANAGER_ID = #{managerId})
+                    </if>
+                </otherwise>
+            </choose>
+        </where>
+        order by a.BID_OPEN_TIME desc, b.Id desc
+    </select>
+
+    <select id="getBidSectionListForExpert" resultMap="BaseResultMap">
+        SELECT b.*
+        FROM bid_section b
+        LEFT JOIN bid_section_relate r ON b.ID = r.BID_SECTION_ID
+        <where>
+            b.DELETE_FLAG = 0
+            <if test="bidSection.tenderProjectId != null">
+                <bind name="tenderProjectId" value="bidSection.tenderProjectId"/>
+                AND b.TENDER_PROJECT_ID = #{tenderProjectId}
+            </if>
+            <if test="bidSection.id != null">
+                <bind name="id" value="bidSection.id"/>
+                AND b.ID != #{id}
+            </if>
+            <if test="bidSection.regId != null">
+                <bind name="regId" value="bidSection.regId"/>
+                AND (r.REG_ID = #{regId} OR r.AWAY_REG_ID = #{regId})
+            </if>
+        </where>
+    </select>
+
+    <select id="listBidSectionByToDay" resultMap="TenderDoc_BidSection">
+        SELECT b.*,a.BID_OPEN_TIME,a.QUAL_TYPE,tp.TENDER_AGENCY_NAME,tp.TENDER_AGENCY_PHONE, r.IS_OLD_PROJECT
+        FROM bid_section b
+        LEFT JOIN tender_project tp ON tp.ID = b.TENDER_PROJECT_ID
+        LEFT JOIN tender_doc a ON b.ID = a.BID_SECTION_ID
+        LEFT JOIN bid_section_relate r ON b.ID = r.BID_SECTION_ID
+        <where>
+            1=1
+            <if test="bidSection.scopeOpenNumDay != null and bidSection.scopeOpenNumDay != '' and bidSection.scopeOpenNumDay != 0 ">
+                <bind name="scopeOpenNumDay" value="bidSection.scopeOpenNumDay"/>
+                AND DATEDIFF(a.BID_OPEN_TIME,NOW()) &lt; #{scopeOpenNumDay}
+            </if>
+            AND DATEDIFF(a.BID_OPEN_TIME,NOW()) &gt;= 0
+            <if test="bidSection.bidOpenOnline != null">
+                <bind name="bidOpenOnline" value="bidSection.bidOpenOnline"/>
+                AND b.BID_OPEN_ONLINE = #{bidOpenOnline}
+            </if>
+            <if test="bidSection.bidOpenStatus != null">
+                <bind name="bidOpenStatus" value="bidSection.bidOpenStatus"/>
+                AND b.BID_OPEN_STATUS = #{bidOpenStatus}
+            </if>
+            <if test="bidSection.deleteFlag != null">
+                <bind name="deleteFlag" value="bidSection.deleteFlag"/>
+                AND b.DELETE_FLAG = #{deleteFlag}
+            </if>
+        </where>
+        order by b.BID_OPEN_STATUS desc, a.BID_OPEN_TIME
+    </select>
+
+    <select id="listThreeBidSection" resultMap="TenderDoc_BidSection">
+        SELECT b.*,a.BID_OPEN_TIME,a.QUAL_TYPE,tp.TENDER_AGENCY_NAME,tp.TENDER_AGENCY_PHONE, r.IS_OLD_PROJECT
+        FROM bid_section b
+        LEFT JOIN tender_project tp ON tp.ID = b.TENDER_PROJECT_ID
+        LEFT JOIN tender_doc a ON b.ID = a.BID_SECTION_ID
+        LEFT JOIN bid_section_relate r ON b.ID = r.BID_SECTION_ID
+        <where>
+            b.BID_OPEN_ONLINE = 1
+            AND b.DELETE_FLAG = 0
+        </where>
+        order by a.BID_OPEN_TIME desc limit 3
+    </select>
+
+    <select id="pagedBidSectionInfo" resultMap="TenderDoc_BidSection">
+        SELECT b.*, a.BID_OPEN_TIME, r.IS_OLD_PROJECT
+        FROM bid_section b
+        LEFT JOIN tender_project tp ON tp.ID = b.TENDER_PROJECT_ID
+        LEFT JOIN tender_doc a ON b.ID = a.BID_SECTION_ID
+        LEFT JOIN bid_section_relate r ON b.ID = r.BID_SECTION_ID
+        <where>
+            b.DELETE_FLAG = 0
+            <if test="bidSection.bidClassifyCode != null and bidSection.bidClassifyCode!=''">
+                <bind name="bidClassifyCode" value="bidSection.bidClassifyCode"/>
+                AND b.BID_CLASSIFY_CODE = #{bidClassifyCode}
+            </if>
+            <if test="bidSection.bidSectionCode !=null">
+                <bind name="bidSectionCode" value="'%'+bidSection.bidSectionCode+'%'"/>
+                AND (b.BID_SECTION_CODE LIKE #{bidSectionCode} OR b.BID_SECTION_NAME LIKE #{bidSectionCode})
+            </if>
+            <if test="bidSection.bidOpenStatus != null">
+                <bind name="bidOpenStatus" value="bidSection.bidOpenStatus"/>
+                AND b.BID_OPEN_STATUS = #{bidOpenStatus}
+            </if>
+            <if test="bidSection.evalStatus != null">
+                <bind name="evalStatus" value="bidSection.evalStatus"/>
+                AND b.EVAL_STATUS = #{evalStatus}
+            </if>
+            <if test="bidSection.regId != null">
+                <bind name="regId" value="bidSection.regId"/>
+                AND (r.REG_ID = #{regId} OR r.AWAY_REG_ID = #{regId})
+            </if>
+        </where>
+        order by a.BID_OPEN_TIME desc, b.Id desc
+    </select>
+
+    <select id="listStatisticalBidSection" resultMap="TenderDoc_BidSection">
+        SELECT b.*,a.BID_OPEN_TIME
+        FROM bid_section b
+        LEFT JOIN tender_doc a ON b.ID = a.BID_SECTION_ID
+        <where>
+            b.DELETE_FLAG = 0
+            <if test="bidSection.bidClassifyCode != null and bidSection.bidClassifyCode!=''">
+                <bind name="bidClassifyCode" value="bidSection.bidClassifyCode"/>
+                AND b.BID_CLASSIFY_CODE = #{bidClassifyCode}
+            </if>
+            <if test="bidSection.bidOpenTime != null and bidSection.bidOpenTime!=''">
+                <bind name="bidOpenTime" value="'%'+bidSection.bidOpenTime+'%'"/>
+                AND a.BID_OPEN_TIME LIKE #{bidOpenTime}
+            </if>
+            <if test="bidSection.regId != null">
+                <bind name="regId" value="bidSection.regId"/>
+                AND b.REG_ID = #{regId}
+            </if>
+        </where>
+        order by a.BID_OPEN_TIME desc, b.Id desc
+    </select>
+
+    <!-- 按照区划分类统计标段数量 -->
+    <select id="statisticalBidSectionByReg" resultType="com.ejiaoyi.common.dto.statistical.RegDetailDTO">
+        SELECT r.REG_NAME AS regName,
+            COUNT(b.REG_ID) AS totalBidSectionNum,
+            SUM(CASE WHEN (c.ABNORMAL = 1 OR c.ABNORMAL IS NULL) THEN 1 ELSE 0 END) AS normalBidSectionNum,
+            SUM(CASE WHEN c.ABNORMAL = 0 THEN 1 ELSE 0 END) AS abnormalBidSectionNum
+            FROM bid_section b
+            LEFT JOIN tender_doc a ON b.ID = a.BID_SECTION_ID
+            LEFT JOIN operation_maintenance_track_record c ON b.ID = c.BID_SECTION_ID
+            LEFT JOIN reg r ON r.ID = b.REG_ID
+        <where>
+            b.DELETE_FLAG = 0
+            <if test="bidSection.bidClassifyCode != null and bidSection.bidClassifyCode!=''">
+                <bind name="bidClassifyCode" value="bidSection.bidClassifyCode"/>
+                AND b.BID_CLASSIFY_CODE = #{bidClassifyCode}
+            </if>
+            <if test="bidSection.bidOpenTime != null and bidSection.bidOpenTime!=''">
+                <bind name="bidOpenTime" value="'%'+bidSection.bidOpenTime+'%'"/>
+                AND a.BID_OPEN_TIME LIKE #{bidOpenTime}
+            </if>
+            <if test="bidSection.regId != null">
+                <bind name="regId" value="bidSection.regId"/>
+                AND b.REG_ID = #{regId}
+            </if>
+        </where>
+        group by b.REG_ID
+    </select>
+
+    <!-- 按照标段类型分类统计标段数量 -->
+    <select id="statisticalBidSectionByBidType" resultType="com.ejiaoyi.common.dto.statistical.BidTypeDetailDTO">
+        SELECT (CASE WHEN b.BID_CLASSIFY_CODE = 'A03' THEN '勘察'
+                    WHEN b.BID_CLASSIFY_CODE = 'A04' THEN '设计'
+                    WHEN b.BID_CLASSIFY_CODE = 'A05' THEN '监理'
+                    WHEN b.BID_CLASSIFY_CODE = 'A08' THEN '工程施工'
+                    WHEN b.BID_CLASSIFY_CODE = 'A10' THEN '资格预审'
+                    WHEN b.BID_CLASSIFY_CODE = 'A11' THEN '电梯采购与安装'
+                    WHEN b.BID_CLASSIFY_CODE = 'A12' THEN '工程总承包'
+                    ELSE '其他' END) AS bidType,
+            COUNT(b.BID_CLASSIFY_CODE) AS totalBidSectionNum,
+            SUM(CASE WHEN (c.ABNORMAL = 1 OR c.ABNORMAL IS NULL) THEN 1 ELSE 0 END) AS normalBidSectionNum,
+            SUM(CASE WHEN c.ABNORMAL = 0 THEN 1 ELSE 0 END) AS abnormalBidSectionNum
+            FROM bid_section b
+            LEFT JOIN tender_doc a ON b.ID = a.BID_SECTION_ID
+            LEFT JOIN operation_maintenance_track_record c ON b.ID = c.BID_SECTION_ID
+        <where>
+            b.DELETE_FLAG = 0
+            <if test="bidSection.bidClassifyCode != null and bidSection.bidClassifyCode!=''">
+                <bind name="bidClassifyCode" value="bidSection.bidClassifyCode"/>
+                AND b.BID_CLASSIFY_CODE = #{bidClassifyCode}
+            </if>
+            <if test="bidSection.bidOpenTime != null and bidSection.bidOpenTime!=''">
+                <bind name="bidOpenTime" value="'%'+bidSection.bidOpenTime+'%'"/>
+                AND a.BID_OPEN_TIME LIKE #{bidOpenTime}
+            </if>
+            <if test="bidSection.regId != null">
+                <bind name="regId" value="bidSection.regId"/>
+                AND b.REG_ID = #{regId}
+            </if>
+        </where>
+        group by b.BID_CLASSIFY_CODE
+    </select>
+
+    <!-- 根据时间分页查询标讯 -->
+    <select id="pageBidNewsByDate" resultType="com.ejiaoyi.common.dto.statistical.BidNewsDTO">
+        SELECT (CASE WHEN b.BID_CLASSIFY_CODE = 'A03' THEN '勘察'
+            WHEN b.BID_CLASSIFY_CODE = 'A04' THEN '设计'
+            WHEN b.BID_CLASSIFY_CODE = 'A05' THEN '监理'
+            WHEN b.BID_CLASSIFY_CODE = 'A08' THEN '工程施工'
+            WHEN b.BID_CLASSIFY_CODE = 'A10' THEN '资格预审'
+            WHEN b.BID_CLASSIFY_CODE = 'A11' THEN '电梯采购与安装'
+            WHEN b.BID_CLASSIFY_CODE = 'A12' THEN '工程总承包'
+            ELSE '其他' END) AS bidType,
+            b.ID as bidSectionId,
+            b.BID_SECTION_NAME,
+            b.BID_SECTION_CODE,
+            a.BID_OPEN_TIME,
+            b.BID_OPEN_STATUS,
+            c.RESUME_STATUS,
+            b.LIVE_ROOM
+        FROM bid_section b
+        LEFT JOIN tender_doc a ON b.ID = a.BID_SECTION_ID
+        LEFT JOIN line_status c ON b.ID = c.BID_SECTION_ID
+        <where>
+            b.DELETE_FLAG = 0
+            <if test="bidSection.scopeOpenNumDay != null and bidSection.scopeOpenNumDay != '' and bidSection.scopeOpenNumDay != 0 ">
+                <bind name="scopeOpenNumDay" value="bidSection.scopeOpenNumDay"/>
+                AND DATEDIFF(a.BID_OPEN_TIME,NOW()) &lt; #{scopeOpenNumDay} AND
+                DATEDIFF(a.BID_OPEN_TIME,NOW()) &gt;= 0
+            </if>
+            <if test="bidSection.bidOpenStatus != null">
+                <bind name="bidOpenStatus" value="bidSection.bidOpenStatus"/>
+                AND b.BID_OPEN_STATUS = #{bidOpenStatus}
+            </if>
+            <if test="bidSection.bidSectionCode !=null">
+                <bind name="bidSectionCode" value="'%'+bidSection.bidSectionCode+'%'"/>
+                AND (b.BID_SECTION_CODE LIKE #{bidSectionCode} OR b.BID_SECTION_NAME LIKE #{bidSectionCode})
+            </if>
+        </where>
+        order by a.BID_OPEN_TIME desc, b.Id desc
+    </select>
+</mapper>

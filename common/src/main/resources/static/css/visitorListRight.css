@@ -1,0 +1,187 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.layui-layer-content {
+    color: #0b1a41 !important;
+}
+
+.section-right {
+    width: 100%;
+    height: 100%;
+    word-spacing: -5px;
+}
+
+.section-right > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.section-right .section-right-nav {
+    margin-right: 20px;
+    width: 40px;
+}
+
+.section-right .section-right-nav > div {
+    height: 287px;
+    width: 100%;
+    margin-bottom: 20px;
+    background: url(/img/visitor/nav-default-icon.png) no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: rgba(22, 145, 255, 0.8);
+    cursor: pointer;
+    font-weight: bold;
+    writing-mode: vertical-lr;
+    -ms-writing-mode: bt-lr;
+    padding: 0 11px;
+    box-sizing: border-box;
+    transition-duration: 200ms;
+}
+
+.section-right .section-right-nav > div:last-child {
+    margin-bottom: 0;
+}
+
+.section-right .section-right-nav .check-nav {
+    background: url(/img/visitor/nav-check-icon.png) no-repeat;
+    background-size: cover;
+    color: rgba(22, 145, 255, 1);
+}
+
+.section-right .section-right-list {
+    width: calc(100% - 60px);
+    height: 100%;
+}
+
+.section-right .section-right-list .section-right-list-btn {
+    margin: auto;
+    width: 56px;
+    height: 44px;
+    cursor: pointer;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+    padding-right: 20px;
+}
+
+.section-right-list-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.section-right .section-right-list-center {
+    width: 100%;
+    margin: 20px 0;
+    height: calc(100% - 130px);
+    overflow: hidden;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.section-right .section-right-list-center ul {
+    transition-duration: 300ms;
+}
+
+.section-right .section-right-list-center ul li {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+.section-right .section-right-list-center ul li:last-child {
+    margin-bottom: 0;
+}
+
+.section-right .section-right-list-center ul li .info {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    background: url(/img/visitor/list-default-icon.png) no-repeat;
+    background-size: 100% 100%;
+    transition-duration: 200ms;
+}
+
+.section-right .section-right-list-center ul li .info-box {
+    margin-bottom: 16px;
+    clear: both;
+    overflow: hidden;
+    word-spacing: 5px;
+}
+
+.section-right .section-right-list-center ul li .info-box:last-child {
+    margin-bottom: 0;
+}
+
+.section-right .section-right-list-center ul li .info-box > div {
+    float: left;
+    font-size: 12px;
+    color: #11dcfc;
+    line-height: 18px;
+}
+
+.section-right .section-right-list-center ul li .info-label {
+    width: 50px;
+    margin-right: 12px;
+}
+
+.section-right .section-right-list-center ul li .info-value {
+    width: calc(100% - 62px);
+}
+
+.section-right .section-right-nav > div:hover,
+.section-right .section-right-list .section-right-list-btn:hover {
+    opacity: 0.7;
+}
+
+.section-right .section-right-nav > div:active,
+.section-right .section-right-list .section-right-list-btn:active {
+    opacity: 1;
+}
+
+.section-right .section-right-list-center ul li:hover {
+    transform: translateX(20px);
+}
+
+.section-right .section-right-list-center ul li:hover .info,
+.section-right .section-right-list-center ul .check-item .info {
+    background: url(/img/visitor/list-check-icon.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.section-right .section-right-list-center ul li .live {
+    width: 90%;
+    height: 90%;
+    position: relative;
+    background: #00183a;
+}
+
+.section-right .list-live-content {
+    width: 100%;
+    height: 100%;
+}
+
+.section-right .list-live-bottom .list-live-bottom-left {
+    float: left;
+}
+
+.section-right .list-live-bottom .list-live-bottom-right {
+    float: right;
+}
+
+.line-tow {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 36px;
+}

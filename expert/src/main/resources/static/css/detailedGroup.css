@@ -1,0 +1,125 @@
+.cont .center {
+    width: 100%;
+    height: 654px;
+}
+.center .cen-left {
+    width: 25.25%;
+    height: 100%;
+    background-color: #fff;
+    float: left;
+}
+.cen-left ol {
+    width: 100%;
+    height: 60px;
+    background: #e1e1e1;
+    opacity: 1;
+}
+.cen-left ol li {
+    width: 20%;
+    height: 100%;
+    float: left;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 60px;
+    color: #1a2539;
+    text-align: center;
+}
+.cen-left ol .long {
+    width: 60%;
+}
+.cen-left ul {
+    width: 100%;
+    max-height: calc(100% - 60px);
+    overflow: auto;
+}
+.cen-left ul::-webkit-scrollbar {
+    display: none;
+}
+.cen-left ul li {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+}
+.cen-left ul .choice {
+    background-color: rgba(59, 135, 103, 0.3);
+}
+.cen-left ul li:hover {
+    background-color: rgba(59, 135, 103, 0.3);
+}
+.cen-left ul li div {
+    width: 20%;
+    height: 40px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.cen-left ul li .long {
+    width: 60%;
+}
+.cen-right {
+    width: 73.9%;
+    height: 645px;
+    background-color: #fff;
+    float: right;
+}
+.cen-right .layui-table,
+.cen-right .layui-table-view {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+.cen-right .layui-table thead tr {
+    width: 100%;
+    height: 60px;
+    background: #e1e1e1;
+    opacity: 1;
+}
+.cen-right .layui-table thead tr th {
+    text-align: center;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    color: #1a2539;
+    width: 300px;
+}
+.cen-right .layui-table tbody tr td {
+    text-align: center;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    color: #1a2539;
+}
+.cen-right .layui-table tbody tr td:nth-child(1) {
+    text-align: left;
+    width: 300px;
+}
+.cen-right tbody .layui-table-cell {
+    min-height: 117px;
+    overflow: inherit;
+    white-space: pre-wrap;
+    height: auto;
+    margin: 0 auto;
+}
+.cen-right .layui-table tbody tr td:nth-child(1) .layui-table-cell {
+    line-height: 24px;
+}
+.cen-right .layui-form .layui-table tbody tr {
+    height: 200px;
+    overflow: auto;
+}
+.cen-right .layui-table tbody tr td .layui-table-cell {
+    max-height: 200px;
+    overflow: auto;
+    line-height: 24px;
+}
+.cen-right .layui-table tbody tr td {
+    padding: 0;
+    box-sizing: border-box;
+}

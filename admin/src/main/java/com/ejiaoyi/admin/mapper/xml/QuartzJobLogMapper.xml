@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.admin.mapper.QuartzJobLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.QuartzJobLog">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="JOB_NAME" property="jobName"/>
+        <result column="JOB_GROUP" property="jobGroup"/>
+        <result column="JOB_ID" property="jobId"/>
+        <result column="JOB_TIME" property="jobTime"/>
+        <result column="CLASS_NAME" property="className"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, JOB_NAME, JOB_GROUP, JOB_ID, JOB_TIME, CLASS_NAME
+    </sql>
+    <delete id="cleanApiLog">
+        <!-- 删除15天 接口日志  id 从1开始重新排序 START  -->
+        delete FROM api_log where INSERT_TIME &lt; NOW() - INTERVAL 15 DAY;
+        <!-- ====================END====================== -->
+    </delete>
+    <delete id="cleanLoggingEvent">
+        <!-- 删除15天前 系统日志 START-->
+        delete FROM logging_event where INSERT_TIME &lt; NOW() - INTERVAL 15 DAY;
+        <!-- ====================END====================== -->
+    </delete>
+    <delete id="cleanNetworkLog">
+        <!-- 删除15天前 网络日志 START -->
+        delete FROM network_log where INSERT_TIME &lt; NOW() - INTERVAL 15 DAY;
+        <!-- ====================END====================== -->
+    </delete>
+    <delete id="cleanQuartzJobLog">
+        <!-- 删除15天前 定时任务日志 START-->
+        delete FROM quartz_job_log where INSERT_TIME &lt; NOW() - INTERVAL 15 DAY;
+        <!-- ====================END====================== -->
+    </delete>
+    <delete id="cleanUserLog">
+        <!-- 删除365天前 用户操作日志 START -->
+        delete FROM user_log where INSERT_TIME &lt; NOW() - INTERVAL 365 DAY;
+        <!-- ====================END====================== -->
+    </delete>
+    <update id="logUpdateIdAsc">
+       alter table api_log drop id;
+        alter table api_log add id int(11) primary key auto_increment first;
+
+        alter table api_push_log drop id;
+        alter table api_push_log add id int(11) primary key auto_increment first;
+
+        alter table logging_event drop id;
+        alter table logging_event add id int(11) primary key auto_increment first;
+
+        alter table network_log drop id;
+        alter table network_log add id int(11) primary key auto_increment first;
+
+        alter table quartz_job_log drop id;
+        alter table quartz_job_log add id int(11) primary key auto_increment first;
+
+        alter table user_log drop id;
+        alter table user_log add id int(11) primary key auto_increment first;
+    </update>
+</mapper>

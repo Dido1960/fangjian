@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+button {
+  cursor: pointer;
+}
+header {
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+}
+section {
+  width: 100%;
+  height: 1000px;
+  background: rgba(239, 243, 245, 1);
+  padding-top: 150px;
+  box-sizing: border-box;
+  position: relative;
+}
+.logo {
+  width: 240px;
+  height: 40px;
+  font-size: 30px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(26, 51, 88, 1);
+  display: flex;
+  margin: 0 auto;
+}
+.logo span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url(../img/logo.png) no-repeat center center;
+  margin-right: 20px;
+}
+.box {
+  width: 1000px;
+  height: 385px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  margin: 50px auto 0;
+}
+.right {
+  width: 100%;
+  height: 140px;
+  background: url(../img/big_right.png) no-repeat center bottom;
+}
+.box p {
+  width: 100%;
+  height: 41px;
+  font-size: 24px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 41px;
+  color: rgba(26, 51, 88, 1);
+  opacity: 1;
+  text-align: center;
+  margin-top: 40px;
+}
+.foot {
+  width: 220px;
+  height: 40px;
+  margin: 100px auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+.foot .into {
+  width: 100px;
+  height: 40px;
+  background: rgba(0, 98, 235, 1);
+  opacity: 1;
+  ont-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  cursor: pointer;
+}
+.foot .back {
+  width: 100px;
+  height: 40px;
+  background: rgba(212, 220, 235, 1);
+  opacity: 1;
+  ont-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 900;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  cursor: pointer;
+}
+.over {
+  width: 100%;
+  height: 24px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(163, 180, 212, 1);
+  opacity: 1;
+  position: absolute;
+  bottom: 65px;
+}

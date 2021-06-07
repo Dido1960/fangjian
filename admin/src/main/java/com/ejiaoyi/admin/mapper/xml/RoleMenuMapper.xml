@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.admin.mapper.RoleMenuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.RoleMenu">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="ROLE_ID" property="roleId"/>
+        <result column="MENU_ID" property="menuId"/>
+    </resultMap>
+
+    <!-- 扩展查询映射结果 -->
+    <resultMap id="BaseResultMapExtend" type="com.ejiaoyi.common.entity.Menu" extends="BaseResultMap">
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, ROLE_ID, MENU_ID
+    </sql>
+
+    <select id="listTreeMenuByRole" resultMap="BaseResultMapExtend">
+        SELECT b.* FROM `role_menu` a LEFT JOIN menu b on a.MENU_ID = b.id WHERE a.ROLE_ID = #{role.id}
+    </select>
+
+</mapper>

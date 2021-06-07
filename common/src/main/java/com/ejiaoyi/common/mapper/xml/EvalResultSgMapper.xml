@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.EvalResultSgMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.EvalResultSg">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="BIDDER_ID" property="bidderId" />
+        <result column="BID_PRICE" property="bidPrice" />
+        <result column="BUSINESS_SCORE" property="businessScore" />
+        <result column="ABILITY" property="ability" />
+        <result column="ORGANIZE" property="organize" />
+        <result column="QUALITY" property="quality" />
+        <result column="BAD_RECORD" property="badRecord" />
+        <result column="MUTUAL_SECURITY" property="mutualSecurity" />
+        <result column="TOTAL_SCORE" property="totalScore" />
+        <result column="ORDER_NO" property="orderNo" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, BIDDER_ID, BID_PRICE, BUSINESS_SCORE, ABILITY, ORGANIZE, QUALITY, BAD_RECORD, MUTUAL_SECURITY, TOTAL_SCORE, ORDER_NO
+    </sql>
+
+    <!-- 扩展查询映射结果 -->
+    <resultMap id="bidder_Result" type="com.ejiaoyi.common.entity.EvalResultSg" extends="BaseResultMap">
+        <result column="BIDDER_NAME" property="bidderName"/>
+    </resultMap>
+
+    <select id="listRankingBidderByBsId" resultMap="bidder_Result">
+        SELECT e.*, b.BIDDER_NAME FROM eval_result_sg e,bidder b
+        <where>
+            1 = 1
+            <if test="bidSectionId != null and bidSectionId != '' ">
+                AND e.BID_SECTION_ID = #{bidSectionId}
+            </if>
+            AND b.ID = e.BIDDER_ID
+        </where>
+        ORDER BY e.ORDER_NO ASC
+    </select>
+
+</mapper>

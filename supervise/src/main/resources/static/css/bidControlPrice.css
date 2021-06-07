@@ -1,0 +1,79 @@
+.right .right-top {
+    width: 100%;
+    height: 140px;
+    background: #ffffff;
+    opacity: 1;
+    border-radius: 8px;
+    font-size: 36px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 140px;
+    color: #0066cc;
+    text-align: center;
+}
+.right .right-document {
+    width: 100%;
+    height: 415px;
+    background: #ffffff;
+    opacity: 1;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.right-document ol {
+    width: 100%;
+    height: 60px;
+    background: #e2e2e2;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+    padding-right: 17px;
+    box-sizing: border-box;
+}
+.right-document ol li {
+    width: 33.3%;
+    height: 60px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 60px;
+    color: #1b2a3d;
+    text-align: center;
+    float: left;
+}
+.right-document .document-table {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.right-document .document-table table {
+    width: 100%;
+}
+.document-table table tr {
+    width: 100%;
+    height: 77px;
+    min-height: 77px;
+}
+.document-table table tr td {
+    width: 33.3%;
+    height: 77px;
+    min-height: 77px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    color: #1b2a3d;
+    text-align: center;
+    border-bottom: 1px solid #e2e2e2;
+    box-sizing: border-box;
+}
+.document-table table tr td span {
+    display: inline-block;
+    width: 86px;
+    height: 36px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}

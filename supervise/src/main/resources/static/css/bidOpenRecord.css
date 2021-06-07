@@ -1,0 +1,135 @@
+.right h3 {
+    width: 100%;
+    height: 61px;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 61px;
+    color: #333333;
+    text-align: center;
+    border-bottom: 1px solid #e2e2e2;
+    box-sizing: border-box;
+}
+
+.right form {
+    width: 100%;
+    height: 200px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.right form div {
+    width: 50%;
+    height: 40px;
+    float: left;
+    margin-top: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.right form div label {
+    display: inline-block;
+    width: 15%;
+    height: 40px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 40px;
+    color: #1a2539;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.right form div input {
+    width: 75%;
+    height: 40px;
+    background: rgba(226, 226, 226, 1);
+    border: 1px solid rgba(226, 226, 226, 1);
+    opacity: 1;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.right-table {
+    width: 100%;
+    min-height: 320px;
+    opacity: 1;
+    box-sizing: border-box;
+}
+
+.right-table ol {
+    width: 100%;
+    height: 60px;
+    background: rgba(226, 226, 226, 1);
+    opacity: 1;
+}
+
+.right-table ol li {
+    float: left;
+    width: 16.5%;
+    height: 60px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 60px;
+    color: #333333;
+    text-align: center;
+}
+
+.right-table ol .small {
+    width: 10%;
+}
+
+.right-table ol .long {
+    width: 20.5%;
+}
+
+.right-table table {
+    width: 100%;
+}
+
+.right-table table tr {
+    width: 100%;
+    height: 59px;
+    min-height: 59px;
+}
+
+.right-table table tr td {
+    width: 16.5%;
+    height: 59px;
+    min-height: 59px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    color: #333333;
+    text-align: center;
+    border-bottom: 1px solid rgba(226, 226, 226, 1);
+    box-sizing: border-box;
+}
+
+.right-table table tr td + td {
+    border-left: 1px solid rgba(226, 226, 226, 1);
+}
+
+.right-table table tr .small {
+    width: 10% !important;
+}
+
+.right-table table tr .long {
+    width: 20.5% !important;
+}
+
+.supervise {
+    width: 100%;
+    height: 59px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 59px;
+    color: #333333;
+}

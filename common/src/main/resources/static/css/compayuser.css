@@ -1,0 +1,148 @@
+
+.panel-card {
+    background: #fff;
+    margin: 20px 0px;
+    height: 84px;
+}
+
+.panel-card .panel-card-header {
+    width: 96px;
+    height: 84px;
+    line-height: 84px !important;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 27px;
+    color: rgba(26, 51, 88, 1);
+    opacity: 1;
+    position: absolute;
+    text-align: center;
+    left: 30px;
+}
+
+.panel-card .panel-card-right {
+    line-height: 84px !important;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 27px;
+    color: rgba(26, 51, 88, 1);
+    opacity: 1;
+    position: absolute;
+    text-align: center;
+    right: 30px;
+}
+
+.panel-card .panel-card-right .btn {
+    width: 118px;
+    height: 40px;
+    background: rgba(243, 247, 255, 1);
+    border: 1px solid rgba(0, 98, 235, 1);
+    opacity: 1;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    line-height: 40px;
+    color: rgba(0, 98, 235, 1);
+    opacity: 1;
+}
+
+
+.panel-card .panel-card-right .btn:hover {
+    box-shadow: 0px 10px 30px rgba(0, 98, 235, 0.07);
+    font-weight: bold;
+}
+
+
+.panel-card .panel-card-right .btn .btn-img {
+    width: 24px;
+    height: 24px;
+    right: -3px;
+    top: -3px
+}
+
+.panel-card .panel-card-right .btn .num {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    line-height: 12px;
+    color: rgba(255, 71, 71, 1);
+    opacity: 1;
+    border: 1px rgba(255, 71, 71, 1) solid;
+    position: relative;
+    float: right;
+    right: -4px;
+    top: -4px;
+    z-index: 100;
+    background: #fff;
+}
+
+.layui-big-menu {
+    width: calc(100% - 30px);
+    height: 18.52vh;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(163, 180, 212, 1);
+    opacity: 1;
+    border-radius: 8px;
+}
+
+.layui-big-menu:hover {
+    box-shadow: 0px 10px 30px rgba(0, 98, 235, 0.07);
+    border: 1px solid #fff;
+}
+
+.layui-big-menu-left {
+    margin: 20px 10px 0px 20px;
+}
+
+.layui-big-menu-right {
+    margin: 20px 20px 0px 10px;
+}
+
+
+.layui-big-menu .log-icon {
+    width: 12.6vh;
+    height: 12.6vh;
+    margin: 3vh;
+    display: inline-block;
+}
+
+.layui-big-menu .choose-text-des {
+    display: inline-block;
+    margin-top: 20px;
+    position: absolute;
+    margin-right: 60px;
+}
+
+.layui-big-menu .choose-text-des .header {
+    font-size: 24px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 41px;
+    color: rgba(26, 51, 88, 1);
+    opacity: 1;
+}
+
+.layui-big-menu .choose-text-des .des {
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    line-height: 24px;
+    color: rgba(140, 158, 185, 1);
+    opacity: 1;
+}
+
+.left-col-menu {
+    padding: 0;
+}
+
+.left-col-menu li {
+    list-style-type: none;
+}
+
+

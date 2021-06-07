@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="wordbook.xsd">
+    <wordbook key="bool" des="布尔类型">
+        <data hash_key="0" value="否"/>
+        <data hash_key="1" value="是"/>
+    </wordbook>
+    <wordbook key="enabled" des="启用状态">
+        <data hash_key="0" value="禁用"/>
+        <data hash_key="1" value="启用"/>
+    </wordbook>
+    <wordbook key="dmlType" des="数据库操纵类型">
+        <data hash_key="1" value="新增"/>
+        <data hash_key="2" value="删除"/>
+        <data hash_key="3" value="更新"/>
+        <data hash_key="4" value="查询"/>
+        <data hash_key="5" value="未知"/>
+    </wordbook>
+    <wordbook key="apiName" des="接口名称">
+        <data hash_key="servicePlatformDock" value="甘肃省房建市政与第三方服务平台对接接口"/>
+        <data hash_key="statisticalData" value="数据统计对接接口"/>
+        <data hash_key="phone" value="移动手机端对接接口"/>
+    </wordbook>
+    <wordbook key="logLevel" des="日志级别">
+        <data hash_key="DEBUG" value="DEBUG"/>
+        <data hash_key="INFO" value="INFO"/>
+        <data hash_key="WARN" value="WARN"/>
+    </wordbook>
+    <wordbook key="userType" des="用户类型">
+        <data hash_key="0" value="管理员"/>
+        <data hash_key="1" value="主管部门"/>
+        <data hash_key="2" value="代理机构"/>
+        <data hash_key="3" value="招标人"/>
+    </wordbook>
+    <wordbook key="siteType" des="场地类型">
+        <data hash_key="1" value="开标室"/>
+        <data hash_key="2" value="评标室"/>
+    </wordbook>
+    <wordbook key="status" des="状态类型">
+        <data hash_key="0" value="未开始"/>
+        <data hash_key="1" value="进行中"/>
+        <data hash_key="2" value="结束"/>
+    </wordbook>
+    <wordbook key="bidClassifyCode" des="标段分类代码">
+        <data hash_key="A03" value="勘察"/>
+        <data hash_key="A04" value="设计"/>
+        <data hash_key="A05" value="监理"/>
+        <data hash_key="A08" value="施工"/>
+        <data hash_key="A10" value="资格预审"/>
+        <data hash_key="A11" value="电梯安装与采购"/>
+        <data hash_key="A12" value="工程总承包"/>
+    </wordbook>
+    <wordbook key="dataSource" des="数据来源">
+        <data hash_key="0" value="本系统数据"/>
+        <data hash_key="1" value="对接数据"/>
+    </wordbook>
+    <wordbook key="expertCategory" des="专家类别">
+        <data hash_key="1" value="经济标专家"/>
+        <data hash_key="2" value="技术标专家"/>
+        <data hash_key="3" value="业主代表"/>
+    </wordbook>
+    <wordbook key="authType" des="身份认证类别">
+        <data hash_key="1" value="信id"/>
+        <data hash_key="2" value="支付宝"/>
+    </wordbook>
+    <wordbook key="govDepType" des="政府用户类别">
+        <data hash_key="1" value="招标办"/>
+        <data hash_key="2" value="交易中心（专家录入）"/>
+        <data hash_key="3" value="交易中心（工程处）"/>
+    </wordbook>
+    <!--<wordbook key="ejiaoyiUserType" des="交易通内部用户类型">
+        <data hash_key="OM01" value="高级运维"/>
+        <data hash_key="OM02" value="中级运维"/>
+        <data hash_key="OM03" value="普通运维"/>
+        <data hash_key="T01" value="测试"/>
+        <data hash_key="D01" value="开发"/>
+    </wordbook>-->
+</root>

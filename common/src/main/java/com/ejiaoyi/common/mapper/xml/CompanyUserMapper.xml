@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.CompanyUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.CompanyUser">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="NAME" property="name" />
+        <result column="LOGIN_NAME" property="loginName" />
+        <result column="PASSWORD" property="password" />
+        <result column="ALL_SPELLING" property="allSpelling" />
+        <result column="FIRST_SPELLING" property="firstSpelling" />
+        <result column="CODE" property="code" />
+        <result column="ADDRESS" property="address" />
+        <result column="LINK_MAN" property="linkMan" />
+        <result column="PHONE" property="phone" />
+        <result column="ENABLED" property="enabled" />
+        <result column="LOCAL" property="local" />
+        <result column="LOCAL_DETAIL" property="localDetail" />
+        <result column="PHOTO_ID" property="photoId" />
+        <result column="FILE_IDS" property="fileIds" />
+        <result column="LICENSE" property="license" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, NAME, LOGIN_NAME, PASSWORD, ALL_SPELLING, FIRST_SPELLING, CODE, ADDRESS, LINK_MAN, PHONE, ENABLED, LOCAL, LOCAL_DETAIL, PHOTO_ID, FILE_IDS, LICENSE
+    </sql>
+
+</mapper>

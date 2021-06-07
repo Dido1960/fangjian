@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.ExpertReviewMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.ExpertReview">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="EXPERT_ID" property="expertId" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="GRADE_ID" property="gradeId" />
+        <result column="START_TIME" property="startTime" />
+        <result column="END_TIME" property="endTime" />
+        <result column="INIT_STATUS" property="initStatus" />
+        <result column="ENABLED" property="enabled" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, EXPERT_ID, BID_SECTION_ID, GRADE_ID, START_TIME, END_TIME, INIT_STATUS, ENABLED
+    </sql>
+
+    <update id="updatePersonalReviewEnd">
+        UPDATE expert_review e,
+            grade g
+        SET e.ENABLED = 1,e.END_TIME = #{endTime}
+        <where>
+            e.GRADE_ID = g.ID
+            AND g.ID IN
+            <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+                #{gradeId}
+            </foreach>
+            AND g.REVIEW_PROCESS = #{evalProcess}
+            AND e.EXPERT_ID = #{expertId}
+        </where>
+    </update>
+    <update id="updateCallPersonReview">
+        UPDATE expert_review e,
+        grade g
+        SET e.ENABLED = null
+        <where>
+            e.GRADE_ID = g.ID
+            AND g.ID IN
+            <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+                #{gradeId}
+            </foreach>
+            AND g.REVIEW_PROCESS = #{evalProcess}
+        </where>
+    </update>
+
+</mapper>

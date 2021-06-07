@@ -1,0 +1,175 @@
+.cont .center {
+  width: 100%;
+  height: 654px;
+}
+.center .cen-left {
+  width: 20.25%;
+  height: 100%;
+  background-color: #fff;
+  float: left;
+}
+.cen-left ol {
+  width: 100%;
+  height: 60px;
+  background: #e1e1e1;
+  opacity: 1;
+}
+.cen-left ol li {
+  width: 20%;
+  height: 100%;
+  float: left;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 60px;
+  color: #1a2539;
+  text-align: center;
+}
+.cen-left ol .long {
+  width: 60%;
+}
+.cen-left ul {
+  width: 100%;
+  max-height: calc(100% - 60px);
+  overflow: auto;
+}
+.cen-left ul::-webkit-scrollbar {
+  display: none;
+}
+.cen-left ul li {
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+}
+.cen-left ul .choice {
+  background-color: rgba(59, 135, 103, 0.3);
+}
+.cen-left ul li:hover {
+  background-color: rgba(59, 135, 103, 0.3);
+}
+.cen-left ul li div {
+  width: 20%;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 40px;
+  text-align: center;
+  float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cen-left ul li .long {
+  width: 60%;
+}
+.cen-right {
+  width: 78.9%;
+  height: 645px;
+  background-color: #fff;
+  float: right;
+}
+.cen-right ol {
+  width: 100%;
+  height: 61px;
+  background: #e1e1e1;
+  opacity: 1;
+  white-space: nowrap;
+  overflow: visible;
+  padding-right: 17px;
+  box-sizing: border-box;
+}
+.cen-right ol li {
+  width: 7.5%;
+  height: 61px;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 61px;
+  color: #1a2539;
+  text-align: center;
+}
+.cen-right ol .long {
+  width: 22% !important;
+  border-right: 1px solid #ccc;
+}
+.cen-right ol .all-in {
+  width: 7.5% !important;
+}
+.cen-right ul {
+  width: 100%;
+  height: calc(100% - 61px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.cen-right ul li {
+  width: 100%;
+  min-height: 118px;
+  border-bottom: 1px solid #ccc;
+  white-space: nowrap;
+  overflow: visible;
+}
+.cen-right ul li div {
+  width: 7.5%;
+  height: 100%;
+  display: inline-block;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  vertical-align: middle;
+  line-height: 117px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+.cen-right ul li .long {
+  width: 22% !important;
+  border-right: 1px solid #ccc;
+  text-align: left;
+}
+.cen-right ul li .all-in {
+  width: 7.5% !important;
+}
+.cen-right ul li div p {
+  line-height: 20px;
+  display: inline-block;
+  white-space: pre-wrap;
+  overflow: visible;
+  vertical-align: middle;
+  text-align: left;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.cen-right ul li .red-f span {
+  display: block;
+  width: 150px;
+  min-height: 59px;
+  opacity: 1;
+  border-radius: 4px;
+  background: url(/img/tips.png) no-repeat center center;
+  background-size: 100% 100%;
+  font-size: 12px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 16px;
+  color: #ffffff;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  overflow: visible;
+  padding: 10px;
+  z-index: 99999;
+}
+.cen-right ul li .red-f img {
+  position: absolute;
+  left: 45%;
+  top: -13px;
+}
+.cen-right ul li .red-f div{
+  width: 150px!important;
+  min-height: 59px!important;
+  position: absolute;
+  top: 70%;
+  left: 18%;
+  z-index: 99999999!important;
+}

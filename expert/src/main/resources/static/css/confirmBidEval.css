@@ -1,0 +1,173 @@
+section {
+  width: 90%;
+  height: calc(100% - 80px);
+  margin: 0 auto;
+  /*padding: 20px 0;*/
+  box-sizing: border-box;
+}
+.cont {
+  width: 90%;
+  height: 750px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 16px;
+  /*margin: 80px auto;*/
+  border-radius: 16px;
+  margin-top: 30px;
+  margin-left: 5%;
+}
+.cont .cont-l {
+  width: 48%;
+  height: 750px;
+  float: left;
+  background-color: #fff;
+  padding-top: 50px;
+  box-sizing: border-box;
+  border-radius: 16px 0px 0px 16px;
+}
+.cont .cont-l p {
+  width: 100%;
+  height: 40px;
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 40px;
+  color: #333333;
+  text-align: center;
+}
+.cont-l img {
+  margin: 72px auto 0px;
+}
+.cont-r {
+  width: 52%;
+  height: 750px;
+  float: right;
+  background: #f0f4f8;
+  border-radius: 0px 16px 16px 0px;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+.cont-r .title {
+  width: 80%;
+  height: 100px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+.cont-r .title .tit-l {
+  width: 100px;
+  height: 100px;
+  background: #0066cc;
+  opacity: 1;
+  border-radius: 10px 0px 0px 10px;
+  float: left;
+  position: relative;
+}
+.tit-l img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.tit-r {
+  width: calc(100% - 100px);
+  height: 100%;
+  float: right;
+  padding-top: 10px;
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+.tit-r h3 {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 40px;
+  color: #333333;
+}
+.tit-r p {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 40px;
+  color: #333333;
+}
+.group {
+  width: 80%;
+  height: 100px;
+  background: #0066cc;
+  opacity: 1;
+  border-radius: 10px;
+  margin: 40px auto 0px;
+  font-size: 30px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 100px;
+  color: #ffffff;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.group span {
+  float: right;
+}
+.radio {
+  width: 80%;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 40px auto;
+  padding-top: 35px;
+  box-sizing: border-box;
+}
+.btns {
+  width: 180px;
+  height: 36px;
+  margin: 0 auto;
+}
+.btn {
+  width: 80px;
+  height: 36px;
+  opacity: 1;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 36px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  float: left;
+}
+.btn + .btn {
+  margin-left: 20px;
+}
+.btns .btn:nth-child(1) {
+  background: rgba(0, 102, 203, 1);
+}
+.btns .btn:nth-child(2) {
+  background: rgba(223, 152, 9, 1);
+}
+.layui-form{
+  width: 90%;
+  margin: 0 auto;
+}
+.radio .layui-input-block {
+  display: inline-block;
+  width: 24%;
+  margin-left: 0px;
+  box-sizing: border-box;
+}
+.radio .layui-form-checked[lay-skin="primary"] i {
+  border-color: #0066cc !important;
+  background-color: #0066cc;
+}
+.radio .layui-form-checkbox[lay-skin="primary"]:hover i {
+  border-color: #0066cc !important;
+}

@@ -1,0 +1,752 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    min-width: 1920px;
+    min-height: 1080px;
+    background: url(../img/bcak.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+span,
+li,
+p,
+h3,
+h4,
+b,
+label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background: url(../img/visitor_head.png) no-repeat center center;
+    background-size: 100%;
+}
+
+header h3 {
+    float: left;
+    width: 62%;
+    height: 80px;
+    font-size: 28px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 80px;
+    color: #ffffff;
+    padding-left: 54px;
+    box-sizing: border-box;
+    letter-spacing: 7px;
+}
+
+header p {
+    float: left;
+    width: 28%;
+    height: 80px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 70px;
+    color: #11dcfc;
+    letter-spacing: 5px;
+    padding-left: 41px;
+    box-sizing: border-box;
+}
+
+header span {
+    display: block;
+    width: 80px;
+    height: 30px;
+    float: left;
+    background: rgba(22, 145, 255, 0.84);
+    opacity: 1;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: -16px;
+    margin-right: 21px;
+    border-radius: 5%;
+}
+
+a {
+    color: #ffffff !important;
+}
+
+a :hover {
+    color: #ffffff !important;
+}
+
+section {
+    width: 95%;
+    height: calc(100% - 80px);
+    padding-top: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+section .left {
+    width: 725px;
+    height: 100%;
+    float: left;
+}
+
+section .right {
+    width: calc(100% - 750px);
+    height: 100%;
+    float: left;
+    margin-left: 20px;
+}
+
+.left .live {
+    width: 100%;
+    height: 405px;
+    background: url(../img/live2.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.left .live h3 {
+    width: 100%;
+    height: 47px;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 47px;
+    color: #11dcfc;
+    text-align: center;
+    background: url(../img/live-title.png) no-repeat center center;
+}
+
+.left .live .live-cont {
+    width: 660px;
+    height: 310px;
+    margin: 0 auto;
+    /*background: url(../img/live-cont.png) no-repeat center center;*/
+}
+
+.left .live .live-foot {
+    width: 660px;
+    height: 47px;
+    margin: 0 auto;
+}
+
+.live-foot .name {
+    width: 70%;
+    height: 47px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 47px;
+    color: #11dcfc;
+    float: left;
+}
+
+.live-foot .phone {
+    width: 30%;
+    height: 47px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 47px;
+    color: #11dcfc;
+    float: left;
+    text-align: right;
+}
+
+.left .talk {
+    width: 100%;
+    height: 405px;
+    background: url(../img/live2.png) no-repeat center center;
+    background-size: 100% 100%;
+    margin-top: 40px;
+}
+
+.right .likes {
+    width: 100%;
+    height: 60px;
+    background: url(../img/like-back.png) no-repeat center center;
+    background-size: 100% 100%;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 60px;
+    color: #11dcfc;
+    cursor: pointer;
+}
+
+.right .likes img {
+    display: block;
+    float: left;
+    margin-left: 48%;
+    margin-top: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.right .likes span {
+    float: right;
+    margin-right: 20px;
+}
+
+.right .introduce {
+    width: 100%;
+    height: 128px;
+    background: url(../img/introduce.png) no-repeat center center;
+    background-size: 100% 100%;
+    margin: 20px 0px;
+    padding-top: 16px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.information {
+    width: 100%;
+    height: 24px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 24px;
+    color: #11dcfc;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.right .information span {
+    display: inline-block;
+    width: 85px;
+    height: 24px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 24px;
+    color: #11dcfc;
+    background: url(../img/name.png) no-repeat center center;
+    background-size: 100% 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.right .information p {
+    display: inline-block;
+    width: calc(100% - 100px);
+    margin-left: 10px;
+    line-height: 24px;
+    vertical-align: middle;
+}
+
+.right .cont {
+    width: 100%;
+    height: 622px;
+    background: url(../img/cont.png) no-repeat center center;
+    background-size: 100% 100%;
+    padding: 0 20px 0 30px;
+    box-sizing: border-box;
+}
+
+.cont ol {
+    width: 100%;
+    height: 80px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.cont ol li {
+    width: 97px;
+    height: 32px;
+    background: url(../img/ol-list.png) no-repeat center center;
+    background-size: 100% 100%;
+    margin-right: 20px;
+    float: left;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 32px;
+    color: #6b94bb;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cont ol .sele {
+    color: #ffffff;
+}
+
+.cont .map {
+    width: 100%;
+    height: calc(100% - 100px);
+}
+
+.cont .state {
+    width: 100%;
+    height: calc(100% - 80px);
+}
+
+.cont .state ul {
+    width: 100%;
+    height: 40px;
+    background: rgba(22, 145, 255, 0.2);
+}
+
+.cont .state ul li {
+    width: 20%;
+    height: 40px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 40px;
+    color: #11dcfc;
+    text-align: center;
+    float: left;
+}
+
+.cont .state ul .long {
+    width: 25%;
+}
+
+.cont .state .state-table {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.cont .state .state-table::-webkit-scrollbar {
+    display: none;
+}
+
+.state-table table {
+    width: 100%;
+}
+
+.state-table table tr {
+    width: 100%;
+    height: 40px;
+    min-height: 40px;
+}
+
+.state-table table tr:nth-child(2n) {
+    background: rgba(22, 145, 255, 0.2);
+}
+
+.state-table table tr td {
+    width: 12.5%;
+    height: 40px;
+    min-height: 40px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    text-align: center;
+    color: #b2cde5;
+}
+
+.state-table table tr:nth-child(2n) td {
+    color: #6b94bb;
+}
+
+.state-table table tr .long {
+    width: 25%;
+}
+
+.cont .decrypt {
+    width: 100%;
+    height: calc(100% - 80px);
+}
+
+.cont .decrypt .decrypt-left {
+    width: 320px;
+    height: 510px;
+    float: left;
+    background: url(../img/decrypt-left.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.decrypt .decrypt-left ul {
+    width: 95%;
+    height: calc(100% - 98px);
+    margin: 78px auto 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.decrypt-left ul::-webkit-scrollbar {
+    display: none;
+}
+
+.decrypt-left ul li {
+    width: 100%;
+    height: 36px;
+    background: rgba(22, 145, 255, 0.3);
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.decrypt-left ul li p {
+    width: 70%;
+    height: 36px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 36px;
+    color: #d1e2f2;
+    float: left;
+}
+
+.decrypt-left ul li span {
+    display: block;
+    width: 30%;
+    height: 36px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 36px;
+    color: #5daeff;
+    text-align: right;
+    float: left;
+}
+
+.decrypt-right {
+    width: calc(100% - 340px);
+    height: 510px;
+    float: right;
+}
+
+.decrypt-right .decrypt-word {
+    width: 556px;
+    height: 438px;
+    margin: 10px auto;
+    position: relative;
+}
+
+.decrypt-right .decrypt-word img {
+    display: block;
+}
+
+.decrypt-right .decrypt-word .percentage {
+    display: block;
+    font-size: 29px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 39px;
+    color: #11dcfc;
+    position: absolute;
+    top: 75px;
+    left: 241px;
+}
+
+.decrypt-word .all {
+    width: 136px;
+    height: 90px;
+    background: url(../img/all.png) no-repeat center center;
+    background-size: 100% 100%;
+    font-size: 18px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 90px;
+    color: #11dcfc;
+    text-align: center;
+    position: absolute;
+    left: 216px;
+    top: 200px;
+}
+
+.decrypt-complete {
+    width: 186px;
+    height: 98px;
+    background: url(../img/complete.png) no-repeat center center;
+    position: absolute;
+    left: -60px;
+    top: 110px;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+
+.decrypt-complete p {
+    width: 100%;
+    height: 30px;
+    font-size: 24px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 30px;
+    color: #11dcfc;
+    padding-left: 11px;
+    box-sizing: border-box;
+}
+
+.decrypt-complete span {
+    display: block;
+    width: 100%;
+    height: 24px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 24px;
+    color: #11dcfc;
+    padding-left: 11px;
+    box-sizing: border-box;
+}
+
+.decrypt-complete span i {
+    /*margin-left: 20px;*/
+    font-style: normal;
+}
+
+.decrypt-wait {
+    width: 232px;
+    height: 110px;
+    background: url(../img/wait.png) no-repeat center center;
+    background-color: 100% 100%;
+    position: absolute;
+    left: -50px;
+    top: 280px;
+    padding-top: 45px;
+    box-sizing: border-box;
+}
+
+.decrypt-wait p {
+    width: 100%;
+    height: 30px;
+    font-size: 24px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 30px;
+    color: #11dcfc;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.decrypt-wait span {
+    display: block;
+    width: 100%;
+    height: 24px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 24px;
+    color: #11dcfc;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.decrypt-conduct {
+    width: 232px;
+    height: 110px;
+    background: url(../img/conduct.png) no-repeat center center;
+    background-color: 100% 100%;
+    position: absolute;
+    right: -72px;
+    top: 165px;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+
+.decrypt-conduct p {
+    width: 100%;
+    height: 30px;
+    font-size: 24px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 30px;
+    color: #11dcfc;
+    padding-right: 81px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.decrypt-conduct span {
+    display: block;
+    width: 100%;
+    height: 24px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 24px;
+    color: #11dcfc;
+    padding-right: 57px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.cont .qualifications {
+    width: 100%;
+    height: calc(100% - 80px);
+}
+
+.cont .qualifications ul {
+    width: 100%;
+    height: 40px;
+    background: rgba(22, 145, 255, 0.2);
+}
+
+.cont .qualifications ul li {
+    width: 33%;
+    height: 40px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 40px;
+    color: #11dcfc;
+    text-align: center;
+    float: left;
+}
+
+.cont .qualifications .qualifications-table {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.cont .qualifications .qualifications-table::-webkit-scrollbar {
+    display: none;
+}
+
+.qualifications-table table {
+    width: 100%;
+}
+
+.qualifications-table table tr {
+    width: 100%;
+    height: 40px;
+    min-height: 40px;
+}
+
+.qualifications-table table tr:nth-child(2n) {
+    background: rgba(22, 145, 255, 0.2);
+}
+
+.qualifications-table table tr td {
+    width: 33%;
+    height: 40px;
+    min-height: 40px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    text-align: center;
+    color: #b2cde5;
+}
+
+.qualifications-table table tr:nth-child(2n) td {
+    color: #6b94bb;
+}
+
+.cont .identity {
+    width: 100%;
+    height: calc(100% - 80px);
+}
+
+.cont .identity ul {
+    width: 100%;
+    height: 40px;
+    background: rgba(22, 145, 255, 0.2);
+}
+
+.cont .identity ul li {
+    width: 15%;
+    height: 40px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 40px;
+    color: #11dcfc;
+    text-align: center;
+    float: left;
+}
+
+.cont .identity ul .long {
+    width: 27.5%;
+}
+
+.cont .identity .identity-table {
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.cont .identity .identity-table::-webkit-scrollbar {
+    display: none;
+}
+
+.identity-table table {
+    width: 100%;
+}
+
+.identity-table table tr {
+    width: 100%;
+    height: 40px;
+    min-height: 40px;
+}
+
+.identity-table table tr:nth-child(2n) {
+    background: rgba(22, 145, 255, 0.2);
+}
+
+.identity-table table tr td {
+    width: 15%;
+    height: 40px;
+    min-height: 40px;
+    font-size: 12px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    text-align: center;
+    color: #b2cde5;
+}
+
+.identity-table table tr:nth-child(2n) td {
+    color: #6b94bb;
+}
+
+.identity-table table tr .long {
+    width: 27.5%;
+}
+
+#talk {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    border: 0;
+}
+
+.talk {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#all {
+    width: 100%;
+    margin: 0 auto;
+}
+
+li {
+    list-style-type: none;
+    line-height: 82px;
+}
+
+#all .t_num i {
+    width: 26px;
+    height: 32px;
+    display: inline-block;
+    background: url(../img/like_num.png) no-repeat center center;
+    background-position: 0 0;
+}
+
+#like {
+    line-height: 60px;
+}
+
+#playerContainer {
+    height: 100% !important;
+}

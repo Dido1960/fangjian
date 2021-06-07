@@ -1,0 +1,241 @@
+section {
+  width: 100%;
+  height: calc(100% - 80px);
+  background: rgba(239, 243, 244, 1);
+}
+section .cont {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.cont .head {
+  width: 100%;
+  min-height: 56px;
+  background: #ffffff;
+  opacity: 1;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.cont .head div{
+  display: inline-block;
+  width: calc(100% - 260px);
+  min-height: 56px;
+}
+.cont .head div p{
+  display: inline-block;
+  width: 80px;
+  height: 56px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 56px;
+  color: #223165;
+  vertical-align: middle;
+}
+.cont .head div span{
+  display: inline-block;
+  width: calc(100% - 90px);
+  line-height: 24px;
+  overflow: visible;
+  white-space: pre-wrap;
+  vertical-align: middle;
+}
+.head .current-time {
+  display: inline-block;
+  width: 250px;
+  height: 56px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 56px;
+  color: #a6a7ab;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.cont .message-head{
+  width: 100%;
+  height: 60px;
+}
+.cont .message {
+  width: calc(100% - 180px);
+  height: 60px;
+  background: #ffffff;
+  opacity: 1;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 60px;
+  color: #223165;
+  margin-bottom: 20px;
+  float: left;
+}
+.cont .countDown{
+  width: 160px;
+  height: 60px;
+  background: #1361fe;
+  opacity: 1;
+  font-size: 16px;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  line-height: 60px;
+  color: #ffffff;
+  text-align: center;
+  float: right;
+}
+.cont .message .talk {
+  width: 26px;
+  height: 26px;
+  background: url(../img/message.png) no-repeat center center;
+  float: right;
+  margin-top: 17px;
+  position: relative;
+  cursor: pointer;
+}
+.cont .message .talk span {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: #f53923;
+  border-radius: 50%;
+  opacity: 1;
+  font-size: 10px;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  line-height: 16px;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+}
+section .jump {
+  width: 100%;
+  height: 124px;
+  font-size: 36px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 124px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  background: url(../img/jump.png) no-repeat center center;
+  background-size: 100%;
+  margin-bottom: 20px;
+}
+section .jump .name {
+  width: 240px;
+  height: 124px;
+  font-size: 40px;
+  font-family: TsangerYuYangT;
+  font-weight: normal;
+  line-height: 124px;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  left: 0;
+}
+section .jump span {
+  display: block;
+  width: 112px;
+  height: 36px;
+  border: 1px solid #ffffff;
+  opacity: 1;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 36px;
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  right: 40px;
+  top: 44px;
+  cursor: pointer;
+}
+section .document {
+  width: 100%;
+  height: 637px;
+}
+.document .document-title {
+  width: 100%;
+  height: 76px;
+  background: #ffffff;
+  opacity: 1;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.document .document-title span {
+  display: block;
+  width: 80px;
+  height: 36px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 36px;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.document-title span:nth-child(1) {
+  background-color: #70dbdb;
+  float: left;
+}
+.document-title span:nth-child(2) {
+  background: #4e8aff;
+  float: right;
+}
+.document ol {
+  width: 100%;
+  height: 77px;
+  background: #a9bfdc;
+  opacity: 1;
+}
+.document ol li {
+  display: inline-block;
+  width: calc(33.3% - 5px);
+  height: 77px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  line-height: 77px;
+  color: #223165;
+  text-align: center;
+}
+.document ul {
+  width: 100%;
+  height: calc(100% - 153px);
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.document ul li {
+  width: 100%;
+  min-height: 96px;
+  background: #ffffff;
+  opacity: 1;
+  margin-bottom: 20px;
+}
+.document ul li div {
+  display: inline-block;
+  width: calc(33.3% - 5px);
+  min-height: 96px;
+  font-size: 14px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 96px;
+  color: #223165;
+  text-align: center;
+}
+.document ul li div p {
+  display: inline-block;
+  line-height: 24px;
+  overflow: visible;
+  white-space: pre-wrap;
+  vertical-align: middle;
+  padding: 10px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,237 @@
+section {
+  width: 90%;
+  height: calc(100% - 80px);
+  padding-top: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+section .head {
+  width: 100%;
+  min-height: 122px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.head div {
+  width: 100%;
+  min-height: 61px;
+  border-bottom: 1px solid rgba(207, 218, 229, 1);
+  box-sizing: border-box;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.head div p {
+  display: inline-block;
+  width: 120px;
+  height: 61px;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 61px;
+  color: #333333;
+  vertical-align: middle;
+}
+.head div span {
+  display: inline-block;
+  width: calc(100% - 130px);
+  line-height: 24px;
+  vertical-align: middle;
+  overflow: visible;
+  white-space: pre-wrap;
+  text-align: right;
+}
+.document {
+  width: 100%;
+  min-height: 600px;
+}
+.list {
+  float: left;
+  width: calc(50% - 10px);
+  height: 600px;
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+.list h3 {
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 60px;
+  color: #1a2539;
+  text-align: center;
+}
+.list .table {
+  width: 97%;
+  height: 520px;
+  border: 1px solid #cccccc;
+  opacity: 1;
+  border-radius: 6px;
+  margin: 0 auto;
+}
+.list .table ol {
+  width: 100%;
+  height: 60px;
+  background: rgba(207, 218, 229, 1);
+  opacity: 1;
+  border-radius: 6px 6px 0px 0px;
+}
+.list .table ol li {
+  width: 30%;
+  height: 60px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 60px;
+  color: #1a2539;
+  text-align: center;
+  float: left;
+}
+.list .table ol .small {
+  width: 10% !important;
+}
+.list .detailed {
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.list table {
+  width: 100%;
+}
+.list table tr {
+  width: 100%;
+  height: 60px;
+  min-height: 60px;
+}
+.list table tr td {
+  width: 30%;
+  min-height: 60px;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  color: #333333;
+  border-bottom: 1px solid rgba(207, 218, 229, 1);
+  box-sizing: border-box;
+}
+.list table tr .small {
+  width: 10%;
+}
+.list table tr td + td {
+  border-left: 1px solid rgba(207, 218, 229, 1);
+}
+.cont {
+  float: left;
+  width: calc(50% - 10px);
+  min-height: 600px;
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 0 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+.cont h2 {
+  width: 100%;
+  height: 84px;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 84px;
+  color: #1a2539;
+  letter-spacing: 2px;
+}
+.cont .printing {
+  width: 48px;
+  height: 48px;
+  background: url(../img/printing.png) no-repeat center center;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cont .printing:hover {
+  opacity: 0.7;
+}
+.cont h3 {
+  width: 100%;
+  height: 49px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 49px;
+  color: #1a2539;
+}
+.cont div {
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 24px;
+  color: #1a2539;
+}
+.cont p {
+  width: 100%;
+  height: 72px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 72px;
+  color: #1a2539;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 20%;
+  box-sizing: border-box;
+}
+.cont p span {
+  float: right;
+}
+.inp {
+  width: 320px;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  color: #1a2539;
+  text-align: center;
+  margin: 15px auto 0px;
+}
+.inp input {
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin-top: 10px;
+}
+.btns {
+  width: 180px;
+  height: 36px;
+  margin: 20px auto 0;
+}
+.btns span {
+  display: block;
+  width: 85px;
+  height: 36px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+}
+.btns span + span {
+  margin-left: 10px;
+}
+.btns span:hover {
+  opacity: 0.7;
+}
+.btns .layui-btn {
+  padding: 0;
+}

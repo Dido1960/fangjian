@@ -1,0 +1,68 @@
+.lit-cont {
+  width: 100%;
+  min-height: 295px;
+  background-color: #fff;
+}
+.lit-cont .lit-name {
+  width: 100%;
+  min-height: 75px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 75px;
+  color: rgba(34, 49, 101, 1);
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+.lit-cont .lit-name span {
+  float: right;
+  width: 50%;
+  text-align: right;
+  display: inline-block;
+  line-height: 24px;
+  vertical-align: middle;
+  overflow: visible;
+  white-space: pre-wrap;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+.lit-num {
+  width: 100%;
+  height: 75px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 75px;
+  color: rgba(34, 49, 101, 1);
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(213, 213, 213, 1);
+}
+.lit-cont .lit-num span {
+  float: right;
+}
+.over-btn {
+  width: 80px;
+  height: 36px;
+  background: linear-gradient(
+          270deg,
+          rgba(19, 97, 254, 1) 0%,
+          rgba(78, 138, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#1361fe, endColorstr=#4e8aff);
+  opacity: 1;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  text-align: center;
+  line-height: 36px;
+  color: rgba(255, 255, 255, 1);
+  margin: 70px auto 0;
+  cursor: pointer;
+}
+.over-btn:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}

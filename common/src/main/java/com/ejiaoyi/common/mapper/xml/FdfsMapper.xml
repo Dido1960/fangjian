@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.expert.mapper.FdfsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.Fdfs">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="MARK" property="mark"/>
+        <result column="DFS_GROUP" property="dfsGroup"/>
+        <result column="DFS_ADDRESS" property="dfsAddress"/>
+        <result column="URL" property="url"/>
+        <result column="SUFFIX" property="suffix"/>
+        <result column="NAME" property="name"/>
+        <result column="FILE_HASH" property="fileHash"/>
+        <result column="BYTE_SIZE" property="byteSize"/>
+        <result column="READ_SIZE" property="readSize"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, MARK, DFS_GROUP, DFS_ADDRESS, URL, SUFFIX, NAME, FILE_HASH, BYTE_SIZE, READ_SIZE
+    </sql>
+
+</mapper>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.ExpertUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.ExpertUser">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="ALL_SPELLING" property="allSpelling" />
+        <result column="FIRST_SPELLING" property="firstSpelling" />
+        <result column="REG_ID" property="regId" />
+        <result column="ID_CARD" property="idCard" />
+        <result column="ENABLED" property="enabled" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="BID_APPLY_ID" property="bidApplyId" />
+        <result column="EXPERT_NAME" property="expertName" />
+        <result column="PHONE_NUMBER" property="phoneNumber" />
+        <result column="COMPANY" property="company" />
+        <result column="LEADER_STATUS" property="leaderStatus" />
+        <result column="PWD" property="pwd" />
+        <result column="CHECKIN_TIME" property="checkinTime" />
+        <result column="IS_CHAIRMAN" property="isChairman" />
+        <result column="CATEGORY" property="category" />
+        <result column="PASS_WORD" property="passWord" />
+        <result column="PROFESSIONAL" property="professional" />
+        <result column="AVOID" property="avoid" />
+        <result column="REASON" property="reason" />
+        <result column="SIGNAR" property="signar" />
+        <result column="DATA_TYPE" property="dataType" />
+        <result column="UNAVAILABLE_REASON" property="unavailableReason" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, ALL_SPELLING, FIRST_SPELLING, REG_ID, ID_CARD, ENABLED, BID_SECTION_ID, BID_APPLY_ID, EXPERT_NAME, PHONE_NUMBER, COMPANY,
+         LEADER_STATUS, PWD, CHECKIN_TIME, IS_CHAIRMAN, CATEGORY, PASS_WORD, PROFESSIONAL, AVOID, REASON, SIGNAR, DATA_TYPE, UNAVAILABLE_REASON
+    </sql>
+
+    <select id="searchExpert" resultMap="BaseResultMap">
+        select EXPERT_NAME,ID_CARD,PHONE_NUMBER,COMPANY from expert_user
+        <where>
+            <if test="expertName !='' and expertName !=null ">
+                <bind name="name" value="'%'+expertName+'%'"/>
+                EXPERT_NAME like #{name}
+            </if>
+            and ENABLED = 1
+        </where>
+        group by EXPERT_NAME,ID_CARD,PHONE_NUMBER,COMPANY ORDER BY COUNT(EXPERT_NAME) DESC LIMIT 10;
+    </select>
+
+    <select id="countExperts" resultType="int">
+        select count(*) from expert_user
+        <where>
+            ENABLED = 1
+            and BID_SECTION_ID = #{bidSectionId}
+            AND (AVOID != 1 OR AVOID IS NULL)
+        </where>
+    </select>
+
+    <select id="listExpertUser" resultMap="BaseResultMap">
+        select * from expert_user
+        <where>
+            ENABLED = 1
+            <if test="loginName !='' and loginName !=null ">
+                and (EXPERT_NAME = #{loginName} or PHONE_NUMBER = #{loginName} or ID_CARD = #{loginName})
+            </if>
+        </where>
+    </select>
+
+</mapper>

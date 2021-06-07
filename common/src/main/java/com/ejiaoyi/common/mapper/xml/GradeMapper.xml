@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.GradeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.Grade">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="NAME" property="name" />
+        <result column="GRADE_TYPE" property="gradeType" />
+        <result column="TYPE" property="type" />
+        <result column="CALC_TYPE" property="calcType" />
+        <result column="REVIEW_PROCESS" property="reviewProcess" />
+        <result column="REVIEW_TYPE" property="reviewType" />
+        <result column="SCORE" property="score" />
+        <result column="HAS_ITEM" property="hasItem" />
+        <result column="GROUP_END" property="groupEnd" />
+        <result column="USER_ID" property="userId" />
+        <result column="REMARK" property="remark" />
+        <result column="DELETE_FLAG" property="deleteFlag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, NAME, GRADE_TYPE, TYPE, CALC_TYPE, REVIEW_PROCESS, REVIEW_TYPE, SCORE, HAS_ITEM, GROUP_END, USER_ID, REMARK, DELETE_FLAG
+    </sql>
+
+    <select id="getProcessCompletion" resultType="com.ejiaoyi.common.dto.ProcessCompletionDTO">
+        SELECT SUM(CASE WHEN GROUP_END = 1 THEN 1 ELSE 0 END) AS completeNum,
+        SUM(CASE WHEN GROUP_END != 1 THEN 1 ELSE 0 END) AS noCompleteNum
+        FROM grade
+        <where>
+            1 = 1 AND DELETE_FLAG = 0
+            <if test="gradeIds != '' and gradeIds != null">
+                AND ID IN
+                <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+                    #{gradeId}
+                </foreach>
+            </if>
+            <if test="evalProcess != '' and evalProcess != null">
+                AND REVIEW_PROCESS = #{evalProcess}
+            </if>
+        </where>
+    </select>
+    <select id="getGradeScoreByReviewType" resultType="java.lang.String">
+        SELECT SUM(SCORE) FROM grade
+        <where>
+            1 = 1 AND DELETE_FLAG = 0
+            <if test="gradeIds != '' and gradeIds != null">
+                AND ID IN
+                <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+                    #{gradeId}
+                </foreach>
+            </if>
+            <if test="evalProcess != '' and evalProcess != null">
+                AND REVIEW_PROCESS = #{evalProcess}
+            </if>
+            <if test="reviewType != '' and reviewType != null">
+                AND REVIEW_TYPE = #{reviewType}
+            </if>
+        </where>
+    </select>
+
+</mapper>

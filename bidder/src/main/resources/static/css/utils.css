@@ -1,0 +1,98 @@
+html .green-b {
+  background: linear-gradient(
+          268deg,
+          rgb(0, 190, 190) 0%,
+          rgb(112, 219, 219) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#00BEBE, endColorstr=#70DBDB);
+  color: #fff;
+}
+html .oragen-b {
+  background: linear-gradient(
+          270deg,
+          rgb(255, 145, 0) 0%,
+          rgb(255, 179, 81) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#ff9100, endColorstr=#ffb351);
+  color: #fff;
+}
+html .red-b {
+  background-color: #ff482b;
+  color: #fff;
+}
+html .yellow-b {
+  background-color: #ffaf00;
+  color: #fff;
+  cursor: pointer;
+}
+html .blove-b {
+  background: rgba(78, 138, 255, 1);
+  color: #fff;
+}
+html .green-f {
+  color: #05bfbf;
+}
+html .oragen-f {
+  color: rgba(245, 154, 35, 1);
+}
+html .red-f {
+  color: #f53923;
+}
+html .blove-f {
+  color: #2f75fe;
+}
+html .green-s {
+  border: 1px solid #02c386;
+}
+html .oragen-s {
+  border: 1px solid #ffb300;
+}
+html .red-s {
+  border: 1px solid #ff482b;
+}
+html .blove-s {
+  border: 1px solid #2f75fe;
+}
+html .o-lev-c {
+  color: #242b29;
+}
+html .s-lev-c {
+  color: #b9b9b9;
+}
+html .t-lev-c {
+  color: #f1f4f3;
+}
+/* 字体大小 */
+html .xl-lev {
+  font-size: 36px;
+}
+html .l-lev {
+  font-size: 30px;
+}
+html .m-lev {
+  font-size: 16px;
+}
+html .s-lev {
+  font-size: 14px;
+}
+html .disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+  color: rgba(226, 226, 226, 1);
+}
+html .gray-f {
+  color: rgba(226, 226, 226, 1);
+}
+html .gray-b {
+  background-color: rgba(226, 226, 226, 1);
+}
+html .gray-s {
+  border: 1px solid rgba(226, 226, 226, 1);
+}
+html .blod {
+  font-weight: bold;
+}
+.layui-layer, .layui-layer-shade{
+  position: fixed !important;
+}

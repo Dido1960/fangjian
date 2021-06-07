@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.BidderFileInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.BidderFileInfo">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="BIDDER_ID" property="bidderId"/>
+        <result column="GEF_ID" property="gefId"/>
+        <result column="GEF_HASH" property="gefHash"/>
+        <result column="SGEF_ID" property="sgefId"/>
+        <result column="SGEF_HASH" property="sgefHash"/>
+        <result column="CZR_ID" property="czrId"/>
+        <result column="CZR_HASH" property="czrHash"/>
+        <result column="RECEIPT_ID" property="receiptId"/>
+        <result column="CERT_ID" property="certId"/>
+        <result column="CIPHER" property="cipher"/>
+        <result column="CA_TYPE" property="caType"/>
+        <result column="PCID" property="pcid"/>
+        <result column="DISKID" property="diskid"/>
+        <result column="MACID" property="macid"/>
+        <result column="XML_UID" property="xmlUid"/>
+        <result column="XML_SERVICE_NUMBER" property="xmlServiceNumber"/>
+        <result column="BUSINESS_STATUS" property="businessStatus"/>
+        <result column="TECHNICAL_STATUS" property="technicalStatus"/>
+        <result column="QUALIFICATIONS_STATUS" property="qualificationsStatus"/>
+        <result column="CHECKLIST_STATUS" property="checklistStatus"/>
+        <result column="CHECKLIST_XML_STATUS" property="checklistXmlStatus"/>
+        <result column="OTHER_STATUS" property="otherStatus"/>
+        <result column="ALL_FILE_STATUS" property="allFileStatus"/>
+        <result column="FILE_UNZIP_PATH" property="fileUnzipPath"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BIDDER_ID, TJF_ID, MTJF_ID RECEIPT_ID, GEF_FILE_ID, SGEF_FILE_ID, CZR_FILE_ID, CZR_HASH, CERT_ID, CIPHER, CA_TYPE, PCID, DISKID, MACID, XML_UID, XML_SERVICE_NUMBER, BUSINESS_STATUS, TECHNICAL_STATUS, QUALIFICATIONS_STATUS, CHECKLIST_STATUS, CHECKLIST_XML_STATUS, OTHER_STATUS, ALL_FILE_STATUS, FILE_UNZIP_PATH
+    </sql>
+
+    <select id="listXmlNoParseCompleteInfo" resultMap="BaseResultMap">
+        SELECT a.ID,
+            a.XML_SERVICE_NUMBER,
+            a.CHECKLIST_XML_STATUS,
+            a.BUSINESS_STATUS,
+            a.TECHNICAL_STATUS,
+            a.QUALIFICATIONS_STATUS,
+            a.CHECKLIST_STATUS,
+            a.OTHER_STATUS
+        FROM `bidder_file_info` a
+        LEFT JOIN `bidder` b ON b.ID = a.BIDDER_ID
+        LEFT JOIN `bid_section` c ON c.ID = b.BID_SECTION_ID
+        <where>
+            a.CHECKLIST_XML_STATUS = 0
+            AND c.BID_CLASSIFY_CODE = 'A08'
+            AND a.XML_SERVICE_NUMBER IS NOT NULL
+        </where>
+    </select>
+</mapper>

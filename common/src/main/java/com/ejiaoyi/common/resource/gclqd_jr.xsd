@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="工程造价数据文件">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="相关单位信息" type="相关单位信息类型定义"/>
+				<xs:element name="总工程">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="总工程类型定义"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="主要材料汇总" type="主要材料汇总类型"/>
+				<xs:element name="措施项目汇总" type="措施项目汇总类型"/>
+			</xs:sequence>
+			<xs:attribute name="文件版本" type="xs:string" use="required"/>
+			<xs:attribute name="文件采用的造价规范" type="xs:string" use="required"/>
+			<xs:attribute name="文件类别" type="文件类别定义" use="required"/>
+		</xs:complexType>
+		<xs:unique name="清单号必须唯一">
+			<xs:selector xpath=".//清单子目"/>
+			<xs:field xpath="@项目编码"/>
+		</xs:unique>
+		<xs:unique name="价格要素子目编号必须唯一">
+			<xs:selector xpath=".//价格要素子目"/>
+			<xs:field xpath="@编码"/>
+		</xs:unique>
+	</xs:element>
+	<xs:simpleType name="文件类别定义">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="招标文件"/>
+			<xs:enumeration value="招标控制价文件"/>
+			<xs:enumeration value="投标文件"/>
+			<xs:enumeration value="标底文件"/>
+			<xs:enumeration value="发包价文件"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="总承包服务费类别定义">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="发包人发包专业工程"/>
+			<xs:enumeration value="发包人供应材料"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="造价师定义">
+		<xs:sequence/>
+		<xs:attribute name="注册证号" type="xs:string" use="required"/>
+		<xs:attribute name="姓名" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="单项工程定义">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="单项工程" type="单项工程定义"/>
+			<xs:element name="单位工程" type="单位工程定义"/>
+		</xs:choice>
+		<xs:attribute name="编码" type="xs:string" use="required"/>
+		<xs:attribute name="名称" type="xs:string" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="暂估价" type="xs:decimal" use="required"/>
+		<xs:attribute name="安全文明施工费" type="xs:decimal" use="required"/>
+		<xs:attribute name="税金" type="xs:decimal" use="required"/>
+		<xs:attribute name="规费" type="xs:decimal" use="required"/>
+		<xs:attribute name="可竞争费用" type="xs:decimal" use="required"/>
+		<xs:attribute name="不可竞争费用" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="单位工程定义">
+		<xs:sequence>
+			<xs:element name="分部分项清单" type="分部分项清单类型定义"/>
+			<xs:element name="措施项目清单" type="措施项目清单类型定义"/>
+			<xs:element name="其它项目清单" type="其它项目清单类型定义"/>
+			<xs:element name="规费" type="规费类型定义"/>
+			<xs:element name="税金" type="税金类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="编码" type="xs:string" use="required"/>
+		<xs:attribute name="名称" type="xs:string" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="暂估价" type="xs:decimal" use="required"/>
+		<xs:attribute name="安全文明施工费" type="xs:decimal" use="required"/>
+		<xs:attribute name="税金" type="xs:decimal" use="required"/>
+		<xs:attribute name="规费" type="xs:decimal" use="required"/>
+		<xs:attribute name="可竞争费用" type="xs:decimal" use="required"/>
+		<xs:attribute name="不可竞争费用" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="费用组成定义">
+		<xs:sequence>
+			<xs:element name="人工费">
+				<xs:complexType>
+					<xs:attribute name="取费基础" type="xs:string" use="required"/>
+					<xs:attribute name="费率" type="xs:decimal" use="required"/>
+					<xs:attribute name="金额" type="xs:decimal" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="材料费">
+				<xs:complexType>
+					<xs:attribute name="取费基础" type="xs:string" use="required"/>
+					<xs:attribute name="费率" type="xs:decimal" use="required"/>
+					<xs:attribute name="金额" type="xs:decimal" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="机械费">
+				<xs:complexType>
+					<xs:attribute name="取费基础" type="xs:string" use="required"/>
+					<xs:attribute name="费率" type="xs:decimal" use="required"/>
+					<xs:attribute name="金额" type="xs:decimal" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="风险费">
+				<xs:complexType>
+					<xs:attribute name="取费基础" type="xs:string" use="required"/>
+					<xs:attribute name="费率" type="xs:decimal" use="required"/>
+					<xs:attribute name="金额" type="xs:decimal" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="利润">
+				<xs:complexType>
+					<xs:attribute name="取费基础" type="xs:string" use="required"/>
+					<xs:attribute name="费率" type="xs:decimal" use="required"/>
+					<xs:attribute name="金额" type="xs:decimal" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="其他费用组成" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="费用子目" type="费用子目类型定义"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="定额组成定义">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="定额子目" type="定额子目类型定义"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="清单子目类型定义">
+		<xs:sequence>
+			<xs:element name="综合单价费用组成" type="费用组成定义"/>
+			<xs:element name="消耗量组成" type="消耗量组成类型定义"/>
+			<xs:element name="定额组成" type="定额组成定义"/>
+		</xs:sequence>
+		<xs:attribute name="项目编码" type="xs:string" use="required"/>
+		<xs:attribute name="项目名称" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="工程量" type="xs:decimal" use="required"/>
+		<xs:attribute name="综合单价" type="xs:decimal" use="required"/>
+		<xs:attribute name="综合合价" type="xs:decimal" use="required"/>
+		<xs:attribute name="工作内容" type="xs:string" use="required"/>
+		<xs:attribute name="项目特征" type="xs:string" use="required"/>
+		<xs:attribute name="是否需评审子目" type="xs:boolean" use="required"/>
+		<xs:attribute name="其中暂估价" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="定额措施子目类型定义">
+		<xs:sequence>
+			<xs:element name="综合单价费用组成" type="费用组成定义"/>
+			<xs:element name="消耗量组成" type="消耗量组成类型定义"/>
+			<xs:element name="定额组成" type="定额组成定义"/>
+		</xs:sequence>
+		<xs:attribute name="项目编码" type="xs:string" use="required"/>
+		<xs:attribute name="项目名称" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="工程量" type="xs:decimal" use="required"/>
+		<xs:attribute name="综合单价" type="xs:decimal" use="required"/>
+		<xs:attribute name="综合合价" type="xs:decimal" use="required"/>
+		<xs:attribute name="其中暂估价" type="xs:decimal" use="required"/>
+		<xs:attribute name="是否需评审子目" type="xs:boolean" use="required"/>
+		<xs:attribute name="是否可竞争措施子目" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="措施子目类型定义">
+		<xs:sequence/>
+		<xs:attribute name="编码" type="xs:string" use="required"/>
+		<xs:attribute name="名称" type="xs:string" use="required"/>
+		<xs:attribute name="取费基础" type="xs:string" use="required"/>
+		<xs:attribute name="费率" type="xs:decimal" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="费率措施子目类型定义">
+		<xs:sequence/>
+		<xs:attribute name="编码" type="xs:string" use="required"/>
+		<xs:attribute name="名称" type="xs:string" use="required"/>
+		<xs:attribute name="取费基础" type="xs:string" use="required"/>
+		<xs:attribute name="费率" type="xs:decimal" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="是否需评审子目" type="xs:boolean" use="required"/>
+		<xs:attribute name="是否可竞争措施子目" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="消耗量子目类型定义">
+		<xs:sequence>
+			<xs:element name="配比材料组成" type="消耗量组成类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="材料编号" type="xs:string" use="required"/>
+		<xs:attribute name="材料名称" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="用量" type="xs:decimal" use="required"/>
+		<xs:attribute name="预算价" type="xs:decimal" use="required"/>
+		<xs:attribute name="市场价" type="xs:decimal" use="required"/>
+		<xs:attribute name="规格" type="xs:string" use="required"/>
+		<xs:attribute name="产地" type="xs:string" use="required"/>
+		<xs:attribute name="型号" type="xs:string" use="required"/>
+		<xs:attribute name="类别" type="材料类别定义" use="required"/>
+		<xs:attribute name="供应方式" type="材料供应方式定义" use="required"/>
+		<xs:attribute name="是否主材" type="xs:boolean" use="required"/>
+		<xs:attribute name="是否暂估材料" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="材料类别定义">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="人工"/>
+			<xs:enumeration value="材料"/>
+			<xs:enumeration value="机械"/>
+			<xs:enumeration value="设备"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="材料供应方式定义">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="施工单位供应"/>
+			<xs:enumeration value="甲供"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="消耗量组成类型定义">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="人材机子目" type="消耗量子目类型定义"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="计日工子目类型定义">
+		<xs:sequence/>
+		<xs:attribute name="编号" type="xs:string" use="required"/>
+		<xs:attribute name="项目名称" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="暂定数量" type="xs:decimal" use="required"/>
+		<xs:attribute name="综合单价" type="xs:decimal" use="required"/>
+		<xs:attribute name="合价" type="xs:decimal" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="价格要素子目类型定义"/>
+	<xs:complexType name="相关单位信息类型定义">
+		<xs:sequence>
+			<xs:element name="施工或建设单位信息">
+				<xs:complexType>
+					<xs:sequence/>
+					<xs:attribute name="单位编码" type="xs:string" use="required"/>
+					<xs:attribute name="单位名称" type="xs:string" use="required"/>
+					<xs:attribute name="项目负责人" type="xs:string" use="required"/>
+					<xs:attribute name="联系电话" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="参与编制的造价师列表">
+				<xs:complexType>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="造价师" type="造价师定义"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="总工程类型定义">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="单项工程" type="单项工程定义"/>
+			<xs:element name="单位工程" type="单位工程定义"/>
+		</xs:choice>
+		<xs:attribute name="项目编码" type="xs:string" use="required"/>
+		<xs:attribute name="项目名称" type="xs:string" use="required"/>
+		<xs:attribute name="施工地点" type="xs:string" use="required"/>
+		<xs:attribute name="建筑面积" type="xs:decimal" use="required"/>
+		<xs:attribute name="定额工期" type="xs:int" use="required"/>
+		<xs:attribute name="要求工期" type="xs:int" use="required"/>
+		<xs:attribute name="开工日期" type="xs:date" use="required"/>
+		<xs:attribute name="竣工日期" type="xs:date" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="暂估价" type="xs:decimal" use="required"/>
+		<xs:attribute name="安全文明施工费" type="xs:decimal" use="required"/>
+		<xs:attribute name="税金" type="xs:decimal" use="required"/>
+		<xs:attribute name="规费" type="xs:decimal" use="required"/>
+		<xs:attribute name="可竞争费用" type="xs:decimal" use="required"/>
+		<xs:attribute name="不可竞争费用" type="xs:decimal" use="required"/>
+		<xs:attribute name="编制说明" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="主要材料类型定义"/>
+	<xs:complexType name="分部分项清单类型定义">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="分部子目" type="分部子目类型"/>
+			<xs:element name="清单子目" type="清单子目类型定义"/>
+		</xs:choice>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="措施项目清单类型定义">
+		<xs:sequence>
+			<xs:element name="安全文明施工费">
+				<xs:complexType>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="措施子目" type="措施子目类型定义"/>
+					</xs:sequence>
+					<xs:attribute name="取费基础" use="required"/>
+					<xs:attribute name="费率" use="required"/>
+					<xs:attribute name="金额" use="required"/>
+					<xs:attribute name="是否需评审子目" type="xs:boolean" use="required"/>
+					<xs:attribute name="是否可竞争措施子目" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="施工措施项目费" type="施工措施项目费类型"/>
+		</xs:sequence>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="其它项目清单类型定义">
+		<xs:sequence>
+			<xs:element name="暂列金额" type="暂列金额类型定义"/>
+			<xs:element name="暂估价" type="暂估价类型定义"/>
+			<xs:element name="计日工" type="计日工类型定义"/>
+			<xs:element name="总承包服务费" type="总承包服务费类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="规费类型定义">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="规费子目" type="规费子目类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="税金类型定义">
+		<xs:sequence/>
+		<xs:attribute name="计算基础" type="xs:string" use="required"/>
+		<xs:attribute name="费率" type="xs:decimal" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="暂列金额类型定义">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="暂列金额子目" type="暂列金额子目类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="暂估价类型定义">
+		<xs:sequence>
+			<xs:element name="材料暂估价" type="材料暂估价类型定义"/>
+			<xs:element name="专业工程暂估价" type="专业工程暂估价类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="计日工类型定义">
+		<xs:sequence>
+			<xs:element name="人工">
+				<xs:complexType>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="人工子目" type="计日工子目类型定义"/>
+					</xs:sequence>
+					<xs:attribute name="编号" type="xs:string" use="required"/>
+					<xs:attribute name="金额" type="xs:decimal" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="材料">
+				<xs:complexType>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="材料子目" type="计日工子目类型定义"/>
+					</xs:sequence>
+					<xs:attribute name="编号" type="xs:string" use="required"/>
+					<xs:attribute name="金额" type="xs:decimal" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="施工机械">
+				<xs:complexType>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="机械子目" type="计日工子目类型定义"/>
+					</xs:sequence>
+					<xs:attribute name="编号" type="xs:string" use="required"/>
+					<xs:attribute name="金额" type="xs:decimal" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="总承包服务费类型定义">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="总承包服务费子目" type="总承包服务费子目类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="暂列金额子目类型定义">
+		<xs:sequence/>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="项目名称" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="暂定金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="材料暂估价类型定义">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="暂估材料子目" type="暂估材料子目类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="专业工程暂估价类型定义">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="暂估工程子目" type="暂估工程子目类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="暂估材料子目类型定义">
+		<xs:sequence/>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="材料名称" type="xs:string" use="required"/>
+		<xs:attribute name="规格" type="xs:string" use="required"/>
+		<xs:attribute name="型号" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="单价" type="xs:decimal" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="暂估工程子目类型定义">
+		<xs:sequence/>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="工程名称" type="xs:string" use="required"/>
+		<xs:attribute name="工程内容" type="xs:string" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="总承包服务费子目类型定义">
+		<xs:sequence/>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="项目名称" type="xs:string" use="required"/>
+		<xs:attribute name="服务内容" type="xs:string" use="required"/>
+		<xs:attribute name="费率" type="xs:decimal" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="类型" type="总承包服务费类别定义" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="规费子目类型定义">
+		<xs:sequence/>
+		<xs:attribute name="序号" type="xs:string" use="required"/>
+		<xs:attribute name="项目名称" type="xs:string" use="required"/>
+		<xs:attribute name="计算基础" type="xs:string" use="required"/>
+		<xs:attribute name="费率" type="xs:decimal" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+		<xs:attribute name="备注" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="定额子目类型定义">
+		<xs:sequence>
+			<xs:element name="综合单价费用组成" type="费用组成定义"/>
+			<xs:element name="消耗量组成" type="消耗量组成类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="项目编码" type="xs:string" use="required"/>
+		<xs:attribute name="项目名称" type="xs:string" use="required"/>
+		<xs:attribute name="计量单位" type="xs:string" use="required"/>
+		<xs:attribute name="工程量" type="xs:decimal" use="required"/>
+		<xs:attribute name="取费基价" type="xs:decimal" use="required"/>
+		<xs:attribute name="综合单价" type="xs:decimal" use="required"/>
+		<xs:attribute name="综合合价" type="xs:decimal" use="required"/>
+		<xs:attribute name="其中暂估价" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="费用子目类型定义">
+		<xs:sequence/>
+		<xs:attribute name="编码" type="xs:string" use="required"/>
+		<xs:attribute name="名称" type="xs:string" use="required"/>
+		<xs:attribute name="取费基础" type="xs:string" use="required"/>
+		<xs:attribute name="费率" type="xs:decimal" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="施工措施项目费类型">
+		<xs:sequence>
+			<xs:element name="费率措施清单" type="费率措施清单类型"/>
+			<xs:element name="定额措施清单" type="定额措施清单类型"/>
+		</xs:sequence>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="费率措施清单类型">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="费率措施子目" type="费率措施子目类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="定额措施清单类型">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="定额措施子目" type="定额措施子目类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="分部子目类型">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="清单子目" type="清单子目类型定义"/>
+		</xs:sequence>
+		<xs:attribute name="名称" type="xs:string" use="required"/>
+		<xs:attribute name="金额" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="主要材料汇总类型">
+		<xs:complexContent>
+			<xs:extension base="主要材料类型定义">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="主要材料子目">
+						<xs:complexType>
+							<xs:sequence/>
+							<xs:attribute name="序号" type="xs:string" use="required"/>
+							<xs:attribute name="编码" type="xs:string" use="required"/>
+							<xs:attribute name="名称" type="xs:string" use="required"/>
+							<xs:attribute name="规格" type="xs:string" use="required"/>
+							<xs:attribute name="材料来源" type="xs:string" use="required"/>
+							<xs:attribute name="产地" type="xs:string" use="required">
+								<xs:annotation>
+									<xs:documentation>如果产地有多个时，产地之间用【】分割。设定多个产地，文件类型必须是招标文件。例如：【产地1】【产地2】</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="厂家" type="xs:string" use="required">
+								<xs:annotation>
+									<xs:documentation>如果厂家有多个时，厂家之间用【】分割。设定多个厂家时，文件类型必须是招标文件。例如：【厂家1】【厂家2】</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="单位" type="xs:string" use="required"/>
+							<xs:attribute name="数量" type="xs:decimal" use="required"/>
+							<xs:attribute name="单价" type="xs:decimal" use="required"/>
+							<xs:attribute name="合价" type="xs:decimal" use="required"/>
+							<xs:attribute name="材料类型" type="材料类别定义" use="required"/>
+							<xs:attribute name="是否需评审子目" type="xs:boolean" use="required"/>
+							<xs:attribute name="备注" type="xs:string" use="required"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="措施项目汇总类型">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="措施汇总子目">
+				<xs:complexType>
+					<xs:attribute name="序号" use="required"/>
+					<xs:attribute name="编码" use="required"/>
+					<xs:attribute name="名称" use="required"/>
+					<xs:attribute name="金额" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

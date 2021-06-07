@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.LineMsgReadMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.LineMsgRead">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="LINE_MSG_ID" property="lineMsgId" />
+        <result column="USER_ID" property="userId" />
+        <result column="USER_TYPE" property="userType" />
+        <result column="READ_SITUATION" property="readSituation" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, LINE_MSG_ID, USER_ID, USER_TYPE, READ_SITUATION
+    </sql>
+
+</mapper>

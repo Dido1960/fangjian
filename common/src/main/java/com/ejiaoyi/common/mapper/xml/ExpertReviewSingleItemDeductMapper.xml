@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.ExpertReviewSingleItemDeductMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.ExpertReviewSingleItemDeduct">
+        <id column="ID" property="id"/>
+        <result column="INSERT_TIME" property="insertTime"/>
+        <result column="EXPERT_ID" property="expertId"/>
+        <result column="EXPERT_REVIEW_ID" property="expertReviewId"/>
+        <result column="BIDDER_ID" property="bidderId"/>
+        <result column="GRADE_ID" property="gradeId"/>
+        <result column="GRADE_ITEM_ID" property="gradeItemId"/>
+        <result column="EVAL_RESULT" property="evalResult"/>
+        <result column="DEDUCT_COMMENTS" property="deductComments"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, EXPERT_ID, EXPERT_REVIEW_ID, BIDDER_ID, GRADE_ID, GRADE_ITEM_ID, EVAL_RESULT, DEDUCT_COMMENTS
+    </sql>
+
+    <select id="listExpertReviewSingleItemDeduct" resultMap="BaseResultMap">
+        SELECT * FROM expert_review_single_item_deduct
+        <where>
+            1 = 1
+            <if test="item.expertReviewId !='' and item.expertReviewId !=null ">
+                <bind name="expertReviewId" value="item.expertReviewId"/>
+                AND EXPERT_REVIEW_ID = #{expertReviewId}
+            </if>
+            <if test="item.gradeId !='' and item.gradeId !=null ">
+                <bind name="gradeId" value="item.gradeId"/>
+                AND GRADE_ID = #{gradeId}
+            </if>
+            <if test="item.expertId !='' and item.expertId !=null ">
+                <bind name="expertId" value="item.expertId"/>
+                AND EXPERT_ID = #{expertId}
+            </if>
+            <if test="item.bidderId !='' and item.bidderId !=null ">
+                <bind name="bidderId" value="item.bidderId"/>
+                AND BIDDER_ID = #{bidderId}
+            </if>
+            <if test="item.evalResult !='' and item.evalResult !=null ">
+                <bind name="evalResult" value="item.evalResult"/>
+                AND EVAL_RESULT = #{evalResult}
+            </if>
+        </where>
+        ORDER BY GRADE_ITEM_ID, EXPERT_ID
+    </select>
+
+    <select id="listHasScore" resultType="com.ejiaoyi.common.entity.ExpertReviewSingleItemDeduct">
+        SELECT * FROM expert_review_single_item_deduct
+        <where>
+            1=1
+            <if test="expertId != '' and expertId != null">
+                AND EXPERT_ID = #{expertId}
+            </if>
+            <if test="gradeId != '' and gradeId != null">
+                AND GRADE_ID = #{gradeId}
+            </if>
+            <if test="bidderId != '' and bidderId != null">
+                AND BIDDER_ID = #{bidderId}
+            </if>
+            AND EVAL_RESULT != ""
+        </where>
+    </select>
+    <select id="listCountInconsistent" resultType="int">
+        select count(DISTINCT a.EVAL_RESULT) from expert_review_single_item_deduct a , grade g
+        <where>
+            1 = 1
+            <if test="gradeIds != null">
+                AND a.GRADE_ID in
+                <foreach collection="gradeIds" index="index" item="gradeId" open="(" separator="," close=")">
+                    #{gradeId}
+                </foreach>
+            </if>
+            AND a.GRADE_ID = g.ID
+            AND (g.`NAME` = #{methodName1} OR g.`NAME` = #{methodName2})
+        </where>
+        GROUP BY a.GRADE_ITEM_ID, a.BIDDER_ID
+    </select>
+
+    <select id="listSumResult" resultType="com.ejiaoyi.common.dto.BidderResultDTO">
+        SELECT a.BIDDER_ID  AS bidderId,
+            a.GRADE_ITEM_ID AS gradeItemId,
+            g.SCORE AS SCORE,
+            SUM(CASE WHEN a.EVAL_RESULT = 1 THEN 1 ELSE 0 END) AS noDeductSum,
+            SUM(CASE WHEN a.EVAL_RESULT != 1 THEN 1 ELSE 0 END) AS deductSum
+        FROM expert_review_single_item_deduct a, grade_item g
+			WHERE a.GRADE_ID = #{gradeId} and a.BIDDER_ID = #{bidderId} and g.id = a.GRADE_ITEM_ID
+			GROUP BY a.BIDDER_ID, a.GRADE_ITEM_ID, g.SCORE
+    </select>
+
+    <select id="listResultCount" resultType="com.ejiaoyi.common.dto.BidderResultDTO">
+        SELECT a.grade_item_id AS gradeItemId,
+            a.EVAL_RESULT AS passResult,
+            count(a.EVAL_RESULT) as scoreCont
+		FROM expert_review_single_item_deduct a
+		WHERE a.GRADE_ID = #{gradeId}
+			AND a.BIDDER_ID = #{bidderId}
+			GROUP BY a.grade_item_id,a.EVAL_RESULT
+			ORDER BY GRADE_ITEM_ID, scoreCont desc
+    </select>
+
+</mapper>

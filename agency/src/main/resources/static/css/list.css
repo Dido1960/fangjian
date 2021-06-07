@@ -1,0 +1,218 @@
+section {
+  width: 90%;
+  height: 93%;
+  margin: 0 auto;
+}
+section .head {
+  width: 100%;
+  height: 46px;
+  margin: 20px 0;
+}
+.head li {
+  width: 90px;
+  height: 46px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: 400;
+  text-align: center;
+  line-height: 46px;
+  color: rgba(213, 213, 213, 1);
+  float: left;
+}
+.head li + li {
+  margin-left: 10px;
+  cursor: pointer;
+}
+span:hover {
+  opacity: 0.7;
+}
+html .blove {
+  background: linear-gradient(
+    263deg,
+    rgba(19, 97, 254, 1) 0%,
+    rgba(78, 138, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#1361fe, endColorstr=#4e8aff);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.seach {
+  width: 100%;
+  height: 81px;
+  background-color: #fff;
+}
+.seach .sea-l {
+  width: 30%;
+  height: 100%;
+  float: left;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+/*.seach .sea-l span {*/
+/*  display: block;*/
+/*  width: 35%;*/
+/*  height: 40px;*/
+/*  background: rgba(255, 255, 255, 1);*/
+/*  border: 1px solid rgba(20, 98, 254, 1);*/
+/*  opacity: 1;*/
+/*  border-radius: 4px;*/
+/*  font-size: 16px;*/
+/*  font-family: "Microsoft YaHei";*/
+/*  font-weight: bold;*/
+/*  line-height: 40px;*/
+/*  text-align: center;*/
+/*  color: rgba(19, 97, 254, 1);*/
+/*  float: left;*/
+/*  margin-left: 20px;*/
+/*  cursor: pointer;*/
+/*}*/
+html .blove-s{
+  border: 1px solid #2f75fe;
+}
+.seach .sea-l span {
+  display: block;
+  width: 35%;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  float: left;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.sea-l span:hover {
+  opacity: 0.7;
+}
+.sea-r {
+  width: 25%;
+  height: 100%;
+  float: right;
+  position: relative;
+}
+.sea-r input {
+  width: 90%;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(213, 213, 213, 1);
+  opacity: 1;
+  border-radius: 4px;
+  outline: none;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.sea-r img {
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 15%;
+  top: 38%;
+  cursor: pointer;
+}
+.tlt {
+  width: 100%;
+  height: 77px;
+  background: rgba(169, 191, 220, 1);
+}
+.tlt li {
+  width: 20%;
+  height: 77px;
+  float: left;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 77px;
+  color: rgba(34, 49, 101, 1);
+  text-align: center;
+}
+#projectContent {
+  width: 100%;
+}
+#projectContent li {
+  width: 100%;
+  height: 96px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+#projectContent li div {
+  width: 20%;
+  height: 96px;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 96px;
+  float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+#projectContent li div span {
+  display: block;
+  width: 90px;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+  margin: 30px auto;
+  cursor: pointer;
+}
+.layui-laypage .layui-laypage-count {
+  position: absolute;
+  left: 0px;
+  width: 71px;
+  float: left;
+  margin-left: 20px !important;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 500;
+  color: rgba(26, 51, 88, 1);
+}
+
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+  background: rgba(2, 195, 134, 1);
+  color: #fff;
+}
+
+.layui-box {
+  width: 100%;
+  text-align: right;
+}
+
+.layui-box a {
+  margin-right: 10px;
+}
+
+.layui-laypage .layui-laypage-spr {
+  margin-right: 10px;
+}
+
+.layui-laypage .layui-laypage-curr {
+  margin-right: 10px;
+}
+html .layui-laypage .layui-laypage-curr .layui-laypage-em {
+  background-color: rgba(19, 97, 254, 1);
+}
+html .layui-laypage a,
+html .layui-laypage span {
+  background-color: rgba(0, 0, 0, 0);
+}
+html .layui-laypage a:hover {
+  color: rgba(19, 97, 254, 1);
+}
+html .layui-laypage input:focus,
+html .layui-laypage select:focus {
+  border: 1px solid rgba(19, 97, 254, 1) !important;
+}

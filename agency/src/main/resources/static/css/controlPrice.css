@@ -1,0 +1,77 @@
+.down {
+  width: 100%;
+  height: 400px;
+  background: rgba(255, 255, 255, 1);
+  padding-top: 99px;
+  box-sizing: border-box;
+  opacity: 1;
+}
+.down form {
+  width: 55%;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.down form input {
+  width: 73%;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(213, 213, 213, 1);
+  opacity: 1;
+  padding-left: 20px;
+  box-sizing: border-box;
+  font-weight: 900;
+}
+.down form input:focus {
+  border: 1px solid rgba(12, 113, 255, 1);
+}
+.down form .btn {
+  width: 143px;
+  height: 40px;
+  background: linear-gradient(
+          270deg,
+          rgb(19, 97, 254) 0%,
+          rgb(78, 138, 255) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1 ,startColorstr=#1361fe, endColorstr=#4e8aff);
+  opacity: 1;
+  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-weight: 900;
+  text-align: center;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+
+}
+.down form .btn:hover {
+  opacity: 0.8;
+}
+
+.down p {
+ /* width: 50%;*/
+  height: 40px;
+  font-size: 24px;
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  line-height: 40px;
+  color: rgba(34, 49, 101, 1);
+  /*margin: 20px auto;*/
+  text-align: center;
+}
+
+/* 谷歌 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+/* 火狐 */
+input{
+  -moz-appearance:textfield;
+}
+.layui-btn {
+ vertical-align: baseline;
+}

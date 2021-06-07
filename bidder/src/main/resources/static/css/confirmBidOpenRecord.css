@@ -1,0 +1,288 @@
+.right-center {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.right-center ul {
+    width: 100%;
+    height: 77px;
+    background: rgba(169, 191, 220, 1);
+    opacity: 1;
+}
+
+.right-center ul li {
+    width: 25%;
+    height: 100%;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 77px;
+    text-align: center;
+    color: rgba(34, 49, 101, 1);
+    opacity: 1;
+    float: left;
+}
+
+.right-center .content {
+    width: 100%;
+    height: 74px;
+    background: rgba(255, 255, 255, 1);
+    margin-top: 20px;
+}
+
+.content div {
+    width: 25%;
+    height: 100%;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 500;
+    line-height: 74px;
+    text-align: center;
+    float: left;
+    color: rgba(34, 49, 101, 1);
+}
+
+.foot {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.foot h4 {
+    width: 100%;
+    height: 64px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 64px;
+    color: #1a2539;
+    text-align: center;
+}
+
+.foot-btns {
+    width: 170px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.foot-btns span {
+    display: block;
+    width: 80px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    padding: 0;
+}
+
+.foot-btns span:hover {
+    opacity: 0.7;
+}
+
+.foot-btns span + span {
+    margin-left: 10px;
+}
+
+
+
+.footer {
+    width: 100%;
+    height: 230px;
+    margin-top: 20px;
+    background: url(../img/right_back.png) no-repeat center;
+    background-size: 100% 100%;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+.footer-cen {
+    width: 60%;
+    height: 170px;
+    margin: 0 auto;
+    min-width: 458px;
+}
+.footer-cen .footer-left {
+    width: 60%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 4px solid rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    float: left;
+}
+.footer-cen .footer-left p {
+    width: 100%;
+    height: 85px;
+    font-size: 40px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    line-height: 68px;
+    color: rgba(255, 255, 255, 1);
+    padding: 0 26px;
+    box-sizing: border-box;
+}
+.footer-right {
+    width: 183px;
+    height: 170px;
+    float: right;
+}
+
+.other-situ {
+    width: 100%;
+    height: 400px;
+    background-color: #fff;
+    margin-top: 20px;
+    padding-top: 108px;
+    box-sizing: border-box;
+}
+
+.other-situ img {
+    display: block;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+}
+
+.other-situ p {
+    width: 100%;
+    height: 64px;
+    font-size: 24px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 64px;
+    color: rgba(34, 49, 101, 1);
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.QRcode {
+    width: 100%;
+    height: 230px;
+    background: url(../img/qrback.png) no-repeat center center;
+    background-size: 100%;
+    margin-top: 20px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+.qr-cen {
+    width: 60%;
+    height: 170px;
+    margin: 0 auto;
+    min-width: 458px;
+}
+.qr-cen .qr-left {
+    width: 60%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 4px solid rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    float: left;
+}
+.qr-cen .qr-left p {
+    width: 100%;
+    height: 85px;
+    font-size: 40px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 68px;
+    color: rgba(255, 255, 255, 1);
+    padding: 0 26px;
+    box-sizing: border-box;
+}
+.qr-right {
+    width: 183px;
+    height: 170px;
+    float: right;
+}
+
+.right-refuse {
+    display: inline-block;
+    width: 100%;
+    background: #ffffff;
+     border: 1px solid #cccccc55;
+    opacity: 1;
+    border-radius: 0px;
+}
+.right-refuse img {
+    display: block;
+    margin: 50px auto 0;
+    width: 100px;
+    height: 100px;
+}
+.right-refuse p {
+    width: 100%;
+    height: 72px;
+    font-size: 24px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 72px;
+    color: #1a2539;
+    text-align: center;
+}
+.rejectReason{
+    width: 80% !important;
+    margin: 0 auto;
+    vertical-align: middle;
+    overflow: visible;
+    white-space: pre-wrap;
+    box-sizing: border-box;
+    text-align: left !important;
+    font-size: 18px !important;
+    line-height: 30px !important;
+    font-weight: normal !important;
+    padding-bottom: 30px;
+}
+.btns {
+    width: 190px;
+    height: 40px;
+    margin: 20px auto 0;
+}
+.btns span {
+    width: 85px;
+    height: 40px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 40px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btns .dissent {
+    background: #e9aa17;
+    float: left;
+}
+.btns .unDissent {
+    background: #4190E7;
+    float: right;
+}
+.btns span:hover {
+    opacity: 0.7;
+}
+
+
+.right-msg {
+    width: 100%;
+    height: 294px;
+    background: #ffffff;
+     border: 1px solid #cccccc55;
+    opacity: 1;
+    border-radius: 0px;
+    margin-top: 20px;
+}
+.right-msg img {
+    display: block;
+    margin: 50px auto 0;
+}
+.right-msg p {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 50px;
+    color: #1a2539;
+    text-align: center;
+}

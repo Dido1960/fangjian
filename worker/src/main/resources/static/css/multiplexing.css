@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.box {
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.head {
+    width: 260px;
+    height: 40px;
+    position: relative;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.head input {
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    opacity: 1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 0 30px 0 10px;
+
+}
+
+.head img {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.cont-top {
+    width: 100%;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.cont-top ol {
+    width: 100%;
+    height: 61px;
+    background: rgba(207, 218, 229, 1);
+    opacity: 1;
+    border-radius: 4px 4px 0px 0px;
+    padding: 0 2.5%;
+    box-sizing: border-box;
+}
+
+.cont-top ol li {
+    width: 33%;
+    height: 61px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    line-height: 61px;
+    color: #1A2539;
+    text-align: center;
+    display: inline-block;
+}
+
+.center-top {
+    width: 95%;
+    min-height: 76px;
+    background: #F7F9FA;
+    border: 1px solid #CCCCCC;
+    opacity: 1;
+    margin: 10px auto 0;
+    cursor: pointer;
+}
+
+.center-top div {
+    width: 33%;
+    min-height: 76px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 76px;
+    color: #1A2539;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.center-top div p {
+    line-height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: pre-wrap;
+    overflow: visible;
+}
+
+.center-top div span {
+    display: inline-table;
+    width: 85px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 40px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+.center-top div span:nth-child(1) {
+    background: rgba(0, 102, 204, 1);
+}
+
+.center-top div span:nth-child(2) {
+    background-color: rgba(0, 102, 204, 0.1);
+    color: rgba(0, 102, 204, 1);
+}
+
+.btn {
+    width: 86px;
+    height: 40px;
+    background: rgba(0, 102, 204, 1);
+    opacity: 1;
+    border-radius: 4px;
+    margin: 20px 0;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 40px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+.center-top div img {
+    float: left;
+    margin-top: 22px;
+    margin-left: 3%;
+    cursor: pointer;
+}
+
+.center .sele {
+    width: 95%;
+    max-height: 455px;
+    margin: 10px auto;
+    border: 1px solid #CCCCCC;
+    opacity: 1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.center .sele thead tr {
+    height: 61px;
+    background: rgba(207, 218, 229, 1);
+    opacity: 1;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.center .sele thead tr th {
+    text-align: center;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: bold;
+    color: #1A2539;
+}
+
+.center .sele tbody tr {
+    width: 100%;
+    height: 76px;
+}
+
+.center .sele tbody tr td {
+    text-align: center;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    color: #1A2539;
+}
+
+.center .sele tbody tr td span {
+    display: inline-table;
+    width: 76px;
+    height: 36px;
+    background: rgba(0, 102, 204, 1);
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    line-height: 36px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+}

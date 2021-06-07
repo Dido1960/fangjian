@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.OnlineVoteMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.OnlineVote">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="THEME" property="theme" />
+        <result column="OPTION1" property="option1" />
+        <result column="OPTION2" property="option2" />
+        <result column="VOTES1" property="votes1" />
+        <result column="VOTES2" property="votes2" />
+        <result column="TOTAL" property="total" />
+        <result column="STATUS" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, THEME, OPTION1, OPTION2, VOTES1, VOTES2, TOTAL, STATUS
+    </sql>
+
+</mapper>

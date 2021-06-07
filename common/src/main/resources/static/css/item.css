@@ -1,0 +1,15 @@
+.items{
+    background-color: #FFFFFF;
+    width: 85%;
+    margin: 0 auto;
+}
+#item_a:hover{
+    background-color: aliceblue;
+}
+#item_a{
+    color: #0C0C0C;
+}
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-this > a:hover{
+    background-color: aliceblue;
+    border-left: 2.5px #009688 solid;
+}

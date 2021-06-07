@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.LineMsgMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.LineMsg">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="BID_SECTION_ID" property="bidSectionId" />
+        <result column="BIDDER_ID" property="bidderId" />
+        <result column="SEND_NAME" property="sendName" />
+        <result column="ROLE_TYPE" property="roleType" />
+        <result column="QUESTION" property="question" />
+        <result column="MESSAGE" property="message" />
+        <result column="BACK_NAME" property="backName" />
+        <result column="BACK_MSG" property="backMsg" />
+        <result column="RESUME" property="resume" />
+        <result column="OBJECTION_FILE_ID" property="objectionFileId" />
+    </resultMap>
+
+    <!-- 扩展查询映射结果 1对多 -->
+    <resultMap id="LineMsg_List_LineMsgRead" type="com.ejiaoyi.common.entity.LineMsg" extends="BaseResultMap">
+        <collection property="lineMsgReads" ofType="com.ejiaoyi.common.entity.LineMsgRead">
+            <id column="LINE_MSG_READ_ID" property="id" />
+            <result column="READ_INSERT_TIME" property="insertTime" />
+            <result column="LINE_MSG_ID" property="lineMsgId" />
+            <result column="USER_ID" property="userId" />
+            <result column="USER_TYPE" property="userType" />
+            <result column="READ_SITUATION" property="readSituation" />
+        </collection>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, BID_SECTION_ID, BIDDER_ID, SEND_NAME, ROLE_TYPE, QUESTION, MSGESS, BACK_NAME, BACK_MSG, RESUME, OBJECTION_FILE_ID
+    </sql>
+
+    <!-- 通用标段id查询所有网上开标消息 -->
+    <select id="listLineMsg" resultMap="LineMsg_List_LineMsgRead">
+        SELECT
+            a.*,
+            b.ID LINE_MSG_READ_ID,
+            b.INSERT_TIME READ_INSERT_TIME,
+            b.LINE_MSG_ID,
+            b.USER_ID,
+            b.USER_TYPE,
+            b.READ_SITUATION
+        FROM
+            line_msg a,
+            line_msg_read b
+        <where>
+            a.ID = b.LINE_MSG_ID
+            <if test="bidSectionId != null">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+    </select>
+
+    <select id="getLastLineMsg" resultMap="LineMsg_List_LineMsgRead">
+        SELECT a.*,
+            b.ID LINE_MSG_READ_ID,
+            b.INSERT_TIME READ_INSERT_TIME,
+            b.LINE_MSG_ID,
+            b.USER_ID,
+            b.USER_TYPE,
+            b.READ_SITUATION
+        FROM
+            line_msg a,
+            line_msg_read b
+        <where>
+            a.ID = b.LINE_MSG_ID
+            <if test="bidSectionId != null">
+                AND a.BID_SECTION_ID = #{bidSectionId}
+            </if>
+        </where>
+        ORDER BY a.ID DESC
+        LIMIT 1
+    </select>
+
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ejiaoyi.common.mapper.DepMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ejiaoyi.common.entity.Dep">
+        <id column="ID" property="id" />
+        <result column="INSERT_TIME" property="insertTime" />
+        <result column="REG_ID" property="regId" />
+        <result column="DEP_NAME" property="depName" />
+        <result column="ENABLED" property="enabled" />
+        <result column="ORDER_NO" property="orderNo" />
+        <result column="ALL_SPELLING" property="allSpelling" />
+        <result column="FIRST_SPELLING" property="firstSpelling" />
+        <result column="PARENT_ID" property="parentId" />
+        <result column="GOV_DEP_TYPE" property="govDepType" />
+        <result column="CODE" property="code" />
+        <result column="PHONE" property="phone" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+    <resultMap id="BaseResultMapExtend" type="com.ejiaoyi.common.entity.Dep" extends="BaseResultMap">
+        <result column="REG_NAME" property="regName"/>
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, INSERT_TIME, REG_ID, DEP_NAME, ENABLED, ORDER_NO, ALL_SPELLING, FIRST_SPELLING, PARENT_ID, GOV_DEP_TYPE, CODE, PHONE, REMARK
+    </sql>
+
+
+    <select id="pagedDep" resultMap="BaseResultMapExtend">
+        select a.*, b.REG_NAME from DEP a
+        left join REG b on a.REG_ID = b.ID
+        <where>
+            <if test="dep.regId != null ">
+                <bind name="regId" value="dep.regId"/>
+                and a.REG_ID = #{regId}
+            </if>
+            <if test="dep.depName !='' and dep.depName !=null ">
+                <bind name="depName" value="'%'+dep.depName+'%'"/>
+                and a.DEP_NAME like #{depName}
+            </if>
+            <if test="dep.enabled != null ">
+                <bind name="enabled" value="dep.enabled"/>
+                and a.enabled = #{enabled}
+            </if>
+        </where>
+    </select>
+
+</mapper>
